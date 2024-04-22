@@ -1,0 +1,9 @@
+keys:
+  - &neri age1tm4nh79a53d5wuj5qktm4ntcquhgt5hu3d2fcwf96krtaqnep4lsmphalm
+  - &kieran age1pcn5h6leap8vf5zavvna29acnnpcnf0cves5zyj7dj6hnte28c7slzp9z2
+creation_rules:
+  - path_regex: secrets.yaml$
+    key_groups:
+      - age:
+        - *neri
+        - *kieran
