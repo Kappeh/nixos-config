@@ -14,6 +14,7 @@
       "editor.formatOnPaste" = true;
       "editor.formatOnSave" = true;
       "editor.formatOnSaveMode" = "modifications";
+      "editor.inlayHints.enabled" = "off";
       "editor.smoothScrolling" = true;
       "files.autoSave" = "afterDelay";
       "files.autoSaveWhenNoErrors" = true;
