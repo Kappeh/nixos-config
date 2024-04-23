@@ -36,6 +36,7 @@
       "Documents"
       "Videos"
       "VirtualBox VMs"
+      "dev"
       ".gnupg"
       ".ssh"
       ".nixops"
