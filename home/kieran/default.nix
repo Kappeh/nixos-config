@@ -28,46 +28,61 @@
 
   home.persistence."/persist/home/kieran" = {
     directories = [
+      # Custom files
       "dotfiles"
+      "dev"
+
+      # Standard files
       "Desktop"
       "Downloads"
       "Music"
       "Pictures"
       "Documents"
       "Videos"
-      "VirtualBox VMs"
-      "dev"
+      # "VirtualBox VMs"
       ".gnupg"
       ".ssh"
       ".nixops"
       ".local/share/keyrings"
-      ".local/share/direnv"
-      # Firefox
+      # ".local/share/direnv"
+
+      # Discord - to stop it opening browser each boot and remember settings
+      ".config/discord"
+
+      # Firefox - to keep addons enabled and remember addon settings
       ".mozilla/firefox/default/"
+
+      # Github Cli
+      ".config/gh"
+
+      # KeePassXC
+      ".cache/keepassxc/" # Remember recent databases
+      ".config/keepassxc/" # Remember settings e.g. password generator
+      ".mozilla/native-messaging-hosts" # KeePassXC-Browser for firefox
+
+      # PrismLauncher
+      ".local/share/PrismLauncher"
+
+      # Pywal
+      ".cache/wal"
+
+      # Rustup - to prevent having to reinstalling toolchain
+      ".rustup"
+
       # Syncthing
       "Sync"
       ".local/state/syncthing"
-      # KeePassXC
-      ".cache/keepassxc/"
-      ".config/keepassxc/"
-      ".mozilla/native-messaging-hosts"
-      # Pywal
-      ".cache/wal"
-      # PrismLauncher
-      ".local/share/PrismLauncher"
-      # Github Cli
-      ".config/gh"
       {
         directory = ".local/share/Steam";
         method = "symlink";
       }
     ];
     files = [
-      ".screenrc"
       ".bash_history"
       ".config/monitors.xml"
       ".config/monitors.xml~"
       ".config/sops/age/keys.txt"
+      ".screenrc"
     ];
     allowOther = true; # Allow other users, such as root, to access files.
   };
