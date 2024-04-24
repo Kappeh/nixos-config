@@ -171,6 +171,7 @@
         hashedPasswordFile = config.sops.secrets."users/kieran/hashedPassword".path;
         extraGroups = [ "wheel" "networkmanager" ];
         packages = with pkgs; [
+          btdu
           discord
           gimp
           keepassxc
