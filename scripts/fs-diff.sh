@@ -3,10 +3,10 @@
 
 set -euo pipefail
 
-OLD_TRANSID=$(sudo btrfs subvolume find-new /root_partition/root_blank 9999999)
+OLD_TRANSID=$(sudo btrfs subvolume find-new /partition_root/root_blank 9999999)
 OLD_TRANSID=${OLD_TRANSID#transid marker was }
 
-sudo btrfs subvolume find-new "/root_partition/root" "$OLD_TRANSID" |
+sudo btrfs subvolume find-new "/partition_root/root" "$OLD_TRANSID" |
 sed '$d' |
 cut -f17- -d' ' |
 sort |
@@ -21,4 +21,3 @@ while read path; do
     echo "$path"
   fi
 done
-
