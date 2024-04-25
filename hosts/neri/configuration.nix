@@ -174,6 +174,7 @@
           btdu
           discord
           gimp
+          jetbrains.idea-community
           keepassxc
           neofetch
           obsidian
