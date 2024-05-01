@@ -76,6 +76,12 @@
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = [ "@reddit" ];
           };
+          "Nix Options" = {
+            urls = [{ template = "https://search.nixos.org/options?query={searchTerms}"; }];
+            iconUpdateURL = "https://nixos.org/favicon.png";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@no" ];
+          };
           "eBay".metaData.hidden = true;
           "Google".metaData.hidden = true;
           "Bing".metaData.hidden = true;
