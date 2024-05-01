@@ -58,6 +58,24 @@
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = [ "@crates" ];
           };
+          "Home Manager Options" = {
+            urls = [{ template = "https://home-manager-options.extranix.com/?query={searchTerms}"; }];
+            iconUpdateURL = "https://home-manager-options.extranix.com/images/favicon.png";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@hm" ];
+          };
+          "Arch Wiki" = {
+            urls = [{ template = "https://wiki.archlinux.org/index.php?search={searchTerms}"; }];
+            iconUpdateURL = "https://wiki.archlinux.org/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@arch" "@aw" ];
+          };
+          "Reddit" = {
+            urls = [{ template = "https://www.reddit.com/search/?q={searchTerms}"; }];
+            iconUpdateURL = "https://www.redditstatic.com/shreddit/assets/favicon/64x64.png";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@reddit" ];
+          };
           "eBay".metaData.hidden = true;
           "Google".metaData.hidden = true;
           "Bing".metaData.hidden = true;
