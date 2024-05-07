@@ -9,10 +9,13 @@
     inputs.impermanence.nixosModules.home-manager.impermanence
 
     ./alacritty.nix
+    ./bash/default.nix
     ./btop.nix
+    ./feh.nix
     ./firefox.nix
     ./gh.nix
     ./git.nix
+    ./pywal.nix
     ./rofi.nix
     ./syncthing.nix
     ./vscodium.nix
