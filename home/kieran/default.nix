@@ -71,6 +71,9 @@
       # Pywal
       ".cache/wal"
 
+      # Custom cache for background management scripts
+      ".cache/background"
+
       # Rustup - to prevent having to reinstalling toolchain
       ".rustup"
 
