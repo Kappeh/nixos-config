@@ -47,24 +47,69 @@
     useXkbConfig = true; # use xkb.options in tty.
   };
 
+  services = {
+    displayManager.defaultSession = "none+bspwm";
+
+    xserver = {
+      enable = true;
+
+      # Use lightdm as display manager
+      displayManager = {
+        lightdm = {
+          enable = true;
+          greeters.slick.enable = true;
+          background = ../../login_wallpaper.png;
+        };
+
+	# Set screen resolution, framerate and position (position of DP-2 on seperate line because it doesn't seem to work otherwise)
+        setupCommands = ''
+          ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-0 --primary --pos 1366x0 --mode 1920x1080 --rate 60.00
+          ${pkgs.xorg.xrandr}/bin/xrandr --output DP-2 --left-of HDMI-0 --mode 1366x768 --rate 60.00
+          ${pkgs.xorg.xrandr}/bin/xrandr --output DP-2 --pos 0x312
+        '';
+
+        # Enable auto-login
+        #autoLogin.enable = true;
+        #autoLogin.user = "kieran";
+      };
+
+      # Use Bspwm as window manager
+      windowManager.bspwm = {
+        enable = true;
+
+        configFile = ../../modules/nixos/bspwm/bspwmrc;
+        sxhkd.configFile = ../../modules/nixos/bspwm/sxhkdrc;
+      };
+
+       # Better support for general peripherals
+      libinput.enable = true;
+
+      # Configure keymap in X11
+      xkb = {
+        layout = "gb";
+        options = "eurosign:4,caps:escape";
+      };
+    };
+  };
+
   # X11 windowing system + GNOME Desktop Environment.
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.excludePackages = [ pkgs.xterm ];
-  environment.gnome.excludePackages = [ pkgs.gnome-tour ];
+  #services.xserver.enable = true;
+  #services.xserver.displayManager.gdm.enable = true;
+  #services.xserver.desktopManager.gnome.enable = true;
+  #services.xserver.excludePackages = [ pkgs.xterm ];
+  #environment.gnome.excludePackages = [ pkgs.gnome-tour ];
   # Disable Wayland due to incompatabilities with Nvidia drivers
-  services.xserver.displayManager.gdm.wayland = false;
+  #services.xserver.displayManager.gdm.wayland = false;
   # Auto-login
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "kieran";
+  #services.displayManager.autoLogin.enable = true;
+  #services.displayManager.autoLogin.user = "kieran";
   # GNOME auto-login workaround (https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229)
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
+  #systemd.services."getty@tty1".enable = false;
+  #systemd.services."autovt@tty1".enable = false;
 
   # Configure keymap in X11
-  services.xserver.xkb.layout = "gb";
-  services.xserver.xkb.options = "eurosign:4,caps:escape";
+  # services.xserver.xkb.layout = "gb";
+  # services.xserver.xkb.options = "eurosign:4,caps:escape";
 
   # Enable sound.
   sound.enable = true;
@@ -72,6 +117,7 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
+    rxvt-unicode
     vim
     wget
   ];
