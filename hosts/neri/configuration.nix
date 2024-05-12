@@ -61,7 +61,7 @@
           background = ../../login_wallpaper.png;
         };
 
-	# Set screen resolution, framerate and position (position of DP-2 on seperate line because it doesn't seem to work otherwise)
+	      # Set screen resolution, framerate and position (position of DP-2 on seperate line because it doesn't seem to work otherwise)
         setupCommands = ''
           ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-0 --primary --pos 1366x0 --mode 1920x1080 --rate 60.00
           ${pkgs.xorg.xrandr}/bin/xrandr --output DP-2 --left-of HDMI-0 --mode 1366x768 --rate 60.00
@@ -91,25 +91,6 @@
       };
     };
   };
-
-  # X11 windowing system + GNOME Desktop Environment.
-  #services.xserver.enable = true;
-  #services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
-  #services.xserver.excludePackages = [ pkgs.xterm ];
-  #environment.gnome.excludePackages = [ pkgs.gnome-tour ];
-  # Disable Wayland due to incompatabilities with Nvidia drivers
-  #services.xserver.displayManager.gdm.wayland = false;
-  # Auto-login
-  #services.displayManager.autoLogin.enable = true;
-  #services.displayManager.autoLogin.user = "kieran";
-  # GNOME auto-login workaround (https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229)
-  #systemd.services."getty@tty1".enable = false;
-  #systemd.services."autovt@tty1".enable = false;
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "gb";
-  # services.xserver.xkb.options = "eurosign:4,caps:escape";
 
   # Enable sound.
   sound.enable = true;
