@@ -18,6 +18,34 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 #
+# media keys
+#
+
+# increase volume
+XF86AudioRaiseVolume
+	amixer set Master 10%+ 1>/dev/null
+
+# decrease volume
+XF86AudioLowerVolume
+	amixer set Master 10%- 1>/dev/null
+
+# toggle mute audio
+XF86AudioMute
+	amixer set Master toggle 1>/dev/null
+
+# play/pause
+#XF86AudioPlay
+#	playerctl play-pause
+
+# next
+#XF86AudioNext
+#	playerctl next
+
+# previous
+#XF86AudioNext
+#	playerctl previous
+
+#
 # bspwm hotkeys
 #
 
