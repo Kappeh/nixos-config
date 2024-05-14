@@ -224,7 +224,7 @@
         uid = 1000;
         isNormalUser = true;
         hashedPasswordFile = config.sops.secrets."users/kieran/hashedPassword".path;
-        extraGroups = [ "wheel" "networkmanager" ];
+        extraGroups = [ "audio" "wheel" "networkmanager" ];
         packages = with pkgs; [
           btdu
           discord
