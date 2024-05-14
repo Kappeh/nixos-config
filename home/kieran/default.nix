@@ -46,6 +46,7 @@
 
       # Firefox - to keep addons enabled and remember addon settings
       ".mozilla/firefox/default/"
+      ".mozilla/native-messaging-hosts" # KeePassXC-Browser for firefox
 
       # Github Cli
       ".config/gh"
@@ -53,7 +54,6 @@
       # KeePassXC
       ".cache/keepassxc/" # Remember recent databases
       ".config/keepassxc/" # Remember settings e.g. password generator
-      ".mozilla/native-messaging-hosts" # KeePassXC-Browser for firefox
 
       # PrismLauncher
       ".local/share/PrismLauncher"

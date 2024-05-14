@@ -134,6 +134,7 @@
   # Session variables
   environment.sessionVariables = {
     EDITOR = "vim";
+    MOX_USE_XINPUT2 = "1"; # Smooth scrolling in Firefox
   };
 
   # Remove security lecture for sudo
