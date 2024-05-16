@@ -125,15 +125,21 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
+    adwaita-qt
+    adwaita-qt6
+    gnome.gnome-themes-extra
+    ncpamixer
     rxvt-unicode
     vim
     wget
-    ncpamixer
   ];
 
   # Session variables
   environment.sessionVariables = {
     EDITOR = "vim";
+    GTK_THEME = "Adwaita:dark";
+    QT_STYLE_OVERRIDE = "Adwaita-Dark";
+    GTK2_RC_FILES="${pkgs.gnome.gnome-themes-extra}/share/themes/Adwaita-dark/gtk-2.0/gtkrc";
     MOX_USE_XINPUT2 = "1"; # Smooth scrolling in Firefox
   };
 
