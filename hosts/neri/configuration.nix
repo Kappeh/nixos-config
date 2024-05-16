@@ -237,6 +237,7 @@
           discord
           gimp
           jetbrains.idea-community
+          keepass-diff
           keepassxc
           neofetch
           obsidian
