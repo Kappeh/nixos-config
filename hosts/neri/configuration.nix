@@ -129,6 +129,7 @@
     adwaita-qt6
     gnome.gnome-themes-extra
     ncpamixer
+    protonup-qt
     rxvt-unicode
     vim
     wget
