@@ -128,6 +128,7 @@
     adwaita-qt
     adwaita-qt6
     gnome.gnome-themes-extra
+    gparted
     ncpamixer
     protonup-qt
     rxvt-unicode
