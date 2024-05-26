@@ -50,6 +50,9 @@
   services = {
     displayManager.defaultSession = "none+bspwm";
 
+    # Better support for general peripherals
+    libinput.enable = true;
+
     xserver = {
       enable = true;
 
@@ -80,9 +83,6 @@
         configFile = ../../modules/nixos/bspwm/bspwmrc;
         sxhkd.configFile = ../../modules/nixos/bspwm/sxhkdrc;
       };
-
-       # Better support for general peripherals
-      libinput.enable = true;
 
       # Configure keymap in X11
       xkb = {
