@@ -70,10 +70,6 @@
       # Syncthing
       "Sync"
       ".local/state/syncthing"
-      {
-        directory = ".local/share/Steam";
-        method = "symlink";
-      }
     ];
     files = [
       ".bash_history"
@@ -82,6 +78,17 @@
       ".config/sops/age/keys.txt"
       ".screenrc"
     ];
+    allowOther = true; # Allow other users, such as root, to access files.
+  };
+
+  home.persistence."/mnt/sshd0p1_persist/home/kieran" = {
+    directories = [
+      {
+        directory = ".local/share/Steam";
+        method = "symlink";
+      }
+    ];
+    files = [];
     allowOther = true; # Allow other users, such as root, to access files.
   };
 }

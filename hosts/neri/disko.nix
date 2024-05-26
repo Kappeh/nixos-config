@@ -1,8 +1,8 @@
-{ device ? throw "Set this to your disk device, e.g. /dev/sda", ... }: {
+{ ... }: {
   disko.devices = {
     disk = {
       main = {
-        inherit device;
+        device = "/dev/disk/by-id/ata-Samsung_SSD_840_EVO_120GB_S1D5NSAFB84723E";
         type = "disk";
         content = {
           type = "gpt";
@@ -64,8 +64,37 @@
                     #  swap.swapfile.size = "17G";
                     #};
                   };
-                  mountpoint = "/partition_root";
+                  mountpoint = "/main_root";
                   swap.swapfile.size = "17G";
+                };
+              };
+            };
+          };
+        };
+      };
+      sshd0 = {
+        device = "/dev/disk/by-id/ata-ST1000LM014-1EJ164-SSHD_W3823ZGH";
+        type = "disk";
+        content = {
+          type = "gpt";
+          partitions = {
+            p1 = {
+              # label = "disk-sshd0-p1"
+              size = "100%";
+              content = {
+                type = "luks";
+                name = "p1";
+                passwordFile = "/tmp/secret.key";
+                settings.allowDiscards = true;
+                content = {
+                  type = "btrfs";
+                  extraArgs = [ "-f" ];
+                  subvolumes = {
+                    "/persist" = {
+                      mountpoint = "/mnt/sshd0p1_persist";
+                    };
+                  };
+                  mountpoint = "/mnt/sshd0p1_root";
                 };
               };
             };

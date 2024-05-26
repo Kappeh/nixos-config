@@ -35,7 +35,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           inputs.disko.nixosModules.default
-          (import ./hosts/neri/disko.nix { device = "/dev/disk/by-id/ata-Samsung_SSD_840_EVO_120GB_S1D5NSAFB84723E"; })
+          ./hosts/neri/disko.nix
 
           ./hosts/neri/configuration.nix
 
