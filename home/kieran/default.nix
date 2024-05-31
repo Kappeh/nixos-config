@@ -84,6 +84,22 @@
   home.persistence."/mnt/sshd0p1_persist/home/kieran" = {
     directories = [
       {
+        directory = ".local/share/Factorio";
+        method = "symlink";
+      }
+      {
+        directory = ".local/share/FasterThanLight";
+        method = "symlink";
+      }
+      {
+        directory = ".local/share/IntoTheBreach";
+        method = "symlink";
+      }
+      {
+        directory = ".local/share/Terraria";
+        method = "symlink";
+      }
+      {
         directory = ".local/share/Steam";
         method = "symlink";
       }
