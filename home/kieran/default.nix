@@ -88,6 +88,10 @@
         method = "symlink";
       }
       {
+        directory = ".factorio";
+        method = "symlink";
+      }
+      {
         directory = ".local/share/FasterThanLight";
         method = "symlink";
       }
