@@ -92,12 +92,23 @@
     };
   };
 
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio = {
+  # Pipewire
+  security.rtkit.enable = true;
+  services.pipewire = {
     enable = true;
-    package = pkgs.pulseaudioFull;
-    #support32Bit = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+
+    wireplumber.extraConfig = {
+      "monitor.bluez.properties" = {
+        "bluez5.enable-sbc-xq" = true;
+        "bluez5.enable-msbc" = true;
+        "bluez5.enable-hw-volume" = true;
+        "bluez5.roles" = [ "a2dp_sink" ];
+      };
+    };
   };
 
   # Enable bluetooth
@@ -113,16 +124,6 @@
   };
   services.blueman.enable = true;
 
-  hardware.pulseaudio.extraConfig = ''
-    load-module module-bluetooth-policy
-    load-module module-bluetooth-discover
-    ## module fails to load with
-    ##   module-bluez5-device.c: Failed to get device path from module arguments
-    ##   module.c: Failed to load module "module-bluez5-device" (argument: ""): initialization failed.
-    # load-module module-bluez5-device
-    # load-module module-bluez5-discover
-  '';
-
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     adwaita-qt
@@ -131,6 +132,7 @@
     gparted
     ncpamixer
     protonup-qt
+    qpwgraph
     rxvt-unicode
     vim
     wget
