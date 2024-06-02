@@ -53,6 +53,12 @@
     # Better support for general peripherals
     libinput.enable = true;
 
+    # Enable auto-login
+    displayManager.autoLogin = {
+      enable = true;
+      user = "kieran";
+    };
+
     xserver = {
       enable = true;
 
@@ -70,10 +76,6 @@
           ${pkgs.xorg.xrandr}/bin/xrandr --output DP-2 --left-of HDMI-0 --mode 1366x768 --rate 60.00
           ${pkgs.xorg.xrandr}/bin/xrandr --output DP-2 --pos 0x312
         '';
-
-        # Enable auto-login
-        #autoLogin.enable = true;
-        #autoLogin.user = "kieran";
       };
 
       # Use Bspwm as window manager
