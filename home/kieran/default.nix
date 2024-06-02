@@ -70,8 +70,15 @@
       # Syncthing
       "Sync"
       ".local/state/syncthing"
+
+      # Pulseaudio
+      ".config/pulse"
+
+      # Wireplumber
+      ".local/state/wireplumber"
     ];
     files = [
+      ".ncpamixer.conf"
       ".bash_history"
       ".config/monitors.xml"
       ".config/monitors.xml~"
