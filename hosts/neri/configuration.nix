@@ -234,6 +234,9 @@
   sops.age.keyFile = /persist/system/root/.config/sops/age/keys.txt;
   sops.secrets."users/kieran/hashedPassword".neededForUsers = true;
 
+  # Gamemode
+  programs.gamemode.enable = true;
+
   # Users
   users = {
     users = {
@@ -241,7 +244,7 @@
         uid = 1000;
         isNormalUser = true;
         hashedPasswordFile = config.sops.secrets."users/kieran/hashedPassword".path;
-        extraGroups = [ "audio" "wheel" "networkmanager" ];
+        extraGroups = [ "audio" "wheel" "networkmanager" "gamemode" ];
         packages = with pkgs; [
           btdu
           discord
