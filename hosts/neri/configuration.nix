@@ -131,11 +131,6 @@
     adwaita-qt
     adwaita-qt6
     gnome.gnome-themes-extra
-    gparted
-    ncpamixer
-    protonup-qt
-    qpwgraph
-    rxvt-unicode
     vim
     wget
   ];
@@ -244,12 +239,16 @@
           btdu
           discord
           gimp
+          gparted
           jetbrains.idea-community
           keepass-diff
           keepassxc
+          ncpamixer
           neofetch
           obsidian
           prismlauncher
+          protonup-qt
+          qpwgraph
           steam
         ];
       };
