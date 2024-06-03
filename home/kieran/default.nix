@@ -78,12 +78,15 @@
       ".local/state/wireplumber"
     ];
     files = [
-      ".ncpamixer.conf"
       ".bash_history"
       ".config/monitors.xml"
       ".config/monitors.xml~"
+      ".config/noisetorch/config.toml"
+      ".config/rncbc.org/qpwgraph.conf"
       ".config/sops/age/keys.txt"
+      ".ncpamixer.conf"
       ".screenrc"
+      "default.qpwgraph"
     ];
     allowOther = true; # Allow other users, such as root, to access files.
   };

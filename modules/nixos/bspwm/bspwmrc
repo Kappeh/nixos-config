@@ -26,3 +26,7 @@ BACKGROUND_PATH_FILE="$HOME/.cache/background/path"
 if [[ -f $BACKGROUND_PATH_FILE ]]; then
     feh --no-fehbg --bg-fill $(cat $BACKGROUND_PATH_FILE)
 fi
+
+# Load default patchbay and noise suppression for microphone
+qpwgraph -a -m ~/default.qpwgraph > /dev/null
+noisetorch -i -t 0 -s alsa_input.usb-BLUE_MICROPHONE_Blue_Snowball_201306-00.mono-fallback > /dev/null
