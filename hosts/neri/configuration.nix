@@ -272,7 +272,12 @@
   sops.secrets."users/kieran/hashedPassword".neededForUsers = true;
 
   # Gamemode
-  programs.gamemode.enable = true;
+  programs.gamemode = {
+    enable = true;
+    settings = {
+      general.renice = 10;
+    };
+  };
 
   # Noisetorch
   programs.noisetorch.enable = true;
