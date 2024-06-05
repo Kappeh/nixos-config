@@ -170,6 +170,11 @@
   };
   services.blueman.enable = true;
 
+  programs.alvr = {
+    enable = true;
+    openFirewall = true;
+  };
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     adwaita-qt
@@ -304,6 +309,7 @@
           prismlauncher
           protonup-qt
           qpwgraph
+          sidequest
           steam
         ];
       };

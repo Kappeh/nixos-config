@@ -76,6 +76,11 @@
 
       # Wireplumber
       ".local/state/wireplumber"
+
+      # VR
+      ".config/alvr"
+      ".config/openvr"
+      ".config/openxr"
     ];
     files = [
       ".bash_history"
