@@ -287,6 +287,9 @@
   # Noisetorch
   programs.noisetorch.enable = true;
 
+  # Android debug bridge
+  programs.adb.enable = true;
+
   # Users
   users = {
     users = {
@@ -294,8 +297,10 @@
         uid = 1000;
         isNormalUser = true;
         hashedPasswordFile = config.sops.secrets."users/kieran/hashedPassword".path;
-        extraGroups = [ "audio" "wheel" "networkmanager" "gamemode" ];
+        extraGroups = [ "audio" "wheel" "networkmanager" "gamemode" "plugdev" "adbusers" ];
         packages = with pkgs; [
+          android-studio
+          android-udev-rules
           btdu
           discord
           gimp

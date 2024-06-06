@@ -81,6 +81,15 @@
       ".config/alvr"
       ".config/openvr"
       ".config/openxr"
+
+      # Android Studio
+      ".android"
+      ".cache/Google"
+      ".config/Google"
+      ".gradle"
+      ".local/share/Google/consentOptions"
+      "Android"
+      "AndroidStudioProjects"
     ];
     files = [
       ".bash_history"
