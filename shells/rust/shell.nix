@@ -11,6 +11,7 @@ in
       llvmPackages_17.bintools
       rustup
       sqlite
+      wasm-pack
     ];
     RUSTC_VERSION = channel;
     # https://github.com/rust-lang/rust-bindgen#environment-variables
