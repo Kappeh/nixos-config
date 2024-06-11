@@ -290,6 +290,9 @@
   # Android debug bridge
   programs.adb.enable = true;
 
+  # rtl-sdr
+  hardware.rtl-sdr.enable = true;
+
   # Users
   users = {
     users = {
@@ -305,6 +308,7 @@
           discord
           gimp
           gparted
+          gqrx
           jetbrains.idea-community
           keepass-diff
           keepassxc
@@ -314,6 +318,7 @@
           prismlauncher
           protonup-qt
           qpwgraph
+          rtl-sdr
           sidequest
           steam
         ];

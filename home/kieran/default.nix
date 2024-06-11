@@ -90,6 +90,9 @@
       ".local/share/Google/consentOptions"
       "Android"
       "AndroidStudioProjects"
+
+      # gqrx
+      ".config/gqrx"
     ];
     files = [
       ".bash_history"
