@@ -18,20 +18,40 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 #
+# clipboard
+#
+
+# globally disable middle-click pasting behavior
+~button2
+    ;echo -n | xclip -in
+
+#
+# screenshots
+#
+
+# Take a screenshot of the whole screen
+Print
+    scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png
+
+# Take a screenshot of the focused window
+shift + Print
+    scrot -u ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png
+
+#
 # media keys
 #
 
 # increase volume
-XF86AudioRaiseVolume
-	amixer set Master 10%+ 1>/dev/null
+# XF86AudioRaiseVolume
+# 	amixer set Master 10%+ 1>/dev/null
 
 # decrease volume
-XF86AudioLowerVolume
-	amixer set Master 10%- 1>/dev/null
+# XF86AudioLowerVolume
+# 	amixer set Master 10%- 1>/dev/null
 
 # toggle mute audio
-XF86AudioMute
-	amixer set Master toggle 1>/dev/null
+# XF86AudioMute
+# 	amixer set Master toggle 1>/dev/null
 
 # play/pause
 #XF86AudioPlay

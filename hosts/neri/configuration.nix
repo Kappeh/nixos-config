@@ -319,8 +319,10 @@
           protonup-qt
           qpwgraph
           rtl-sdr
+          scrot
           sidequest
           steam
+          xclip
         ];
       };
     };
