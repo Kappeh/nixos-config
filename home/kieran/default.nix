@@ -93,9 +93,14 @@
 
       # gqrx
       ".config/gqrx"
+
+      # qt5ct
+      ".config/qt5ct"
+
     ];
     files = [
       ".bash_history"
+      ".config/krusaderrc"
       ".config/monitors.xml"
       ".config/monitors.xml~"
       ".config/noisetorch/config.toml"

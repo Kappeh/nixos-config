@@ -188,7 +188,7 @@
   environment.sessionVariables = {
     EDITOR = "vim";
     GTK_THEME = "Adwaita:dark";
-    QT_STYLE_OVERRIDE = "Adwaita-Dark";
+    QT_QPA_PLATFORMTHEME = "qt5ct";
     GTK2_RC_FILES="${pkgs.gnome.gnome-themes-extra}/share/themes/Adwaita-dark/gtk-2.0/gtkrc";
     MOX_USE_XINPUT2 = "1"; # Smooth scrolling in Firefox
   };
@@ -304,25 +304,38 @@
         packages = with pkgs; [
           android-studio
           android-udev-rules
+          arj
           btdu
           discord
+          dracula-icon-theme
           gimp
           gparted
           gqrx
           jetbrains.idea-community
+          # kdePackages.breeze-icons
           keepass-diff
           keepassxc
+          krename
+          krusader
+          lha
+          libsForQt5.qt5ct
           ncpamixer
           neofetch
           obsidian
+          p7zip
           prismlauncher
           protonup-qt
           qpwgraph
+          rar
           rtl-sdr
           scrot
           sidequest
           steam
+          unrar
+          unzip
           xclip
+          xxdiff
+          zip
         ];
       };
     };
