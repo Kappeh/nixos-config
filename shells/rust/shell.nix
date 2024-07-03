@@ -1,12 +1,20 @@
 { pkgs ? import <nixpkgs> {} }:
 let
-  libPath = with pkgs; lib.makeLibraryPath [
-    # load external libraries that you need in your rust project here
-  ];
+  # libPath = with pkgs; lib.makeLibraryPath [
+  #   # load external libraries that you need in your rust project here
+  # ];
   channel = "stable";
 in
   pkgs.mkShell rec {
     buildInputs = with pkgs; [
+      xorg.libX11
+      xorg.libXrandr
+      xorg.libXcursor
+      xorg.libxcb
+      xorg.libXi
+      libxkbcommon
+      libGL
+      fontconfig
       clang
       llvmPackages_17.bintools
       rustup
@@ -24,7 +32,7 @@ in
     RUSTFLAGS = (builtins.map (a: ''-L ${a}/lib'') [
       # add libraries here (e.g. pkgs.libvmi)
     ]);
-    LD_LIBRARY_PATH = libPath;
+    LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath buildInputs;
     # Add glibc, clang, glib, and other headers to bindgen search path
     BINDGEN_EXTRA_CLANG_ARGS =
     # Includes normal include path
