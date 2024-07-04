@@ -51,7 +51,12 @@
     displayManager.defaultSession = "none+bspwm";
 
     # Better support for general peripherals
-    libinput.enable = true;
+    libinput = {
+      enable = true;
+
+      mouse.horizontalScrolling = true;
+      mouse.middleEmulation = false;
+    };
 
     # Enable auto-login
     displayManager.autoLogin = {
