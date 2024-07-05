@@ -206,6 +206,7 @@
   # Fonts
   fonts.packages = with pkgs; [
     cascadia-code
+    liberation_ttf
   ];
 
   # Wipe root partition on boot
