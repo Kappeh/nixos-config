@@ -318,11 +318,14 @@
           gqrx
           jetbrains.idea-community
           # kdePackages.breeze-icons
+          hunspell
+          hunspellDicts.en_GB-ise
           keepass-diff
           keepassxc
           krename
           krusader
           lha
+          libreoffice-qt
           libsForQt5.qt5ct
           ncpamixer
           neofetch
