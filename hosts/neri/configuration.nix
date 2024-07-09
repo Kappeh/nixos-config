@@ -315,6 +315,7 @@
           discord
           dracula-icon-theme
           gimp
+          godot_4
           gparted
           gqrx
           jetbrains.idea-community
