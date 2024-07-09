@@ -314,6 +314,7 @@
           btdu
           discord
           dracula-icon-theme
+          fastfetch
           gimp
           godot_4
           gparted
@@ -330,7 +331,6 @@
           libreoffice-qt
           libsForQt5.qt5ct
           ncpamixer
-          # neofetch
           obsidian
           p7zip
           prismlauncher
