@@ -184,7 +184,7 @@
   environment.systemPackages = with pkgs; [
     adwaita-qt
     adwaita-qt6
-    gnome.gnome-themes-extra
+    gnome-themes-extra
     vim
     wget
   ];
@@ -194,7 +194,7 @@
     EDITOR = "vim";
     GTK_THEME = "Adwaita:dark";
     QT_QPA_PLATFORMTHEME = "qt5ct";
-    GTK2_RC_FILES="${pkgs.gnome.gnome-themes-extra}/share/themes/Adwaita-dark/gtk-2.0/gtkrc";
+    GTK2_RC_FILES="${pkgs.gnome-themes-extra}/share/themes/Adwaita-dark/gtk-2.0/gtkrc";
     MOX_USE_XINPUT2 = "1"; # Smooth scrolling in Firefox
   };
 
@@ -330,7 +330,7 @@
           libreoffice-qt
           libsForQt5.qt5ct
           ncpamixer
-          neofetch
+          # neofetch
           obsidian
           p7zip
           prismlauncher

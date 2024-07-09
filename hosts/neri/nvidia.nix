@@ -24,10 +24,9 @@
     };
 
     hardware = {
-      opengl = {
+      graphics = {
         enable = true;
-        driSupport = true;
-        driSupport32Bit = true; # Required for steam
+        enable32Bit = true; # Required for steam
       };
       nvidia = {
         modesetting.enable = true; # Required for native resolution in TTY
