@@ -8,7 +8,7 @@
       "editor.bracketPairColorization.enabled" = false;
       "editor.cursorBlinking" = "smooth";
       "editor.cursorSmoothCaretAnimation" = "on";
-      "editor.find.autoFindInSelection" = "always";
+      "editor.find.autoFindInSelection" = "multiline";
       "editor.fontFamily" = "Cascadia Code";
       "editor.fontLigatures" = true;
       "editor.formatOnPaste" = true;
@@ -43,6 +43,7 @@
       eamodio.gitlens
       editorconfig.editorconfig
       ms-azuretools.vscode-docker
+      ms-python.python
       rust-lang.rust-analyzer
       saurabh.calvera-dark
       serayuzgur.crates
