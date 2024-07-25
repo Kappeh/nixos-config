@@ -343,6 +343,7 @@
           steam
           unrar
           unzip
+          vlc
           xclip
           xxdiff
           zip
