@@ -12,6 +12,7 @@ print_usage () {
   echo "DEVICE"
   echo "    keylogger"
   echo "    spyware"
+  echo "    t7_2"
 }
 
 POSITIONAL_ARGS=()
@@ -55,6 +56,10 @@ case $DEVICE_NAME in
   spyware)
     DEVICE_ID="usb-Generic_Flash_Disk_23081610370096-0:0-part1"
     MOUNT_NAME="spyware"
+    ;;
+  t7_2)
+    DEVICE_ID="usb-Samsung_PSSD_T7_S6XCNS0W818267V-0:0-part1"
+    MOUNT_NAME="t7_2"
     ;;
   *)
     echo "Unknown device $DEVICE_NAME"
