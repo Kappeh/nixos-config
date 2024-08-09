@@ -100,6 +100,10 @@
       # qt5ct
       ".config/qt5ct"
 
+      # qmk
+      "qmk_firmware"
+      ".config/qmk/"
+
     ];
     files = [
       ".bash_history"

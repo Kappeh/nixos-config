@@ -189,11 +189,16 @@
     openFirewall = true;
   };
 
+  # Qmk/Via
+  hardware.keyboard.qmk.enable = true;
+  services.udev.packages = with pkgs; [ via ];
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     adwaita-qt
     adwaita-qt6
     gnome-themes-extra
+    via
     vim
     wget
   ];
@@ -345,6 +350,7 @@
           p7zip
           prismlauncher
           protonup-qt
+          qmk
           qpwgraph
           rar
           rtl-sdr
