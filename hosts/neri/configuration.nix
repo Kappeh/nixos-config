@@ -266,6 +266,7 @@
 
   fileSystems."/persist".neededForBoot = true;
   fileSystems."/var/log".neededForBoot = true;
+  fileSystems."/.swapvol".neededForBoot = true;
 
   # Persist home files
   programs.fuse.userAllowOther = true;

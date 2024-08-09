@@ -59,13 +59,15 @@
                       mountpoint = "/var/log";
                       mountOptions = [ "compress=zstd" "noatime" ];
                     };
-                    #"/swap" = {
-                    #  mountpoint = "/.swapvol";
-                    #  swap.swapfile.size = "17G";
-                    #};
+                    # The subvolume for the swap file, which should be preserved across hibernations but I'm not interested in backing up.
+                    "/swap" = {
+                      mountpoint = "/.swapvol";
+                      mountOptions = [ "noatime" "nodatacow" "nodatasum" ];
+                      swap.swapfile.size = "17G";
+                    };
                   };
                   mountpoint = "/main_root";
-                  swap.swapfile.size = "17G";
+                  # swap.swapfile.size = "17G";
                 };
               };
             };
