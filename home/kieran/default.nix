@@ -11,6 +11,7 @@
     ./alacritty.nix
     ./bash/default.nix
     ./btop.nix
+    ./dunst/default.nix
     ./feh.nix
     ./firefox.nix
     ./gh.nix
