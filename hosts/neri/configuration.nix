@@ -87,8 +87,8 @@
       windowManager.bspwm = {
         enable = true;
 
-        configFile = ../../modules/nixos/bspwm/bspwmrc;
-        sxhkd.configFile = ../../modules/nixos/bspwm/sxhkdrc;
+        configFile = ./bspwmrc;
+        sxhkd.configFile = ./sxhkdrc;
       };
 
       # Configure keymap in X11
