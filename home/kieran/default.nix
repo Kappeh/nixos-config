@@ -22,6 +22,8 @@
     ./vscodium.nix
   ];
 
+  xsession.numlock.enable = true;
+
   home.persistence."/persist/home/kieran" = {
     directories = [
       # Custom files
