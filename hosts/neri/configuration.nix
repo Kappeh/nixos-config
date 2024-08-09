@@ -306,7 +306,7 @@
         uid = 1000;
         isNormalUser = true;
         hashedPasswordFile = config.sops.secrets."users/kieran/hashedPassword".path;
-        extraGroups = [ "audio" "wheel" "networkmanager" "gamemode" "plugdev" "adbusers" ];
+        extraGroups = [ "audio" "video" "wheel" "networkmanager" "gamemode" "plugdev" "adbusers" ];
         packages = with pkgs; [
           android-studio
           android-udev-rules
