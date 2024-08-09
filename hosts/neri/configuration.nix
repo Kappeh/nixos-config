@@ -11,19 +11,28 @@
     auto-optimise-store = true;
   };
 
-  # Use the Grub EFI boot loader with OSProber.
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub = {
-      devices = [ "nodev" ];
-      efiSupport = true;
-      enable = true;
-      useOSProber = true;
+  boot = {
+    # Use the Grub EFI boot loader with OSProber.
+    loader = {
+      efi.canTouchEfiVariables = true;
+      grub = {
+        devices = [ "nodev" ];
+        efiSupport = true;
+        enable = true;
+        useOSProber = true;
+      };
     };
+
+    # Use swapfile for hibernation
+    resumeDevice = "/dev/mapper/root";
+    kernelParams = [
+      "resume_offset=10323377"
+    ];
+
+    # Enable support for NTFS to access Windows filesystems
+    supportedFilesystems = [ "ntfs" ];
   };
 
-  # Enable support for NTFS to access Windows filesystems
-  boot.supportedFilesystems = [ "ntfs" ];
 
   # Set RTC time standard to localtime, compatible with Windows
   time.hardwareClockInLocalTime = true;
