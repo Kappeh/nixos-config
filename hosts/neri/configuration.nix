@@ -33,7 +33,6 @@
     supportedFilesystems = [ "ntfs" ];
   };
 
-
   # Set RTC time standard to localtime, compatible with Windows
   time.hardwareClockInLocalTime = true;
 
@@ -41,6 +40,22 @@
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+
+  # Some networking configuration for wireguard
+  networking.firewall = {
+    allowedUDPPorts = [ 51820 ];
+    # if packets are still dropped, they will show up in dmesg
+    logReversePathDrops = true;
+    # wireguard trips rpfilter up
+    extraCommands = ''
+      ip46tables -t mangle -I nixos-fw-rpfilter -p udp -m udp --sport 51820 -j RETURN
+      ip46tables -t mangle -I nixos-fw-rpfilter -p udp -m udp --dport 51820 -j RETURN
+    '';
+    extraStopCommands = ''
+      ip46tables -t mangle -D nixos-fw-rpfilter -p udp -m udp --sport 51820 -j RETURN || true
+      ip46tables -t mangle -D nixos-fw-rpfilter -p udp -m udp --dport 51820 -j RETURN || true
+    '';
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/London";
