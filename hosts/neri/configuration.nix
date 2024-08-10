@@ -329,6 +329,9 @@
   # rtl-sdr
   hardware.rtl-sdr.enable = true;
 
+  # Wireshark
+  programs.wireshark.enable = true;
+
   # Users
   users = {
     users = {
@@ -336,7 +339,7 @@
         uid = 1000;
         isNormalUser = true;
         hashedPasswordFile = config.sops.secrets."users/kieran/hashedPassword".path;
-        extraGroups = [ "audio" "video" "wheel" "networkmanager" "gamemode" "plugdev" "adbusers" ];
+        extraGroups = [ "audio" "video" "wheel" "networkmanager" "gamemode" "plugdev" "adbusers" "wireshark" ];
         packages = with pkgs; [
           android-studio
           android-udev-rules
@@ -375,6 +378,7 @@
           unrar
           unzip
           vlc
+          wireshark
           xclip
           xxdiff
           zip
