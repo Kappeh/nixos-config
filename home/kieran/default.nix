@@ -37,6 +37,7 @@
       "Pictures"
       "Documents"
       "Videos"
+      "Games"
       # "VirtualBox VMs"
       ".gnupg"
       ".ssh"
