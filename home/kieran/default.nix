@@ -105,6 +105,9 @@
       "qmk_firmware"
       ".config/qmk/"
 
+      # Conda
+      ".conda"
+
     ];
     files = [
       ".bash_history"

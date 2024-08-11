@@ -345,6 +345,7 @@
           android-udev-rules
           arj
           btdu
+          conda
           discord
           dracula-icon-theme
           fastfetch
