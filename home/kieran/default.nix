@@ -5,6 +5,15 @@
     stateVersion = "23.11";
   };
 
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "inode/directory" = [ "org.kde.krusader.desktop" ];
+      "application/pdf" = [ "firefox.desktop" ];
+      "image/png" = [ "firefox.desktop" ];
+    };
+  };
+
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
 
