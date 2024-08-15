@@ -74,14 +74,14 @@
           };
         };
       };
-      sshd0 = {
-        device = "/dev/disk/by-id/ata-ST1000LM014-1EJ164-SSHD_W3823ZGH";
+      ssd0 = {
+        device = "/dev/disk/by-id/ata-Samsung_SSD_870_QVO_4TB_S5STNF0T405957D";
         type = "disk";
         content = {
           type = "gpt";
           partitions = {
-            p1 = {
-              # label = "disk-sshd0-p1"
+            ssd0p1 = {
+              # label = "disk-ssd0-ssd0p1"
               size = "100%";
               content = {
                 type = "luks";
@@ -93,10 +93,10 @@
                   extraArgs = [ "-f" ];
                   subvolumes = {
                     "/persist" = {
-                      mountpoint = "/mnt/sshd0p1_persist";
+                      mountpoint = "/mnt/ssd0p1_persist";
                     };
                   };
-                  mountpoint = "/mnt/sshd0p1_root";
+                  mountpoint = "/mnt/ssd0p1_root";
                 };
               };
             };

@@ -289,8 +289,8 @@
   systemd.tmpfiles.rules = [
     "d /persist/home/ 0755 root root -"
     "d /persist/home/kieran 0700 kieran users -"
-    "d /mnt/sshd0p1_persist/home/ 0755 root root -"
-    "d /mnt/sshd0p1_persist/home/kieran 0700 kieran users -"
+    "d /mnt/ssd0p1_persist/home/ 0755 root root -"
+    "d /mnt/ssd0p1_persist/home/kieran 0700 kieran users -"
   ];
 
   fileSystems."/persist".neededForBoot = true;

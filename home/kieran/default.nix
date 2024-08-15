@@ -124,7 +124,7 @@
     allowOther = true; # Allow other users, such as root, to access files.
   };
 
-  home.persistence."/mnt/sshd0p1_persist/home/kieran" = {
+  home.persistence."/mnt/ssd0p1_persist/home/kieran" = {
     directories = [
       {
         directory = ".local/share/Factorio";
