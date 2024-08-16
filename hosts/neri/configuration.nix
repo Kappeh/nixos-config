@@ -348,6 +348,7 @@
           conda
           discord
           dracula-icon-theme
+          element-desktop
           fastfetch
           gimp
           godot_4

@@ -117,6 +117,8 @@
       # Conda
       ".conda"
 
+      # Element
+      ".config/Element"
     ];
     files = [
       ".bash_history"
