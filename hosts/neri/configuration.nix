@@ -389,6 +389,13 @@
     };
   };
 
+  programs.ssh = {
+    startAgent = true;
+    setXAuthLocation = true;
+    enableAskPassword = true;
+    askPassword = "${pkgs.ssh-askpass-fullscreen}/bin/ssh-askpass-fullscreen";
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
