@@ -312,6 +312,12 @@
   sops.age.keyFile = /persist/system/root/.config/sops/age/keys.txt;
   sops.secrets."users/kieran/hashedPassword".neededForUsers = true;
 
+  # SSL
+  security.pki.certificateFiles = [
+    "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt"
+    ./local-ca-cert.pem
+  ];
+
   # Gamemode
   programs.gamemode = {
     enable = true;
