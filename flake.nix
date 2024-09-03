@@ -3,12 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     impermanence.url = "github:nix-community/impermanence";
 
     home-manager = {
@@ -34,11 +28,7 @@
       neri = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
-          inputs.disko.nixosModules.default
-          ./hosts/neri/disko.nix
-
           ./hosts/neri/configuration.nix
-
           inputs.home-manager.nixosModules.default
           inputs.impermanence.nixosModules.impermanence
         ];
