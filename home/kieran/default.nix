@@ -48,6 +48,7 @@
         ".config/qmk/" # Qmk - config
         ".conda" # Conda
         ".config/Element" # Element
+        ".cache/appimage-run" # AppImage - install cache
       ];
       files = [
         ".bash_history"
@@ -62,6 +63,7 @@
     };
     "/backup/home/kieran" = {
       directories = [
+        "Apps"
         "Desktop"
         "Downloads"
         "Music"

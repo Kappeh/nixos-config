@@ -10,6 +10,12 @@
     wget
   ];
 
+  # AppImage
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   # Gamemode
   programs.gamemode = {
     enable = true;
