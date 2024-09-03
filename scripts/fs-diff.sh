@@ -3,10 +3,10 @@
 
 set -euo pipefail
 
-OLD_TRANSID=$(sudo btrfs subvolume find-new /main_root/root_blank 9999999)
+OLD_TRANSID=$(sudo btrfs subvolume find-new /raid_root/root_blank 9999999)
 OLD_TRANSID=${OLD_TRANSID#transid marker was }
 
-sudo btrfs subvolume find-new "/main_root/root" "$OLD_TRANSID" |
+sudo btrfs subvolume find-new "/raid_root/root" "$OLD_TRANSID" |
 sed '$d' |
 cut -f17- -d' ' |
 sort |
