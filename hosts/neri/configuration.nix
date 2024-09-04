@@ -178,6 +178,14 @@
   fonts.packages = with pkgs; [
     cascadia-code
     liberation_ttf
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    fira-code
+    fira-code-symbols
+    mplus-outline-fonts.githubRelease
+    dina-font
+    proggyfonts
   ];
 
   # SSL
