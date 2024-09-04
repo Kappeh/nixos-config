@@ -11,6 +11,7 @@
     ./bash.nix
     ./btop.nix
     ./cursor_theme.nix
+    ./dunst/default.nix
     ./feh.nix
     ./firefox.nix
     ./gh.nix
