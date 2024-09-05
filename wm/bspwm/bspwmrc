@@ -23,3 +23,6 @@ bspc rule -a Screenkey manage=off
 
 # Set default cursor to left pointer
 xsetroot -cursor_name left_ptr
+
+# Load pipewire and wireplumber with default.qpwgraph patchbay
+qpwgraph -m ~/default.qpwgraph
