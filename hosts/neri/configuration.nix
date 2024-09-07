@@ -29,7 +29,11 @@
   };
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot = {
+    enable = true;
+    editor = false;           # Recommended to set to false, as it allows gaining root access
+    configurationLimit = 100; # To prevent boot partition running out of disk space
+  };
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "neri"; # Define your hostname.
