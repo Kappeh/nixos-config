@@ -113,11 +113,9 @@
       "wheel"           # Enable sudo for user
     ];
     packages = with pkgs; [
-      arj
       btdu
       conda
       discord
-      dracula-icon-theme
       element-desktop
       fastfetch
       gimp
@@ -125,36 +123,26 @@
       gparted
       gqrx
       jetbrains.idea-community
-      # kdePackages.breeze-icons
       hunspell
       hunspellDicts.en_GB-ise
       keepass-diff
       keepassxc
-      krename
-      krusader
-      lha
       libreoffice-qt
       libsForQt5.qt5ct
       ncpamixer
       obsidian
-      p7zip
       prismlauncher
       protonup-qt
       qmk
       qpwgraph
-      rar
       rtl-sdr
       scrot
       sidequest
       steam
       tree
-      unrar
-      unzip
       vlc
       wireshark
       xclip
-      xxdiff
-      zip
     ];
   };
 

@@ -54,7 +54,6 @@
       ];
       files = [
         ".bash_history"
-        ".config/krusaderrc"
         ".config/noisetorch/config.toml"
         ".config/rncbc.org/qpwgraph.conf"
         ".config/sops/age/keys.txt"

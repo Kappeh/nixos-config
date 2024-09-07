@@ -14,8 +14,8 @@ super + @space
 	rofi -show drun
 
 # file manager
-super + e
-    krusader
+# super + e
+#
 
 # make sxhkd reload its configuration files:
 super + Escape
