@@ -16,10 +16,11 @@
 #
 #==========================================================
 
-{ ... }: {
+{ pkgs, ... }: {
   services.polybar = {
     enable = true;
     script = "polybar top &";
+    package = pkgs.polybarFull;
     config = {
       "colors" = {
         background = "#282A2E";
@@ -62,6 +63,9 @@
         cursor-scroll = "ns-resize";
 
         enable-ipc = true;
+
+        override-redirect = false;
+        wm-restack = "bspwm";
       };
       "module/systray" = {
         type = "internal/tray";
@@ -126,7 +130,6 @@
       "settings" = {
         screenchange-reload = true;
         pseudo-transparency = true;
-        wm-restack = "bspwm";
       };
     };
   };
