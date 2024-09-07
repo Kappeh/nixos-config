@@ -10,7 +10,7 @@ PASSWORD=$(cat password.txt)
 #
 # to create the partitions programatically (rather than manually)
 # we're going to simulate the manual input to fdisk
-# The sed script strips off all the comments so that we can 
+# The sed script strips off all the comments so that we can
 # document what we're doing in-line with the actual commands
 # Note that a blank line (commented as "defualt" will send a empty
 # line terminated with a newline to take the fdisk default.
@@ -66,6 +66,7 @@ sudo btrfs subvolume create /mnt/backup		# The subvolume for '/backup', containi
 sudo btrfs subvolume create /mnt/persist	# The subvolume for '/persist', containing system state and user data which should be persistent.
 sudo btrfs subvolume create /mnt/nix		# The subvolume for '/nix', which needs to be persistent but is not worth backing up, as it's trivial to reconstruct/.
 sudo btrfs subvolume create /mnt/log		# The subvolume for '/var/log', which should be preserved across reboots but I'm not interested in backing up.
+sudo btrfs subvolume create /mnt/snapshots  # The subvolume for '/snapshots', which should be preserved across reboots and it used during backups.
 sudo umount /mnt
 
 sleep 1
@@ -81,6 +82,8 @@ sudo mkdir -p /mnt/nix
 sudo mount UUID=$RAID_UUID -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2,subvol=nix /mnt/nix
 sudo mkdir -p /mnt/var/log
 sudo mount UUID=$RAID_UUID -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2,subvol=log /mnt/var/log
+sudo mkdir -p /mnt/snapshots
+sudo mount UUID=$RAID_UUID -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2,subvol=snapshots /mnt/snapshots
 
 sleep 1
 
@@ -96,9 +99,11 @@ sudo mkdir -p /mnt/boot
 sudo mount ${RAW_DISK_1}-part1 /mnt/boot
 
 # Mount existing subvolumes
-echo $PASSWORD | sudo cryptsetup open ${STORAGE_DISK}-part1 crypt3 
+echo $PASSWORD | sudo cryptsetup open ${STORAGE_DISK}-part1 crypt3
 sudo mkdir -p /mnt/storage_root
 sudo mount /dev/mapper/crypt3 -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2 /mnt/storage_root
+sudo mkdir -p /mnt/backups
+sudo mount /dev/mapper/crypt3 -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2,subvol=backups /mnt/backups
 
 # Generate nixos config
 sudo nixos-generate-config --root /mnt

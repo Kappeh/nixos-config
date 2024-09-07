@@ -5,6 +5,7 @@
 { config, lib, pkgs, inputs, ... }: {
   imports = [
     ../../wm/bspwm/default.nix
+    ./backups.nix
     ./hardware-configuration.nix
     ./impermanence.nix
     ./nvidia.nix
