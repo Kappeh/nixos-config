@@ -33,6 +33,7 @@
       "workbench.sideBar.location" = "right";
       "workbench.startupEditor" = "none";
       "workbench.tree.renderIndentGuides" = "always";
+      "window.menuBarVisibility" = "toggle";
     };
 
     mutableExtensionsDir = true;
@@ -54,4 +55,3 @@
     ];
   };
 }
-
