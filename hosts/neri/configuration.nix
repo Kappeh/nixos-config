@@ -122,9 +122,10 @@
       godot_4
       gparted
       gqrx
-      jetbrains.idea-community
       hunspell
       hunspellDicts.en_GB-ise
+      jetbrains.idea-community
+      kdePackages.qt6ct
       keepass-diff
       keepassxc
       libreoffice-qt

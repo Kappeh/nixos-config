@@ -47,6 +47,7 @@
         ".local/state/wireplumber" # Wireplumber
         ".config/gqrx" # Gqrx
         ".config/qt5ct" # qt5ct
+        ".config/qt6ct" # qt6ct
         "qmk_firmware" # Qmk - firmware
         ".config/qmk/" # Qmk - config
         ".conda" # Conda
