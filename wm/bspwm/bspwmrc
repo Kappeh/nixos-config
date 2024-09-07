@@ -25,6 +25,10 @@ bspc rule -a Screenkey manage=off
 if [ -f "$HOME/Pictures/.background" ]; then
     set_bg
 fi
+# Start polybar service
+if ! systemctl --user is-active --quiet polybar; then
+    systemctl --user start polybar
+fi
 # Set default cursor to left pointer
 xsetroot -cursor_name left_ptr
 # Load pipewire and wireplumber with default.qpwgraph patchbay
