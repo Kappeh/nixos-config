@@ -21,8 +21,11 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
+# Set background if one is set
+if [ -f "$HOME/Pictures/.background" ]; then
+    set_bg
+fi
 # Set default cursor to left pointer
 xsetroot -cursor_name left_ptr
-
 # Load pipewire and wireplumber with default.qpwgraph patchbay
 qpwgraph -m ~/default.qpwgraph

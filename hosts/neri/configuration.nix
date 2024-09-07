@@ -4,6 +4,7 @@
 
 { config, lib, pkgs, inputs, ... }: {
   imports = [
+    ../../scripts/default.nix
     ../../wm/bspwm/default.nix
     ./backups.nix
     ./hardware-configuration.nix
