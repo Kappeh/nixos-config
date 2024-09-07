@@ -89,6 +89,9 @@
       };
 
       settings = {
+        # Remove the god aweful border around the window
+        "browser.tabs.inTitlebar" = 0;
+
         # Performance
         "gfx.webrender.all" = true; # Force enable GPU acceleration
         "media.ffmpeg.vaapi.enabled" = true;
@@ -324,4 +327,3 @@
     };
   };
 }
-
