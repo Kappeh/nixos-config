@@ -16,6 +16,7 @@
     ./firefox.nix
     ./gh.nix
     ./git.nix
+    ./polybar.nix
     ./rofi.nix
     ./syncthing.nix
     ./vscodium.nix
