@@ -171,14 +171,15 @@
   # Fonts
   fonts.packages = with pkgs; [
     cascadia-code
+    dina-font
+    fira-code
+    fira-code-symbols
     liberation_ttf
+    mplus-outline-fonts.githubRelease
+    nerdfonts
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
-    fira-code
-    fira-code-symbols
-    mplus-outline-fonts.githubRelease
-    dina-font
     proggyfonts
   ];
 

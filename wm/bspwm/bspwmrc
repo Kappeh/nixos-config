@@ -5,10 +5,10 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc wm -O %DP-2 HDMI-0
 # bspc monitor -d I II III IV V VI VII VIII IX X
-bspc monitor DP-2 -d I II III IV V
-bspc monitor HDMI-0 -d VI VII VIII IX X
+bspc monitor DP-2 -d 1 2 3 4 5
+bspc monitor HDMI-0 -d 6 7 8 9 0
 
-bspc config border_width         2
+bspc config border_width         0
 bspc config window_gap          12
 
 bspc config split_ratio          0.52
@@ -20,6 +20,11 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+
+# Fix firefox rules. For some reason setting `browser.tabs.inTitlebar`
+# to `0` (to remove the border around the window) makes bspwm start
+# firefox in `floating` mode.
+bspc rule -a firefox state=tiled
 
 # Set background if one is set
 if [ -f "$HOME/Pictures/.background" ]; then

@@ -91,6 +91,9 @@
       settings = {
         # Remove the god aweful border around the window
         "browser.tabs.inTitlebar" = 0;
+        # Apparently allows transparency
+        # TODO: transparent top menu / tabs
+        "browser.tabs.allow_transparent_browser" = true;
 
         # Performance
         "gfx.webrender.all" = true; # Force enable GPU acceleration

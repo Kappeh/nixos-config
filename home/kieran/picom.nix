@@ -65,7 +65,7 @@
       # shadow-offset-y = -35;
       shadow-offset-y = -35;
       # The translucency for shadows. (default .75)
-      shadow-opacity = 0.7;
+      shadow-opacity = 0.8;
 
       # Set if you want different colour shadows
       # shadow-red = 0.0;
@@ -149,7 +149,7 @@
       #
       #################################
 
-      inactive-opacity = 0.8;
+      inactive-opacity = 1;
       active-opacity = 1;
       frame-opacity = 1;
       inactive-opacity-override = false;
@@ -161,9 +161,7 @@
       # Desaturate and darken the inactive windows
       # Dim inactive windows. (0.0 - 1.0)
 
-      # inactive-dim = 0.2;
-      # inactive-dim-fixed = true;
-
+      # inactive-dim = 0.1;
       # Do not let dimness adjust based on window opacity.
       # inactive-dim-fixed = true;
 
@@ -189,7 +187,7 @@
         "class_g = 'Peek'"
         "class_g = 'Pensela'"
         "name = 'Drawing Board'"
-        "window_type = 'dock'"
+        # "window_type = 'dock'"
         "window_type = 'dropdown_menu'"
         "window_type = 'combo'"
         "window_type = 'popup_menu'"
@@ -213,6 +211,22 @@
       # no-fading-openclose = true;
       # no-fading-destroyed-argb = true;
       # fade-exclude = [ ];
+
+      #################################
+      #
+      # ROUNDED CORNERS
+      #
+      #################################
+
+      corner-radius = 10;
+
+      rounded-corners-exclude = [
+        "class_g = 'Dunst'"
+        "class_g = 'polybar' || class_g = 'Polybar'"
+        "class_g = 'rofi' || class_g = 'Rofi'"
+        "class_g = 'steam' && name = 'Sign in to Steam'"
+        "class_g = 'steam' && name = 'Steam'"
+      ];
 
       #################################
       #
