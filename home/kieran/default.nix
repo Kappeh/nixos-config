@@ -8,7 +8,7 @@
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
     ./alacritty.nix
-    ./bash.nix
+    ./bash/default.nix
     ./btop.nix
     ./cursor_theme.nix
     ./dunst/default.nix

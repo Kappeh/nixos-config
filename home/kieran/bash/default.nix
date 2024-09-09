@@ -7,5 +7,7 @@
     historySize = 1000;
 
     enableVteIntegration = true;
+
+    initExtra = builtins.readFile ./initExtra.sh;
   };
 }
