@@ -14,6 +14,7 @@
     ./dunst/default.nix
     ./feh.nix
     ./firefox.nix
+    ./flameshot.nix
     ./gh.nix
     ./git.nix
     ./picom.nix

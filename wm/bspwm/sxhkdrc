@@ -41,6 +41,10 @@ Print
 shift + Print
     scrot -u ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png
 
+# Open screenshot gui
+super + shift + s
+    flameshot gui
+
 #
 # media keys
 #
