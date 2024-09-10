@@ -24,11 +24,7 @@
         '';
       };
 
-      windowManager.bspwm = {
-        enable = true;
-        configFile = ./bspwmrc;
-        sxhkd.configFile = ./sxhkdrc;
-      };
+      windowManager.bspwm = { enable = true; };
     };
   };
 }

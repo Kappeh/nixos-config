@@ -9,6 +9,7 @@
     inputs.impermanence.nixosModules.home-manager.impermanence
     ./alacritty.nix
     ./bash/default.nix
+    ./bspwm/default.nix
     ./btop.nix
     ./cursor_theme.nix
     ./dunst/default.nix
