@@ -4,7 +4,7 @@
 
     settings = {
       General = {
-        autoCloseIdleDaemon = true;
+        autoCloseIdleDaemon = false;
         checkForUpdates = false;
         contrastOpacity = 188;
         contrastUiColor = "#60409c";
@@ -16,7 +16,7 @@
         showDesktopNotification = true;
         showSelectionGeometryHideTime = 3000;
         showStartupLaunchMessage = false;
-        startupLaunch = false;
+        startupLaunch = true;
         uiColor = "#2e78d3";
         uploadHistoryMax = 22;
       };
