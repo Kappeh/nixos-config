@@ -16,6 +16,9 @@
     binfmt = true;
   };
 
+  # Clipcat
+  services.clipcat.enable = true;
+
   # Gamemode
   programs.gamemode = {
     enable = true;

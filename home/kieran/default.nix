@@ -11,6 +11,7 @@
     ./bash/default.nix
     ./bspwm/default.nix
     ./btop.nix
+    ./clipcat/default.nix
     ./cursor_theme.nix
     ./dunst/default.nix
     ./feh.nix
@@ -56,6 +57,7 @@
         ".conda" # Conda
         ".config/Element" # Element
         ".cache/appimage-run" # AppImage - install cache
+        ".cache/clipcat" # Clipcat - Clipboard history
       ];
       files = [
         ".bash_history"

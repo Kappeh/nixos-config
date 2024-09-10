@@ -55,6 +55,9 @@
       # Open screenshot gui
       "super + shift + s" = "flameshot gui";
 
+      # Open clipboard history
+      "super + c" = "clipcat-menu";
+
       # Quit bspwm
       "super + alt + q" = "bspc quit";
       # Restart bspwm
