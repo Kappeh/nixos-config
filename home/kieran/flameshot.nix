@@ -5,7 +5,6 @@
     settings = {
       General = {
         autoCloseIdleDaemon = false;
-        checkForUpdates = false;
         contrastOpacity = 188;
         contrastUiColor = "#60409c";
         disabledTrayIcon = false;
