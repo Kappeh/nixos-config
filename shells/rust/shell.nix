@@ -7,19 +7,23 @@ let
 in
   pkgs.mkShell rec {
     buildInputs = with pkgs; [
-      xorg.libX11
-      xorg.libXrandr
-      xorg.libXcursor
-      xorg.libxcb
-      xorg.libXi
-      libxkbcommon
-      libGL
-      fontconfig
       clang
+      fontconfig
+      libGL
+      libmysqlclient
+      libpqxx
+      libxkbcommon
       llvmPackages_17.bintools
+      mysql
+      postgresql
       rustup
       sqlite
       wasm-pack
+      xorg.libX11
+      xorg.libxcb
+      xorg.libXcursor
+      xorg.libXi
+      xorg.libXrandr
     ];
     RUSTC_VERSION = channel;
     # https://github.com/rust-lang/rust-bindgen#environment-variables
