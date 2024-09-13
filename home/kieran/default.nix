@@ -60,6 +60,7 @@
         ".cache/appimage-run" # AppImage - install cache
         ".cache/clipcat" # Clipcat - Clipboard history
         ".config/obsidian" # Obsidian - Config and session information
+        ".config/beekeeper-studio" # Beekeeper Studio - Database Connections and config
       ];
       files = [
         ".bash_history"

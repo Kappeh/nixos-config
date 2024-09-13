@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     adwaita-qt
     adwaita-qt6
+    beekeeper-studio
     gnome-themes-extra
     via
     vim
