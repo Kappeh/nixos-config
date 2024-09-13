@@ -45,6 +45,7 @@
         ".config/keepassxc/" # Remember settings e.g. password generator
         ".local/share/PrismLauncher" # Prism launcher config
         ".rustup" # Rustup - to prevent having to reinstalling toolchain
+        ".cargo" # Cargo - to persist packages installed with cargo
         "Sync" # Syncthing - shared directories
         ".local/state/syncthing" # Syncthing - state and config
         ".config/pulse" # Pulseaudio
