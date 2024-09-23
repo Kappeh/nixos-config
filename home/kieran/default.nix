@@ -17,6 +17,7 @@
     ./feh.nix
     ./firefox.nix
     ./flameshot.nix
+    ./fzf.nix
     ./gh.nix
     ./git.nix
     ./picom.nix
