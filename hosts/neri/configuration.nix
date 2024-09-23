@@ -16,6 +16,9 @@
     inputs.sops-nix.nixosModules.sops
   ];
 
+  # Simply for mounting NTFS filesystems such as external drives
+  boot.supportedFilesystems = [ "ntfs" ];
+
   nixpkgs.config.allowUnfree = true;
   nix.settings = {
     experimental-features = "nix-command flakes";
