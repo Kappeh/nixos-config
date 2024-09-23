@@ -5,7 +5,16 @@
     adwaita-qt
     adwaita-qt6
     beekeeper-studio
+    cemu
+    cemu-ti
+    desmume
+    dolphin-emu
+    fceux
     gnome-themes-extra
+    libretro.citra
+    mgba
+    mupen64plus
+    snes9x
     via
     vim
     wget

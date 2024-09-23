@@ -16,7 +16,7 @@
     inputs.sops-nix.nixosModules.sops
   ];
 
-  # Simply for mounting NTFS filesystems such as external drives
+  # Simply for moungting NTFS filesystems such as external drives
   boot.supportedFilesystems = [ "ntfs" ];
 
   nixpkgs.config.allowUnfree = true;
