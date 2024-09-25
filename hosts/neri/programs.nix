@@ -10,6 +10,7 @@
     desmume
     dolphin-emu
     fceux
+    fm
     gnome-themes-extra
     libretro.citra
     mgba

@@ -48,6 +48,9 @@
       # Globally disable middle-click pasting behaviour
       "~button2" = ";echo -n | xclip -in";
 
+      # Open file manager
+      "super + e" = "fm";
+
       # Take a screenshot of the whole screen
       "Print" = "scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png";
       # Take a screenshot of the focused window
