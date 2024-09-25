@@ -20,6 +20,7 @@
     ./fzf.nix
     ./gh.nix
     ./git.nix
+    ./lf.nix
     ./picom.nix
     ./polybar.nix
     ./rofi.nix

@@ -49,7 +49,7 @@
       "~button2" = ";echo -n | xclip -in";
 
       # Open file manager
-      "super + e" = "fm";
+      "super + e" = "alacritty -e lf";
 
       # Take a screenshot of the whole screen
       "Print" = "scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png";
