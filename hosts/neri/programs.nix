@@ -16,9 +16,11 @@
     mgba
     mupen64plus
     snes9x
+    unzip
     via
     vim
     wget
+    zip
   ];
 
   # AppImage
