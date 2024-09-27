@@ -176,7 +176,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "<big><b>%s</b></big>\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -244,7 +244,8 @@
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
+    # dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/bin/env rofi -dmenu -p dunst:
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/xdg-open
@@ -315,9 +316,19 @@
     # * context_all: Open context menu for all notifications.
     # These values can be strung together for each mouse event, and
     # will be executed in sequence.
-    mouse_left_click = close_current
-    mouse_middle_click = do_action, close_current
-    mouse_right_click = close_all
+
+    # mouse_left_click = close_current
+    # mouse_middle_click = do_action, close_current
+    # mouse_right_click = close_all
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = context
+    mouse_right_click = close_current
+
+    # Custom stuff
+    padding = 20
+    horizontal_padding = 20
+    text_icon_padding = 10
+    frame_width = 1
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.
@@ -333,22 +344,24 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#222222"
-    foreground = "#888888"
+    background = "#1b2230aa"
+    foreground = "#707880"
+    frame_color = "#465e7a"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#285577"
-    foreground = "#ffffff"
+    background = "#2d3b56aa"
+    foreground = "#c5c8c6"
+    frame_color = "#86d1f4"
     timeout = 10
     override_pause_level = 30
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_critical]
-    background = "#900000"
+    background = "#a54242aa"
     foreground = "#ffffff"
     frame_color = "#ff0000"
     timeout = 0
