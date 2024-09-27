@@ -22,6 +22,7 @@
     ./git.nix
     ./lf.nix
     ./picom.nix
+    ./playerctld.nix
     ./polybar.nix
     ./rofi.nix
     ./syncthing.nix

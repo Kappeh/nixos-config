@@ -61,6 +61,16 @@
       # Open clipboard history
       "super + c" = "clipcat-menu";
 
+      # Media Controls
+      "XF86AudioPlay" = "playerctl play-pause";
+      "XF86AudioNext" = "playerctl next";
+      "XF86AudioPrev" = "playerctl previous";
+
+      # Audio Controls (TODO)
+      # XF86AudioMute
+      # XF86AudioLowerVolume
+      # XF86AudioRaiseVolume
+
       # Quit bspwm
       "super + alt + q" = "bspc quit";
       # Restart bspwm

@@ -139,6 +139,7 @@
       libsForQt5.qt5ct
       ncpamixer
       obsidian
+      playerctl
       prismlauncher
       protonup-qt
       qmk
