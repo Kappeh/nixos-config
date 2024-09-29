@@ -9,6 +9,7 @@
     inputs.impermanence.nixosModules.home-manager.impermanence
     ./alacritty.nix
     ./bash/default.nix
+    ./bat.nix
     ./bspwm/default.nix
     ./btop.nix
     ./clipcat/default.nix
