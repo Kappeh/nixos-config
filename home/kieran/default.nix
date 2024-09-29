@@ -28,6 +28,7 @@
     ./syncthing.nix
     ./vscodium.nix
     ./yazi.nix
+    ./zsh.nix
   ];
 
   xsession.numlock.enable = true;
@@ -73,6 +74,7 @@
         ".config/sops/age/keys.txt"
         ".ncpamixer.conf"
         "default.qpwgraph"
+        ".local/share/zsh/history"
       ];
       allowOther = true;
     };

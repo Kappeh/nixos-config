@@ -113,6 +113,8 @@
     uid = 1000;
     isNormalUser = true;
     hashedPasswordFile = config.sops.secrets."users/kieran/hashedPassword".path;
+    shell = pkgs.zsh;
+    useDefaultShell = true;
     extraGroups = [
       "audio"           # Enable audio devices for user
       "networkmanager"  # Enable network manager for user

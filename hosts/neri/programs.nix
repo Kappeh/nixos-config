@@ -60,4 +60,7 @@
 
   # Wireshark
   programs.wireshark.enable = true;
+
+  # Zsh
+  programs.zsh.enable = true;
 }
