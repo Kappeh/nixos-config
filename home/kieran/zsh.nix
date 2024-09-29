@@ -19,6 +19,7 @@
       enable = true;
 
       plugins = [
+        "bgnotify"
         "rust"
       ];
 
