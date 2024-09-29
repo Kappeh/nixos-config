@@ -32,6 +32,7 @@
     ./vscodium.nix
     ./yazi.nix
     ./zsh.nix
+    ./zoxide.nix
   ];
 
   xsession.numlock.enable = true;
