@@ -18,9 +18,9 @@
           # background = background.png
         };
         setupCommands = ''
-          ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-0 --primary --pos 1366x0 --mode 1920x1080 --rate 60.00
-          ${pkgs.xorg.xrandr}/bin/xrandr --output DP-2 --left-of HDMI-0 --mode 1366x768 --rate 60.00
-          ${pkgs.xorg.xrandr}/bin/xrandr --output DP-2 --pos 0x312
+          ${pkgs.xorg.xrandr}/bin/xrandr --output DP-2 --primary --pos 0x0 --mode 1920x1080 --rate 60.00
+          ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-0 --right-of DP-2 --mode 2560x1080 --rate 60.00
+          ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-0 --pos 1920x0
         '';
       };
 

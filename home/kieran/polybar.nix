@@ -32,7 +32,7 @@
         disabled = "#707880";
       };
       "bar/top" = {
-        monitor = "\${env:MONITOR:HDMI-0}";
+        monitor = "\${env:MONITOR:DP-2}";
 
         width = "100%";
         height = "24pt";
