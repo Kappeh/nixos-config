@@ -16,6 +16,7 @@
     mgba
     mupen64plus
     snes9x
+    tldr
     unzip
     via
     vim
