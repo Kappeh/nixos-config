@@ -14,7 +14,6 @@
       "--preview 'bat -r :50 --color always {}'"
     ];
 
-
     enableBashIntegration = true;
     enableFishIntegration = true;
     enableZshIntegration = true;

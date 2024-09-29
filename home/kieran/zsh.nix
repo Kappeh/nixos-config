@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
   programs.zsh = {
     enable = true;
 
@@ -25,5 +25,7 @@
 
       theme = "jispwoso";
     };
+
+    initExtra = builtins.readFile "${pkgs.fzf-git-sh}/share/fzf-git-sh/fzf-git.sh";
   };
 }

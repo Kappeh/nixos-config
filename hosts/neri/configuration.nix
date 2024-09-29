@@ -127,6 +127,7 @@
       discord
       element-desktop
       fastfetch
+      fzf-git-sh
       gimp
       godot_4
       gparted
