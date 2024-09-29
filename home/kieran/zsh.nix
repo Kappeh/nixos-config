@@ -12,7 +12,7 @@
     history = {
       size = 10000;
       extended = true;
-      path = "${config.xdg.dataHome}/zsh/history";
+      path = "${config.xdg.dataHome}/zsh/zsh_history";
     };
 
     oh-my-zsh = {

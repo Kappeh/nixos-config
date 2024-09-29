@@ -15,6 +15,7 @@
     ./clipcat/default.nix
     ./cursor_theme.nix
     ./dunst/default.nix
+    ./fd.nix
     ./feh.nix
     ./firefox.nix
     ./flameshot.nix
@@ -67,6 +68,7 @@
         ".cache/clipcat" # Clipcat - Clipboard history
         ".config/obsidian" # Obsidian - Config and session information
         ".config/beekeeper-studio" # Beekeeper Studio - Database Connections and config
+        ".local/share/zsh"
       ];
       files = [
         ".bash_history"
@@ -75,7 +77,6 @@
         ".config/sops/age/keys.txt"
         ".ncpamixer.conf"
         "default.qpwgraph"
-        ".local/share/zsh/history"
       ];
       allowOther = true;
     };
