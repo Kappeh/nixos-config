@@ -27,6 +27,7 @@
     ./rofi.nix
     ./syncthing.nix
     ./vscodium.nix
+    ./yazi.nix
   ];
 
   xsession.numlock.enable = true;
