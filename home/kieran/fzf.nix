@@ -11,7 +11,7 @@
 
     fileWidgetCommand = "fd --type f";
     fileWidgetOptions = [
-      "--preview 'head {}'"
+      "--preview 'bat -r :50 --color always {}'"
     ];
 
 
