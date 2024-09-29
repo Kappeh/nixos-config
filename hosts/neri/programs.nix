@@ -12,6 +12,7 @@
     fceux
     fm
     gnome-themes-extra
+    libnotify
     libretro.citra
     mgba
     mupen64plus
