@@ -28,6 +28,7 @@
     ./polybar.nix
     ./rofi.nix
     ./syncthing.nix
+    ./thefuck.nix
     ./vscodium.nix
     ./yazi.nix
     ./zsh.nix
