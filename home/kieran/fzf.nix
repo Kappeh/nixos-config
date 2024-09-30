@@ -4,7 +4,7 @@
 
     changeDirWidgetCommand = "fd --type d";
     changeDirWidgetOptions = [
-      "--preview 'tree -C {} | head -200'"
+      "--preview 'eza --tree --color=always {} | head -200'"
     ];
 
     defaultCommand = "fd --type f";
