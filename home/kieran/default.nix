@@ -15,6 +15,7 @@
     ./clipcat/default.nix
     ./cursor_theme.nix
     ./dunst/default.nix
+    ./eza.nix
     ./fd.nix
     ./feh.nix
     ./firefox.nix
@@ -70,7 +71,8 @@
         ".cache/clipcat" # Clipcat - Clipboard history
         ".config/obsidian" # Obsidian - Config and session information
         ".config/beekeeper-studio" # Beekeeper Studio - Database Connections and config
-        ".local/share/zsh"
+        ".local/share/zsh" # Zsh - zsh_history
+        ".local/share/zoxide" # Zoxide - zoxide database
       ];
       files = [
         ".bash_history"
