@@ -30,6 +30,7 @@
     ./rofi.nix
     ./syncthing.nix
     ./thefuck.nix
+    ./tmux.nix
     ./vscodium.nix
     ./yazi.nix
     ./zsh.nix
