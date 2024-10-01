@@ -129,7 +129,6 @@
       fastfetch
       fzf-git-sh
       gimp
-      godot_4
       gparted
       gqrx
       hunspell
