@@ -24,6 +24,7 @@
     ./gh.nix
     ./git.nix
     ./lf.nix
+    ./nixvim.nix
     ./picom.nix
     ./playerctld.nix
     ./polybar.nix
