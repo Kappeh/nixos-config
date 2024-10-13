@@ -9,6 +9,7 @@
     ./hardware-configuration.nix
     ./impermanence.nix
     ./lightdm.nix
+    ./logiops/default.nix
     ./nvidia.nix
     ./pipewire.nix
     ./programs.nix
@@ -166,6 +167,7 @@
     };
   };
 
+  # Environment variables
   environment.sessionVariables = {
     EDITOR = "vim";
     GTK_THEME = "Adwaita:dark";
