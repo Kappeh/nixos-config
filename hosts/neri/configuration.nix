@@ -118,6 +118,7 @@
     useDefaultShell = true;
     extraGroups = [
       "audio"           # Enable audio devices for user
+      "gamemode"        # Allow gamemode user daemon to change CPU governor or niceness
       "networkmanager"  # Enable network manager for user
       "video"           # Enable video devices for user
       "wheel"           # Enable sudo for user
