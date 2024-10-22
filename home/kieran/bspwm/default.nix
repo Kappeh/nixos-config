@@ -51,6 +51,9 @@
       # Open file manager
       "super + e" = "alacritty -e yazi";
 
+      # Open calculator
+      "super + q" = "rofi -show calc -modi calc -no-show-match -no-sort > /dev/null";
+
       # Take a screenshot of the whole screen
       "Print" = "scrot ~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png";
       # Take a screenshot of the focused window

@@ -6,6 +6,10 @@
     location = "center";
     terminal = "${pkgs.alacritty}/bin/alacritty";
 
+    plugins = [
+      pkgs.rofi-calc
+    ];
+
     theme = let inherit (config.lib.formats.rasi) mkLiteral; in {
       "*" = {
         width = 512;
@@ -15,6 +19,7 @@
         selected = mkLiteral "#61AFEFFF";
         active = mkLiteral "#98C379FF";
         urgent = mkLiteral "#E06C75FF";
+        handle-color = mkLiteral "#E06C75FF";
       };
 
       "window" = {
@@ -43,7 +48,7 @@
         border-radius = mkLiteral "0px 0px 0px 0px";
         border-color = mkLiteral "@selected";
         background-color = mkLiteral "transparent";
-        children = [ "inputbar" "listview" ];
+        children = [ "inputbar" "message" "listview" ];
       };
 
       "inputbar" = {
