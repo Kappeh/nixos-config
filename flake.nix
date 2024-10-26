@@ -30,6 +30,13 @@
 
   outputs = { nixpkgs, ... } @ inputs: {
     nixosConfigurations = {
+      ciela = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/ciela/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
       neri = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
