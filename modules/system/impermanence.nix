@@ -1,5 +1,5 @@
-{ lib, ... }: {
-  boot.initrd.postDeviceCommands = lib.mkAfter ''
+{ config, lib, ... }: {
+  config.boot.initrd.postDeviceCommands = lib.mkAfter ''
     mkdir /btrfs_tmp
     mount /dev/mapper/crypt1 /btrfs_tmp
     if [[ -e /btrfs_tmp/root ]]; then
@@ -30,7 +30,7 @@
     umount /btrfs_tmp
   '';
 
-  environment.persistence."/persist/system" = {
+  config.environment.persistence."/persist/system" = {
     hideMounts = true;
     directories = [
       "/var/lib/nixos"                                                          # root:root 0755
@@ -45,7 +45,7 @@
     ];
   };
 
-  systemd.tmpfiles.rules = [
+  config.systemd.tmpfiles.rules = [
     "d /persist/home/ 0755 root root -"
     "d /backup/home/ 0755 root root -"
     "d /persist/home/kieran 0700 kieran users -"

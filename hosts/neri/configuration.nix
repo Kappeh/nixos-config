@@ -4,18 +4,18 @@
 
 { config, lib, pkgs, inputs, ... }: {
   imports = [
+    ../../modules/system/impermanence.nix
+    ../../modules/system/lightdm.nix
+    ../../modules/system/logiops/default.nix
+    ../../modules/system/nvidia.nix
+    ../../modules/system/pipewire.nix
     ../../modules/system/sops.nix
     ../../modules/system/ssl/default.nix
+    ../../modules/system/wireguard.nix
     ../../scripts/default.nix
     ./backups.nix
     ./hardware-configuration.nix
-    ./impermanence.nix
-    ./lightdm.nix
-    ./logiops/default.nix
-    ./nvidia.nix
-    ./pipewire.nix
     ./programs.nix
-    ./wireguard.nix
     inputs.sops-nix.nixosModules.sops
   ];
 

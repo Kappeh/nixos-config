@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  services = {
+{ config, pkgs, ... }: {
+  config.services = {
     displayManager = {
       defaultSession = "none+bspwm";
       autoLogin = {

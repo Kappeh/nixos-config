@@ -1,12 +1,14 @@
-{ pkgs, ... }: {
-  environment.systemPackages = [ pkgs.logiops ];
+{ config, pkgs, ... }: {
+  config.environment = {
+    systemPackages = [ pkgs.logiops ];
 
-  environment.etc."logid.cfg" = {
-    source = ./logid.cfg;
-    mode = "0774";
+    etc."logid.cfg" = {
+      source = ./logid.cfg;
+      mode = "0774";
+    };
   };
 
-  systemd.services.logid = {
+  config.systemd.services.logid = {
     enable = true;
 
     description = "Run logid";

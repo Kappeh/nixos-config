@@ -1,5 +1,5 @@
-{ ... }: {
-  networking.firewall = {
+{ config, ... }: {
+  config.networking.firewall = {
     allowedUDPPorts = [ 51820 ];
     # if packets are still dropped, they will show up in dmesg
     logReversePathDrops = true;
