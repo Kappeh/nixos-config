@@ -15,6 +15,12 @@
     auto-optimise-store = true;
   };
 
+  fileSystems = {
+    "/backup".neededForBoot = true;
+    "/persist".neededForBoot = true;
+    "/var/log".neededForBoot = true;
+  };
+
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
     systemd-boot = {
