@@ -1,7 +1,6 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 { config, lib, pkgs, inputs, ... }: {
   imports = [
     ../../modules/system/sops.nix
@@ -16,54 +15,45 @@
     auto-optimise-store = true;
   };
 
-  boot = {
-    # Use the systemd-boot EFI boot loader.
-    loader = {
-      systemd-boot = {
-        enable = true;
-        editor = false;
-        configurationLimit = 100;
+  # Use the systemd-boot EFI boot loader.
+  boot.loader = {
+    systemd-boot = {
+      enable = true;
+      editor = false;
+      configurationLimit = 100;
+    };
+    efi.canTouchEfiVariables = true;
+  };
+
+  boot.initrd = {
+    # Specify kernel modules to be included in the initial RAM disk.
+    availableKernelModules = [
+      "e1000e"  # Intel network driver for Ethernet devices.
+      "ptp"     # Precision Time Protocol support.
+    ];
+
+    network = {
+      enable = true;  # Enable network support during the initrd phase.
+      ssh = {
+        enable = true;  # Enable SSH access during the initrd.
+        hostKeys = [ "/persist/system/etc/secrets/initrd/ciela_initrd_host_key_ed25519" ];
+        authorizedKeys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOCUJsStgjTCObc7BrzoGDE3tj633SbghefFM2wk20gX local" ];
       };
-      efi.canTouchEfiVariables = true;
     };
 
-    initrd = {
-      # Specify kernel modules to be included in the initial RAM disk.
-      availableKernelModules = [
-        "e1000e"  # Intel network driver for Ethernet devices.
-        "ptp"     # Precision Time Protocol support.
-      ];
-
+    systemd = {
+      enable = true;  # Enable systemd services in the initrd.
+      # Drop the root user straight into the password prompt on connection
+      users.root.shell = "/bin/systemd-tty-ask-password-agent";
       network = {
-        enable = true;  # Enable network support during the initrd phase.
-
-        ssh = {
-          enable = true;  # Enable SSH access during the initrd.
-          hostKeys = [
-            "/persist/system/etc/secrets/initrd/ciela_initrd_host_key_ed25519"
-          ];
-          authorizedKeys = [
-            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOCUJsStgjTCObc7BrzoGDE3tj633SbghefFM2wk20gX local"
-          ];
-        };
-      };
-
-      systemd = {
-        enable = true;  # Enable systemd services in the initrd.
-
-        # Drop the root user straight into the password prompt on connection
-        users.root.shell = "/bin/systemd-tty-ask-password-agent";
-
-        network = {
-          enable = true;  # Use systemd-networkd in the initrd for network configuration.
-          networks."10-eno1" = {
-            enable = true;
-            name = "eno1";
-            DHCP = "no";
-            address = [ "10.0.1.5/16" ];
-            gateway= [ "10.0.0.1" ];
-            dns = [ "10.0.1.1" ];
-          };
+        enable = true;  # Use systemd-networkd in the initrd for network configuration.
+        networks."10-eno1" = {
+          enable = true;
+          name = "eno1";
+          DHCP = "no";
+          address = [ "10.0.1.5/16" ];
+          gateway= [ "10.0.0.1" ];
+          dns = [ "10.0.1.1" ];
         };
       };
     };
@@ -96,10 +86,6 @@
   # Set your time zone.
   time.timeZone = "Etc/UTC";
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
   console = {
@@ -107,41 +93,18 @@
     useXkbConfig = true; # use xkb.options in tty.
   };
 
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "gb";
     options = "eurosign:4,caps:escape";
   };
 
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  # Enable sound.
-  # hardware.pulseaudio.enable = true;
-  # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kieran = {
     uid = 1000;
     isNormalUser = true;
     hashedPasswordFile = config.sops.secrets."users/kieran/hashedPassword".path;
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOCUJsStgjTCObc7BrzoGDE3tj633SbghefFM2wk20gX local"
-    ];
+    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOCUJsStgjTCObc7BrzoGDE3tj633SbghefFM2wk20gX local" ];
     extraGroups = [
       "networkmanager"  # Enable network manager for user
       "wheel"           # Enable `sudo` for the user.
@@ -154,7 +117,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim   # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
   ];
 
