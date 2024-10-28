@@ -27,22 +27,18 @@
       efi.canTouchEfiVariables = true;
     };
 
-    kernelParams = [
-      # Network it required during stage 1 for network based unlocking and ssh
-      # "rd.neednet=1"
-      "ip=10.0.1.5:::255.255.0.0:ciela:eno1:off:10.0.1.1::"
-    ];
-
     initrd = {
+      # Specify kernel modules to be included in the initial RAM disk.
       availableKernelModules = [
-        "e1000e"
-        "ptp"
+        "e1000e"  # Intel network driver for Ethernet devices.
+        "ptp"     # Precision Time Protocol support.
       ];
+
       network = {
-        enable = true;
-        flushBeforeStage2 = false;
+        enable = true;  # Enable network support during the initrd phase.
+
         ssh = {
-          enable = true;
+          enable = true;  # Enable SSH access during the initrd.
           hostKeys = [
             "/persist/system/etc/secrets/initrd/ciela_initrd_host_key_ed25519"
           ];
@@ -52,59 +48,49 @@
         };
       };
 
-      systemd.network = {
-        enable = true;
+      systemd = {
+        enable = true;  # Enable systemd services in the initrd.
 
-        networks = {
-          "eno1" = {
+        # Drop the root user straight into the password prompt on connection
+        users.root.shell = "/bin/systemd-tty-ask-password-agent";
+
+        network = {
+          enable = true;  # Use systemd-networkd in the initrd for network configuration.
+          networks."10-eno1" = {
             enable = true;
             name = "eno1";
-            DHCP = false;
-            addresses = [ "10.0.1.5" ];
-            gateway = [ "10.0.0.1" ];
+            DHCP = "no";
+            address = [ "10.0.1.5/16" ];
+            gateway= [ "10.0.0.1" ];
             dns = [ "10.0.1.1" ];
           };
         };
-        # links = {};
-        # netdevs = {};
-        # config = {};
       };
     };
   };
 
   networking = {
-    hostName = "ciela"; # Define your hostname.
-    # networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-    # useDHCP = false;
-    # nameservers = [ "10.0.1.1" ];
-    # interfaces."eno1" = {
-    #   ipv4 = {
-    #     addresses = [
-    #       {
-    #         address = "10.0.1.5";
-    #         prefixLength = 16;
-    #       }
-    #     ];
-    #   };
-    # };
+    hostName = "ciela";           # Define your hostname.
+    useDHCP = false;              # Disable dhcp for static ip
+    nameservers = [ "10.0.1.1" ]; # Use local dns server
   };
 
+  services.resolved = {
+    enable = true;
+    fallbackDns = []; # Disable fallback dns server, only use the primary dns server
+  };
+
+  # Use the same systemd-networkd configuration as in initrd
   systemd.network = {
     enable = true;
-
-    networks = {
-      "eno1" = {
-        enable = true;
-        name = "eno1";
-        DHCP = false;
-        addresses = [ "10.0.1.5" ];
-        gateway = [ "10.0.0.1" ];
-        dns = [ "10.0.1.1" ];
-      };
+    networks."10-eno1" = {
+      enable = true;
+      name = "eno1";
+      DHCP = "no";
+      address = [ "10.0.1.5/16" ];
+      gateway= [ "10.0.0.1" ];
+      dns = [ "10.0.1.1" ];
     };
-    # links = {};
-    # netdevs = {};
-    # config = {};
   };
 
   # Set your time zone.

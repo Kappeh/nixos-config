@@ -14,44 +14,44 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/a34828dc-c04c-47cf-aa17-24e438d2ee79";
+    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
       fsType = "btrfs";
       options = [ "subvol=root" ];
     };
 
-  boot.initrd.luks.devices."crypt".device = "/dev/disk/by-uuid/89221d6e-c057-4150-a2a7-51da9bef4b36";
+  boot.initrd.luks.devices."crypt".device = "/dev/disk/by-uuid/a64e8d43-54e1-4420-ade1-63d1e04b2006";
 
   fileSystems."/backup" =
-    { device = "/dev/disk/by-uuid/a34828dc-c04c-47cf-aa17-24e438d2ee79";
+    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
       fsType = "btrfs";
       options = [ "subvol=backup" ];
     };
 
   fileSystems."/persist" =
-    { device = "/dev/disk/by-uuid/a34828dc-c04c-47cf-aa17-24e438d2ee79";
+    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
       fsType = "btrfs";
       options = [ "subvol=persist" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/a34828dc-c04c-47cf-aa17-24e438d2ee79";
+    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
       fsType = "btrfs";
       options = [ "subvol=nix" ];
     };
 
   fileSystems."/snapshots" =
-    { device = "/dev/disk/by-uuid/a34828dc-c04c-47cf-aa17-24e438d2ee79";
+    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
       fsType = "btrfs";
       options = [ "subvol=snapshots" ];
     };
 
   fileSystems."/partition_root" =
-    { device = "/dev/disk/by-uuid/a34828dc-c04c-47cf-aa17-24e438d2ee79";
+    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
       fsType = "btrfs";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/379B-E3A9";
+    { device = "/dev/disk/by-uuid/1E75-713E";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
