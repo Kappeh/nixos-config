@@ -75,6 +75,7 @@
         ".config/beekeeper-studio" # Beekeeper Studio - Database Connections and config
         ".local/share/zsh" # Zsh - zsh_history
         ".local/share/zoxide" # Zoxide - zoxide database
+        ".cache/fontconfig" # Cache fontconfig because it is big and causes some apps to take a while to start
       ];
       files = [
         ".bash_history"
