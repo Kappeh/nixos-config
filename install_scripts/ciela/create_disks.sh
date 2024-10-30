@@ -88,7 +88,6 @@ btrfs subvolume create /mnt/partition_root/root         # The subvolume for '/',
 btrfs subvolume create /mnt/partition_root/backup       # The subvolume for '/backup', containing system state and user data which should be persistent and backed up.
 btrfs subvolume create /mnt/partition_root/persist      # The subvolume for '/persist', containing system state and user data which should be persistent.
 btrfs subvolume create /mnt/partition_root/nix          # The subvolume for '/nix', which needs to be persistent but is not worth backing up, as it's trivial to reconstruct/.
-btrfs subvolume create /mnt/partition_root/log		    # The subvolume for '/var/log', which should be preserved across reboots but I'm not interested in backing up.
 btrfs subvolume create /mnt/partition_root/snapshots    # The subvolume for '/snapshots', which should be preserved across reboots and it used during backups.
 
 umount /mnt/partition_root
@@ -109,9 +108,6 @@ mount -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2,subvo
 
 mkdir -p /mnt/system_root/nix
 mount -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2,subvol=nix /dev/mapper/crypt /mnt/system_root/nix
-
-mkdir -p /mnt/system_root/var/log
-mount -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2,subvol=log /dev/mapper/crypt /mnt/system_root/var/log
 
 mkdir -p /mnt/system_root/snapshots
 mount -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2,subvol=snapshots /dev/mapper/crypt /mnt/system_root/snapshots

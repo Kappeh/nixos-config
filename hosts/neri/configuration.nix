@@ -3,9 +3,11 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 { config, lib, pkgs, inputs, ... }: {
   imports = [
-    ../../modules/system/impermanence.nix
+    ../../modules/system/bluetooth.nix
+    ../../modules/system/impermanence/default.nix
     ../../modules/system/lightdm.nix
     ../../modules/system/logiops/default.nix
+    ../../modules/system/networkmanager.nix
     ../../modules/system/nvidia.nix
     ../../modules/system/pipewire.nix
     ../../modules/system/sops.nix
@@ -27,12 +29,6 @@
   # Simply for moungting NTFS filesystems such as external drives
   boot.supportedFilesystems = [ "ntfs" ];
 
-  fileSystems = {
-    "/backup".neededForBoot = true;
-    "/persist".neededForBoot = true;
-    "/var/log".neededForBoot = true;
-  };
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot = {
     enable = true;
@@ -42,7 +38,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "neri"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -71,23 +66,6 @@
     mouse.horizontalScrolling = true;
     mouse.middleEmulation = false;
   };
-
-  # Enable bluetooth
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-    settings = {
-      General = {
-        Enable = "Source,Sink,Media,Socket";
-        Experimental = true;
-      };
-    };
-  };
-
-  # Remove security lecture for sudo
-  security.sudo.extraConfig = ''
-    Defaults lecture = never
-  '';
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kieran = {
@@ -140,7 +118,6 @@
   };
 
   # Home manager
-  programs.fuse.userAllowOther = true;
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
@@ -206,5 +183,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }

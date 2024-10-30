@@ -3,6 +3,7 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 { config, lib, pkgs, inputs, ... }: {
   imports = [
+    ../../modules/system/impermanence/default.nix
     ../../modules/system/sops.nix
     ../../modules/system/ssl/default.nix
     ./hardware-configuration.nix
@@ -13,12 +14,6 @@
   nix.settings = {
     experimental-features = "nix-command flakes";
     auto-optimise-store = true;
-  };
-
-  fileSystems = {
-    "/backup".neededForBoot = true;
-    "/persist".neededForBoot = true;
-    "/var/log".neededForBoot = true;
   };
 
   # Use the systemd-boot EFI boot loader.

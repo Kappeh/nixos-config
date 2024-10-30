@@ -36,12 +36,6 @@
       options = [ "subvol=nix" ];
     };
 
-  fileSystems."/var/log" =
-    { device = "/dev/disk/by-uuid/f22b001b-efde-466f-8ecd-9fa199208516";
-      fsType = "btrfs";
-      options = [ "subvol=log" ];
-    };
-
   fileSystems."/snapshots" =
     { device = "/dev/disk/by-uuid/f22b001b-efde-466f-8ecd-9fa199208516";
       fsType = "btrfs";
