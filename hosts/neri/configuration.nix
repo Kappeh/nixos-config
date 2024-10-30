@@ -3,20 +3,21 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 { config, lib, pkgs, inputs, ... }: {
   imports = [
-    ../../modules/system/bluetooth.nix
+    ../../modules/system/hardware/bluetooth.nix
+    ../../modules/system/hardware/logiops/default.nix
+    ../../modules/system/hardware/nvidia.nix
     ../../modules/system/impermanence/default.nix
-    ../../modules/system/lightdm.nix
-    ../../modules/system/logiops/default.nix
-    ../../modules/system/networkmanager.nix
-    ../../modules/system/nvidia.nix
-    ../../modules/system/pipewire.nix
+    ../../modules/system/networking/networkmanager.nix
+    ../../modules/system/networking/ssl/default.nix
+    ../../modules/system/networking/wireguard.nix
+    ../../modules/system/programs/lightdm.nix
+    ../../modules/system/programs/pipewire.nix
     ../../modules/system/sops.nix
-    ../../modules/system/ssl/default.nix
-    ../../modules/system/wireguard.nix
     ../../scripts/default.nix
     ./backups.nix
     ./hardware-configuration.nix
     ./programs.nix
+    ./ssh.nix
     inputs.sops-nix.nixosModules.sops
   ];
 
@@ -115,9 +116,7 @@
   # Home manager
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
-    users = {
-      kieran = import ../../home/kieran/default.nix;
-    };
+    users.kieran = import ../../home/kieran/default.nix;
   };
 
   # Environment variables
