@@ -34,13 +34,6 @@
   # Set your time zone.
   time.timeZone = "Europe/London";
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput = {
-    enable = true;
-    mouse.horizontalScrolling = true;
-    mouse.middleEmulation = false;
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kieran = {
     uid = 1000;
