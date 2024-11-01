@@ -1,5 +1,5 @@
-{ ... }: {
-  programs.bash = {
+{ config, ... }: {
+  config.programs.bash = {
     enable = true;
 
     historyFile = "~/.bash_history";

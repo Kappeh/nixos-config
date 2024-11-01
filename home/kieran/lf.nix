@@ -1,5 +1,5 @@
-{ ... }: {
-  programs.lf = {
+{ config, ... }: {
+  config.programs.lf = {
     enable = true;
 
     settings = {

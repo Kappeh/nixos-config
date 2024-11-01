@@ -1,3 +1,3 @@
-{ ... }: {
-  programs.feh.enable = true;
+{ config, ... }: {
+  config.programs.feh.enable = true;
 }

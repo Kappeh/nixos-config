@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-  programs.zsh = {
+  config.programs.zsh = {
     enable = true;
 
     autocd = true;

@@ -3,28 +3,9 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 { config, lib, pkgs, inputs, ... }: {
   imports = [
-    ../../modules/system/impermanence/default.nix
-    ../../modules/system/sops.nix
-    ../../modules/system/ssl/default.nix
+    ../common.nix
     ./hardware-configuration.nix
-    inputs.sops-nix.nixosModules.sops
   ];
-
-  nixpkgs.config.allowUnfree = true;
-  nix.settings = {
-    experimental-features = "nix-command flakes";
-    auto-optimise-store = true;
-  };
-
-  # Use the systemd-boot EFI boot loader.
-  boot.loader = {
-    systemd-boot = {
-      enable = true;
-      editor = false;
-      configurationLimit = 100;
-    };
-    efi.canTouchEfiVariables = true;
-  };
 
   boot.initrd = {
     # Specify kernel modules to be included in the initial RAM disk.
@@ -86,19 +67,6 @@
 
   # Set your time zone.
   time.timeZone = "Etc/UTC";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_GB.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    useXkbConfig = true; # use xkb.options in tty.
-  };
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "gb";
-    options = "eurosign:4,caps:escape";
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kieran = {

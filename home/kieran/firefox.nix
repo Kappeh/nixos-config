@@ -1,5 +1,5 @@
-{ pkgs, inputs, ... }: {
-  programs.firefox = {
+{ config, pkgs, inputs, ... }: {
+  config.programs.firefox = {
     enable = true;
     profiles.default = {
       id = 0;

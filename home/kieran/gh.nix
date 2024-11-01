@@ -1,5 +1,3 @@
-{ ... }: {
-  programs.gh = {
-    enable = true;
-  };
+{ config, ... }: {
+  config.programs.gh.enable = true;
 }

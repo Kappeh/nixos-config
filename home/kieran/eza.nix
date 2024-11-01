@@ -1,5 +1,5 @@
-{ ... }: {
-  programs.eza = {
+{ config, ... }: {
+  config.programs.eza = {
     enable = true;
 
     enableBashIntegration = true;

@@ -1,3 +1,3 @@
-{ ... }: {
-  services.syncthing.enable = true;
+{ config, ... }: {
+  config.services.syncthing.enable = true;
 }

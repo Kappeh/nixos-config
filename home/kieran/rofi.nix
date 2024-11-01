@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-  programs.rofi = {
+  config.programs.rofi = {
     enable = true;
 
     configPath = "/home/kieran/.config/rofi/config.rasi";

@@ -1,5 +1,5 @@
-{ ... }: {
-  programs.fzf = {
+{ config, ... }: {
+  config.programs.fzf = {
     enable = true;
 
     changeDirWidgetCommand = "fd --type d";

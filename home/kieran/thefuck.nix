@@ -1,5 +1,5 @@
-{ ... }: {
-  programs.thefuck = {
+{ config, ... }: {
+  config.programs.thefuck = {
     enable = true;
 
     enableBashIntegration = true;

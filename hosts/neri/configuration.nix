@@ -8,9 +8,7 @@
     ../../modules/system/hardware/nvidia.nix
     ../../modules/system/hardware/qmk.nix
     ../../modules/system/hardware/rtl_sdr.nix
-    ../../modules/system/impermanence/default.nix
     ../../modules/system/networking/networkmanager.nix
-    ../../modules/system/networking/ssl/default.nix
     ../../modules/system/networking/wireguard.nix
     ../../modules/system/programs/appimage.nix
     ../../modules/system/programs/clipcat.nix
@@ -21,48 +19,20 @@
     ../../modules/system/programs/via.nix
     ../../modules/system/programs/wireshark.nix
     ../../modules/system/programs/zsh.nix
-    ../../modules/system/sops.nix
     ../../scripts/default.nix
+    ../common.nix
     ./backups.nix
     ./hardware-configuration.nix
     ./ssh.nix
-    inputs.sops-nix.nixosModules.sops
   ];
-
-  nixpkgs.config.allowUnfree = true;
-  nix.settings = {
-    experimental-features = "nix-command flakes";
-    auto-optimise-store = true;
-  };
 
   # Simply for moungting NTFS filesystems such as external drives
   boot.supportedFilesystems = [ "ntfs" ];
-
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot = {
-    enable = true;
-    editor = false;           # Recommended to set to false, as it allows gaining root access
-    configurationLimit = 100; # To prevent boot partition running out of disk space
-  };
-  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "neri"; # Define your hostname.
 
   # Set your time zone.
   time.timeZone = "Europe/London";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_GB.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    useXkbConfig = true; # use xkb.options in tty.
-  };
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "gb";
-    options = "eurosign:4,caps:escape";
-  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput = {
@@ -85,45 +55,13 @@
       "video"           # Enable video devices for user
       "wheel"           # Enable `sudo` for user
     ];
-    packages = with pkgs; [
-      btdu
-      conda
-      discord
-      element-desktop
-      fastfetch
-      fzf-git-sh
-      gimp
-      gparted
-      gqrx
-      hunspell
-      hunspellDicts.en_GB-ise
-      jetbrains.idea-community
-      kdePackages.qt6ct
-      keepass-diff
-      keepassxc
-      libreoffice-qt
-      libsForQt5.qt5ct
-      ncpamixer
-      obsidian
-      playerctl
-      prismlauncher
-      protonup-qt
-      qmk
-      qpwgraph
-      rtl-sdr
-      scrot
-      sidequest
-      steam
-      tree
-      vlc
-      wireshark
-      xclip
-    ];
   };
 
   # Home manager
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
+    useGlobalPkgs = true;
+    useUserPackages = true;
     users.kieran = import ../../home/kieran/default.nix;
   };
 

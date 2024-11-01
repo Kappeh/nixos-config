@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  home.pointerCursor = {
+{ config, pkgs, ... }: {
+  config.home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
     name = "Sunity-cursors";

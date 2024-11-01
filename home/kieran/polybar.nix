@@ -16,8 +16,8 @@
 #
 #==========================================================
 
-{ pkgs, ... }: {
-  services.polybar = {
+{ config, pkgs, ... }: {
+  config.services.polybar = {
     enable = true;
     script = "polybar top &";
     package = pkgs.polybarFull;

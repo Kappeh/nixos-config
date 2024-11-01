@@ -1,5 +1,5 @@
-{ ... }: {
-  services.picom = {
+{ config, ... }: {
+  config.services.picom = {
     enable = true;
 
     settings = {

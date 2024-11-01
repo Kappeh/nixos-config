@@ -1,5 +1,5 @@
-{ pkgs, inputs, ... }: {
-  programs.vscode = {
+{ config, pkgs, inputs, ... }: {
+  config.programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
 

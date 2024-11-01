@@ -1,5 +1,5 @@
-{ ... }: {
-  services.flameshot = {
+{ config, ... }: {
+  config.services.flameshot = {
     enable = true;
 
     settings = {
