@@ -6,17 +6,25 @@
     ../../modules/system/hardware/bluetooth.nix
     ../../modules/system/hardware/logiops/default.nix
     ../../modules/system/hardware/nvidia.nix
+    ../../modules/system/hardware/qmk.nix
+    ../../modules/system/hardware/rtl_sdr.nix
     ../../modules/system/impermanence/default.nix
     ../../modules/system/networking/networkmanager.nix
     ../../modules/system/networking/ssl/default.nix
     ../../modules/system/networking/wireguard.nix
+    ../../modules/system/programs/appimage.nix
+    ../../modules/system/programs/clipcat.nix
+    ../../modules/system/programs/gamemode.nix
     ../../modules/system/programs/lightdm.nix
+    ../../modules/system/programs/noisetorch.nix
     ../../modules/system/programs/pipewire.nix
+    ../../modules/system/programs/via.nix
+    ../../modules/system/programs/wireshark.nix
+    ../../modules/system/programs/zsh.nix
     ../../modules/system/sops.nix
     ../../scripts/default.nix
     ./backups.nix
     ./hardware-configuration.nix
-    ./programs.nix
     ./ssh.nix
     inputs.sops-nix.nixosModules.sops
   ];
@@ -118,6 +126,30 @@
     extraSpecialArgs = { inherit inputs; };
     users.kieran = import ../../home/kieran/default.nix;
   };
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    adwaita-qt
+    adwaita-qt6
+    beekeeper-studio
+    cemu
+    desmume
+    dolphin-emu
+    fceux
+    gnome-themes-extra
+    libnotify
+    libretro.citra
+    mgba
+    mupen64plus
+    snes9x
+    tldr
+    unzip
+    via
+    vim
+    wget
+    zip
+  ];
 
   # Environment variables
   environment.sessionVariables = {
