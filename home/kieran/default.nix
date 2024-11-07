@@ -137,7 +137,8 @@
       "/storage/home/kieran" = {
         directories = [
           { directory = ".local/share/Factorio"; method = "symlink"; }
-          { directory = ".factorio"; method = "symlink"; }
+          # { directory = ".factorio"; method = "symlink"; }
+          { directory = ".factorio"; }
           { directory = ".local/share/FasterThanLight"; method = "symlink"; }
           { directory = ".local/share/IntoTheBreach"; method = "symlink"; }
           { directory = ".local/share/Terraria"; method = "symlink"; }
