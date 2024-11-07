@@ -84,7 +84,10 @@
         # Kill focused window
         "super + shift + w" = "bspc node -k";
         # Toggle monocle layout
-        "super + m" = "bspc desktop -l next";
+        # "super + m" = "bspc desktop -l next";
+
+        # Mount device
+        "super + m" = "rofi_mount";
 
         # Set focused window state to tiled
         "super + t" = "bspc node -t tiled";
