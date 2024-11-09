@@ -85,7 +85,6 @@
           ".config/gh" # Github Cli
           ".cache/keepassxc/" # Remember recent databases
           ".config/keepassxc/" # Remember settings e.g. password generator
-          ".local/share/PrismLauncher" # Prism launcher config
           ".rustup" # Rustup - to prevent having to reinstalling toolchain
           ".cargo" # Cargo - to persist packages installed with cargo
           "Sync" # Syncthing - shared directories
@@ -136,8 +135,8 @@
 
       "/storage/home/kieran" = {
         directories = [
+          { directory = ".local/share/PrismLauncher"; } # Prism launcher config
           { directory = ".local/share/Factorio"; method = "symlink"; }
-          # { directory = ".factorio"; method = "symlink"; }
           { directory = ".factorio"; }
           { directory = ".local/share/FasterThanLight"; method = "symlink"; }
           { directory = ".local/share/IntoTheBreach"; method = "symlink"; }
