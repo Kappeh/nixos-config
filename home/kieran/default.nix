@@ -135,6 +135,7 @@
 
       "/storage/home/kieran" = {
         directories = [
+          { directory = "Storage"; } # Directory for large files
           { directory = ".local/share/PrismLauncher"; } # Prism launcher config
           { directory = ".local/share/Factorio"; method = "symlink"; }
           { directory = ".factorio"; }
