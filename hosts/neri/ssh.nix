@@ -7,11 +7,11 @@
 
     knownHosts = {
       "ciela" = {
-        hostNames = [ "ciela.local" ];
+        hostNames = [ "ciela.illegal-crime.org" ];
         publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHOXu2r9mqPzDSgO2VoWj45xXsnJCqFYGrlui5qYK/0h ciela_host_key_ed25519";
       };
       "ciela_initrd" = {
-        hostNames = [ "ciela.local" ];
+        hostNames = [ "ciela.illegal-crime.org" ];
         publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL47+Wnncs1VEJBCkr1vzyC1g+P3SRW1jmLhoadu3PEO ciela_initrd_host_key_ed25519";
       };
     };
