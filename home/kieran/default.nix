@@ -128,6 +128,7 @@
           ".config/sops/age/keys.txt"
           ".ncpamixer.conf"
           "default.qpwgraph"
+          ".cache/rofi3.druncache"
         ];
         allowOther = true;
       };
