@@ -87,7 +87,7 @@
   environment.sessionVariables = {
     EDITOR = "vim";
     GTK_THEME = "Adwaita:dark";
-    QT_QPA_PLATFORMTHEME = "qt5ct";
+    QT_QPA_PLATFORMTHEME = "qt6ct";
     GTK2_RC_FILES="${pkgs.gnome-themes-extra}/share/themes/Adwaita-dark/gtk-2.0/gtkrc";
     MOX_USE_XINPUT2 = "1"; # Smooth scrolling in Firefox
   };
