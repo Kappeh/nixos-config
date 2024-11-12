@@ -3,6 +3,7 @@
     ./alacritty.nix
     ./bash/default.nix
     ./bat.nix
+    ./blender.nix
     ./bspwm/default.nix
     ./btdu.nix
     ./btop.nix
@@ -121,6 +122,8 @@
           ".cache/fontconfig" # Cache fontconfig because it is big and causes some apps to take a while to start
           ".config/libfm" # libfm - pcmanfm config
           ".config/pcmanfm/default" # pcmanfm - config
+          ".cache/blender" # blender - cache
+          ".config/blender" # blender - config
         ];
         files = [
           ".bash_history"
