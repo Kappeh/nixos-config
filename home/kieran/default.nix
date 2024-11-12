@@ -55,6 +55,7 @@
     ./vlc.nix
     ./vscodium.nix
     ./wireshark.nix
+    ./xarchiver.nix
     ./xclip.nix
     ./yazi.nix
     ./zoxide.nix
