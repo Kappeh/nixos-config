@@ -34,6 +34,7 @@
     ./ncpamixer.nix
     ./nixvim.nix
     ./obsidian.nix
+    ./pcmanfm.nix
     ./picom.nix
     ./playerctl.nix
     ./polybar.nix
@@ -70,6 +71,18 @@
 
     xsession.numlock.enable = true;
 
+    xdg = {
+      enable = true;
+
+      mime.enable = true;
+      mimeApps = {
+        enable = true;
+        defaultApplications = {
+          "inode/directory" = [ "pcmanfm.desktop" ];
+        };
+      };
+    };
+
     home.persistence = {
       "/persist/home/kieran" = {
         directories = [
@@ -105,6 +118,8 @@
           ".local/share/zsh" # Zsh - zsh_history
           ".local/share/zoxide" # Zoxide - zoxide database
           ".cache/fontconfig" # Cache fontconfig because it is big and causes some apps to take a while to start
+          ".config/libfm" # libfm - pcmanfm config
+          ".config/pcmanfm/default" # pcmanfm - config
         ];
         files = [
           ".bash_history"
