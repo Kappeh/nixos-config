@@ -43,7 +43,6 @@
         modules = [
           ./hosts/neri/configuration.nix
           inputs.home-manager.nixosModules.default
-          inputs.impermanence.nixosModules.impermanence
         ];
       };
     };

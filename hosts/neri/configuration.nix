@@ -9,6 +9,7 @@
     ../../modules/system/hardware/qmk.nix
     ../../modules/system/hardware/rtl_sdr.nix
     ../../modules/system/hardware/udisks.nix
+    ../../modules/system/impermanence/default.nix
     ../../modules/system/networking/networkmanager.nix
     ../../modules/system/networking/wireguard.nix
     ../../modules/system/programs/appimage.nix

@@ -1,6 +1,6 @@
 { config, lib, ... }: {
   config = {
-    boot.initrd.postDeviceCommands = lib.mkAfter (builtins.readFile ./wipe_root.sh);
+    boot.initrd.postDeviceCommands = lib.mkAfter (builtins.readFile ./rollback.sh);
 
     fileSystems = {
       "/backup".neededForBoot = true;
