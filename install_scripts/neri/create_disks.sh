@@ -104,11 +104,12 @@ RAID_UUID=$(mkfs.btrfs -m raid1 -d raid1 /dev/mapper/crypt1 /dev/mapper/crypt2 |
 mkdir -p /mnt/partition_root
 mount UUID=$RAID_UUID -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2 /mnt/partition_root
 
-btrfs subvolume create /mnt/partition_root/root      # The subvolume for '/', which will be cleared on every boot.
-btrfs subvolume create /mnt/partition_root/backup	 # The subvolume for '/backup', containing system state and user data which should be persistent and backed up.
-btrfs subvolume create /mnt/partition_root/persist   # The subvolume for '/persist', containing system state and user data which should be persistent.
-btrfs subvolume create /mnt/partition_root/nix		 # The subvolume for '/nix', which needs to be persistent but is not worth backing up, as it's trivial to reconstruct/.
-btrfs subvolume create /mnt/partition_root/snapshots # The subvolume for '/snapshots', which should be preserved across reboots and is used during backups.
+btrfs subvolume create /mnt/partition_root/root         # The subvolume for '/', which will be cleared on every boot.
+btrfs subvolume create /mnt/partition_root/backup	    # The subvolume for '/backup', containing system state and user data which should be persistent and backed up.
+btrfs subvolume create /mnt/partition_root/persist      # The subvolume for '/persist', containing system state and user data which should be persistent.
+btrfs subvolume create /mnt/partition_root/nix		    # The subvolume for '/nix', which needs to be persistent but is not worth backing up, as it's trivial to reconstruct/.
+btrfs subvolume create /mnt/partition_root/snapshots    # The subvolume for '/snapshots', which should be preserved across reboots and is used during backups.
+btrfs subvolume create /mnt/partition_root/old_roots    # The subvolume storing the contents of root subvolume from previous boots
 
 umount /mnt/partition_root
 

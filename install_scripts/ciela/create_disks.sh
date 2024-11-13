@@ -89,6 +89,7 @@ btrfs subvolume create /mnt/partition_root/backup       # The subvolume for '/ba
 btrfs subvolume create /mnt/partition_root/persist      # The subvolume for '/persist', containing system state and user data which should be persistent.
 btrfs subvolume create /mnt/partition_root/nix          # The subvolume for '/nix', which needs to be persistent but is not worth backing up, as it's trivial to reconstruct/.
 btrfs subvolume create /mnt/partition_root/snapshots    # The subvolume for '/snapshots', which should be preserved across reboots and it used during backups.
+btrfs subvolume create /mnt/partition_root/old_roots    # The subvolume storing the contents of root subvolume from previous boots
 
 umount /mnt/partition_root
 rmdir /mnt/partition_root
