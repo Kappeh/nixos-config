@@ -10,6 +10,7 @@
     ./clipcat/default.nix
     ./conda.nix
     ./cursor_theme.nix
+    ./da_vinci_resolve.nix
     ./discord.nix
     ./dunst/default.nix
     ./element_desktop.nix
@@ -124,6 +125,8 @@
           ".config/pcmanfm/default" # pcmanfm - config
           ".cache/blender" # blender - cache
           ".config/blender" # blender - config
+          ".cache/DaVinci_Resolve_Welcome" # Da Vinci Resolve - To prevent welcome message each boot
+          ".local/share/DaVinciResolve" # Da Vinci Resolve - Data
         ];
         files = [
           ".bash_history"
