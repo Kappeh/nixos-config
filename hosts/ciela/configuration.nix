@@ -42,6 +42,13 @@
     };
   };
 
+  # Do not hibernate on lid closed
+  services.logind = {
+    lidSwitch = "ignore";
+    lidSwitchDocked = "ignore";
+    lidSwitchExternalPower = "ignore";
+  };
+
   networking = {
     hostName = "ciela";           # Define your hostname.
     useDHCP = false;              # Disable dhcp for static ip
