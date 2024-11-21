@@ -14,46 +14,45 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
+    { device = "/dev/mapper/crypt";
       fsType = "btrfs";
       options = [ "subvol=root" ];
     };
 
-  boot.initrd.luks.devices."crypt".device = "/dev/disk/by-uuid/a64e8d43-54e1-4420-ade1-63d1e04b2006";
+  boot.initrd.luks.devices."crypt".device = "/dev/disk/by-uuid/3d66423c-1f1a-4d4e-a1c6-c29c4afd828a";
 
   fileSystems."/backup" =
-    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
+    { device = "/dev/mapper/crypt";
       fsType = "btrfs";
       options = [ "subvol=backup" ];
     };
 
   fileSystems."/persist" =
-    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
+    { device = "/dev/mapper/crypt";
       fsType = "btrfs";
       options = [ "subvol=persist" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
+    { device = "/dev/mapper/crypt";
       fsType = "btrfs";
       options = [ "subvol=nix" ];
     };
 
   fileSystems."/snapshots" =
-    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
+    { device = "/dev/mapper/crypt";
       fsType = "btrfs";
       options = [ "subvol=snapshots" ];
     };
 
   fileSystems."/partition_root" =
-    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
+    { device = "/dev/mapper/crypt";
       fsType = "btrfs";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/1E75-713E";
+    { device = "/dev/disk/by-uuid/8C61-B54D";
       fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices = [ ];

@@ -10,7 +10,7 @@ if [[ "$EUID" -ne 0 ]]; then
 fi
 
 # Hard coded device to install system to
-RAW_DISK="/dev/disk/by-id/ata-Samsung_SSD_860_QVO_1TB_S4CZNF0M447844K"
+RAW_DISK="/dev/disk/by-id/ata-Samsung_SSD_870_QVO_4TB_S5STNF0T405957D"
 
 # Function to prompt for password
 password_prompt() {

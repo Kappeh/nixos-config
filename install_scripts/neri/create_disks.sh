@@ -12,7 +12,7 @@ fi
 # Hard coded devices to install system to
 RAW_DISK_1="/dev/disk/by-id/ata-Samsung_SSD_840_EVO_120GB_S1D5NSAFB84723E"
 RAW_DISK_2="/dev/disk/by-id/ata-ADATA_SU650_2J0520043892"
-STORAGE_DISK="/dev/disk/by-id/ata-Samsung_SSD_870_QVO_4TB_S5STNF0T405957D"
+STORAGE_DISK="/dev/disk/by-id/ata-Samsung_SSD_860_QVO_1TB_S4CZNF0M447844K"
 
 # Function to prompt for password
 password_prompt() {

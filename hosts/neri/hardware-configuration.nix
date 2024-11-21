@@ -54,26 +54,26 @@
     };
 
   fileSystems."/storage_root" =
-    { device = "/dev/disk/by-uuid/1ff6e384-f682-46c8-b973-cd6471bd0e34";
+    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
       fsType = "btrfs";
     };
 
-  boot.initrd.luks.devices."crypt3".device = "/dev/disk/by-uuid/35733911-bd9b-4126-b5a3-9b9c19aebb21";
+  boot.initrd.luks.devices."crypt3".device = "/dev/disk/by-uuid/a64e8d43-54e1-4420-ade1-63d1e04b2006";
 
   fileSystems."/storage" =
-    { device = "/dev/disk/by-uuid/1ff6e384-f682-46c8-b973-cd6471bd0e34";
+    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
       fsType = "btrfs";
       options = [ "subvol=storage" ];
     };
 
   fileSystems."/backups" =
-    { device = "/dev/disk/by-uuid/1ff6e384-f682-46c8-b973-cd6471bd0e34";
+    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
       fsType = "btrfs";
       options = [ "subvol=backups" ];
     };
 
   fileSystems."/swap" =
-    { device = "/dev/disk/by-uuid/1ff6e384-f682-46c8-b973-cd6471bd0e34";
+    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
       fsType = "btrfs";
       options = [ "subvol=swap" ];
     };
