@@ -29,6 +29,7 @@
     ./gqrx.nix
     ./hunspell.nix
     ./idea.nix
+    ./jellyfin_media_player.nix
     ./keepass_diff.nix
     ./keepassxc.nix
     ./lf.nix
@@ -127,6 +128,9 @@
           ".config/blender" # blender - config
           ".cache/DaVinci_Resolve_Welcome" # Da Vinci Resolve - To prevent welcome message each boot
           ".local/share/DaVinciResolve" # Da Vinci Resolve - Data
+          ".local/share/Jellyfin Media Player"
+          ".config/jellyfin.org"
+          ".local/share/jellyfinmediaplayer"
         ];
         files = [
           ".bash_history"
