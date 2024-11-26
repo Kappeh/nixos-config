@@ -77,18 +77,47 @@
   time.timeZone = "Etc/UTC";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.kieran = {
-    uid = 1000;
-    isNormalUser = true;
-    hashedPasswordFile = config.sops.secrets."users/kieran/hashedPassword".path;
-    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOCUJsStgjTCObc7BrzoGDE3tj633SbghefFM2wk20gX local" ];
-    extraGroups = [
-      "networkmanager"  # Enable network manager for user
-      "wheel"           # Enable `sudo` for the user.
-    ];
-    packages = with pkgs; [
-      tree
-    ];
+  users = {
+    groups = {
+      services = {
+        gid = 1001;  # Group for shared files used by services
+        members = [
+          "kieran"
+          "jellyfin"
+        ];
+      };
+    };
+
+    users = {
+      kieran = {
+        uid = 1000;
+        isNormalUser = true;
+        hashedPasswordFile = config.sops.secrets."users/kieran/hashedPassword".path;
+        openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOCUJsStgjTCObc7BrzoGDE3tj633SbghefFM2wk20gX local" ];
+        extraGroups = [
+          "services"        # Grant access to shared files used by services
+          "networkmanager"  # Enable network manager for user
+          "wheel"           # Enable `sudo` for the user.
+        ];
+        packages = with pkgs; [
+          tree
+        ];
+      };
+
+      jellyfin = {
+        uid = 1002;
+        group = "nogroup";
+        isNormalUser = false;
+        isSystemUser = true;
+        useDefaultShell = false;
+        shell = null;
+        extraGroups = [
+          "services"  # Grant access to shared files used by services
+          "render"    # Allow use of render devices
+          "video"     # Allow use of video devices
+        ];
+      };
+    };
   };
 
   # List packages installed in system profile. To search, run:
