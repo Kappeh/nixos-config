@@ -4,6 +4,7 @@
 { config, lib, pkgs, inputs, ... }: {
   imports = [
     ../../modules/system/hardware/bluetooth.nix
+    ../../modules/system/hardware/libinput.nix
     ../../modules/system/hardware/logiops/default.nix
     ../../modules/system/hardware/nvidia.nix
     ../../modules/system/hardware/qmk.nix
