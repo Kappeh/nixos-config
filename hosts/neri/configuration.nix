@@ -102,9 +102,9 @@
     fira-code-symbols
     liberation_ttf
     mplus-outline-fonts.githubRelease
-    nerdfonts
+    nerd-fonts.symbols-only
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts-emoji
     proggyfonts
   ];
