@@ -20,6 +20,7 @@
     ./feh.nix
     ./firefox.nix
     ./flameshot.nix
+    ./freecad.nix
     ./fzf_git_sh.nix
     ./fzf.nix
     ./gh.nix
