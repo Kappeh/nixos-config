@@ -15,7 +15,9 @@
         };
 
         settings = {
-          border_width = 0;
+          border_width = 1;
+          normal_border_color = "#465e7a";
+          focused_border_color = "#86d1f4";
           window_gap = 12;
           split_ratio = 0.52;
           borderless_monocle = true;
