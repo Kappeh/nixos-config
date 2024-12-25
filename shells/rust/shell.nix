@@ -14,7 +14,7 @@ in
       libpqxx
       libxkbcommon
       llvmPackages_17.bintools
-      mysql
+      mariadb
       postgresql
       rustup
       sqlite
