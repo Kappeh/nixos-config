@@ -84,6 +84,7 @@
         members = [
           "kieran"
           "jellyfin"
+          "project_zomboid"
         ];
       };
     };
@@ -115,6 +116,18 @@
           "services"  # Grant access to shared files used by services
           "render"    # Allow use of render devices
           "video"     # Allow use of video devices
+        ];
+      };
+
+      project_zomboid = {
+        uid = 400;
+        group = "nogroup";
+        isNormalUser = false;
+        isSystemUser = true;
+        useDefaultShell = false;
+        shell = null;
+        extraGroups = [
+          "services"  # Grant access to shared files used by services
         ];
       };
     };
