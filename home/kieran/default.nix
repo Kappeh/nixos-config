@@ -169,7 +169,7 @@
           { directory = ".factorio"; }
           { directory = ".local/share/FasterThanLight"; method = "symlink"; }
           { directory = ".local/share/IntoTheBreach"; method = "symlink"; }
-          { directory = ".local/share/Terraria"; method = "symlink"; }
+          { directory = ".local/share/Terraria"; }
           { directory = ".local/share/Steam"; method = "symlink"; }
           { directory = ".local/share/Daedalic Entertainment GmbH"; method = "symlink"; }
         ];
