@@ -5,6 +5,7 @@
   imports = [
     ../../modules/system/programs/docker.nix
     ../common.nix
+    ./mc_server_backup/default.nix
     ./hardware-configuration.nix
   ];
 
