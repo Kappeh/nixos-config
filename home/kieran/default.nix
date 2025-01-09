@@ -132,6 +132,9 @@
           ".local/share/Jellyfin Media Player"
           ".config/jellyfin.org"
           ".local/share/jellyfinmediaplayer"
+          ".config/JetBrains" # JetBrains - Persist IntelliJ IDEA CE state
+          ".local/share/JetBrains" # JetBrains - Persist IntelliJ IDEA CE state
+          ".java" # Java
         ];
         files = [
           ".bash_history"
