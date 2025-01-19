@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
   # Disable pulseaudio
-  config.hardware.pulseaudio.enable = false;
+  config.services.pulseaudio.enable = false;
   # Use Pipewire
   config.security.rtkit.enable = true;
   config.services.pipewire = {
