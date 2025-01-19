@@ -30,12 +30,6 @@
       options = [ "subvol=persist" ];
     };
 
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/f22b001b-efde-466f-8ecd-9fa199208516";
-      fsType = "btrfs";
-      options = [ "subvol=nix" ];
-    };
-
   fileSystems."/snapshots" =
     { device = "/dev/disk/by-uuid/f22b001b-efde-466f-8ecd-9fa199208516";
       fsType = "btrfs";
@@ -59,6 +53,12 @@
     };
 
   boot.initrd.luks.devices."crypt3".device = "/dev/disk/by-uuid/a64e8d43-54e1-4420-ade1-63d1e04b2006";
+
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
+      fsType = "btrfs";
+      options = [ "subvol=nix" ];
+    };
 
   fileSystems."/storage" =
     { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
