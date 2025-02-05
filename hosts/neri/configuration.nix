@@ -15,6 +15,7 @@
     ../../modules/system/networking/wireguard.nix
     ../../modules/system/programs/appimage.nix
     ../../modules/system/programs/clipcat.nix
+    ../../modules/system/programs/dconf.nix
     ../../modules/system/programs/gamemode.nix
     ../../modules/system/programs/lightdm.nix
     ../../modules/system/programs/noisetorch.nix

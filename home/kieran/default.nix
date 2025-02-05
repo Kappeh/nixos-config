@@ -13,6 +13,7 @@
     ./da_vinci_resolve.nix
     ./discord.nix
     ./dunst/default.nix
+    ./easyeffects.nix
     ./element_desktop.nix
     ./eza.nix
     ./fastfetch.nix
@@ -135,6 +136,8 @@
           ".config/JetBrains" # JetBrains - Persist IntelliJ IDEA CE state
           ".local/share/JetBrains" # JetBrains - Persist IntelliJ IDEA CE state
           ".java" # Java
+          ".config/easyeffects" # EastEffects - Persist Presents
+          ".config/dconf"
         ];
         files = [
           ".bash_history"
