@@ -90,6 +90,8 @@
 
         # Mount device
         "super + m" = "rofi_mount";
+        # Open bluetooth settings
+        "super + b" = "alacritty -e bluetui";
 
         # Set focused window state to tiled
         "super + t" = "bspc node -t tiled";

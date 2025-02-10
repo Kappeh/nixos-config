@@ -4,6 +4,7 @@
     ./bash/default.nix
     ./bat.nix
     ./blender.nix
+    ./bluetui.nix
     ./bspwm/default.nix
     ./btdu.nix
     ./btop.nix
