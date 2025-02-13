@@ -130,9 +130,9 @@
 
         # Audio Controls (TODO)
         #
-        # XF86AudioMute
-        # XF86AudioLowerVolume
-        # XF86AudioRaiseVolume
+        "XF86AudioMute" = "wpctl set-mute @DEFAULT_SINK@ toggle";
+        "XF86AudioLowerVolume" = "wpctl set-volume @DEFAULT_SINK@ 5%-";
+        "XF86AudioRaiseVolume" = "wpctl set-volume @DEFAULT_SINK@ 5%+";
 
         # Screenshot
         #
