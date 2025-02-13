@@ -92,6 +92,8 @@
         "super + m" = "rofi_mount";
         # Open bluetooth settings
         "super + b" = "alacritty -e bluetui";
+        # Open volume control
+        "super + v" = "alacritty -e pulsemixer";
 
         # Set focused window state to tiled
         "super + t" = "bspc node -t tiled";

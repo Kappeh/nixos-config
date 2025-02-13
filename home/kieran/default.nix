@@ -40,6 +40,7 @@
     ./ncpamixer.nix
     ./nixvim.nix
     ./obsidian.nix
+    ./pulsemixer.nix
     ./pcmanfm.nix
     ./picom.nix
     ./playerctl.nix
