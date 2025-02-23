@@ -128,7 +128,7 @@
         "XF86AudioNext" = "playerctl next";
         "XF86AudioPrev" = "playerctl previous";
 
-        # Audio Controls (TODO)
+        # Audio Controls
         #
         "XF86AudioMute" = "wpctl set-mute @DEFAULT_SINK@ toggle";
         "XF86AudioLowerVolume" = "wpctl set-volume @DEFAULT_SINK@ 5%-";
