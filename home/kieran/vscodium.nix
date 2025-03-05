@@ -14,9 +14,8 @@
         "editor.find.autoFindInSelection" = "multiline";
         "editor.fontFamily" = "Cascadia Code";
         "editor.fontLigatures" = true;
-        "editor.formatOnPaste" = true;
-        "editor.formatOnSave" = true;
-        "editor.formatOnSaveMode" = "modifications";
+        "editor.formatOnPaste" = false;
+        "editor.formatOnSave" = false;
         "editor.inlayHints.enabled" = "off";
         "editor.smoothScrolling" = true;
         "files.autoSave" = "afterDelay";

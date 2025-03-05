@@ -1,0 +1,121 @@
+* {
+    font-family: Lexend, "JetBrainsMono NFP", FontAwesome6Free, SymbolsNerdFont;
+    min-height: 0;
+    min-width: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+window#waybar {
+    background-color: #14142c;
+    border-bottom: 1px solid #434380;
+}
+
+#workspaces button {
+    padding: 0.3rem 0.6rem;
+    margin: 0.4rem 0.25rem;
+    background-color: #111127;
+    border: 1px solid #434380;
+    border-radius: 6px;
+    color: #44447e;
+
+    transition-property: color;
+    transition-duration: 0.0s;
+}
+
+#workspaces button:hover {
+    /* Remove default all hover effects */
+    /* https://github.com/Alexays/Waybar/issues/60 */
+    padding: 0.3rem 0.6rem;
+    box-shadow: none;
+    text-shadow: none;
+    background-color: #111127;
+    border-bottom: 1px solid #434380;
+    border: 1px solid #434380;
+    background: #111127;
+    transition: none;
+}
+
+#workspaces button.active {
+    color: #9e9edf;
+
+    transition-property: color;
+    transition-duration: 0.0s;
+}
+
+#workspaces button.urgent {
+    color: #e97a7a;
+
+    transition-property: color;
+    transition-duration: 0.0s;
+}
+
+#custom-nixos-icon,
+#cpu,
+#memory,
+#disk,
+#network,
+#bluetooth,
+#wireplumber,
+#clock {
+    padding: 0.3rem 0.6rem;
+    margin: 0.4rem 0.25rem;
+    background-color: #111127;
+    border: 1px solid #434380;
+    border-radius: 6px;
+    color: #9e9edf;
+    transition-property: color;
+    transition-duration: 0.5s;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+#network.disabled,
+#network.disconnected,
+#bluetooth.disabled,
+#bluetooth.off,
+#wireplumber.muted {
+    color: #44447e;
+}
+
+#custom-nixos-icon {
+    color: #82AAFF;
+}
+
+#window {
+    padding: 0.3rem 0.6rem;
+    margin: 0.4rem 0.25rem;
+    border: 1px;
+    color: #b1b9f1;
+    background-color: transparent;
+}
+
+#cpu {
+    color: #e97a7a;
+}
+
+#memory {
+    color: #d6b295;
+}
+
+#disk {
+    color: #adcea1;
+}
+
+#network {
+    color: #aab4ec;
+}
+
+#bluetooth {
+    color: #82AAFF;
+}
+
+#wireplumber {
+    color: #a991eb;
+}
+
+#clock {
+    color: #747495;
+}

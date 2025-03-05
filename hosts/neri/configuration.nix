@@ -119,6 +119,9 @@
       noto-fonts-cjk-sans
       noto-fonts-emoji
       proggyfonts
+      font-awesome
+      jetbrains-mono
+      lexend
     ];
 
     # List services that you want to enable:

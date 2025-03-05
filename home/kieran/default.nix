@@ -62,7 +62,7 @@
     ./tree.nix
     ./vlc.nix
     ./vscodium.nix
-    ./waybar.nix
+    ./waybar/default.nix
     ./wireshark.nix
     ./wofi/default.nix
     ./xarchiver.nix
