@@ -31,7 +31,8 @@
     ./gparted.nix
     ./gqrx.nix
     ./hunspell.nix
-    ./idea.nix
+    ./hyprland/default.nix
+    # ./idea.nix
     ./jellyfin_media_player.nix
     ./keepass_diff.nix
     ./keepassxc.nix
@@ -61,7 +62,9 @@
     ./tree.nix
     ./vlc.nix
     ./vscodium.nix
+    ./waybar.nix
     ./wireshark.nix
+    ./wofi/default.nix
     ./xarchiver.nix
     ./xclip.nix
     ./yazi.nix
@@ -69,6 +72,8 @@
     ./zsh.nix
     inputs.impermanence.nixosModules.home-manager.impermanence
   ];
+
+  config.systemd.user.services.numlockx.Install.WantedBy = lib.mkForce [];
 
   config = {
     home = {

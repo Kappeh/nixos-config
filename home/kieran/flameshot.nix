@@ -1,4 +1,6 @@
-{ config, ... }: {
+{ config, lib, ... }: {
+  config.systemd.user.services.flameshot.Install.WantedBy = lib.mkForce [];
+
   config.services.flameshot = {
     enable = true;
 

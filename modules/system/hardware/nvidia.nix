@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, pkgs, lib, inputs, ... }: {
   config = {
     # Proprietary Nvidia drivers
     boot.kernelParams = [
@@ -28,12 +28,19 @@
         enable = true;
         enable32Bit = true; # Required for steam
       };
+
       nvidia = {
         modesetting.enable = true; # Required for native resolution in TTY
-        powerManagement.enable = true;
+
+        powerManagement = {
+          enable = false;
+          finegrained = false;
+        };
+
         open = true;
         nvidiaSettings = true;
-        package = config.boot.kernelPackages.nvidiaPackages.stable; # stable, production, latest, beta or vulkan_beta
+
+        package = config.boot.kernelPackages.nvidiaPackages.beta; # stable, production, latest, beta or vulkan_beta
       };
     };
   };

@@ -16,7 +16,9 @@
 #
 #==========================================================
 
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
+  config.systemd.user.services.polybar.Install.WantedBy = lib.mkForce [];
+
   config.services.polybar = {
     enable = true;
     script = "polybar top &";

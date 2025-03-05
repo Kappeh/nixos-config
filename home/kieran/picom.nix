@@ -1,4 +1,6 @@
-{ config, ... }: {
+{ config, lib, ... }: {
+  config.systemd.user.services.picom.Install.WantedBy = lib.mkForce [];
+
   config.services.picom = {
     enable = true;
 
