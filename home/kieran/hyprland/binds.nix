@@ -48,6 +48,9 @@
       "$mod SHIFT, 8, movetoworkspacesilent, 8"
       "$mod SHIFT, 9, movetoworkspacesilent, 9"
       "$mod SHIFT, 0, movetoworkspacesilent, 10"
+
+      ", Print, exec, hyprshot --clipboard-only -m region"
+      "SHIFT, Print, exec, hyprshot --clipboard-only -m active -m output"
     ];
 
     bindl = [
