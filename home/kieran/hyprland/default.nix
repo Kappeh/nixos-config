@@ -38,6 +38,7 @@
 
         exec-once = [
           "waybar"
+          "hyprpaper"
         ];
 
         env = [

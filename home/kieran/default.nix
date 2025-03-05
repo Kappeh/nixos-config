@@ -32,6 +32,7 @@
     ./gqrx.nix
     ./hunspell.nix
     ./hyprland/default.nix
+    ./hyprpaper/default.nix
     # ./idea.nix
     ./jellyfin_media_player.nix
     ./keepass_diff.nix
