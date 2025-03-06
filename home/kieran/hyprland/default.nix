@@ -11,11 +11,42 @@
       systemd.enable = true;
 
       settings = {
+        general = {
+          border_size = 1;
+          "col.inactive_border" = "0xff14142c";
+          "col.active_border" = "0xff434380";
+
+          layout = "master";
+        };
+
+        decoration = {
+          blur.enabled = false;
+          shadow.enabled = false;
+        };
+
+        animations = {
+          enabled = true;
+          first_launch_animation = true;
+        };
+
         input = {
           kb_layout = "gb";
           kb_options = "eurosign:4,caps:escape";
+          numlock_by_default = true;
+          follow_mouse = 2;
+          repeat_rate = 50;
+          repeat_delay = 200;
+        };
 
-          follow_mouse = false;
+        misc = {
+          disable_hyprland_logo = true;
+          disable_splash_rendering = true;
+          middle_click_paste = false;
+        };
+
+        ecosystem = {
+          no_update_news = true;
+          no_donation_nag = true;
         };
 
         monitor = [
