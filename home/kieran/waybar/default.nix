@@ -26,7 +26,8 @@
       modules-right = [
         "cpu"
         "memory"
-        "disk"
+        "disk#raid"
+        "disk#storage"
         "network"
         "bluetooth"
         "wireplumber"
@@ -59,7 +60,14 @@
         interval = 1;
       };
 
-      disk = {
+      "disk#raid" = {
+        path = "/raid_root";
+        format = " {percentage_used}%";
+        tooltip = false;
+      };
+
+      "disk#storage" = {
+        path = "/storage_root";
         format = " {percentage_used}%";
         tooltip = false;
       };
