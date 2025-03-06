@@ -14,6 +14,13 @@
         "/var/lib/nixos"
         "/var/lib/systemd/coredump"
         "/var/log"
+        {
+          # Used to remember the most recent user and session
+          directory = "/var/cache/tuigreet";
+          user = "greeter";
+          group = "greeter";
+          mode = "u=rwx,g=rx,o=rx";
+        }
       ];
       files = [
         "/etc/machine-id"
