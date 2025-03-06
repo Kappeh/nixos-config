@@ -51,6 +51,8 @@
 
       ", Print, exec, hyprshot --clipboard-only -m region"
       "SHIFT, Print, exec, hyprshot --clipboard-only -m active -m output"
+
+      "$mod, Print, exec, hyprpicker --autocopy --format=hex --quiet"
     ];
 
     bindl = [

@@ -33,6 +33,7 @@
     ./hunspell.nix
     ./hyprland/default.nix
     ./hyprpaper/default.nix
+    ./hyprpicker.nix
     ./hyprshot.nix
     # ./idea.nix
     ./jellyfin_media_player.nix
