@@ -21,6 +21,7 @@
         };
 
         master = {
+          allow_small_split = true;
           mfact = 0.60;
         };
 

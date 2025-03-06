@@ -27,6 +27,11 @@
       "$mod, k, movefocus, u"
       "$mod, j, movefocus, d"
 
+      "$mod SHIFT, h, layoutmsg, rollnext"
+      "$mod SHIFT, l, layoutmsg, rollprev"
+      "$mod SHIFT, k, layoutmsg, removemaster"
+      "$mod SHIFT, j, layoutmsg, addmaster"
+
       "$mod, 1, workspace, 1"
       "$mod, 2, workspace, 2"
       "$mod, 3, workspace, 3"
