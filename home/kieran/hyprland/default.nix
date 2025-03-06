@@ -1,5 +1,6 @@
 { config, ... }: {
   imports = [
+    ./animations.nix
     ./binds.nix
   ];
 
