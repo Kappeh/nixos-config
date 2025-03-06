@@ -3,7 +3,7 @@
     enable = true;
 
     settings = {
-      color_theme = "nord";
+      color_theme = "tty";
       theme_background = false;
     };
   };
