@@ -64,6 +64,7 @@
     ./thefuck.nix
     ./tmux.nix
     ./tree.nix
+    ./udiskie.nix
     ./vlc.nix
     ./vscodium.nix
     ./waybar/default.nix
