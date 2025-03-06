@@ -20,6 +20,10 @@
           layout = "master";
         };
 
+        master = {
+          mfact = 0.60;
+        };
+
         decoration = {
           blur.enabled = false;
           shadow.enabled = false;
