@@ -53,6 +53,8 @@
       "SHIFT, Print, exec, hyprshot --clipboard-only -m active -m output"
 
       "$mod, Print, exec, hyprpicker --autocopy --format=hex --quiet"
+
+      "$mod, c, exec, cliphist list | wofi -S dmenu | cliphist decode | wl-copy"
     ];
 
     bindl = [

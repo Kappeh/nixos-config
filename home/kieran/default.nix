@@ -8,7 +8,8 @@
     ./bspwm/default.nix
     ./btdu.nix
     ./btop.nix
-    ./clipcat/default.nix
+    # ./clipcat/default.nix
+    ./cliphist.nix
     ./conda.nix
     ./cursor_theme.nix
     ./da_vinci_resolve.nix

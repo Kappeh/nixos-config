@@ -15,7 +15,7 @@
     ../../modules/system/networking/networkmanager.nix
     ../../modules/system/networking/wireguard.nix
     ../../modules/system/programs/appimage.nix
-    ../../modules/system/programs/clipcat.nix
+    # ../../modules/system/programs/clipcat.nix
     ../../modules/system/programs/dconf.nix
     ../../modules/system/programs/gamemode.nix
     ../../modules/system/programs/greetd.nix
