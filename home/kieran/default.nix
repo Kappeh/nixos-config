@@ -68,6 +68,7 @@
     ./vlc.nix
     ./vscodium.nix
     ./waybar/default.nix
+    ./webcord/default.nix
     ./wireshark.nix
     ./wofi/default.nix
     ./xarchiver.nix
