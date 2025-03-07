@@ -6,6 +6,7 @@
     ../../modules/system/programs/docker.nix
     ../common.nix
     ./mc_server_backup/default.nix
+    ./update_mc_server_blacklist/default.nix
     ./hardware-configuration.nix
   ];
 
