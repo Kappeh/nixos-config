@@ -309,7 +309,7 @@
 }
 
 .popoverReactionHoverBar_f84418 {
-    background-color: var(--background-primary);
+    background-color: var(--background-primary) !important;
 }
 
 .userPopout-3XzG_A>.body-3iLsc4 .bodyTitle-Y0qMQz,
