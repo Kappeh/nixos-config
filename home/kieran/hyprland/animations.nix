@@ -7,7 +7,7 @@
     animation = [
       "windows, 1, 2, easeOutCubic, popin 80%"
       "fade, 1, 2, easeOutCubic"
-      "layers, 1, 2, easeOutCubic, popin 80%"
+      "layers, 0"
       "workspaces, 1, 2, easeOutCubic, slidefade 20%"
     ];
   };
