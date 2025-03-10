@@ -13,6 +13,7 @@
     bind = [
       "$mod ALT, Q, exec, pkill Hyprland"
       "$mod, W, killactive,"
+      "$mod SHIFT, W, forcekillactive,"
       "$mod, S, togglefloating,"
 
       "$mod, Return, exec, $terminal"
@@ -54,12 +55,22 @@
       "$mod SHIFT, 9, movetoworkspacesilent, 9"
       "$mod SHIFT, 0, movetoworkspacesilent, 10"
 
+      # Screenshot a region
       ", Print, exec, hyprshot --clipboard-only -m region"
+      # Screenshot the active monitor
       "SHIFT, Print, exec, hyprshot --clipboard-only -m active -m output"
-
+      # Open colour picker
       "$mod, Print, exec, hyprpicker --autocopy --format=hex --quiet"
-
+      # Open clipboard manager
       "$mod, c, exec, cliphist list | wofi -S dmenu | cliphist decode | wl-copy"
+      # Open bluetooth controls
+      "$mod, b, exec, alacritty -e bluetui"
+      # Open volume controls
+      "$mod, v, exec, alacritty -e pulsemixer"
+      # Open file manager (tui)
+      "$mod, e, exec, alacritty -e yazi"
+      # Open file manager (gui)
+      "$mod SHIFT, e, exec, pcmanfm"
     ];
 
     bindl = [
