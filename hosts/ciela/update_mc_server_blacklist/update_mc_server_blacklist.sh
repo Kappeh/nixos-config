@@ -17,8 +17,13 @@ TXT_URLS=(
     "https://raw.githubusercontent.com/jhassine/server-ip-addresses/refs/heads/master/data/datacenters.txt"
 )
 
+ASNS=(
+    "AS36680" # Netiface LLC
+    "AS60223" # Netiface Limited
+)
+
 is_ipv4() {
-    [[ "$1" =~ ^([0-9]{1,3}\.){3}[0-9]{1,3}$ ]] && return 0 || return 1
+    [[ "$1" =~ ^([0-9]{1,3}\.){3}[0-9]{1,3}(\/[0-9]{1,2})?$ ]] && return 0 || return 1
 }
 
 TEMP_FILE=$(mktemp)
@@ -28,16 +33,22 @@ for URL in "${TXT_URLS[@]}"; do
 	curl -s "$URL" >> "$TEMP_FILE"
 done
 
+# Special case for this CSV file
 URL="https://raw.githubusercontent.com/Lars-/PIA-servers/refs/heads/master/export.csv"
 echo "Downloading $URL..."
 curl -s "$URL" | tail -n +2 | cut -d',' -f1 >> "$TEMP_FILE"
+
+for ASN in "${ASNS[@]}"; do
+    echo "Looking up IP ranges for $ASN..."
+    whois -h whois.radb.net -- "-i origin $ASN" | grep -Eo "([0-9.]+){4}/[0-9]+" >> "$TEMP_FILE"
+done
 
 SORTED_FILE=$(mktemp)
 sort -u "$TEMP_FILE" | uniq > "$SORTED_FILE"
 
 if ! ipset list mc_server_blacklist &>/dev/null; then
 	echo "Creating ipset mc_server_blacklist..."
-	ipset create mc_server_blacklist hash:net
+	ipset create mc_server_blacklist hash:net maxelem 1048575
 fi
 
 echo "Adding IPs to ipset mc_server_blacklist..."

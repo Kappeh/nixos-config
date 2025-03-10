@@ -4,6 +4,7 @@ let
 in {
   environment.systemPackages = [
     pkgs.ipset
+    pkgs.whois
     update_mc_server_blacklist_script
   ];
 
