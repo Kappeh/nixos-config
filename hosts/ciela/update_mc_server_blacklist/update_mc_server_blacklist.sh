@@ -10,11 +10,11 @@ if [[ "$EUID" -ne 0 ]]; then
 fi
 
 TXT_URLS=(
-	"https://raw.githubusercontent.com/X4BNet/lists_vpn/refs/heads/main/ipv4.txt"
+	# "https://raw.githubusercontent.com/X4BNet/lists_vpn/refs/heads/main/ipv4.txt"
 	"https://raw.githubusercontent.com/platformbuilds/Tor-IP-Addresses/refs/heads/master/tor-exit-nodes.lst"
 	"https://raw.githubusercontent.com/iamshab/Malicious-IPs-Feed/refs/heads/main/AFAT-Clean-IPs.txt"
 	"https://raw.githubusercontent.com/sefinek/Malicious-IP-Addresses/refs/heads/main/lists/main.txt"
-    "https://raw.githubusercontent.com/jhassine/server-ip-addresses/refs/heads/master/data/datacenters.txt"
+    # "https://raw.githubusercontent.com/jhassine/server-ip-addresses/refs/heads/master/data/datacenters.txt"
 )
 
 ASNS=(
