@@ -89,6 +89,11 @@
           "project_zomboid"
         ];
       };
+
+      illegal_crime_mc = {
+        gid = 500;
+        members = [ "illegal_crime_mc" ];
+      };
     };
 
     users = {
@@ -131,6 +136,15 @@
         extraGroups = [
           "services"  # Grant access to shared files used by services
         ];
+      };
+
+      illegal_crime_mc = {
+        uid = 500;
+        group = "illegal_crime_mc";
+        isNormalUser = false;
+        isSystemUser = true;
+        useDefaultShell = false;
+        shell = null;
       };
     };
   };
