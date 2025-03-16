@@ -92,7 +92,10 @@
 
       illegal_crime_mc = {
         gid = 500;
-        members = [ "illegal_crime_mc" ];
+        members = [
+          "illegal_crime_mc"
+          "kieran"
+        ];
       };
     };
 
@@ -103,9 +106,10 @@
         hashedPasswordFile = config.sops.secrets."users/kieran/hashedPassword".path;
         openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOCUJsStgjTCObc7BrzoGDE3tj633SbghefFM2wk20gX local" ];
         extraGroups = [
-          "services"        # Grant access to shared files used by services
-          "networkmanager"  # Enable network manager for user
-          "wheel"           # Enable `sudo` for the user.
+          "services"          # Grant access to shared files used by services
+          "networkmanager"    # Enable network manager for user
+          "wheel"             # Enable `sudo` for the user.
+          "illegal_crime_mc"  # Grant access to illegal crime minecraft server files
         ];
         packages = with pkgs; [
           git
