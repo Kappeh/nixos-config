@@ -18,6 +18,7 @@
     ./easyeffects.nix
     ./element_desktop.nix
     ./eza.nix
+    ./f3.nix
     ./fastfetch.nix
     ./fd.nix
     ./feh.nix
