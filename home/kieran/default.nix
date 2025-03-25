@@ -5,7 +5,7 @@
     ./bat.nix
     ./blender.nix
     ./bluetui.nix
-    ./bspwm/default.nix
+    # ./bspwm/default.nix
     ./btdu.nix
     ./btop.nix
     # ./clipcat/default.nix
@@ -23,7 +23,7 @@
     ./fd.nix
     ./feh.nix
     ./firefox.nix
-    ./flameshot.nix
+    # ./flameshot.nix
     ./freecad.nix
     ./fzf_git_sh.nix
     ./fzf.nix
@@ -43,22 +43,22 @@
     ./keepassxc.nix
     ./lf.nix
     ./libreoffice.nix
-    ./ncpamixer.nix
+    # ./ncpamixer.nix
     ./nixvim.nix
     ./obsidian.nix
     ./pulsemixer.nix
     ./pcmanfm.nix
-    ./picom.nix
+    # ./picom.nix
     ./playerctl.nix
-    ./polybar.nix
+    # ./polybar.nix
     ./prismlauncher.nix
     ./protonup.nix
     ./qmk.nix
     ./qpwgraph.nix
     ./qt.nix
-    ./rofi.nix
+    # ./rofi.nix
     ./rtl_sdr.nix
-    ./scrot.nix
+    # ./scrot.nix
     ./sidequest.nix
     ./steam.nix
     ./syncthing.nix
