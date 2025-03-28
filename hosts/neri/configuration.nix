@@ -21,6 +21,7 @@
     ../../modules/system/programs/greetd.nix
     # ../../modules/system/programs/lightdm.nix
     ../../modules/system/programs/noisetorch.nix
+    ../../modules/system/programs/obs_studio.nix
     ../../modules/system/programs/pipewire.nix
     ../../modules/system/programs/via.nix
     ../../modules/system/programs/wireshark.nix

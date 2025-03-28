@@ -45,6 +45,7 @@
     ./libreoffice.nix
     # ./ncpamixer.nix
     ./nixvim.nix
+    ./obs_studio.nix
     ./obsidian.nix
     ./pulsemixer.nix
     ./pcmanfm.nix
