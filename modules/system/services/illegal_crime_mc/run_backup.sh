@@ -54,6 +54,9 @@ cp -r "$PROJECT_DIR/paper/data/plugins/Multiverse-Inventories/groups" "$BACKUP_D
 cp -r "$PROJECT_DIR/paper/data/plugins/Multiverse-Inventories/players" "$BACKUP_DIR_HOST/paper/data/plugins/Multiverse-Inventories/"
 cp -r "$PROJECT_DIR/paper/data/plugins/Multiverse-Inventories/worlds" "$BACKUP_DIR_HOST/paper/data/plugins/Multiverse-Inventories/"
 
+# Copy G4mespeed files
+cp -r "$PROJECT_DIR/fabric/data/g4mespeed" "$BACKUP_DIR_HOST/fabric/data"
+
 # Copy Minecraft worlds
 cp -r "$PROJECT_DIR/fabric/data/world" "$BACKUP_DIR_HOST/fabric/data/"
 cp -r "$PROJECT_DIR/paper/data/survival" "$BACKUP_DIR_HOST/paper/data/"
