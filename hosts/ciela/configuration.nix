@@ -98,6 +98,14 @@
           "kieran"
         ];
       };
+
+      syncthing = {
+        gid = 501;
+        members = [
+          "syncthing"
+          "kieran"
+        ];
+      };
     };
 
     users = {
@@ -111,6 +119,7 @@
           "networkmanager"    # Enable network manager for user
           "wheel"             # Enable `sudo` for the user.
           "illegal_crime_mc"  # Grant access to illegal crime minecraft server files
+          "syncthing"         # Grant access to syncthing files
         ];
         packages = with pkgs; [
           git
@@ -147,6 +156,15 @@
       illegal_crime_mc = {
         uid = 500;
         group = "illegal_crime_mc";
+        isNormalUser = false;
+        isSystemUser = true;
+        useDefaultShell = false;
+        shell = null;
+      };
+
+      syncthing = {
+        uid = 501;
+        group = "syncthing";
         isNormalUser = false;
         isSystemUser = true;
         useDefaultShell = false;
