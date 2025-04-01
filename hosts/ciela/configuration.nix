@@ -95,6 +95,7 @@
         gid = 500;
         members = [
           "illegal_crime_mc"
+          "duplicati"
           "kieran"
         ];
       };
@@ -103,6 +104,15 @@
         gid = 501;
         members = [
           "syncthing"
+          "duplicati"
+          "kieran"
+        ];
+      };
+
+      duplicati = {
+        gid = 502;
+        members = [
+          "duplicati"
           "kieran"
         ];
       };
@@ -120,6 +130,7 @@
           "wheel"             # Enable `sudo` for the user.
           "illegal_crime_mc"  # Grant access to illegal crime minecraft server files
           "syncthing"         # Grant access to syncthing files
+          "duplicati"         # Grant access to duplicati files
         ];
         packages = with pkgs; [
           git
@@ -169,6 +180,19 @@
         isSystemUser = true;
         useDefaultShell = false;
         shell = null;
+      };
+
+      duplicati = {
+        uid = 502;
+        group = "duplicati";
+        isNormalUser = false;
+        isSystemUser = true;
+        useDefaultShell = false;
+        shell = null;
+        extraGroups = [
+          "illegal_crime_mc"  # Grant access to illegal crime minecraft server files
+          "syncthing"         # Grant access to syncthing files
+        ];
       };
     };
   };
