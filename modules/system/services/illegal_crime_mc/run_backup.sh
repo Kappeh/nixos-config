@@ -7,7 +7,7 @@ BACKUPS_DIR_HOST="$PROJECT_DIR/backups"
 BACKUPS_TO_KEEP=24
 
 PUID=500
-GUID=500
+PGID=500
 
 # Create backup directory
 DATE="$(date +\%Y-\%m-\%d_\%H-\%M-\%S)"
