@@ -97,7 +97,7 @@
       clock = {
         format = " {:%A %d/%m/%Y %H:%M:%S}";
         tooltip = false;
-        timezone = "Etc/GMT";
+        timezone = "Europe/London";
         interval = 1;
       };
     };
