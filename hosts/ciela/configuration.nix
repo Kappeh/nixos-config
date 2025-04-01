@@ -6,8 +6,8 @@
     ../../modules/system/programs/docker.nix
     ../../modules/system/services/illegal_crime_mc/default.nix
     ../common.nix
-    ./mc_server_backup/default.nix
-    ./update_mc_server_blacklist/default.nix
+    # ./mc_server_backup/default.nix
+    # ./update_mc_server_blacklist/default.nix
     ./hardware-configuration.nix
   ];
 
