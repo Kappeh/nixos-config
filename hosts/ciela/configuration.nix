@@ -88,6 +88,8 @@
           "kieran"
           "jellyfin"
           "project_zomboid"
+          "syncthing"
+          "duplicati"
         ];
       };
 
@@ -95,7 +97,6 @@
         gid = 500;
         members = [
           "illegal_crime_mc"
-          "duplicati"
           "kieran"
         ];
       };
@@ -103,8 +104,6 @@
       syncthing = {
         gid = 501;
         members = [
-          "syncthing"
-          "duplicati"
           "kieran"
         ];
       };
@@ -112,7 +111,6 @@
       duplicati = {
         gid = 502;
         members = [
-          "duplicati"
           "kieran"
         ];
       };
@@ -175,7 +173,7 @@
 
       syncthing = {
         uid = 501;
-        group = "syncthing";
+        group = "services";
         isNormalUser = false;
         isSystemUser = true;
         useDefaultShell = false;
@@ -184,15 +182,11 @@
 
       duplicati = {
         uid = 502;
-        group = "duplicati";
+        group = "services";
         isNormalUser = false;
         isSystemUser = true;
         useDefaultShell = false;
         shell = null;
-        extraGroups = [
-          "illegal_crime_mc"  # Grant access to illegal crime minecraft server files
-          "syncthing"         # Grant access to syncthing files
-        ];
       };
     };
   };

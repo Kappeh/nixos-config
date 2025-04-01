@@ -4,8 +4,12 @@ set -e
 
 PROJECT_DIR="/services/illegal_crime_mc"
 BACKUPS_DIR="$PROJECT_DIR/backups"
-LATEST_SYMLINK="$BACKUPS_DIR/markers/latest"
-DAILY_SYMLINK="$BACKUPS_DIR/markers/daily"
+MARKERS_DIR="$BACKUPS_DIR/markers"
+LATEST_SYMLINK="$MARKERS_DIR/latest"
+DAILY_SYMLINK="$MARKERS_DIR/daily"
+
+PUID=500  # illegal_crime_mc
+PGID=1001 # services
 
 # There is no latest backup, exit
 if [ ! -L "$LATEST_SYMLINK" ]; then
@@ -24,3 +28,7 @@ else
 	# Symlink does not exists. Creating it.
 	cp -P "$LATEST_SYMLINK" "$DAILY_SYMLINK"
 fi
+
+# Update permissions of markers
+chown -R "$PUID:$PGID" "$MARKERS_DIR"
+chmod -R 770 "$MARKERS_DIR"

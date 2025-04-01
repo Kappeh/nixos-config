@@ -6,8 +6,8 @@ PROJECT_DIR="/services/illegal_crime_mc"
 BACKUPS_DIR_HOST="$PROJECT_DIR/backups"
 BACKUPS_TO_KEEP=24
 
-PUID=500
-PGID=500
+PUID=500  # illegal_crime_mc
+PGID=1001 # services
 
 # Create backup directory
 DATE="$(date +\%Y-\%m-\%d_\%H-\%M-\%S)"
