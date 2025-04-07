@@ -17,6 +17,7 @@
     ../../modules/system/programs/appimage.nix
     # ../../modules/system/programs/clipcat.nix
     ../../modules/system/programs/dconf.nix
+    ../../modules/system/programs/droidcam.nix
     ../../modules/system/programs/gamemode.nix
     ../../modules/system/programs/greetd.nix
     # ../../modules/system/programs/lightdm.nix
