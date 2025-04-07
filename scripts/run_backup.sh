@@ -24,6 +24,8 @@ SNAPSHOT_STORAGE_PATH="/snapshots"
 BACKUP_DESTINATION_PATH="/backups"
 # Path to the symlink pointing to the latest snapshot
 LATEST_SNAPSHOT_SYMLINK="${SNAPSHOT_STORAGE_PATH}/backup_latest"
+# The number of snapshots to keep
+SNAPSHOTS_TO_KEEP=12
 
 # Generate a timestamp for the backup
 BACKUP_TIMESTAMP=$(date +"%Y_%m_%d_%H_%M_%S")
@@ -67,3 +69,26 @@ btrfs subvolume snapshot -r "$SOURCE_SUBVOL_PATH" "$SNAPSHOT_PATH"
 btrfs send -p "$LATEST_SNAPSHOT_PATH" "$SNAPSHOT_PATH" | btrfs receive "$BACKUP_DESTINATION_PATH"
 rm "$LATEST_SNAPSHOT_SYMLINK"
 ln -s "$SNAPSHOT_PATH" "$LATEST_SNAPSHOT_SYMLINK"
+
+# Remove old snapshots
+delete_subvolume_recursively() {
+    IFS=$'\n'
+    for i in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
+        delete_subvolume_recursively "/btrfs_tmp/$i"
+    done
+    btrfs subvolume delete "$1"
+}
+
+SNAPSHOTS=$(find "$SNAPSHOT_STORAGE_PATH" -mindepth 1 -maxdepth 1 -type d)
+TOTAL_SNAPSHOTS=$(echo "$SNAPSHOTS" | wc -l)
+
+echo "TOTAL_SNAPSHOTS: $TOTAL_SNAPSHOTS, SNAPSHOTS_TO_KEEP: $SNAPSHOTS_TO_KEEP"
+
+if ((TOTAL_SNAPSHOTS > SNAPSHOTS_TO_KEEP)); then
+    SNAPSHOTS_TO_REMOVE=$((TOTAL_SNAPSHOTS - SNAPSHOTS_TO_KEEP))
+    SNAPSHOTS_TO_DELETE=$(echo "$SNAPSHOTS" | head -n "$SNAPSHOTS_TO_REMOVE")
+    for SNAPSHOT in $SNAPSHOTS_TO_DELETE; do
+        echo "Removing snapshot $SNAPSHOT"
+        delete_subvolume_recursively "$SNAPSHOT"
+    done
+fi

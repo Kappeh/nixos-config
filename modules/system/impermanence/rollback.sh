@@ -7,11 +7,11 @@ mv /btrfs_tmp/root "/btrfs_tmp/old_roots/$timestamp"
 fi
 
 delete_subvolume_recursively() {
-IFS=$'\n'
-for i in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
-    delete_subvolume_recursively "/btrfs_tmp/$i"
-done
-btrfs subvolume delete "$1"
+    IFS=$'\n'
+    for i in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
+        delete_subvolume_recursively "/btrfs_tmp/$i"
+    done
+    btrfs subvolume delete "$1"
 }
 
 for i in $(find /btrfs_tmp/old_roots/ -maxdepth 1 -mtime +30); do
