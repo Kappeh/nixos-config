@@ -14,6 +14,7 @@
     ../../modules/system/impermanence/default.nix
     ../../modules/system/networking/networkmanager.nix
     ../../modules/system/networking/wireguard.nix
+    ../../modules/system/programs/alvr.nix
     ../../modules/system/programs/appimage.nix
     # ../../modules/system/programs/clipcat.nix
     ../../modules/system/programs/dconf.nix
