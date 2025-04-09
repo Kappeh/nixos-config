@@ -20,8 +20,8 @@
 
       search = {
         force = true;
-        default = "DuckDuckGo";
-        order = [ "DuckDuckGo" ];
+        default = "ddg";
+        order = [ "ddg" ];
         engines = {
           "Nix Packages" = {
             urls = [{
@@ -36,55 +36,55 @@
           };
           "NixOS Wiki" = {
             urls = [{ template = "https://nixos.wiki/index.php?search={searchTerms}"; }];
-            iconUpdateURL = "https://nixos.wiki/favicon.png";
+            icon = "https://nixos.wiki/favicon.png";
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = [ "@nw" ];
           };
-          "DuckDuckGo" = {
+          "ddg" = {
             urls = [{ template = "https://duckduckgo.com/?q={searchTerms}"; }];
-            iconUpdateURL = "https://duckduckgo.com/favicon.png";
+            icon = "https://duckduckgo.com/favicon.png";
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = [ "@duckduckgo" "@ddg" ];
           };
           "Youtube" = {
             urls = [{ template = "https://www.youtube.com/results?search_query={searchTerms}"; }];
-            iconUpdateURL = "https://www.youtube.com/favicon.ico";
+            icon = "https://www.youtube.com/favicon.ico";
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = [ "@youtube" "@yt" ];
           };
           "Crates.io" = {
             urls = [{ template = "https://crates.io/search?q={searchTerms}"; }];
-            iconUpdateURL = "https://crates.io/favicon.ico";
+            icon = "https://crates.io/favicon.ico";
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = [ "@crates" ];
           };
           "Home Manager Options" = {
             urls = [{ template = "https://home-manager-options.extranix.com/?query={searchTerms}"; }];
-            iconUpdateURL = "https://home-manager-options.extranix.com/images/favicon.png";
+            icon = "https://home-manager-options.extranix.com/images/favicon.png";
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = [ "@hm" ];
           };
           "Arch Wiki" = {
             urls = [{ template = "https://wiki.archlinux.org/index.php?search={searchTerms}"; }];
-            iconUpdateURL = "https://wiki.archlinux.org/favicon.ico";
+            icon = "https://wiki.archlinux.org/favicon.ico";
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = [ "@arch" "@aw" ];
           };
-          "Reddit" = {
+          "reddit" = {
             urls = [{ template = "https://www.reddit.com/search/?q={searchTerms}"; }];
-            iconUpdateURL = "https://www.redditstatic.com/shreddit/assets/favicon/64x64.png";
+            icon = "https://www.redditstatic.com/shreddit/assets/favicon/64x64.png";
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = [ "@reddit" ];
           };
           "Nix Options" = {
             urls = [{ template = "https://search.nixos.org/options?query={searchTerms}"; }];
-            iconUpdateURL = "https://nixos.org/favicon.png";
+            icon = "https://nixos.org/favicon.png";
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = [ "@no" ];
           };
-          "eBay".metaData.hidden = true;
-          "Google".metaData.hidden = true;
-          "Bing".metaData.hidden = true;
+          "ebay".metaData.hidden = true;
+          "google".metaData.hidden = true;
+          "bing".metaData.hidden = true;
         };
       };
 

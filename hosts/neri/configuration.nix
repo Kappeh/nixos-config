@@ -77,7 +77,7 @@
     environment.systemPackages = with pkgs; [
       adwaita-qt
       adwaita-qt6
-      beekeeper-studio
+      # beekeeper-studio
       cemu
       desmume
       dolphin-emu
