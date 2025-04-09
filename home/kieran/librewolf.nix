@@ -190,6 +190,9 @@
         # Apparently allows transparency
         # TODO: transparent top menu / tabs
         "browser.tabs.allow_transparent_browser" = true;
+	# Enable DRM
+	"drm" = true;
+	"media.eme.enabled" = true;
 
         # Performance
         "gfx.webrender.all" = true; # Force enable GPU acceleration
