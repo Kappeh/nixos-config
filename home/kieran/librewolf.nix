@@ -82,9 +82,13 @@
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = [ "@no" ];
           };
-          "ebay".metaData.hidden = true;
           "google".metaData.hidden = true;
           "bing".metaData.hidden = true;
+          "policy-DuckDuckGo Lite".metaData.hidden = true;
+          "policy-MetaGer".metaData.hidden = true;
+          "policy-Mojeek".metaData.hidden = true;
+          "policy-SearXNG - searx.be".metaData.hidden = true;
+          "policy-StartPage".metaData.hidden = true;
         };
       };
 
