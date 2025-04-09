@@ -82,6 +82,96 @@
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = [ "@no" ];
           };
+          "Steam" = {
+            urls = [{ template = "https://store.steampowered.com/search/?term={searchTerms}"; }];
+            icon = "https://store.steampowered.com/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@steam" ];
+          };
+          "ProtonDB" = {
+            urls = [{ template = "https://www.protondb.com/search?q={searchTerms}"; }];
+            icon = "https://www.protondb.com/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@protondb" "@pdb" ];
+          };
+          "SteamDB" = {
+            urls = [{ template = "https://steamdb.info/search/?a=all&q={searchTerms}"; }];
+            icon = "https://steamdb.info/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@steamdb" "@sdb" ];
+          };
+          "Github" = {
+            urls = [{ template = "https://github.com/search?q={searchTerms}&type=repositories"; }];
+            icon = "https://github.com/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@gh" ];
+          };
+          "DockerHub" = {
+            urls = [{ template = "https://hub.docker.com/search?q={searchTerms}"; }];
+            icon = "https://hub.docker.com/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@dh" ];
+          };
+          "Factorio Wiki" = {
+            urls = [{ template = "https://wiki.factorio.com/index.php?search={searchTerms}"; }];
+            icon = "https://wiki.factorio.com/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@fw" ];
+          };
+          "Barotrauma Wiki" = {
+            urls = [{ template = "https://barotraumagame.com/baro-wiki/index.php?search={searchTerms}"; }];
+            icon = "https://barotraumagame.com/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@bw" ];
+          };
+          "Terraria Wiki" = {
+            urls = [{ template = "https://terraria.wiki.gg/wiki/Special:Search?search={searchTerms}"; }];
+            icon = "https://terraria.wiki.gg/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@tw" ];
+          };
+          "Urban Dictionary" = {
+            urls = [{ template = "https://www.urbandictionary.com/define.php?term={searchTerms}"; }];
+            icon = "https://www.urbandictionary.com/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@ud" ];
+          };
+          "Whois" = {
+            urls = [{ template = "https://www.whois.com/whois/{searchTerms}"; }];
+            icon = "https://www.whois.com/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@whois" ];
+          };
+          "Thingiverse" = {
+            urls = [{ template = "https://www.thingiverse.com/search?q={searchTerms}"; }];
+            icon = "https://www.thingiverse.com/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@thing" ];
+          };
+          "Modrinth Mods" = {
+            urls = [{ template = "https://modrinth.com/mods?q={searchTerms}"; }];
+            icon = "https://modrinth.com/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@mod" ];
+          };
+          "Modrinth Plugins" = {
+            urls = [{ template = "https://modrinth.com/plugins?q={searchTerms}"; }];
+            icon = "https://modrinth.com/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@plugin" ];
+          };
+          "Minecraft Wiki" = {
+            urls = [{ template = "https://minecraft.wiki/w/Special:Search?search={searchTerms}"; }];
+            icon = "https://minecraft.wiki/favicon.ico";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@mw" ];
+          };
+          "Stardew Valley Wiki" = {
+            urls = [{ template = "https://www.stardewvalleywiki.com/mediawiki/index.php?search={searchTerms}"; }];
+            icon = "https://stardewvalleywiki.com/favicon.png";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@sw" ];
+          };
           "google".metaData.hidden = true;
           "bing".metaData.hidden = true;
           "policy-DuckDuckGo Lite".metaData.hidden = true;
