@@ -44,6 +44,7 @@
     ./keepassxc.nix
     ./lf.nix
     ./libreoffice.nix
+    ./librewolf.nix
     # ./ncpamixer.nix
     ./nixvim.nix
     ./obs_studio.nix
