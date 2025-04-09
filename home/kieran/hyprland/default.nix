@@ -74,6 +74,7 @@
         ];
 
         exec-once = [
+          "systemctl --user start hyprpolkitagent"
           "waybar"
           "hyprpaper"
           "wl-clip-persist --clipboard regular --write-timeout 1000"

@@ -36,6 +36,7 @@
     ./hyprland/default.nix
     ./hyprpaper/default.nix
     ./hyprpicker.nix
+    ./hyprpolkitagent.nix
     ./hyprshot.nix
     # ./idea.nix
     ./jellyfin_media_player.nix
