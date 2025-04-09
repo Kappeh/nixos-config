@@ -1,4 +1,6 @@
 { config, pkgs, inputs, ... }: {
+  config.home.persistence."/persist/home/kieran".directories = [ ".librewolf" ];
+
   config.programs.librewolf = {
     enable = true;
     profiles.default = {
