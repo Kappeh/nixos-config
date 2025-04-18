@@ -59,6 +59,7 @@
     ./qmk.nix
     ./qpwgraph.nix
     ./qt.nix
+    ./r2modman.nix
     # ./rofi.nix
     ./rtl_sdr.nix
     # ./scrot.nix
