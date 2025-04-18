@@ -160,6 +160,7 @@
           ".java" # Java
           ".config/easyeffects" # EastEffects - Persist Presents
           ".config/dconf"
+          ".config/UNDERTALE" # Undertale files
         ];
         files = [
           ".bash_history"
