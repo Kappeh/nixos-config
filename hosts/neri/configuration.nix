@@ -86,7 +86,7 @@
       libnotify
       libretro.citra
       mgba
-      mupen64plus
+      # mupen64plus
       snes9x
       tldr
       unzip
