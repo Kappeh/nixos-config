@@ -114,6 +114,14 @@
           "kieran"
         ];
       };
+
+      synapse = {
+        gid = 503;
+        members = [
+          "synapse"
+          "kieran"
+        ];
+      };
     };
 
     users = {
@@ -129,6 +137,7 @@
           "illegal_crime_mc"  # Grant access to illegal crime minecraft server files
           "syncthing"         # Grant access to syncthing files
           "duplicati"         # Grant access to duplicati files
+          "synapse"           # Grant access to synapse files
         ];
         packages = with pkgs; [
           git
@@ -183,6 +192,15 @@
       duplicati = {
         uid = 502;
         group = "services";
+        isNormalUser = false;
+        isSystemUser = true;
+        useDefaultShell = false;
+        shell = null;
+      };
+
+      synapse = {
+        uid = 503;
+        group = "synapse";
         isNormalUser = false;
         isSystemUser = true;
         useDefaultShell = false;
