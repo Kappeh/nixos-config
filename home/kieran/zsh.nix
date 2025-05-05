@@ -39,7 +39,7 @@
       theme = "jispwoso";
     };
 
-    initExtra = builtins.readFile "${pkgs.fzf-git-sh}/share/fzf-git-sh/fzf-git.sh";
+    initContent = builtins.readFile "${pkgs.fzf-git-sh}/share/fzf-git-sh/fzf-git.sh";
 
     shellAliases = {
       cd = "z";
