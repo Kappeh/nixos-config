@@ -34,6 +34,7 @@
     ./gqrx.nix
     ./hunspell.nix
     ./hyprland/default.nix
+    ./hyprlock.nix
     ./hyprpaper/default.nix
     ./hyprpicker.nix
     ./hyprpolkitagent.nix

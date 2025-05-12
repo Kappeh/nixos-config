@@ -11,10 +11,10 @@
     ];
 
     bind = [
-      "$mod ALT, Q, exec, pkill Hyprland"
+      "$mod, Q, exec, hyprlock"
+      "$mod SHIFT, Q, exec, pkill Hyprland"
       "$mod, W, killactive,"
       "$mod SHIFT, W, forcekillactive,"
-      "$mod, S, togglefloating,"
 
       "$mod, Return, exec, $terminal"
       "$mod, Space, exec, $launcher"
