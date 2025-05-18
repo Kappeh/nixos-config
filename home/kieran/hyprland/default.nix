@@ -44,6 +44,11 @@
           repeat_delay = 200;
         };
 
+        device = [{
+          name = "wacom-intuos-s-pen";
+          output = "HDMI-A-1";
+        }];
+
         misc = {
           disable_hyprland_logo = true;
           disable_splash_rendering = true;
