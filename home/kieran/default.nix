@@ -14,7 +14,7 @@
     ./cursor_theme.nix
     ./da_vinci_resolve.nix
     ./discord.nix
-    ./dunst/default.nix
+    # ./dunst/default.nix
     ./easyeffects.nix
     ./element_desktop.nix
     ./eza.nix
@@ -46,6 +46,7 @@
     ./lf.nix
     ./libreoffice.nix
     ./librewolf.nix
+    ./mako.nix
     # ./ncpamixer.nix
     ./nixvim.nix
     ./obs_studio.nix

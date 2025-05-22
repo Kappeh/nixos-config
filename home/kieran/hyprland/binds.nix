@@ -71,6 +71,8 @@
       "$mod, e, exec, alacritty -e yazi"
       # Open file manager (gui)
       "$mod SHIFT, e, exec, pcmanfm"
+      # Restore recent notifications
+      "$mod, n, exec, makoctl restore"
     ];
 
     bindl = [
