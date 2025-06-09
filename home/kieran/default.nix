@@ -30,6 +30,7 @@
     ./gh.nix
     ./gimp.nix
     ./git.nix
+    ./godot.nix
     ./gparted.nix
     ./gqrx.nix
     ./hunspell.nix
