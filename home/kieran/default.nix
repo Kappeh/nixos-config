@@ -165,6 +165,7 @@
           ".config/easyeffects" # EastEffects - Persist Presents
           ".config/dconf"
           ".config/UNDERTALE" # Undertale files
+          ".config/unity3d/Landfall/Haste" # Haste files
         ];
         files = [
           ".bash_history"
