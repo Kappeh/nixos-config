@@ -166,6 +166,8 @@
           ".config/dconf"
           ".config/UNDERTALE" # Undertale files
           ".config/unity3d/Landfall/Haste" # Haste files
+          ".config/godot" # Godot settings
+          ".local/share/godot" # Godot data
         ];
         files = [
           ".bash_history"
