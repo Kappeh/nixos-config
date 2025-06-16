@@ -5,6 +5,7 @@
   imports = [
     ../../modules/system/programs/docker.nix
     ../../modules/system/services/illegal_crime_mc/default.nix
+    ../../modules/system/services/update_rota/default.nix
     ../common.nix
     # ./mc_server_backup/default.nix
     # ./update_mc_server_blacklist/default.nix
