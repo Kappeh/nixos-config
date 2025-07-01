@@ -13,6 +13,7 @@ in
       libmysqlclient
       libpqxx
       libxkbcommon
+      lld_20
       llvmPackages_17.bintools
       mariadb
       postgresql
