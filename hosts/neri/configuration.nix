@@ -18,6 +18,7 @@
     ../../modules/system/programs/appimage.nix
     # ../../modules/system/programs/clipcat.nix
     ../../modules/system/programs/dconf.nix
+    ../../modules/system/programs/docker.nix
     ../../modules/system/programs/droidcam.nix
     ../../modules/system/programs/gamemode.nix
     ../../modules/system/programs/greetd.nix
@@ -125,6 +126,13 @@
       font-awesome
       jetbrains-mono
       lexend
+    ];
+
+    environment.persistence."/persist/system".directories = [
+      {
+        directory = "/var/lib/docker";
+        mode = "0710";
+      }
     ];
 
     # List services that you want to enable:
