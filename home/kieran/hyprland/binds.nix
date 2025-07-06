@@ -73,6 +73,8 @@
       "$mod SHIFT, e, exec, pcmanfm"
       # Restore recent notifications
       "$mod, n, exec, makoctl restore"
+      # Open power menu
+      "$mod, p, exec, wofi-power-menu"
     ];
 
     bindl = [

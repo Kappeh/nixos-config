@@ -79,6 +79,7 @@
     ./webcord/default.nix
     ./wireshark.nix
     ./wofi/default.nix
+    ./wofi_power_menu/default.nix
     ./xarchiver.nix
     ./xclip.nix
     ./yazi.nix

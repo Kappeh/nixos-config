@@ -1,0 +1,11 @@
+[wofi]
+extra_args = "--allow-markup --columns=1 --hide-scroll"
+
+[menu.hibernate]
+requires_confirmation = "true"
+
+[menu.logout]
+requires_confirmation = "true"
+
+# [menu.lock-screen]
+# requires_confirmation = "false"
