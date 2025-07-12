@@ -17,11 +17,11 @@
     extraConfig = {
       pipewire = {
         "10-context-properties"."context.properties" = {
-          "default.clock.rate" = 44100;         # default 48000
-          "default.clock.min-quantum" = 32;     # default 32
+          "default.clock.rate" = 48000;         # default 48000
+          "default.clock.min-quantum" = 512;     # default 32
           "default.clock.max-quantum" = 8192;   # default 8192
-          "default.clock.quantum" = 512;        # default 1024
-          "default.clock.quantum-limit" = 2048; # default 8192
+          "default.clock.quantum" = 1024;       # default 1024
+          "default.clock.quantum-limit" = 8192; # default 8192
           "default.clock.quantum-floor" = 4;    # default 4
           "link.max-buffers" = 64;              # default 64
         };
@@ -78,6 +78,8 @@
             actions.update-props = {
               "node.nick" = "System";
               "node.description" = "System";
+              "priority.driver" = 1010;
+              "priority.session" = 1010;
             };
           }
           {
@@ -113,6 +115,11 @@
               "bluez5.auto-connect" = [ "a2dp_sink" ];
               "bluez5.hw-volume" = [ "a2dp_sink" ];
 
+              "bluez5.a2dp.ldac.quality" = "auto";
+              "bluez5.a2dp.acc.bitratemode" = 0;
+              "bluez5.a2dp.opus.pro.application" = "audio";
+              "bluez5.a2dp.opus.pro.bidi.application" = "audio";
+
               "device.nick" = "Headphones";
               "device.description" = "Headphones";
             };
@@ -122,15 +129,20 @@
             actions.update-props = {
               "node.nick" = "Headphones";
               "node.description" = "Headphones";
+              "node.latency" = "1024/48000"; # 1024 frames for 44100 Hz sample rate
+              "priority.driver" = 1011;
+              "priority.session" = 1011;
+              "resample.quality" = 4;
+              "channelmix.normalize" = false;
+              "channelmix.mix-lfe" = false;
             };
           }
         ];
         "51-bluetooth" = {
           "monitor.bluez.properties" = {
-            "bluez5.roles" = [ "a2dp_sink" "a2dp_source" "bap_sink" "bap_source" ];
-            "bluez5.codecs" = [ "aptx_ll" "aptx" "aptx_hd" "aac" "sbc" "sbc_xq" ];
-            "bluez5.enable-sbc-xq" = true;
-            "bluez5.enable-msbc" = true;
+            "bluez5.default.rate" = 48000;
+            "bluez5.roles" = [ "a2dp_sink" "a2dp_source" ];
+            "bluez5.codecs" = [ "aac" ];
             "bluez5.enable-hw-volume" = true;
             "bluez5.hfphsp-backend" = "none";
           };
