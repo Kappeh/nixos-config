@@ -29,6 +29,7 @@
     ../../modules/system/programs/via.nix
     ../../modules/system/programs/wireshark.nix
     ../../modules/system/programs/zsh.nix
+    ../../modules/system/virtualization.nix
     ../../scripts/default.nix
     ../common.nix
     ./backups.nix
