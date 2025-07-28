@@ -123,6 +123,14 @@
           "kieran"
         ];
       };
+
+      navidrome = {
+        gid = 504;
+        members = [
+          "navidrome"
+          "kieran"
+        ];
+      };
     };
 
     users = {
@@ -202,6 +210,15 @@
       synapse = {
         uid = 503;
         group = "synapse";
+        isNormalUser = false;
+        isSystemUser = true;
+        useDefaultShell = false;
+        shell = null;
+      };
+
+      navidrome = {
+        uid = 504;
+        group = "navidrome";
         isNormalUser = false;
         isSystemUser = true;
         useDefaultShell = false;
