@@ -22,6 +22,7 @@
     ./fastfetch.nix
     ./fd.nix
     ./feh.nix
+    ./feishin.nix
     ./firefox.nix
     # ./flameshot.nix
     ./freecad.nix
