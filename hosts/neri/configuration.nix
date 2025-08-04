@@ -47,7 +47,7 @@
       # Specify location of swapfile to use when attempting to resume during boot.
       # https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Manually_specify_hibernate_location
       resumeDevice = "/dev/mapper/crypt3";
-      kernelParams = [ "resume_offset=56701914" ];
+      kernelParams = [ "resume_offset=56700969" ];
     };
 
     networking.hostName = "neri"; # Define your hostname.
