@@ -16,13 +16,11 @@
     ../../modules/system/networking/wireguard.nix
     ../../modules/system/programs/alvr.nix
     ../../modules/system/programs/appimage.nix
-    # ../../modules/system/programs/clipcat.nix
     ../../modules/system/programs/dconf.nix
     ../../modules/system/programs/docker.nix
     ../../modules/system/programs/droidcam.nix
     ../../modules/system/programs/gamemode.nix
     ../../modules/system/programs/greetd.nix
-    # ../../modules/system/programs/lightdm.nix
     ../../modules/system/programs/obs_studio.nix
     ../../modules/system/programs/pipewire.nix
     ../../modules/system/programs/via.nix

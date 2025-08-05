@@ -6,17 +6,14 @@
     ./bat.nix
     ./blender.nix
     ./bluetui.nix
-    # ./bspwm/default.nix
     ./btdu.nix
     ./btop.nix
-    # ./clipcat/default.nix
     ./cliphist.nix
     ./conda.nix
     ./cursor_theme.nix
     ./da_vinci_resolve.nix
     ./dconf.nix
     ./discord.nix
-    # ./dunst/default.nix
     ./easyeffects.nix
     ./element_desktop.nix
     ./eza.nix
@@ -26,7 +23,6 @@
     ./feh.nix
     ./feishin.nix
     ./firefox.nix
-    # ./flameshot.nix
     ./fonts.nix
     ./freecad.nix
     ./fzf_git_sh.nix
@@ -54,26 +50,21 @@
     ./libreoffice.nix
     ./librewolf.nix
     ./mako.nix
-    # ./ncpamixer.nix
     ./nixvim.nix
     ./obs_studio.nix
     ./obsidian.nix
     ./pulsemixer.nix
     ./pcmanfm.nix
-    # ./picom.nix
     ./pipewire.nix
     ./playerctl.nix
-    # ./polybar.nix
     ./prismlauncher.nix
     ./protonup.nix
     ./qmk.nix
     ./qpwgraph.nix
     ./qt.nix
     ./r2modman.nix
-    # ./rofi.nix
     ./rtl_sdr.nix
     ./rust.nix
-    # ./scrot.nix
     ./sidequest.nix
     ./sops.nix
     ./ssh.nix
