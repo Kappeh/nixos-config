@@ -1,5 +1,9 @@
 { config, lib, ... }: {
-  config = {
+  options = {
+    impermanence.enable = lib.mkEnableOption "enables impermanence";
+  };
+
+  config =  lib.mkIf config.impermanence.enable {
     boot.initrd.postDeviceCommands = lib.mkAfter (builtins.readFile ./rollback.sh);
 
     fileSystems = {
@@ -14,18 +18,8 @@
         "/var/lib/nixos"
         "/var/lib/systemd/coredump"
         "/var/log"
-        {
-          # Used to remember the most recent user and session
-          directory = "/var/cache/tuigreet";
-          user = "greeter";
-          group = "greeter";
-          mode = "u=rwx,g=rx,o=rx";
-        }
       ];
-      files = [
-        "/etc/machine-id"
-        "/root/.config/sops/age/keys.txt"
-      ];
+      files = [ "/etc/machine-id" ];
     };
 
     systemd.tmpfiles.rules = [

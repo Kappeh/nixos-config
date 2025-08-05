@@ -11,7 +11,6 @@
     ../../modules/system/hardware/rtl_sdr.nix
     ../../modules/system/hardware/udisks.nix
     ../../modules/system/hyprland.nix
-    ../../modules/system/impermanence/default.nix
     ../../modules/system/networking/networkmanager.nix
     ../../modules/system/networking/wireguard.nix
     ../../modules/system/programs/alvr.nix
@@ -35,6 +34,8 @@
   ];
 
   config = {
+    impermanence.enable = true;
+
     boot = {
       kernelPackages = pkgs.linuxPackages_latest;
 

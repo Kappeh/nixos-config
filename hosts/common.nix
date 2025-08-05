@@ -1,5 +1,6 @@
 { config, lib, pkgs, inputs, ... }: {
   imports = [
+    ../modules/system/impermanence/default.nix
     ../modules/system/networking/ssl/default.nix
     ../modules/system/sops.nix
     inputs.sops-nix.nixosModules.sops
