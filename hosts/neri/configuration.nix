@@ -23,7 +23,6 @@
     ../../modules/system/programs/gamemode.nix
     ../../modules/system/programs/greetd.nix
     # ../../modules/system/programs/lightdm.nix
-    ../../modules/system/programs/noisetorch.nix
     ../../modules/system/programs/obs_studio.nix
     ../../modules/system/programs/pipewire.nix
     ../../modules/system/programs/via.nix
@@ -84,7 +83,6 @@
     environment.systemPackages = with pkgs; [
       adwaita-qt
       adwaita-qt6
-      # beekeeper-studio
       cemu
       desmume
       dolphin-emu
@@ -132,13 +130,6 @@
       font-awesome
       jetbrains-mono
       lexend
-    ];
-
-    environment.persistence."/persist/system".directories = [
-      {
-        directory = "/var/lib/docker";
-        mode = "0710";
-      }
     ];
 
     # List services that you want to enable:

@@ -1,7 +1,10 @@
 { config, ... }: {
-  config.services.easyeffects = {
-    enable = true;
+  config = {
+    services.easyeffects = {
+      enable = true;
+      preset = "Default";
+    };
 
-    preset = "Default";
+    home.persistence."/persist/home/kieran".directories = [ ".config/easyeffects" ];
   };
 }

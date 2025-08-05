@@ -1,3 +1,7 @@
 { config, pkgs, ... }: {
-  config.home.packages = [ pkgs.gqrx ];
+  config.home = {
+    packages = [ pkgs.gqrx ];
+
+    persistence."/persist/home/kieran".directories = [ ".config/gqrx" ];
+  };
 }

@@ -5,10 +5,6 @@
     inputs.sops-nix.nixosModules.sops
   ];
 
-  options = {
-
-  };
-
   config = {
     nixpkgs.config.allowUnfree = true;
     nix.settings = {

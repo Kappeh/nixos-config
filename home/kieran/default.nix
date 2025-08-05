@@ -1,6 +1,7 @@
 { config, osConfig, lib, pkgs, inputs, ...}: {
   imports = [
     ./alacritty.nix
+    ./appimage.nix
     ./bash/default.nix
     ./bat.nix
     ./blender.nix
@@ -13,6 +14,7 @@
     ./conda.nix
     ./cursor_theme.nix
     ./da_vinci_resolve.nix
+    ./dconf.nix
     ./discord.nix
     # ./dunst/default.nix
     ./easyeffects.nix
@@ -25,12 +27,14 @@
     ./feishin.nix
     ./firefox.nix
     # ./flameshot.nix
+    ./fonts.nix
     ./freecad.nix
     ./fzf_git_sh.nix
     ./fzf.nix
     ./gh.nix
     ./gimp.nix
     ./git.nix
+    ./gnupg.nix
     ./godot.nix
     ./gparted.nix
     ./gqrx.nix
@@ -42,6 +46,7 @@
     ./hyprpolkitagent.nix
     ./hyprshot.nix
     # ./idea.nix
+    ./java.nix
     ./jellyfin_media_player.nix
     ./keepass_diff.nix
     ./keepassxc.nix
@@ -56,6 +61,7 @@
     ./pulsemixer.nix
     ./pcmanfm.nix
     # ./picom.nix
+    ./pipewire.nix
     ./playerctl.nix
     # ./polybar.nix
     ./prismlauncher.nix
@@ -66,8 +72,11 @@
     ./r2modman.nix
     # ./rofi.nix
     ./rtl_sdr.nix
+    ./rust.nix
     # ./scrot.nix
     ./sidequest.nix
+    ./sops.nix
+    ./ssh.nix
     ./steam.nix
     ./syncthing.nix
     ./thefuck.nix
@@ -89,8 +98,6 @@
     inputs.impermanence.nixosModules.home-manager.impermanence
   ];
 
-  config.systemd.user.services.numlockx.Install.WantedBy = lib.mkForce [];
-
   config = {
     home = {
       homeDirectory = "/home/kieran";
@@ -99,6 +106,7 @@
     };
 
     xsession.numlock.enable = true;
+    systemd.user.services.numlockx.Install.WantedBy = lib.mkForce [];
 
     xdg = {
       enable = true;
@@ -118,72 +126,9 @@
     };
 
     home.persistence = {
-      "/persist/home/kieran" = {
-        directories = [
-          ".gnupg"
-          ".ssh"
-          ".nixops"
-          ".config/pulse"
-          ".local/state/wireplumber"
-
-          ".mozilla/firefox/default/" # Firefox - to keep addons enabled and remember addon settings
-          ".mozilla/native-messaging-hosts" # KeePassXC-Browser for firefox
-          ".config/discord" # Discord - to stop it opening browser each boot and remember settings
-          ".config/gh" # Github Cli
-          ".cache/keepassxc/" # Remember recent databases
-          ".config/keepassxc/" # Remember settings e.g. password generator
-          ".rustup" # Rustup - to prevent having to reinstalling toolchain
-          ".cargo" # Cargo - to persist packages installed with cargo
-          "Sync" # Syncthing - shared directories
-          ".local/state/syncthing" # Syncthing - state and config
-          ".config/pulse" # Pulseaudio
-          ".local/state/wireplumber" # Wireplumber
-          ".config/gqrx" # Gqrx
-          ".config/qt5ct" # qt5ct
-          ".config/qt6ct" # qt6ct
-          "qmk_firmware" # Qmk - firmware
-          ".config/qmk/" # Qmk - config
-          ".conda" # Conda
-          ".config/Element" # Element
-          ".cache/appimage-run" # AppImage - install cache
-          ".cache/clipcat" # Clipcat - Clipboard history
-          ".config/obsidian" # Obsidian - Config and session information
-          ".config/beekeeper-studio" # Beekeeper Studio - Database Connections and config
-          ".local/share/zsh" # Zsh - zsh_history
-          ".local/share/zoxide" # Zoxide - zoxide database
-          ".cache/fontconfig" # Cache fontconfig because it is big and causes some apps to take a while to start
-          ".config/libfm" # libfm - pcmanfm config
-          ".config/pcmanfm/default" # pcmanfm - config
-          ".cache/blender" # blender - cache
-          ".config/blender" # blender - config
-          ".cache/DaVinci_Resolve_Welcome" # Da Vinci Resolve - To prevent welcome message each boot
-          ".local/share/DaVinciResolve" # Da Vinci Resolve - Data
-          ".local/share/Jellyfin Media Player"
-          ".config/jellyfin.org"
-          ".local/share/jellyfinmediaplayer"
-          ".config/JetBrains" # JetBrains - Persist IntelliJ IDEA CE state
-          ".local/share/JetBrains" # JetBrains - Persist IntelliJ IDEA CE state
-          ".java" # Java
-          ".config/easyeffects" # EastEffects - Persist Presents
-          ".config/dconf"
-          ".config/UNDERTALE" # Undertale files
-          ".config/unity3d/Landfall/Haste" # Haste files
-          ".config/godot" # Godot settings
-          ".local/share/godot" # Godot data
-        ];
-        files = [
-          ".bash_history"
-          ".config/noisetorch/config.toml"
-          ".config/rncbc.org/qpwgraph.conf"
-          ".config/sops/age/keys.txt"
-          ".ncpamixer.conf"
-          "default.qpwgraph"
-          ".cache/rofi3.druncache"
-        ];
-        allowOther = true;
-      };
-
+      "/persist/home/kieran".allowOther = true;
       "/backup/home/kieran" = {
+        allowOther = true;
         directories = [
           "Apps"
           "Desktop"
@@ -192,27 +137,12 @@
           "Pictures"
           "Documents"
           "Videos"
-
           "dev"
         ];
-        files = [];
-        allowOther = true;
       };
-
       "/storage/home/kieran" = {
-        directories = [
-          { directory = "Storage"; } # Directory for large files
-          { directory = ".local/share/PrismLauncher"; } # Prism launcher config
-          { directory = ".local/share/Factorio"; method = "symlink"; }
-          { directory = ".factorio"; }
-          { directory = ".local/share/FasterThanLight"; method = "symlink"; }
-          { directory = ".local/share/IntoTheBreach"; method = "symlink"; }
-          { directory = ".local/share/Terraria"; }
-          { directory = ".local/share/Steam"; method = "symlink"; }
-          { directory = ".local/share/Daedalic Entertainment GmbH"; method = "symlink"; }
-        ];
-        files = [];
         allowOther = true;
+        directories = [ "Storage" ];
       };
     };
   };
