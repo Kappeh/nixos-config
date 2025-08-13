@@ -37,6 +37,7 @@
         modules = [
           ./hosts/ciela/configuration.nix
           inputs.home-manager.nixosModules.default
+          inputs.impermanence.nixosModules.impermanence
         ];
       };
       neri = nixpkgs.lib.nixosSystem {

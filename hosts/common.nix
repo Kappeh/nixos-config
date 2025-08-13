@@ -1,8 +1,12 @@
-{ config, lib, pkgs, inputs, ... }: {
+{ config, pkgs, inputs, ... }: {
   imports = [
-    ../modules/system/impermanence/default.nix
-    ../modules/system/networking/ssl/default.nix
-    ../modules/system/sops.nix
+    # ../modules/system/impermanence/default.nix
+    # ../modules/system/networking/ssl/default.nix
+    # ../modules/system/sops.nix
+
+    ../users/default.nix
+    ../modules/system/default.nix
+
     inputs.sops-nix.nixosModules.sops
   ];
 
@@ -35,5 +39,9 @@
       layout = "gb";
       options = "eurosign:4,caps:escape";
     };
+
+    # Use vim as the default editor
+    environment.systemPackages = [ pkgs.vim ];
+    environment.sessionVariables.EDITOR = "vim";
   };
 }
