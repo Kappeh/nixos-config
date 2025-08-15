@@ -1,7 +1,9 @@
-{ config, lib, ... }: {
+{ config, lib, pkgs, ... }: {
   options.myModules.desktop.waybar.enable = lib.mkEnableOption "Enable Waybar";
 
   config = lib.mkIf config.myModules.desktop.waybar.enable {
+    home.packages = [ pkgs.waybar-mpris ];
+
     programs.waybar = {
       enable = true;
 
@@ -23,7 +25,7 @@
         ];
 
         modules-center = [
-          "hyprland/window"
+          "custom/waybar-mpris"
         ];
 
         modules-right = [
@@ -47,8 +49,13 @@
           active-only = false;
         };
 
-        "hyprland/window" = {
-          tooltip = false;
+        "custom/waybar-mpris" = {
+          return-type = "json";
+          # Play and pause symbols are switched so that the current state is displayed instead
+          exec = "waybar-mpris --position --autofocus --play  --pause ";
+          on-click = "waybar-mpris --send toggle";
+          on-scroll-up = "waybar-mpris --send player-next";
+          on-scroll-down = "waybar-mpris --send player-prev";
         };
 
         cpu = {
