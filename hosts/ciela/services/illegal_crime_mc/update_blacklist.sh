@@ -11,9 +11,10 @@ TXT_URLS=(
 )
 
 ASNS=(
-    "AS36680" # Netiface LLC
-    "AS60223" # Netiface Limited
-    "AS51396" # Pfcloud UG
+    "AS36680"  # Netiface LLC
+    "AS60223"  # Netiface Limited
+    "AS51396"  # Pfcloud UG
+    "AS208191" # Go Host Ltd
 )
 
 is_ipv4() {
