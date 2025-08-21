@@ -4,6 +4,7 @@
     ./easyeffects.nix
     ./feh.nix
     ./feishin.nix
+    ./freetube.nix
     ./gimp.nix
     ./jellyfin_media_player.nix
     ./libreoffice.nix
@@ -19,6 +20,7 @@
       easyeffects.enable = lib.mkDefault true;
       feh.enable = lib.mkDefault true;
       feishin.enable = lib.mkDefault true;
+      freetube.enable = lib.mkDefault true;
       gimp.enable = lib.mkDefault true;
       jellyfin_media_player.enable = lib.mkDefault true;
       libreoffice.enable = lib.mkDefault true;
