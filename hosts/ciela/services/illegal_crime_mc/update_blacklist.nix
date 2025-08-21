@@ -2,7 +2,11 @@
   script = pkgs.writeScriptBin "illegal_crime_mc_update_blacklist" (builtins.readFile ./update_blacklist.sh);
 in {
   config = {
-    # environment.systemPackages = [ script ];
+    environment.systemPackages = [
+      pkgs.ipset
+      pkgs.whois
+      # script
+    ];
     systemd = {
       services."illegal_crime_mc_update_blacklist" = {
         serviceConfig = {
