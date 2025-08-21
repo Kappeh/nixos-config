@@ -1,6 +1,6 @@
 { config, lib, pkgs, inputs, ... }:
 let
-  tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
+  tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
   session = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/Hyprland";
   username = "kieran";
 in {
@@ -9,7 +9,7 @@ in {
   # Automatic login with greetd and tuigreet
   # https://discourse.nixos.org/t/autologin-hyprland/38159/12
   config = lib.mkIf config.myModules.desktop.greetd.enable {
-    environment.systemPackages = [ pkgs.greetd.tuigreet ];
+    environment.systemPackages = [ pkgs.tuigreet ];
 
     services.greetd = {
       enable = true;

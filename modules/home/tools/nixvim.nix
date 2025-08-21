@@ -1,5 +1,5 @@
 { config, inputs, lib, ... }: {
-  imports = [ inputs.nixvim.homeManagerModules.nixvim ];
+  imports = [ inputs.nixvim.homeModules.nixvim ];
 
   options.myModules.tools.nixvim.enable = lib.mkEnableOption "Enable nixvim";
 

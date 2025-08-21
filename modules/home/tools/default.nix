@@ -16,7 +16,6 @@
     ./nixvim.nix
     ./playerctl.nix
     ./pulsemixer.nix
-    ./thefuck.nix
     ./tldr.nix
     ./tmux.nix
     ./tree.nix
@@ -48,7 +47,6 @@
       nixvim.enable = lib.mkDefault true;
       playerctl.enable = lib.mkDefault true;
       pulsemixer.enable = lib.mkDefault true;
-      thefuck.enable = lib.mkDefault true;
       tldr.enable = lib.mkDefault true;
       tmux.enable = lib.mkDefault true;
       tree.enable = lib.mkDefault true;

@@ -45,6 +45,10 @@
           applications = {
             enable = osConfig.myModules.applications.enable;
             editors.idea.enable = false;
+
+            # Build can fail due to race condition in libsecret test
+            # https://gitlab.gnome.org/GNOME/libsecret/-/issues/80
+            # media.davinci_resolve.enable = false;
           };
           core.enable = true;
           desktop.enable = osConfig.myModules.desktop.enable;

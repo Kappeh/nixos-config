@@ -54,7 +54,7 @@
           streetsidesoftware.code-spell-checker
           tamasfe.even-better-toml
           usernamehw.errorlens
-          vadimcn.vscode-lldb
+          # vadimcn.vscode-lldb
         ];
       };
     };

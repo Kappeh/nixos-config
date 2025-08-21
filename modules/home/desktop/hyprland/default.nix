@@ -44,7 +44,9 @@
 
         animations = {
           enabled = true;
-          first_launch_animation = true;
+
+          # Appears to have been removed
+          # first_launch_animation = true;
         };
 
         input = {
