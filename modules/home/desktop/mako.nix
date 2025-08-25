@@ -32,25 +32,16 @@
         width = 300;
         height = 100;
         margin = "10";
-        border-size = 1;
+        border-size = 2;
         border-radius = 0;
         padding = "20";
         max-icon-size = 64;
 
         # Appearance
-        background-color = "#111127";
-        border-color = "#434380";
-        text-color = "#82aaff";
         text-alignment = "left";
-        font = "monospace 10";
         format = "<b>%s</b>\\n%b";
 
-        "urgency=low".text-color = "#747495";
-        "urgency=normal".text-color = "#82aaff";
-        "urgency=high" = {
-          text-color = "#e97a7a";
-          default-timeout = 0;
-        };
+        "urgency=high".default-timeout = 0;
       };
     };
   };

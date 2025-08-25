@@ -25,10 +25,7 @@
 
       settings = {
         general = {
-          border_size = 1;
-          "col.inactive_border" = "0xff14142c";
-          "col.active_border" = "0xff434380";
-
+          border_size = 2;
           layout = "master";
         };
 
@@ -120,7 +117,7 @@
           "QT_AUTO_SCREEN_SCALE_FACTOR,1"
           "QT_QPA_PLATFORM,wayland;xcb"
           "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-          "QT_QPA_PLATFORMTHEME,qt6ct"
+          # "QT_QPA_PLATFORMTHEME,qt6ct"
 
           "GBM_BACKEND,nvidia-drm"
           "__GLX_VENDOR_LIBRARY_NAME,nvidia"

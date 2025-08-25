@@ -13,6 +13,7 @@
     ./pipewire.nix
     ./sops.nix
     ./ssl/default.nix
+    ./stylix.nix
     ./wireguard.nix
   ];
 

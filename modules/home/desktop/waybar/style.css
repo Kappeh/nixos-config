@@ -7,17 +7,17 @@
 }
 
 window#waybar {
-    background-color: #14142c;
-    border-bottom: 1px solid #434380;
+    background-color: #@base00@;
+    border-bottom: 2px solid #@base0D@;
 }
 
 #workspaces button {
     padding: 0.3rem 0.6rem;
     margin: 0.4rem 0.25rem;
-    background-color: #111127;
-    border: 1px solid #434380;
+    background-color: #@base01@;
+    border: 1px solid #@base03@;
     border-radius: 6px;
-    color: #44447e;
+    color: #@base03@;
 
     transition-property: color;
     transition-duration: 0.0s;
@@ -29,22 +29,22 @@ window#waybar {
     padding: 0.3rem 0.6rem;
     box-shadow: none;
     text-shadow: none;
-    background-color: #111127;
-    border-bottom: 1px solid #434380;
-    border: 1px solid #434380;
-    background: #111127;
+    background-color: #@base01@;
+    border-bottom: 1px solid #@base03@;
+    border: 1px solid #@base03@;
+    background: #@base01@;
     transition: none;
 }
 
 #workspaces button.active {
-    color: #9e9edf;
+    color: #@base05@;
 
     transition-property: color;
     transition-duration: 0.0s;
 }
 
 #workspaces button.urgent {
-    color: #e97a7a;
+    color: #@base09@;
 
     transition-property: color;
     transition-duration: 0.0s;
@@ -60,15 +60,15 @@ window#waybar {
 #clock {
     padding: 0.3rem 0.6rem;
     margin: 0.4rem 0.25rem;
-    background-color: #111127;
-    border: 1px solid #434380;
+    background-color: #@base01@;
+    border: 1px solid #@base03@;
     border-radius: 6px;
-    color: #9e9edf;
+    color: #@base05@;
     transition-property: color;
     transition-duration: 0.5s;
 }
 
-window#waybar.empty #window {
+window#waybar.empty #waybar-mpris {
     background-color: transparent;
 }
 
@@ -77,45 +77,45 @@ window#waybar.empty #window {
 #bluetooth.disabled,
 #bluetooth.off,
 #wireplumber.muted {
-    color: #44447e;
+    color: #@base03@;
 }
 
 #custom-nixos-icon {
-    color: #82AAFF;
+    color: #@base0B@;
 }
 
-#window {
+#waybar-mpris {
     padding: 0.3rem 0.6rem;
     margin: 0.4rem 0.25rem;
     border: 1px;
-    color: #b1b9f1;
+    color: #@base05@;
     background-color: transparent;
 }
 
 #cpu {
-    color: #e97a7a;
+    color: #@base08@;
 }
 
 #memory {
-    color: #d6b295;
+    color: #@base09@;
 }
 
 #disk {
-    color: #adcea1;
+    color: #@base0A@;
 }
 
 #network {
-    color: #aab4ec;
+    color: #@base0B@;
 }
 
 #bluetooth {
-    color: #82AAFF;
+    color: #@base0C@;
 }
 
 #wireplumber {
-    color: #a991eb;
+    color: #@base0E@;
 }
 
 #clock {
-    color: #747495;
+    color: #@base05@;
 }

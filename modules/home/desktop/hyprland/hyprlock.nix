@@ -1,5 +1,7 @@
 { config, lib, ... }: {
   config = lib.mkIf config.myModules.desktop.hyprland.enable {
+    # TODO overwrite stylix input-field
+
     programs.hyprlock = {
       enable = true;
 
@@ -9,24 +11,24 @@
           hide_cursor = true;
         };
         animations.enabled = true;
-        background = [{
-          color = "rgb(000000)";
-        }];
-        input-field = [{
-          size = "200, 50";
+        # background = [{
+        #   color = "rgb(000000)";
+        # }];
+        # input-field = [{
+        #   size = "200, 50";
 
-          font_color = "rgb(82AAFF)";
-          inner_color = "rgb(222222)";
-          outer_color = "rgb(222222)";
-          check_color = "rgb(82AAFF)";
-          fail_color = "rgb(e97a7a)";
-          outline_thickness = 1;
+        #   font_color = "rgb(82AAFF)";
+        #   inner_color = "rgb(222222)";
+        #   outer_color = "rgb(222222)";
+        #   check_color = "rgb(82AAFF)";
+        #   fail_color = "rgb(e97a7a)";
+        #   outline_thickness = 1;
 
-          fade_on_empty = true;
-          fade_timeout = 100;
-          placeholder_text = "";
-          fail_text = "";
-        }];
+        #   fade_on_empty = true;
+        #   fade_timeout = 100;
+        #   placeholder_text = "";
+        #   fail_text = "";
+        # }];
 
         animations = {
           bezier = [

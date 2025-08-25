@@ -1,0 +1,49 @@
+window {
+    margin: 0px;
+    border: 2px solid #@base0D@;
+    background-color: #@base00@;
+}
+
+#input {
+    margin: 5px;
+    color: #@base05@;
+    background-color: #@base01@;
+    border: 1px solid #@base03@;
+    /* Removes outline when text box is focused */
+    box-shadow: none;
+}
+
+#input:focus {
+    border: 1px solid #@base0D@;
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: #@base00@;
+}
+
+#outer-box {
+    margin: 5px;
+    border: none;
+    background-color: #@base00@;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+#text {
+    margin: 5px;
+    border: none;
+    color: #@base05@;
+}
+
+#entry:selected {
+    background-color: #@base02@;
+}
+
+#entry:selected #text {
+    color: #@base04@;
+}

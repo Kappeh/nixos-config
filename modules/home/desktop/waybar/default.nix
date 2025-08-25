@@ -2,12 +2,26 @@
   options.myModules.desktop.waybar.enable = lib.mkEnableOption "Enable Waybar";
 
   config = lib.mkIf config.myModules.desktop.waybar.enable {
+    stylix.targets.waybar.enable = false;
+
     home.packages = [ pkgs.waybar-mpris ];
 
     programs.waybar = {
       enable = true;
 
-      style = builtins.readFile ./style.css;
+      style = pkgs.replaceVars ./style.css {
+        base00 = config.lib.stylix.colors.base00;
+        base01 = config.lib.stylix.colors.base01;
+        base03 = config.lib.stylix.colors.base03;
+        base05 = config.lib.stylix.colors.base05;
+        base08 = config.lib.stylix.colors.base08;
+        base09 = config.lib.stylix.colors.base09;
+        base0A = config.lib.stylix.colors.base0A;
+        base0B = config.lib.stylix.colors.base0B;
+        base0C = config.lib.stylix.colors.base0C;
+        base0D = config.lib.stylix.colors.base0D;
+        base0E = config.lib.stylix.colors.base0E;
+      };
 
       settings.mainBar = {
         layer = "top";

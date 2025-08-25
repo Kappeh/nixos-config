@@ -2,6 +2,8 @@
   options.myModules.applications.browsers.librewolf.enable = lib.mkEnableOption "Enable LibreWolf";
 
   config = lib.mkIf config.myModules.applications.browsers.librewolf.enable {
+    stylix.targets.librewolf.profileNames = [ "default" ];
+
     programs.librewolf = {
       enable = true;
       profiles.default = {

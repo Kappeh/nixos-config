@@ -2,6 +2,8 @@
   options.myModules.applications.browsers.firefox.enable = lib.mkEnableOption "Enable Firefox";
 
   config = lib.mkIf config.myModules.applications.browsers.firefox.enable {
+    stylix.targets.firefox.profileNames = [ "default" ];
+
     programs.firefox = {
       enable = true;
       profiles.default = {

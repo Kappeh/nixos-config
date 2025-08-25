@@ -2,16 +2,26 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    impermanence.url = "github:nix-community/impermanence";
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    hyprland.url = "github:hyprwm/Hyprland";
+
+    impermanence.url = "github:nix-community/impermanence";
+
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -20,14 +30,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-
-    nixvim = {
-      url = "github:nix-community/nixvim";
+    stylix = {
+      url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = { nixpkgs, ... } @ inputs: {
@@ -38,6 +44,7 @@
           ./hosts/ciela/configuration.nix
           inputs.home-manager.nixosModules.default
           inputs.impermanence.nixosModules.impermanence
+          inputs.stylix.nixosModules.stylix
         ];
       };
       neri = nixpkgs.lib.nixosSystem {
@@ -46,6 +53,7 @@
           ./hosts/neri/configuration.nix
           inputs.home-manager.nixosModules.default
           inputs.impermanence.nixosModules.impermanence
+          inputs.stylix.nixosModules.stylix
         ];
       };
     };

@@ -15,7 +15,6 @@
           "editor.cursorBlinking" = "smooth";
           "editor.cursorSmoothCaretAnimation" = "on";
           "editor.find.autoFindInSelection" = "multiline";
-          "editor.fontFamily" = "Cascadia Code";
           "editor.fontLigatures" = true;
           "editor.formatOnPaste" = false;
           "editor.formatOnSave" = false;
@@ -32,7 +31,6 @@
           "update.showReleaseNotes" = false;
           "window.density.editorTabHeight" = "default";
           "workbench.activityBar.location" = "top";
-          "workbench.colorTheme" = "Calvera Dark";
           "workbench.editor.enablePreview" = false;
           "workbench.iconTheme" = "catppuccin-mocha";
           "workbench.sideBar.location" = "right";

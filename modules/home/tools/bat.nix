@@ -4,11 +4,7 @@
   config = lib.mkIf config.myModules.tools.bat.enable {
     programs.bat = {
       enable = true;
-
-      config = {
-        style = "numbers,changes,header";
-        theme = "Nord";
-      };
+      config.style = "numbers,changes,header";
     };
   };
 }

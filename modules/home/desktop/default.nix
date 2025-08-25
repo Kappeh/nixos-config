@@ -7,10 +7,8 @@
     ./wofi_power_menu/default.nix
     ./cliphist.nix
     ./dconf.nix
-    ./gtk.nix
     ./libnotify.nix
     ./mako.nix
-    ./qt.nix
     ./udiskie.nix
     ./xdg_mime.nix
   ];
@@ -26,10 +24,8 @@
       wofi_power_menu.enable = lib.mkDefault true;
       cliphist.enable = lib.mkDefault true;
       dconf.enable = lib.mkDefault true;
-      gtk.enable = lib.mkDefault true;
       libnotify.enable = lib.mkDefault true;
       mako.enable = lib.mkDefault true;
-      qt.enable = lib.mkDefault true;
       udiskie.enable = lib.mkDefault true;
       xdg_mime.enable = lib.mkDefault true;
     };
