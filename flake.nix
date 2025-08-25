@@ -18,6 +18,8 @@
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
+    nixcord.url = "github:kaylorben/nixcord";
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixvim = {
