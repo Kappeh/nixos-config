@@ -1,0 +1,49 @@
+/*
+ *  Make white actually white instead of gray
+ */
+* {
+    --white: #ffffff !important;
+}
+
+/*
+ *  Fix color of server icon badge (In voice status icon)
+ */
+html body div[class^="iconBadge"] path[d^="M12 3a1 1 0 0 0-1-1h-.06"],
+html body div[class^="iconBadge"] path[d^="M15.16 16.51c-.57.28"] {
+    fill: var(--white) !important;
+}
+
+/*
+ *  Use correct background color for mic test meter
+ */
+html body path[d^="m0 0h8v20h-8zm4"] {
+    fill: var(--base01) !important;
+}
+
+/*
+ *  Fix text color of some buttons
+ *  - "User Settings" -> "My Account" -> "Edit User Profile"
+ *  - "User Settings" -> "My Account" -> "Disable Account"
+ */
+html body .primary__6af3a,
+html body .critical-primary__6af3a,
+html body .critical-primary__6af3a:hover {
+    color: var(--white);
+}
+
+/*
+ * Fix color of "Disconnect" and "Stop Watching" button
+ */
+html body path[fill^="rgb(88,101,242)"],
+html body path[fill^="rgb(88,101,242)"] {
+    fill: var(--white) !important;
+    stroke: var(--white) !important;
+}
+
+/*
+ * Fix color of game icon (shows when sharing screens)
+ */
+html body div[class^="gameWrapper"] div[class^="icon"] {
+    color: var(--white);
+}
+
