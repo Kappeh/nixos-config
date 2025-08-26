@@ -35,7 +35,16 @@
           tab_size = 4;
         };
 
-        # opener = {};
+        opener.set-wallpaper = [{
+          run = "swww img \"$0\" -t none";
+          for = "linux";
+          desc = "Set as wallpaper";
+        }];
+
+        open.prepend_rules = [{
+          mime = "image/*";
+          use = [ "set-wallpaper" "open" ];
+        }];
 
         # open.rules = [
         #   { mime = ""; use = ""; }
