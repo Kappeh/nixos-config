@@ -3,7 +3,7 @@
     ./animations.nix
     ./binds.nix
     ./hyprlock.nix
-    ./hyprpaper.nix
+    # ./hyprpaper.nix
     ./hyprpicker.nix
     ./hyprpolkitagent.nix
     ./hyprshot.nix

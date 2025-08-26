@@ -9,6 +9,7 @@
     ./dconf.nix
     ./libnotify.nix
     ./mako.nix
+    ./swww.nix
     ./udiskie.nix
     ./xdg_mime.nix
   ];
@@ -26,6 +27,7 @@
       dconf.enable = lib.mkDefault true;
       libnotify.enable = lib.mkDefault true;
       mako.enable = lib.mkDefault true;
+      swww.enable = lib.mkDefault true;
       udiskie.enable = lib.mkDefault true;
       xdg_mime.enable = lib.mkDefault true;
     };
