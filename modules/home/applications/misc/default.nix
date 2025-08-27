@@ -2,6 +2,7 @@
   imports = [
     ./gparted.nix
     ./gqrx.nix
+    ./qmk.nix
     ./qpwgraph.nix
     ./rtl_sdr.nix
     ./via.nix
@@ -15,6 +16,7 @@
     myModules.applications.misc = {
       gparted.enable = lib.mkDefault true;
       gqrx.enable = lib.mkDefault true;
+      qmk.enable = lib.mkDefault true;
       qpwgraph.enable = lib.mkDefault true;
       rtl_sdr.enable = lib.mkDefault true;
       via.enable = lib.mkDefault true;
