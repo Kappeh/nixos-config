@@ -47,3 +47,9 @@ html body div[class^="gameWrapper"] div[class^="icon"] {
     color: var(--white);
 }
 
+/*
+ * Fix color of unread pill
+ */
+html body span[class^="unreadPill"] {
+    color: var(--white);
+}
