@@ -9,10 +9,8 @@ in
     buildInputs = with pkgs; [
       clang
       fontconfig
-      libGL
       libmysqlclient
       libpqxx
-      libxkbcommon
       lld_20
       llvmPackages_17.bintools
       mariadb
@@ -20,11 +18,17 @@ in
       rustup
       sqlite
       wasm-pack
+
       xorg.libX11
       xorg.libxcb
       xorg.libXcursor
       xorg.libXi
       xorg.libXrandr
+
+      libxkbcommon
+      wayland
+
+      libGL
     ];
     RUSTC_VERSION = channel;
     # https://github.com/rust-lang/rust-bindgen#environment-variables
