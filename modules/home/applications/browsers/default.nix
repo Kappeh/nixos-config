@@ -2,6 +2,7 @@
   imports = [
     ./firefox.nix
     ./librewolf.nix
+    ./tor_browser.nix
   ];
 
   options.myModules.applications.browsers.enable = lib.mkEnableOption "Enable browsers";
@@ -10,6 +11,7 @@
     myModules.applications.browsers = {
       firefox.enable = lib.mkDefault true;
       librewolf.enable = lib.mkDefault true;
+      tor_browser.enable = lib.mkDefault true;
     };
 
     # TODO find a better way to do these
