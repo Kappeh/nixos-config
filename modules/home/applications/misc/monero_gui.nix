@@ -8,6 +8,7 @@
       ".bitmonero"
       ".cache/monero-project"
       ".config/monero-project"
+      ".shared_ringdb"
       "Monero"
     ];
   };
