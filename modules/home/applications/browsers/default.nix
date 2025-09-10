@@ -8,12 +8,12 @@
 
   options.myModules.applications.browsers.enable = lib.mkEnableOption "Enable browsers";
 
-  config = lib.mkIf config.myModules.applications.browsers.enable {
+  config = {
     myModules.applications.browsers = {
-      firefox.enable = lib.mkDefault true;
-      librewolf.enable = lib.mkDefault true;
-      mullvad_browser.enable = lib.mkDefault true;
-      tor_browser.enable = lib.mkDefault true;
+      firefox.enable = lib.mkDefault config.myModules.applications.browsers.enable;
+      librewolf.enable = lib.mkDefault config.myModules.applications.browsers.enable;
+      mullvad_browser.enable = lib.mkDefault config.myModules.applications.browsers.enable;
+      tor_browser.enable = lib.mkDefault config.myModules.applications.browsers.enable;
     };
 
     # TODO find a better way to do these

@@ -6,10 +6,10 @@
 
   options.myModules.applications.terminals.enable = lib.mkEnableOption "Enable terminal emulators";
 
-  config = lib.mkIf config.myModules.applications.terminals.enable {
+  config = {
     myModules.applications.terminals = {
-      alacritty.enable = lib.mkDefault true;
-      kitty.enable = lib.mkDefault true;
+      alacritty.enable = lib.mkDefault config.myModules.applications.terminals.enable;
+      kitty.enable = lib.mkDefault config.myModules.applications.terminals.enable;
     };
 
     # TODO find a better way to do this

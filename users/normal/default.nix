@@ -5,7 +5,7 @@
 
   options.myModules.users.normal.enable = lib.mkEnableOption "Enable normal users";
 
-  config = lib.mkIf config.myModules.users.normal.enable {
-    myModules.users.normal.kieran.enable = lib.mkDefault true;
+  config.myModules.users.normal = {
+    kieran.enable = lib.mkDefault config.myModules.users.normal.enable;
   };
 }

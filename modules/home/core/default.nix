@@ -13,17 +13,15 @@
 
   options.myModules.core.enable = lib.mkEnableOption "Enable core";
 
-  config = lib.mkIf config.myModules.core.enable {
-    myModules.core = {
-      appimage.enable = lib.mkDefault true;
-      fontcache.enable = lib.mkDefault true;
-      gnupg.enable = lib.mkDefault true;
-      hunspell.enable = lib.mkDefault true;
-      numlock.enable = lib.mkDefault true;
-      pipewire.enable = lib.mkDefault true;
-      sops.enable = lib.mkDefault true;
-      ssh.enable = lib.mkDefault true;
-      syncthing.enable = lib.mkDefault true;
-    };
+  config.myModules.core = {
+    appimage.enable = lib.mkDefault config.myModules.core.enable;
+    fontcache.enable = lib.mkDefault config.myModules.core.enable;
+    gnupg.enable = lib.mkDefault config.myModules.core.enable;
+    hunspell.enable = lib.mkDefault config.myModules.core.enable;
+    numlock.enable = lib.mkDefault config.myModules.core.enable;
+    pipewire.enable = lib.mkDefault config.myModules.core.enable;
+    sops.enable = lib.mkDefault config.myModules.core.enable;
+    ssh.enable = lib.mkDefault config.myModules.core.enable;
+    syncthing.enable = lib.mkDefault config.myModules.core.enable;
   };
 }

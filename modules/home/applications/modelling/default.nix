@@ -6,10 +6,8 @@
 
   options.myModules.applications.modelling.enable = lib.mkEnableOption "Enable modelling applications";
 
-  config = lib.mkIf config.myModules.applications.modelling.enable {
-    myModules.applications.modelling = {
-      blender.enable = lib.mkDefault true;
-      freecad.enable = lib.mkDefault true;
-    };
+  config.myModules.applications.modelling = {
+    blender.enable = lib.mkDefault config.myModules.applications.modelling.enable;
+    freecad.enable = lib.mkDefault config.myModules.applications.modelling.enable;
   };
 }

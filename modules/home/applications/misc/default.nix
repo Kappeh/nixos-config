@@ -13,17 +13,15 @@
 
   options.myModules.applications.misc.enable = lib.mkEnableOption "Enable misc applications";
 
-  config = lib.mkIf config.myModules.applications.misc.enable {
-    myModules.applications.misc = {
-      gparted.enable = lib.mkDefault true;
-      gqrx.enable = lib.mkDefault true;
-      monero_gui.enable = lib.mkDefault true;
-      qmk.enable = lib.mkDefault true;
-      qpwgraph.enable = lib.mkDefault true;
-      rtl_sdr.enable = lib.mkDefault true;
-      via.enable = lib.mkDefault true;
-      wireshark.enable = lib.mkDefault true;
-      xarchiver.enable = lib.mkDefault true;
-    };
+  config.myModules.applications.misc = {
+    gparted.enable = lib.mkDefault config.myModules.applications.misc.enable;
+    gqrx.enable = lib.mkDefault config.myModules.applications.misc.enable;
+    monero_gui.enable = lib.mkDefault config.myModules.applications.misc.enable;
+    qmk.enable = lib.mkDefault config.myModules.applications.misc.enable;
+    qpwgraph.enable = lib.mkDefault config.myModules.applications.misc.enable;
+    rtl_sdr.enable = lib.mkDefault config.myModules.applications.misc.enable;
+    via.enable = lib.mkDefault config.myModules.applications.misc.enable;
+    wireshark.enable = lib.mkDefault config.myModules.applications.misc.enable;
+    xarchiver.enable = lib.mkDefault config.myModules.applications.misc.enable;
   };
 }

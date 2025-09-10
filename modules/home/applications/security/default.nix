@@ -6,10 +6,8 @@
 
   options.myModules.applications.security.enable = lib.mkEnableOption "Enable security applications";
 
-  config = lib.mkIf config.myModules.applications.security.enable {
-    myModules.applications.security = {
-      keepass_diff.enable = lib.mkDefault true;
-      keepassxc.enable = lib.mkDefault true;
-    };
+  config.myModules.applications.security = {
+    keepass_diff.enable = lib.mkDefault config.myModules.applications.security.enable;
+    keepassxc.enable = lib.mkDefault config.myModules.applications.security.enable;
   };
 }

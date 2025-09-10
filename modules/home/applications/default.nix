@@ -15,19 +15,17 @@
 
   options.myModules.applications.enable = lib.mkEnableOption "Enable applications";
 
-  config = lib.mkIf config.myModules.applications.enable {
-    myModules.applications = {
-      browsers.enable = lib.mkDefault true;
-      editors.enable = lib.mkDefault true;
-      emulation.enable = lib.mkDefault true;
-      file_managers.enable = lib.mkDefault true;
-      gaming.enable = lib.mkDefault true;
-      media.enable = lib.mkDefault true;
-      messaging.enable = lib.mkDefault true;
-      modelling.enable = lib.mkDefault true;
-      misc.enable = lib.mkDefault true;
-      security.enable = lib.mkDefault true;
-      terminals.enable = lib.mkDefault true;
-    };
+  config.myModules.applications = {
+    browsers.enable = lib.mkDefault config.myModules.applications.enable;
+    editors.enable = lib.mkDefault config.myModules.applications.enable;
+    emulation.enable = lib.mkDefault config.myModules.applications.enable;
+    file_managers.enable = lib.mkDefault config.myModules.applications.enable;
+    gaming.enable = lib.mkDefault config.myModules.applications.enable;
+    media.enable = lib.mkDefault config.myModules.applications.enable;
+    messaging.enable = lib.mkDefault config.myModules.applications.enable;
+    modelling.enable = lib.mkDefault config.myModules.applications.enable;
+    misc.enable = lib.mkDefault config.myModules.applications.enable;
+    security.enable = lib.mkDefault config.myModules.applications.enable;
+    terminals.enable = lib.mkDefault config.myModules.applications.enable;
   };
 }

@@ -8,12 +8,10 @@
 
   options.myModules.applications.editors.enable = lib.mkEnableOption "Enable editors";
 
-  config = lib.mkIf config.myModules.applications.editors.enable {
-    myModules.applications.editors = {
-      godot.enable = lib.mkDefault true;
-      idea.enable = lib.mkDefault true;
-      obsidian.enable = lib.mkDefault true;
-      vscodium.enable = lib.mkDefault true;
-    };
+  config.myModules.applications.editors = {
+    godot.enable = lib.mkDefault config.myModules.applications.editors.enable;
+    idea.enable = lib.mkDefault config.myModules.applications.editors.enable;
+    obsidian.enable = lib.mkDefault config.myModules.applications.editors.enable;
+    vscodium.enable = lib.mkDefault config.myModules.applications.editors.enable;
   };
 }

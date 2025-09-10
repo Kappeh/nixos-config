@@ -29,33 +29,31 @@
 
   options.myModules.tools.enable = lib.mkEnableOption "Enable tools";
 
-  config = lib.mkIf config.myModules.tools.enable {
-    myModules.tools = {
-      bat.enable = lib.mkDefault true;
-      bluetui.enable = lib.mkDefault true;
-      btdu.enable = lib.mkDefault true;
-      btop.enable = lib.mkDefault true;
-      eza.enable = lib.mkDefault true;
-      f3.enable = lib.mkDefault true;
-      fastfetch.enable = lib.mkDefault true;
-      fd.enable = lib.mkDefault true;
-      fzf_git_sh.enable = lib.mkDefault true;
-      fzf.enable = lib.mkDefault true;
-      gh.enable = lib.mkDefault true;
-      git.enable = lib.mkDefault true;
-      lf.enable = lib.mkDefault true;
-      nixvim.enable = lib.mkDefault true;
-      playerctl.enable = lib.mkDefault true;
-      pulsemixer.enable = lib.mkDefault true;
-      tldr.enable = lib.mkDefault true;
-      tmux.enable = lib.mkDefault true;
-      tree.enable = lib.mkDefault true;
-      unzip.enable = lib.mkDefault true;
-      wget.enable = lib.mkDefault true;
-      xclip.enable = lib.mkDefault true;
-      yazi.enable = lib.mkDefault true;
-      zip.enable = lib.mkDefault true;
-      zoxide.enable = lib.mkDefault true;
-    };
+  config.myModules.tools = {
+    bat.enable = lib.mkDefault config.myModules.tools.enable;
+    bluetui.enable = lib.mkDefault config.myModules.tools.enable;
+    btdu.enable = lib.mkDefault config.myModules.tools.enable;
+    btop.enable = lib.mkDefault config.myModules.tools.enable;
+    eza.enable = lib.mkDefault config.myModules.tools.enable;
+    f3.enable = lib.mkDefault config.myModules.tools.enable;
+    fastfetch.enable = lib.mkDefault config.myModules.tools.enable;
+    fd.enable = lib.mkDefault config.myModules.tools.enable;
+    fzf_git_sh.enable = lib.mkDefault config.myModules.tools.enable;
+    fzf.enable = lib.mkDefault config.myModules.tools.enable;
+    gh.enable = lib.mkDefault config.myModules.tools.enable;
+    git.enable = lib.mkDefault config.myModules.tools.enable;
+    lf.enable = lib.mkDefault config.myModules.tools.enable;
+    nixvim.enable = lib.mkDefault config.myModules.tools.enable;
+    playerctl.enable = lib.mkDefault config.myModules.tools.enable;
+    pulsemixer.enable = lib.mkDefault config.myModules.tools.enable;
+    tldr.enable = lib.mkDefault config.myModules.tools.enable;
+    tmux.enable = lib.mkDefault config.myModules.tools.enable;
+    tree.enable = lib.mkDefault config.myModules.tools.enable;
+    unzip.enable = lib.mkDefault config.myModules.tools.enable;
+    wget.enable = lib.mkDefault config.myModules.tools.enable;
+    xclip.enable = lib.mkDefault config.myModules.tools.enable;
+    yazi.enable = lib.mkDefault config.myModules.tools.enable;
+    zip.enable = lib.mkDefault config.myModules.tools.enable;
+    zoxide.enable = lib.mkDefault config.myModules.tools.enable;
   };
 }

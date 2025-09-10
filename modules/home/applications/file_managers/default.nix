@@ -5,9 +5,9 @@
 
   options.myModules.applications.file_managers.enable = lib.mkEnableOption "Enable file managers";
 
-  config = lib.mkIf config.myModules.applications.file_managers.enable {
+  config = {
     myModules.applications.file_managers = {
-      pcmanfm.enable = lib.mkDefault true;
+      pcmanfm.enable = lib.mkDefault config.myModules.applications.file_managers.enable;
     };
 
     # TODO find better way to do this

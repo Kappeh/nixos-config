@@ -7,11 +7,9 @@
 
   options.myModules.applications.enable = lib.mkEnableOption "Enable applications";
 
-  config = lib.mkIf config.myModules.applications.enable {
-    myModules.applications = {
-      gaming.enable = lib.mkDefault true;
-      media.enable = lib.mkDefault true;
-      misc.enable = lib.mkDefault true;
-    };
+  config.myModules.applications = {
+    gaming.enable = lib.mkDefault config.myModules.applications.enable;
+    media.enable = lib.mkDefault config.myModules.applications.enable;
+    misc.enable = lib.mkDefault config.myModules.applications.enable;
   };
 }

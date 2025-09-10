@@ -12,16 +12,14 @@
 
   options.myModules.applications.emulation.enable = lib.mkEnableOption "Enable emulation";
 
-  config = lib.mkIf config.myModules.applications.emulation.enable {
-    myModules.applications.emulation = {
-      cemu.enable = lib.mkDefault true;
-      citra.enable = lib.mkDefault true;
-      desmume.enable = lib.mkDefault true;
-      dolphin_emu.enable = lib.mkDefault true;
-      fceux.enable = lib.mkDefault true;
-      mgba.enable = lib.mkDefault true;
-      mupen64plus.enable = lib.mkDefault true;
-      snes9x.enable = lib.mkDefault true;
-    };
+  config.myModules.applications.emulation = {
+    cemu.enable = lib.mkDefault config.myModules.applications.emulation.enable;
+    citra.enable = lib.mkDefault config.myModules.applications.emulation.enable;
+    desmume.enable = lib.mkDefault config.myModules.applications.emulation.enable;
+    dolphin_emu.enable = lib.mkDefault config.myModules.applications.emulation.enable;
+    fceux.enable = lib.mkDefault config.myModules.applications.emulation.enable;
+    mgba.enable = lib.mkDefault config.myModules.applications.emulation.enable;
+    mupen64plus.enable = lib.mkDefault config.myModules.applications.emulation.enable;
+    snes9x.enable = lib.mkDefault config.myModules.applications.emulation.enable;
   };
 }

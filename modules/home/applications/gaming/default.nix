@@ -9,13 +9,11 @@
 
   options.myModules.applications.gaming.enable = lib.mkEnableOption "Enable gaming";
 
-  config = lib.mkIf config.myModules.applications.gaming.enable {
-    myModules.applications.gaming = {
-      prismlauncher.enable = lib.mkDefault true;
-      protonup_qt.enable = lib.mkDefault true;
-      r2modman.enable = lib.mkDefault true;
-      sidequest.enable = lib.mkDefault true;
-      steam.enable = lib.mkDefault true;
-    };
+  config.myModules.applications.gaming = {
+    prismlauncher.enable = lib.mkDefault config.myModules.applications.gaming.enable;
+    protonup_qt.enable = lib.mkDefault config.myModules.applications.gaming.enable;
+    r2modman.enable = lib.mkDefault config.myModules.applications.gaming.enable;
+    sidequest.enable = lib.mkDefault config.myModules.applications.gaming.enable;
+    steam.enable = lib.mkDefault config.myModules.applications.gaming.enable;
   };
 }

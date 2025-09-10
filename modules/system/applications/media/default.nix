@@ -5,7 +5,7 @@
 
   options.myModules.applications.media.enable = lib.mkEnableOption "Enable media applications";
 
-  config = lib.mkIf config.myModules.applications.media.enable {
-    myModules.applications.media.obs_studio.enable = lib.mkDefault true;
+  config.myModules.applications.media = {
+    obs_studio.enable = lib.mkDefault config.myModules.applications.media.enable;
   };
 }

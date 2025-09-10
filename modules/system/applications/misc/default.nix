@@ -10,14 +10,12 @@
 
   options.myModules.applications.misc.enable = lib.mkEnableOption "Enable misc applications";
 
-  config = lib.mkIf config.myModules.applications.misc.enable {
-    myModules.applications.misc = {
-      droidcam.enable = lib.mkDefault true;
-      qmk.enable = lib.mkDefault true;
-      rtl_sdr.enable = lib.mkDefault true;
-      via.enable = lib.mkDefault true;
-      wireshark.enable = lib.mkDefault true;
-      xmrig.enable = lib.mkDefault true;
-    };
+  config.myModules.applications.misc = {
+    droidcam.enable = lib.mkDefault config.myModules.applications.misc.enable;
+    qmk.enable = lib.mkDefault config.myModules.applications.misc.enable;
+    rtl_sdr.enable = lib.mkDefault config.myModules.applications.misc.enable;
+    via.enable = lib.mkDefault config.myModules.applications.misc.enable;
+    wireshark.enable = lib.mkDefault config.myModules.applications.misc.enable;
+    xmrig.enable = lib.mkDefault config.myModules.applications.misc.enable;
   };
 }

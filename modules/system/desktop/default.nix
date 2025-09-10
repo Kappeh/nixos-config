@@ -8,14 +8,14 @@
 
   options.myModules.desktop.enable = lib.mkEnableOption "Enable desktop";
 
-  config = lib.mkIf config.myModules.desktop.enable {
+  config = {
     myModules.desktop = {
-      dconf.enable = lib.mkDefault true;
-      greetd.enable = lib.mkDefault true;
-      hyprland.enable = lib.mkDefault true;
-      udisks.enable = lib.mkDefault true;
+      dconf.enable = lib.mkDefault config.myModules.desktop.enable;
+      greetd.enable = lib.mkDefault config.myModules.desktop.enable;
+      hyprland.enable = lib.mkDefault config.myModules.desktop.enable;
+      udisks.enable = lib.mkDefault config.myModules.desktop.enable;
     };
 
-    xdg.terminal-exec.enable = true;
+    xdg.terminal-exec.enable = config.myModules.desktop.enable;
   };
 }

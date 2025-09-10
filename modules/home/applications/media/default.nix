@@ -14,18 +14,16 @@
 
   options.myModules.applications.media.enable = lib.mkEnableOption "Enable media applications";
 
-  config = lib.mkIf config.myModules.applications.media.enable {
-    myModules.applications.media = {
-      davinci_resolve.enable = lib.mkDefault true;
-      easyeffects.enable = lib.mkDefault true;
-      feh.enable = lib.mkDefault true;
-      feishin.enable = lib.mkDefault true;
-      freetube.enable = lib.mkDefault true;
-      gimp.enable = lib.mkDefault true;
-      jellyfin_media_player.enable = lib.mkDefault true;
-      libreoffice.enable = lib.mkDefault true;
-      obs_studio.enable = lib.mkDefault true;
-      vlc.enable = lib.mkDefault true;
-    };
+  config.myModules.applications.media = {
+    davinci_resolve.enable = lib.mkDefault config.myModules.applications.media.enable;
+    easyeffects.enable = lib.mkDefault config.myModules.applications.media.enable;
+    feh.enable = lib.mkDefault config.myModules.applications.media.enable;
+    feishin.enable = lib.mkDefault config.myModules.applications.media.enable;
+    freetube.enable = lib.mkDefault config.myModules.applications.media.enable;
+    gimp.enable = lib.mkDefault config.myModules.applications.media.enable;
+    jellyfin_media_player.enable = lib.mkDefault config.myModules.applications.media.enable;
+    libreoffice.enable = lib.mkDefault config.myModules.applications.media.enable;
+    obs_studio.enable = lib.mkDefault config.myModules.applications.media.enable;
+    vlc.enable = lib.mkDefault config.myModules.applications.media.enable;
   };
 }
