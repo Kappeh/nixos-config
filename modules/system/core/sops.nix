@@ -3,7 +3,7 @@
 
   config = lib.mkIf config.myModules.core.sops.enable {
     sops = {
-      defaultSopsFile = ../../../sops/secrets.yaml;
+      defaultSopsFile = ../../../secrets/secrets.yaml;
       defaultSopsFormat = "yaml";
       age.keyFile = "/persist/system/root/.config/sops/age/keys.txt";
       secrets."users/kieran/hashedPassword".neededForUsers = true;
