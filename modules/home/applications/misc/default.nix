@@ -2,6 +2,7 @@
   imports = [
     ./gparted.nix
     ./gqrx.nix
+    ./monero_gui.nix
     ./qmk.nix
     ./qpwgraph.nix
     ./rtl_sdr.nix
@@ -16,6 +17,7 @@
     myModules.applications.misc = {
       gparted.enable = lib.mkDefault true;
       gqrx.enable = lib.mkDefault true;
+      monero_gui.enable = lib.mkDefault true;
       qmk.enable = lib.mkDefault true;
       qpwgraph.enable = lib.mkDefault true;
       rtl_sdr.enable = lib.mkDefault true;
