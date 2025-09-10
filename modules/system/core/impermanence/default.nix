@@ -1,8 +1,10 @@
 { config, lib, ... }: {
   options.myModules.core.impermanence.enable = lib.mkEnableOption "Enable impermanence";
 
-  config =  lib.mkIf config.myModules.core.impermanence.enable {
-    boot.initrd.postDeviceCommands = lib.mkAfter (builtins.readFile ./rollback.sh);
+  config = {
+    boot.initrd.postDeviceCommands = lib.mkIf config.myModules.core.impermanence.enable (
+      lib.mkAfter (builtins.readFile ./rollback.sh)
+    );
 
     fileSystems = {
       "/backup".neededForBoot = true;

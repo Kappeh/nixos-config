@@ -8,12 +8,10 @@
     };
 
     home = lib.mkIf config.myModules.core.pipewire.enable {
-      persistence = lib.mkIf osConfig.myModules.core.impermanence.enable {
-        "/persist/home/${config.home.username}".directories = [
-          ".config/pulse" # I do not know whether this needs to stick around or not
-          ".local/state/wireplumber"
-        ];
-      };
+      persistence."/persist/home/${config.home.username}".directories = [
+        ".config/pulse" # I do not know whether this needs to stick around or not
+        ".local/state/wireplumber"
+      ];
     };
   };
 }

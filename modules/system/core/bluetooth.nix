@@ -13,13 +13,11 @@
       };
     };
 
-    environment.persistence = lib.mkIf config.myModules.core.impermanence.enable {
-      "/persist/system".directories = [
-        {
-          directory = "/var/lib/bluetooth";
-          mode = "0700";
-        }
-      ];
-    };
+    environment.persistence."/persist/system".directories = [
+      {
+        directory = "/var/lib/bluetooth";
+        mode = "0700";
+      }
+    ];
   };
 }

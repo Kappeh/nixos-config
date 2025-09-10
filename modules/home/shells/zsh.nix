@@ -1,4 +1,4 @@
-{ config, lib, osConfig, pkgs, ... }: {
+{ config, lib, pkgs, ... }: {
   options.myModules.shells.zsh.enable = lib.mkEnableOption "Enable Zsh";
 
   config = lib.mkIf config.myModules.shells.zsh.enable {
@@ -49,8 +49,6 @@
       };
     };
 
-    home.persistence = lib.mkIf osConfig.myModules.core.impermanence.enable {
-      "/persist/home/${config.home.username}".directories = [ ".local/share/zsh" ];
-    };
+    home.persistence."/persist/home/${config.home.username}".directories = [ ".local/share/zsh" ];
   };
 }

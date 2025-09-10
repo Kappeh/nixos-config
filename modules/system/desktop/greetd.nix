@@ -26,16 +26,14 @@ in {
       };
     };
 
-    environment.persistence = lib.mkIf config.myModules.core.impermanence.enable {
-      "/persist/system".directories = [
-        {
-          # Used to remember the most recent user and session
-          directory = "/var/cache/tuigreet";
-          user = "greeter";
-          group = "greeter";
-          mode = "u=rwx,g=rx,o=rx";
-        }
-      ];
-    };
+    environment.persistence."/persist/system".directories = [
+      {
+        # Used to remember the most recent user and session
+        directory = "/var/cache/tuigreet";
+        user = "greeter";
+        group = "greeter";
+        mode = "u=rwx,g=rx,o=rx";
+      }
+    ];
   };
 }

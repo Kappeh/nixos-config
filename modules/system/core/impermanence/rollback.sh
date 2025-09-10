@@ -1,9 +1,9 @@
 mkdir /btrfs_tmp
 mount /dev/mapper/crypt1 /btrfs_tmp
 if [[ -e /btrfs_tmp/root ]]; then
-mkdir -p /btrfs_tmp/old_roots
-timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%-d_%H:%M:%S")
-mv /btrfs_tmp/root "/btrfs_tmp/old_roots/$timestamp"
+    mkdir -p /btrfs_tmp/old_roots
+    timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%-d_%H:%M:%S")
+    mv /btrfs_tmp/root "/btrfs_tmp/old_roots/$timestamp"
 fi
 
 delete_subvolume_recursively() {
@@ -15,11 +15,11 @@ delete_subvolume_recursively() {
 }
 
 for i in $(find /btrfs_tmp/old_roots/ -maxdepth 1 -mtime +30); do
-delete_subvolume_recursively "$i"
+    delete_subvolume_recursively "$i"
 done
 
 if [[ -e /btrfs_tmp/root_blank ]]; then
-delete_subvolume_recursively /btrfs_tmp/root_blank
+    delete_subvolume_recursively /btrfs_tmp/root_blank
 fi
 
 btrfs subvolume create /btrfs_tmp/root

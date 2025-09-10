@@ -1,4 +1,4 @@
-{ config, osConfig, ... }: {
+{ config, ... }: {
   imports = [
     ./applications/default.nix
     ./core/default.nix

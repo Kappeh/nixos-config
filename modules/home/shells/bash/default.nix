@@ -1,4 +1,4 @@
-{ config, osConfig, lib, ... }: {
+{ config, ... }: {
   config = {
     programs.bash = {
       enable = true;
@@ -12,8 +12,6 @@
       initExtra = builtins.readFile ./initExtra.sh;
     };
 
-    home.persistence = lib.mkIf osConfig.myModules.core.impermanence.enable {
-      "/persist/home/${config.home.username}".files = [ ".bash_history" ];
-    };
+    home.persistence."/persist/home/${config.home.username}".files = [ ".bash_history" ];
   };
 }

@@ -1,4 +1,4 @@
-{ config, lib, osConfig, pkgs, ... }: {
+{ config, lib, pkgs, ... }: {
   options.myModules.applications.messaging.element_desktop.enable = lib.mkEnableOption "Enable Element";
 
   # Does not work due to electron bug
@@ -12,9 +12,7 @@
     home = {
       packages = [ pkgs.element-desktop ];
 
-      persistence = lib.mkIf osConfig.myModules.core.impermanence.enable {
-        "/persist/home/${config.home.username}".directories = [ ".config/Element" ];
-      };
+      persistence."/persist/home/${config.home.username}".directories = [ ".config/Element" ];
     };
   };
 }

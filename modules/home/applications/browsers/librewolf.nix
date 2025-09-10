@@ -1,4 +1,4 @@
-{ config, inputs, lib, osConfig, ... }: {
+{ config, inputs, lib, ... }: {
   options.myModules.applications.browsers.librewolf.enable = lib.mkEnableOption "Enable LibreWolf";
 
   config = lib.mkIf config.myModules.applications.browsers.librewolf.enable {
@@ -432,8 +432,6 @@
       };
     };
 
-    home.persistence = lib.mkIf osConfig.myModules.core.impermanence.enable {
-      "/persist/home/${config.home.username}".directories = [ ".librewolf" ];
-    };
+    home.persistence."/persist/home/${config.home.username}".directories = [ ".librewolf" ];
   };
 }

@@ -1,4 +1,4 @@
-{ config, lib, osConfig, ... }: {
+{ config, lib, ... }: {
   options.myModules.applications.media.easyeffects.enable = lib.mkEnableOption "Enable EasyEffects";
 
   config = lib.mkIf config.myModules.applications.media.easyeffects.enable {
@@ -7,8 +7,6 @@
       preset = "Default";
     };
 
-    home.persistence = lib.mkIf osConfig.myModules.core.impermanence.enable {
-      "/persist/home/${config.home.username}".directories = [ ".config/easyeffects" ];
-    };
+    home.persistence."/persist/home/${config.home.username}".directories = [ ".config/easyeffects" ];
   };
 }

@@ -1,4 +1,4 @@
-{ config, lib, osConfig, ... }: {
+{ config, lib, ... }: {
   options.myModules.applications.messaging.nixcord.enable = lib.mkEnableOption "Enable Nixcord";
 
   config = lib.mkIf config.myModules.applications.messaging.nixcord.enable {
@@ -6,8 +6,6 @@
 
     programs.nixcord.enable = true;
 
-    home.persistence = lib.mkIf osConfig.myModules.core.impermanence.enable {
-      "/persist/home/${config.home.username}".directories = [ ".config/discord" ];
-    };
+    home.persistence."/persist/home/${config.home.username}".directories = [ ".config/discord" ];
   };
 }

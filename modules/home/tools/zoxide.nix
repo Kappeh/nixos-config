@@ -1,4 +1,4 @@
-{ config, lib, osConfig, ... }: {
+{ config, lib, ... }: {
   options.myModules.tools.zoxide.enable = lib.mkEnableOption "Enable zoxide";
 
   config = lib.mkIf config.myModules.tools.zoxide.enable {
@@ -11,8 +11,6 @@
       enableZshIntegration = true;
     };
 
-    home.persistence = lib.mkIf osConfig.myModules.core.impermanence.enable {
-      "/persist/home/${config.home.username}".directories = [ ".local/share/zoxide" ];
-    };
+    home.persistence."/persist/home/${config.home.username}".directories = [ ".local/share/zoxide" ];
   };
 }

@@ -1,9 +1,7 @@
-{ config, osConfig, lib, pkgs, ... }: {
+{ config, pkgs, ... }: {
   config.home = {
     packages = [ pkgs.conda ];
 
-    persistence = lib.mkIf osConfig.myModules.core.impermanence.enable {
-      "/persist/home/${config.home.username}".directories = [ ".conda" ];
-    };
+    persistence."/persist/home/${config.home.username}".directories = [ ".conda" ];
   };
 }

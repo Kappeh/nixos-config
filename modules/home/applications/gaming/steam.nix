@@ -10,19 +10,17 @@
     home = lib.mkIf config.myModules.applications.gaming.steam.enable {
       packages = [ pkgs.steam ];
 
-      persistence = lib.mkIf osConfig.myModules.core.impermanence.enable {
-        "/storage/home/${config.home.username}".directories = [
-          { directory = ".local/share/Steam"; method = "symlink"; }
-          { directory = ".local/share/Factorio"; method = "symlink"; }
-          { directory = ".factorio"; }
-          { directory = ".local/share/FasterThanLight"; method = "symlink"; }
-          { directory = ".local/share/IntoTheBreach"; method = "symlink"; }
-          { directory = ".local/share/Terraria"; }
-          { directory = ".local/share/Daedalic Entertainment GmbH"; method = "symlink"; }
-          { directory = ".config/UNDERTALE"; method = "symlink"; }
-          { directory = ".config/unity3d/Landfall/Haste"; method = "symlink"; }
-        ];
-      };
+      persistence."/storage/home/${config.home.username}".directories = [
+        { directory = ".local/share/Steam"; method = "symlink"; }
+        { directory = ".local/share/Factorio"; method = "symlink"; }
+        { directory = ".factorio"; }
+        { directory = ".local/share/FasterThanLight"; method = "symlink"; }
+        { directory = ".local/share/IntoTheBreach"; method = "symlink"; }
+        { directory = ".local/share/Terraria"; }
+        { directory = ".local/share/Daedalic Entertainment GmbH"; method = "symlink"; }
+        { directory = ".config/UNDERTALE"; method = "symlink"; }
+        { directory = ".config/unity3d/Landfall/Haste"; method = "symlink"; }
+      ];
     };
   };
 }

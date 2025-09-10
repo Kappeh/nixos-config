@@ -7,13 +7,11 @@
       storageDriver = "btrfs";
     };
 
-    environment.persistence = lib.mkIf config.myModules.core.impermanence.enable {
-      "/persist/system".directories = [
-        {
-          directory = "/var/lib/docker";
-          mode = "0710";
-        }
-      ];
-    };
+    environment.persistence."/persist/system".directories = [
+      {
+        directory = "/var/lib/docker";
+        mode = "0710";
+      }
+    ];
   };
 }

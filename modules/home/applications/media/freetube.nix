@@ -1,4 +1,4 @@
-{ config, lib, osConfig, ... }: {
+{ config, lib, ... }: {
   options.myModules.applications.media.freetube.enable = lib.mkEnableOption "Enable FreeTube";
 
   config = lib.mkIf config.myModules.applications.media.freetube.enable {
@@ -25,11 +25,9 @@
       };
     };
 
-    home.persistence = lib.mkIf osConfig.myModules.core.impermanence.enable {
-      "/persist/home/${config.home.username}".files = [
-        ".config/FreeTube/playlists.db"
-        ".config/FreeTube/profiles.db"
-      ];
-    };
+    home.persistence."/persist/home/${config.home.username}".files = [
+      ".config/FreeTube/playlists.db"
+      ".config/FreeTube/profiles.db"
+    ];
   };
 }

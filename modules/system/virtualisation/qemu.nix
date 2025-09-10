@@ -13,13 +13,11 @@
     # TODO move into groups/libvirtd.nix
     users.groups.libvirtd.members = [ "kieran" ];
 
-    environment.persistence = lib.mkIf config.myModules.core.impermanence.enable {
-      "/persist/system".directories = [
-        {
-          directory = "/var/lib/libvirt";
-          mode = "0755";
-        }
-      ];
-    };
+    environment.persistence."/persist/system".directories = [
+      {
+        directory = "/var/lib/libvirt";
+        mode = "0755";
+      }
+    ];
   };
 }

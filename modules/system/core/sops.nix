@@ -9,8 +9,6 @@
       secrets."users/kieran/hashedPassword".neededForUsers = true;
     };
 
-    environment = lib.mkIf config.myModules.core.impermanence.enable {
-      persistence."/persist/system".files = [ "/root/.config/sops/age/keys.txt" ];
-    };
+    environment.persistence."/persist/system".files = [ "/root/.config/sops/age/keys.txt" ];
   };
 }

@@ -1,4 +1,4 @@
-{ config, inputs, lib, osConfig, ... }: {
+{ config, inputs, lib, ... }: {
   options.myModules.applications.browsers.firefox.enable = lib.mkEnableOption "Enable Firefox";
 
   config = lib.mkIf config.myModules.applications.browsers.firefox.enable {
@@ -335,11 +335,9 @@
       };
     };
 
-    home.persistence = lib.mkIf osConfig.myModules.core.impermanence.enable {
-      "/persist/home/${config.home.username}".directories = [
-        ".mozilla/firefox/default/"
-        ".mozilla/native-messaging-hosts"
-      ];
-    };
+    home.persistence."/persist/home/${config.home.username}".directories = [
+      ".mozilla/firefox/default/"
+      ".mozilla/native-messaging-hosts"
+    ];
   };
 }
