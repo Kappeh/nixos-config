@@ -9,5 +9,8 @@
       path = "/root/.config/xmrig.json";
       sopsFile = ../../../../secrets/xmrig.json;
     };
+
+    # Disable systemd service, it should be started manually
+    systemd.services.xmrig.wantedBy = lib.mkForce [];
   };
 }
