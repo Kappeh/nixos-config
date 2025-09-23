@@ -16,21 +16,21 @@
           "wheel"           # Enable `sudo` for user
         ]
         # Grant access to duplicati files
-        (lib.lists.optional config.myModules.users.system.duplicati.enable "duplicati")
+        (lib.optional config.myModules.users.system.duplicati.enable "duplicati")
         # Allow gamemode user daemon to change CPU governor or niceness
-        (lib.lists.optional config.myModules.applications.gaming.gamemode.enable "gamemode")
+        (lib.optional config.myModules.applications.gaming.gamemode.enable "gamemode")
         # Grant access to illegal crime minecraft server files
-        (lib.lists.optional config.myModules.users.system.illegal_crime_mc.enable "illegal_crime_mc")
+        (lib.optional config.myModules.users.system.illegal_crime_mc.enable "illegal_crime_mc")
         # Grant password-less access to the RW daemon socket
-        (lib.lists.optional config.myModules.virtualisation.qemu.enable "libvirtd")
+        (lib.optional config.myModules.virtualisation.qemu.enable "libvirtd")
         # Enable network manager for user
-        (lib.lists.optional config.myModules.core.networkmanager.enable "networkmanager")
+        (lib.optional config.myModules.core.networkmanager.enable "networkmanager")
         # Grant access to shared files used by services
-        (lib.lists.optional config.myModules.users.system.services.enable "services")
+        (lib.optional config.myModules.users.system.services.enable "services")
         # Grant access to synapse files
-        (lib.lists.optional config.myModules.users.system.synapse.enable "synapse")
+        (lib.optional config.myModules.users.system.synapse.enable "synapse")
         # Grant access to syncthing files
-        (lib.lists.optional config.myModules.users.system.syncthing.enable "syncthing")
+        (lib.optional config.myModules.users.system.syncthing.enable "syncthing")
       ];
     };
 
