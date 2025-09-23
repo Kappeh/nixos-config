@@ -16,7 +16,7 @@
       members = builtins.concatLists [
         [ "illegal_crime_mc" ]
 
-        (lib.lists.optional config.myModules.users.normal.kieran.enable "kieran")
+        (lib.optional config.myModules.users.normal.kieran.enable "kieran")
       ];
     };
   };

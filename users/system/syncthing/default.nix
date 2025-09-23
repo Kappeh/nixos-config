@@ -14,7 +14,7 @@
     groups.syncthing = {
       gid = 501;
       members = builtins.concatLists [
-        (lib.lists.optional config.myModules.users.normal.kieran.enable "kieran")
+        (lib.optional config.myModules.users.normal.kieran.enable "kieran")
       ];
     };
   };

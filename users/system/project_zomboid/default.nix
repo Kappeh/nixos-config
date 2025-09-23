@@ -11,7 +11,7 @@
       shell = null;
       extraGroups = builtins.concatLists [
         # Grant access to shared files used by services
-        (lib.lists.optional config.myModules.users.system.services.enable "services")
+        (lib.optional config.myModules.users.system.services.enable "services")
       ];
     };
 

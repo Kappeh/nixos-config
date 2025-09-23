@@ -16,7 +16,7 @@
       members = builtins.concatLists [
         [ "synapse" ]
 
-        (lib.lists.optional config.myModules.users.normal.kieran.enable "kieran")
+        (lib.optional config.myModules.users.normal.kieran.enable "kieran")
       ];
     };
   };
