@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, inputs, ... }: {
   imports = [
     ./hardware-configuration.nix
 
@@ -6,7 +6,10 @@
     ./services/default.nix
     ./ssh.nix
 
-    ../common.nix
+    ../../modules/system/default.nix
+    ../../users/default.nix
+
+    inputs.sops-nix.nixosModules.sops
   ];
 
   config = {

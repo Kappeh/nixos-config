@@ -7,7 +7,10 @@
     ./services/default.nix
     ./ssh.nix
 
-    ../common.nix
+    ../../modules/system/default.nix
+    ../../users/default.nix
+
+    inputs.sops-nix.nixosModules.sops
   ];
 
   config = {
@@ -17,6 +20,7 @@
         opengl.enable = true;
         sops.enable = true;
         ssl.enable = true;
+        systemd_boot.enable = true;
       };
       shells.enable = true;
       virtualisation.docker.enable = true;

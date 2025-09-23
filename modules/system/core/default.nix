@@ -6,14 +6,18 @@
     ./home_manager.nix
     ./impermanence/default.nix
     ./libinput.nix
+    ./locale.nix
     ./logiops/default.nix
     ./networkmanager.nix
+    ./nix.nix
     ./nvidia.nix
     ./opengl.nix
     ./pipewire.nix
     ./sops.nix
     ./ssl/default.nix
     ./stylix.nix
+    ./systemd_boot.nix
+    ./vim.nix
     ./wireguard.nix
   ];
 
@@ -33,6 +37,7 @@
     pipewire.enable = lib.mkDefault config.myModules.core.enable;
     sops.enable = lib.mkDefault config.myModules.core.enable;
     ssl.enable = lib.mkDefault config.myModules.core.enable;
+    systemd_boot.enable = lib.mkDefault config.myModules.core.enable;
     wireguard.enable = lib.mkDefault config.myModules.core.enable;
   };
 }
