@@ -14,6 +14,10 @@
         hostNames = [ "ciela.illegal-crime.org" ];
         publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL47+Wnncs1VEJBCkr1vzyC1g+P3SRW1jmLhoadu3PEO ciela_initrd_host_key_ed25519";
       };
+      "leaf" = {
+        hostNames = [ "leaf.illegal-crime.org" ];
+        publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMuKy12mhjVzGb93FXgcaAARZT9bLDTte3D/AmfOkEex leaf_host_key_ed25519";
+      };
     };
   };
 }

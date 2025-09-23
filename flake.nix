@@ -49,6 +49,15 @@
           inputs.stylix.nixosModules.stylix
         ];
       };
+      leaf = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/leaf/configuration.nix
+          inputs.home-manager.nixosModules.default
+          inputs.impermanence.nixosModules.impermanence
+          inputs.stylix.nixosModules.stylix
+        ];
+      };
       neri = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [

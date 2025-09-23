@@ -46,20 +46,20 @@
     # I don't know where this came from.
     # I don't know if it is required or not.
     # TODO: Investigate.
-    systemd.tmpfiles.rules = builtins.concatLists [
-      [
-        "d /persist/home/ 0755 root root -"
-        "d /backup/home/ 0755 root root -"
-        "d /persist/system/ 0755 root root -"
-        "d /backup/system/ 0755 root root -"
-        "d /persist/system/root 0700 root root -"
-        "d /backup/system/root 0700 root root -"
-      ]
-      (lib.optionals config.myModules.users.normal.kieran.enable [
-        "d /persist/home/kieran 0700 kieran users -"
-        "d /backup/home/kieran 0700 kieran users -"
-      ])
-    ];
+    # systemd.tmpfiles.rules = builtins.concatLists [
+    #   [
+    #     "d /persist/home/ 0755 root root -"
+    #     "d /backup/home/ 0755 root root -"
+    #     "d /persist/system/ 0755 root root -"
+    #     "d /backup/system/ 0755 root root -"
+    #     "d /persist/system/root 0700 root root -"
+    #     "d /backup/system/root 0700 root root -"
+    #   ]
+    #   (lib.optionals config.myModules.users.normal.kieran.enable [
+    #     "d /persist/home/kieran 0700 kieran users -"
+    #     "d /backup/home/kieran 0700 kieran users -"
+    #   ])
+    # ];
 
     # Remove security lecture for sudo
     security.sudo.extraConfig = ''
