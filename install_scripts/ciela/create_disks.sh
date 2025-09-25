@@ -148,8 +148,8 @@ mkdir -p -m 700 /mnt/system_root/backup/home/kieran
 mkdir -p /mnt/system_root/persist/system/etc/secrets/initrd
 cp /mnt/keys/ciela_initrd_host_key_ed25519 /mnt/system_root/persist/system/etc/secrets/initrd/
 ## regular host key - used to host ssh server during normal operation
-mkdir -p /mnt/system_root/persist/etc/ssh
-cp /mnt/keys/ciela_host_key_ed25519 /mnt/system_root/persist/etc/ssh/
+mkdir -p /mnt/system_root/persist/system/etc/ssh
+cp /mnt/keys/ciela_host_key_ed25519 /mnt/system_root/persist/system/etc/ssh/
 ## root age key - used by system for managing secrets stored in config via sops
 mkdir -p /mnt/system_root/persist/system/root/.config/sops/age
 cp /mnt/keys/ciela.keys.txt /mnt/system_root/persist/system/root/.config/sops/age/keys.txt
@@ -162,8 +162,8 @@ chown -R 1000:100 /mnt/system_root/persist/home/kieran # kieran:users
 mkdir -p /persist/system/etc/secrets/initrd
 cp /mnt/keys/ciela_initrd_host_key_ed25519 /persist/system/etc/secrets/initrd/
 ### regular host key
-mkdir -p /persist/etc/ssh
-cp /mnt/keys/ciela_host_key_ed25519 /persist/etc/ssh/
+mkdir -p /persist/system/etc/ssh
+cp /mnt/keys/ciela_host_key_ed25519 /persist/system/etc/ssh/
 ### root age key
 mkdir -p /persist/system/root/.config/sops/age
 cp /mnt/keys/ciela.keys.txt /persist/system/root/.config/sops/age/keys.txt

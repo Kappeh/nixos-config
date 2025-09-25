@@ -12,7 +12,7 @@
       hostKeys = [
         {
           comment = "leaf_host_key_ed25519";
-          path = "/persist/etc/ssh/leaf_host_key_ed25519";
+          path = "/persist/system/etc/ssh/leaf_host_key_ed25519";
           type = "ed25519";
         }
       ];

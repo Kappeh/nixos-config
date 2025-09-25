@@ -12,7 +12,7 @@
       hostKeys = [
         {
           comment = "ciela_host_key_ed25519";
-          path = "/persist/etc/ssh/ciela_host_key_ed25519";
+          path = "/persist/system/etc/ssh/ciela_host_key_ed25519";
           type = "ed25519";
         }
       ];
