@@ -1,6 +1,7 @@
 { config, lib, ... }: {
   imports = [
     ./duplicati/default.nix
+    ./freshrss/default.nix
     ./illegal_crime_mc/default.nix
     ./jellyfin/default.nix
     ./navidrome/default.nix
@@ -14,6 +15,7 @@
 
   config.myModules.users.system = {
     duplicati.enable = lib.mkDefault config.myModules.users.system.enable;
+    freshrss.enable = lib.mkDefault config.myModules.users.system.enable;
     illegal_crime_mc.enable = lib.mkDefault config.myModules.users.system.enable;
     jellyfin.enable = lib.mkDefault config.myModules.users.system.enable;
     navidrome.enable = lib.mkDefault config.myModules.users.system.enable;

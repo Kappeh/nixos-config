@@ -17,6 +17,8 @@
         ]
         # Grant access to duplicati files
         (lib.optional config.myModules.users.system.duplicati.enable "duplicati")
+        # Grant access to FreshRSS files
+        (lib.optional config.myModules.users.system.freshrss.enable "freshrss")
         # Allow gamemode user daemon to change CPU governor or niceness
         (lib.optional config.myModules.applications.gaming.gamemode.enable "gamemode")
         # Grant access to illegal crime minecraft server files
