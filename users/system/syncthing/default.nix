@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{ config, lib, pkgs, ... }: {
   options.myModules.users.system.syncthing.enable = lib.mkEnableOption "Enable syncthing user and group";
 
   config.users = lib.mkIf config.myModules.users.system.syncthing.enable {
@@ -8,7 +8,7 @@
       isNormalUser = false;
       isSystemUser = true;
       useDefaultShell = false;
-      shell = null;
+      shell = pkgs.shadow;
     };
 
     groups.syncthing = {

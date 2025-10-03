@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{ config, lib, pkgs, ... }: {
   options.myModules.users.system.illegal_crime_mc.enable = lib.mkEnableOption "Enable illegal_crime_mc user and group";
 
   config.users = lib.mkIf config.myModules.users.system.illegal_crime_mc.enable {
@@ -8,7 +8,7 @@
       isNormalUser = false;
       isSystemUser = true;
       useDefaultShell = false;
-      shell = null;
+      shell = pkgs.shadow;
     };
 
     groups.illegal_crime_mc = {

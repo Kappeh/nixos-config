@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{ config, lib, pkgs, ... }: {
   options.myModules.users.system.project_zomboid.enable = lib.mkEnableOption "Enable project_zomboid user and group";
 
   config.users = lib.mkIf config.myModules.users.system.project_zomboid.enable {
@@ -8,7 +8,7 @@
       isNormalUser = false;
       isSystemUser = true;
       useDefaultShell = false;
-      shell = null;
+      shell = pkgs.shadow;
       extraGroups = builtins.concatLists [
         # Grant access to shared files used by services
         (lib.optional config.myModules.users.system.services.enable "services")

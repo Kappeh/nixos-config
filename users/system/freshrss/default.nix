@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{ config, lib, pkgs, ... }: {
   options.myModules.users.system.freshrss.enable = lib.mkEnableOption "Enable FreshRSS user and group";
 
   config.users = lib.mkIf config.myModules.users.system.freshrss.enable {
@@ -8,7 +8,7 @@
       isNormalUser = false;
       isSystemUser = true;
       useDefaultShell = false;
-      shell = null;
+      shell = pkgs.shadow;
     };
 
     groups.freshrss = {

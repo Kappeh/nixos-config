@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{ config, lib, pkgs, ... }: {
   options.myModules.users.system.duplicati.enable = lib.mkEnableOption "Enable duplicati user and group";
 
   config.users = lib.mkIf config.myModules.users.system.duplicati.enable {
@@ -8,7 +8,7 @@
       isNormalUser = false;
       isSystemUser = true;
       useDefaultShell = false;
-      shell = null;
+      shell = pkgs.shadow;
     };
 
     groups.duplicati = {

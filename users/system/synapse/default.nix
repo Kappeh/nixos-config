@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{ config, lib, pkgs, ... }: {
   options.myModules.users.system.synapse.enable = lib.mkEnableOption "Enable synapse user and group";
 
   config.users = lib.mkIf config.myModules.users.system.synapse.enable {
@@ -8,7 +8,7 @@
       isNormalUser = false;
       isSystemUser = true;
       useDefaultShell = false;
-      shell = null;
+      shell = pkgs.shadow;
     };
 
     groups.synapse = {
