@@ -46,7 +46,7 @@
           "cpu"
           "memory"
           "disk#raid"
-          "disk#storage"
+          # "disk#storage"
           "network"
           "bluetooth"
           "wireplumber"
@@ -90,11 +90,11 @@
           tooltip = false;
         };
 
-        "disk#storage" = {
-          path = "/storage_root";
-          format = " {percentage_used}%";
-          tooltip = false;
-        };
+        # "disk#storage" = {
+        #   path = "/storage_root";
+        #   format = " {percentage_used}%";
+        #   tooltip = false;
+        # };
 
         network = {
           format-wifi = "";

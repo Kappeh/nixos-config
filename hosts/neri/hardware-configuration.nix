@@ -9,50 +9,48 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/1E75-713E";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
+    };
+
+  boot.initrd.luks.devices."crypt1".device = "/dev/disk/by-uuid/a64e8d43-54e1-4420-ade1-63d1e04b2006";
+  boot.initrd.luks.devices."crypt2".device = "/dev/disk/by-uuid/9d2c4603-4870-47f5-b70c-28a56ba30750";
+
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/f22b001b-efde-466f-8ecd-9fa199208516";
+    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
       fsType = "btrfs";
       options = [ "subvol=root" ];
     };
 
-  boot.initrd.luks.devices."crypt1".device = "/dev/disk/by-uuid/4f7ce34b-e627-40cf-b7d4-441991d37b1e";
-  boot.initrd.luks.devices."crypt2".device = "/dev/disk/by-uuid/af04631e-f7f8-41d6-b014-8b189dd973fd";
-
   fileSystems."/backup" =
-    { device = "/dev/disk/by-uuid/f22b001b-efde-466f-8ecd-9fa199208516";
+    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
       fsType = "btrfs";
       options = [ "subvol=backup" ];
     };
 
   fileSystems."/persist" =
-    { device = "/dev/disk/by-uuid/f22b001b-efde-466f-8ecd-9fa199208516";
+    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
       fsType = "btrfs";
       options = [ "subvol=persist" ];
     };
 
   fileSystems."/snapshots" =
-    { device = "/dev/disk/by-uuid/f22b001b-efde-466f-8ecd-9fa199208516";
+    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
       fsType = "btrfs";
       options = [ "subvol=snapshots" ];
     };
 
   fileSystems."/raid_root" =
-    { device = "/dev/disk/by-uuid/f22b001b-efde-466f-8ecd-9fa199208516";
+    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
       fsType = "btrfs";
-    };
-
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/9233-F9A0";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
     };
 
   fileSystems."/storage_root" =
     { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
       fsType = "btrfs";
     };
-
-  boot.initrd.luks.devices."crypt3".device = "/dev/disk/by-uuid/a64e8d43-54e1-4420-ade1-63d1e04b2006";
 
   fileSystems."/nix" =
     { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
@@ -78,7 +76,8 @@
       options = [ "subvol=swap" ];
     };
 
-  swapDevices = [ { device = "/swap/swapfile"; size = 34 * 1024; } ];
+  # swapDevices = [ { device = "/swap/swapfile"; size = 34 * 1024; } ];
+  swapDevices = [];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
