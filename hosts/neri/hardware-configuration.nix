@@ -47,21 +47,10 @@
       fsType = "btrfs";
     };
 
-  fileSystems."/storage_root" =
-    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
-      fsType = "btrfs";
-    };
-
   fileSystems."/nix" =
     { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
       fsType = "btrfs";
       options = [ "subvol=nix" ];
-    };
-
-  fileSystems."/storage" =
-    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
-      fsType = "btrfs";
-      options = [ "subvol=storage" ];
     };
 
   fileSystems."/backups" =

@@ -71,17 +71,14 @@
             directories = [
               "Apps"
               "Desktop"
+              "Documents"
               "Downloads"
               "Music"
               "Pictures"
-              "Documents"
+              "Storage"
               "Videos"
               "dev"
             ];
-          };
-          "/storage/home/${config.home.username}" = {
-            allowOther = true;
-            directories = [ "Storage" ];
           };
         };
       };

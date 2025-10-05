@@ -10,7 +10,7 @@
     home = lib.mkIf config.myModules.applications.gaming.steam.enable {
       packages = [ pkgs.steam ];
 
-      persistence."/storage/home/${config.home.username}".directories = [
+      persistence."/persist/home/${config.home.username}".directories = [
         { directory = ".local/share/Steam"; method = "symlink"; }
         { directory = ".local/share/Factorio"; method = "symlink"; }
         { directory = ".factorio"; }
