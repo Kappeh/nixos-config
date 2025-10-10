@@ -38,7 +38,7 @@
 
     home-manager.users.kieran = { config, osConfig, lib, inputs, ...}: {
       imports = [
-        ../../modules/home/default.nix
+        ../home/default.nix
         inputs.impermanence.nixosModules.home-manager.impermanence
       ];
 
