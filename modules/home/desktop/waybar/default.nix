@@ -49,6 +49,7 @@
           # "disk#storage"
           "network"
           "bluetooth"
+          "upower#controller"
           "wireplumber"
           "clock"
         ];
@@ -109,6 +110,21 @@
           format-on = "";
           format-connected = " {num_connections}";
           tooltip = false;
+        };
+
+        "upower#controller" = {
+          native-path = "/org/bluez/hci0/dev_F8_67_B9_47_30_C9";
+
+          show-icon = false;
+          # icon-size = 20;
+          tooltip = false;
+          # tooltip-spacing = 4;
+          # tooltip-padding = 4;
+
+          format = "󰊴 {percentage}";
+          # format-alt = "{percentage} {time}";
+          hide-if-empty = true;
+          on-click = "";
         };
 
         wireplumber = {

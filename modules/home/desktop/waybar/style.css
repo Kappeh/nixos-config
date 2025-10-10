@@ -56,6 +56,7 @@ window#waybar {
 #disk,
 #network,
 #bluetooth,
+#upower,
 #wireplumber,
 #clock {
     padding: 5px 10px;
@@ -110,6 +111,10 @@ window#waybar.empty #waybar-mpris {
 }
 
 #bluetooth {
+    color: #@base0C@;
+}
+
+#upower {
     color: #@base0C@;
 }
 
