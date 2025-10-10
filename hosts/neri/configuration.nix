@@ -15,6 +15,7 @@
   config = {
     myModules = {
       applications.enable = true;
+      containers.portainer.enable = true;
       core.enable = true;
       desktop.enable = true;
       shells.enable = true;

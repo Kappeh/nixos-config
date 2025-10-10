@@ -23,7 +23,7 @@
         systemd_boot.enable = true;
       };
       shells.enable = true;
-      virtualisation.docker.enable = true;
+      # virtualisation.docker.enable = true;
 
       users.system.enable = true;
     };
