@@ -15,8 +15,9 @@ window#waybar {
     padding: 5px 10px;
     margin: 5px 2.5px 8px 2.5px;
     background-color: #@base01@;
-    border: 1px solid #@base03@;
-    border-radius: 6px;
+    /* border: 1px solid #@base03@; */
+    /* border-radius: 6px; */
+    border: 0px;
     color: #@base03@;
 
     transition-property: color;
@@ -30,8 +31,9 @@ window#waybar {
     box-shadow: none;
     text-shadow: none;
     background-color: #@base01@;
-    border-bottom: 1px solid #@base03@;
-    border: 1px solid #@base03@;
+    /* border-bottom: 1px solid #@base03@; */
+    /* border: 1px solid #@base03@; */
+    border: 0px;
     background: #@base01@;
     transition: none;
 }
@@ -62,8 +64,9 @@ window#waybar {
     padding: 5px 10px;
     margin: 5px 2.5px 8px 2.5px;
     background-color: #@base01@;
-    border: 1px solid #@base03@;
-    border-radius: 6px;
+    /* border: 1px solid #@base03@; */
+    /* border-radius: 6px; */
+    border: 0px;
     color: #@base05@;
     transition-property: color;
     transition-duration: 0.5s;
@@ -89,7 +92,7 @@ window#waybar.empty #waybar-mpris {
 #waybar-mpris {
     padding: 5px 10px;
     margin: 5px 2.5px 8px 2.5px;
-    border: 1px;
+    /* border: 1px; */
     color: #@base05@;
     background-color: transparent;
 }
