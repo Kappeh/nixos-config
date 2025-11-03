@@ -11,7 +11,6 @@
         base00 = config.lib.stylix.colors.base00;
         base01 = config.lib.stylix.colors.base01;
         base02 = config.lib.stylix.colors.base02;
-        base03 = config.lib.stylix.colors.base03;
         base04 = config.lib.stylix.colors.base04;
         base05 = config.lib.stylix.colors.base05;
         base0D = config.lib.stylix.colors.base0D;

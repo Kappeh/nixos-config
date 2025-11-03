@@ -8,7 +8,8 @@ window {
     margin: 5px;
     color: #@base05@;
     background-color: #@base01@;
-    border: 1px solid #@base03@;
+    border: 1px solid #@base01@;
+    border-radius: 0px;
     /* Removes outline when text box is focused */
     box-shadow: none;
 }
