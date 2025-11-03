@@ -7,6 +7,7 @@
     ./freetube.nix
     ./gimp.nix
     ./jellyfin_media_player.nix
+    ./krita.nix
     ./libreoffice.nix
     ./obs_studio.nix
     ./vlc.nix
@@ -22,6 +23,7 @@
     freetube.enable = lib.mkDefault config.myModules.applications.media.enable;
     gimp.enable = lib.mkDefault config.myModules.applications.media.enable;
     jellyfin_media_player.enable = lib.mkDefault config.myModules.applications.media.enable;
+    krita.enable = lib.mkDefault config.myModules.applications.media.enable;
     libreoffice.enable = lib.mkDefault config.myModules.applications.media.enable;
     obs_studio.enable = lib.mkDefault config.myModules.applications.media.enable;
     vlc.enable = lib.mkDefault config.myModules.applications.media.enable;
