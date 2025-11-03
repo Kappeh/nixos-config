@@ -76,6 +76,8 @@
         "$mod, n, exec, makoctl restore"
         # Open power menu
         "$mod, p, exec, wofi-power-menu"
+        # Open calculator
+        "$mod, EQUAL, exec, qalculate-qt"
       ];
 
       bindl = [
