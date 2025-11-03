@@ -8,6 +8,7 @@
     ./mgba.nix
     ./mupen64plus.nix
     ./snes9x.nix
+    ./sudachi.nix
   ];
 
   options.myModules.applications.emulation.enable = lib.mkEnableOption "Enable emulation";
@@ -21,5 +22,6 @@
     mgba.enable = lib.mkDefault config.myModules.applications.emulation.enable;
     mupen64plus.enable = lib.mkDefault config.myModules.applications.emulation.enable;
     snes9x.enable = lib.mkDefault config.myModules.applications.emulation.enable;
+    sudachi.enable = lib.mkDefault config.myModules.applications.emulation.enable;
   };
 }
