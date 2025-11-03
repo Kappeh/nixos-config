@@ -46,6 +46,7 @@
 
       shellAliases = {
         cd = "z";
+        ns = "nix-search-tv print | fzf -i --preview 'nix-search-tv preview {}' --scheme history --layout reverse";
       };
     };
 

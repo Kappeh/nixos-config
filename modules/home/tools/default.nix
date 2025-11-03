@@ -13,6 +13,7 @@
     ./gh.nix
     ./git.nix
     ./lf.nix
+    ./nix_search_tv.nix
     ./nixvim.nix
     ./playerctl.nix
     ./pulsemixer.nix
@@ -43,6 +44,7 @@
     gh.enable = lib.mkDefault config.myModules.tools.enable;
     git.enable = lib.mkDefault config.myModules.tools.enable;
     lf.enable = lib.mkDefault config.myModules.tools.enable;
+    nix_search_tv.enable = lib.mkDefault config.myModules.tools.enable;
     nixvim.enable = lib.mkDefault config.myModules.tools.enable;
     playerctl.enable = lib.mkDefault config.myModules.tools.enable;
     pulsemixer.enable = lib.mkDefault config.myModules.tools.enable;
