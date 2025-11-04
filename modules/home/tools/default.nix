@@ -12,6 +12,7 @@
     ./fzf.nix
     ./gh.nix
     ./git.nix
+    ./lazygit.nix
     ./lf.nix
     ./nix_search_tv.nix
     ./nixvim.nix
@@ -43,6 +44,7 @@
     fzf.enable = lib.mkDefault config.myModules.tools.enable;
     gh.enable = lib.mkDefault config.myModules.tools.enable;
     git.enable = lib.mkDefault config.myModules.tools.enable;
+    lazygit.enable = lib.mkDefault config.myModules.tools.enable;
     lf.enable = lib.mkDefault config.myModules.tools.enable;
     nix_search_tv.enable = lib.mkDefault config.myModules.tools.enable;
     nixvim.enable = lib.mkDefault config.myModules.tools.enable;
