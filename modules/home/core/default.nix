@@ -5,6 +5,7 @@
     ./gnupg.nix
     ./hunspell.nix
     ./numlock.nix
+    ./nvidia.nix
     ./pipewire.nix
     ./sops.nix
     ./ssh.nix
@@ -19,6 +20,7 @@
     gnupg.enable = lib.mkDefault config.myModules.core.enable;
     hunspell.enable = lib.mkDefault config.myModules.core.enable;
     numlock.enable = lib.mkDefault config.myModules.core.enable;
+    nvidia.enable = lib.mkDefault config.myModules.core.enable;
     pipewire.enable = lib.mkDefault config.myModules.core.enable;
     sops.enable = lib.mkDefault config.myModules.core.enable;
     ssh.enable = lib.mkDefault config.myModules.core.enable;
