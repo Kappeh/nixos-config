@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
 
     ./kieran.nix
+    ./network.nix
     ./ssh.nix
 
     ../../modules/system/default.nix
@@ -25,7 +26,6 @@
       # users.normal.kieran.enable = false;
     };
 
-    networking.hostName = "leaf"; # Define your hostname.
     time.timeZone = "Etc/UTC";    # Set your time zone.
 
     # This option defines the first version of NixOS you have installed on this particular machine,
