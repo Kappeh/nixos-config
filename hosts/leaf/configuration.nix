@@ -26,6 +26,8 @@
       # users.normal.kieran.enable = false;
     };
 
+    services.qemuGuest.enable = true;
+
     time.timeZone = "Etc/UTC";    # Set your time zone.
 
     # This option defines the first version of NixOS you have installed on this particular machine,
