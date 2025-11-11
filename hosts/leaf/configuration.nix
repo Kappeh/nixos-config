@@ -4,10 +4,10 @@
 
     ./kieran.nix
     ./network.nix
+    ./services/default.nix
     ./ssh.nix
 
     ../../modules/system/default.nix
-    # ../../users/default.nix
 
     inputs.sops-nix.nixosModules.sops
   ];
