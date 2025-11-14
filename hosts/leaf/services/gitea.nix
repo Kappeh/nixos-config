@@ -1,17 +1,17 @@
 { inputs, pkgs, ... }: {
   config.users = {
     users = {
-      gitea = {
+      gitea_server = {
         uid = 2000;
-        group = "gitea";
+        group = "gitea_server";
         isNormalUser = false;
         isSystemUser = true;
         useDefaultShell = false;
         shell = pkgs.shadow;
       };
-      act_runner = {
+      gitea_runner = {
         uid = 2001;
-        group = "act_runner";
+        group = "gitea_runner";
         extraGroups = [ "docker" ];
         isNormalUser = false;
         isSystemUser = true;
@@ -20,17 +20,19 @@
       };
     };
     groups = {
-      gitea = {
+      gitea_server = {
+        name = "gitea_server";
         gid = 2000;
         members = [
-          "gitea"
+          "gitea_server"
           "kieran"
         ];
       };
-      act_runner = {
+      gitea_runner = {
+        name = "gitea_runner";
         gid = 2001;
         members = [
-          "act_runner"
+          "gitea_runner"
           "kieran"
         ];
       };
