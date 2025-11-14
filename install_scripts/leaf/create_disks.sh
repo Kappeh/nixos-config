@@ -110,9 +110,11 @@ chown -R 1000:1000 /mnt/system_root/persist/home/kieran # kieran:kieran
 # ### target system
 mkdir -p /mnt/system_root/persist/system/etc/ssh
 cp /mnt/keylogger/keys/ssh/leaf_host_key_ed25519 /mnt/system_root/persist/system/etc/ssh/leaf_host_key_ed25519
+chmod 600 /mnt/system_root/persist/system/etc/ssh/leaf_host_key_ed25519
 # ### current system
 mkdir -p /persist/system/etc/ssh
 cp /mnt/keylogger/keys/ssh/leaf_host_key_ed25519 /persist/system/etc/ssh/leaf_host_key_ed25519
+chmod 600 /persist/system/etc/ssh/leaf_host_key_ed25519
 
 # Install
 nixos-install --root /mnt/system_root --flake .#leaf
