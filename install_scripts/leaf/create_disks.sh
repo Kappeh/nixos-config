@@ -12,37 +12,10 @@ fi
 # Hard coded device to install system to
 RAW_DISK="/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi0"
 
-# Function to prompt for password
-password_prompt() {
-    # Read password securely
-    read -s -p "Enter password: " password_from_prompt
-    echo
-    read -s -p "Confirm password: " password_from_prompt_confirm
-    echo
-
-    # Check if passwords match
-    if [ "$password_from_prompt" != "$password_from_prompt_confirm" ]; then
-        echo "Passwords do not match. Please try again."
-        return 1
-    fi
-
-    return 0
-}
-
-# Function to loop until a valid password is entered
-loop_password_prompt_until_valid() {
-    while true; do
-        password_prompt
-        if [ $? -eq 0 ]; then
-            break
-        fi
-    done
-}
-
 # Prompt user for password
-echo "Please enter a password for unlocking this device"
-loop_password_prompt_until_valid
-PASSWORD=$(echo -n $password_from_prompt)
+# echo "Please enter a password for unlocking this device"
+# loop_password_prompt_until_valid
+# PASSWORD=$(echo -n $password_from_prompt)
 
 # Partition Disks
 #
@@ -75,22 +48,17 @@ EOF
 # Wait
 sleep 1
 
-# Create encrypted btrfs filesystem
-echo -n $PASSWORD | cryptsetup luksFormat ${RAW_DISK}-part2
-echo -n $PASSWORD | cryptsetup open ${RAW_DISK}-part2 crypt
-mkfs.btrfs /dev/mapper/crypt
+# Create filesystems
+mkfs.fat -F 32 ${RAW_DISK}-part1
+mkfs.btrfs ${RAW_DISK}-part2
 
 # Create subvolumes
 mkdir -p /mnt/partition_root
-mount -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2 /dev/mapper/crypt /mnt/partition_root
-
+mount -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2 ${RAW_DISK}-part2 /mnt/partition_root
 btrfs subvolume create /mnt/partition_root/root         # The subvolume for '/', which will be cleared on every boot.
 btrfs subvolume create /mnt/partition_root/backup       # The subvolume for '/backup', containing system state and user data which should be persistent and backed up.
 btrfs subvolume create /mnt/partition_root/persist      # The subvolume for '/persist', containing system state and user data which should be persistent.
 btrfs subvolume create /mnt/partition_root/nix          # The subvolume for '/nix', which needs to be persistent but is not worth backing up, as it's trivial to reconstruct/.
-# btrfs subvolume create /mnt/partition_root/snapshots    # The subvolume for '/snapshots', which should be preserved across reboots and it used during backups.
-# btrfs subvolume create /mnt/partition_root/old_roots    # The subvolume storing the contents of root subvolume from previous boots
-
 umount /mnt/partition_root
 rmdir /mnt/partition_root
 
@@ -99,29 +67,20 @@ sleep 1
 
 # Mount subvolumes
 mkdir -p /mnt/system_root
-mount -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2,subvol=root /dev/mapper/crypt /mnt/system_root
-
+mount -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2,subvol=root ${RAW_DISK}-part2 /mnt/system_root
 mkdir -p /mnt/system_root/backup
-mount -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2,subvol=backup /dev/mapper/crypt /mnt/system_root/backup
-
+mount -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2,subvol=backup ${RAW_DISK}-part2 /mnt/system_root/backup
 mkdir -p /mnt/system_root/persist
-mount -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2,subvol=persist /dev/mapper/crypt /mnt/system_root/persist
-
+mount -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2,subvol=persist ${RAW_DISK}-part2 /mnt/system_root/persist
 mkdir -p /mnt/system_root/nix
-mount -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2,subvol=nix /dev/mapper/crypt /mnt/system_root/nix
-
-# mkdir -p /mnt/system_root/snapshots
-# mount -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2,subvol=snapshots /dev/mapper/crypt /mnt/system_root/snapshots
+mount -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2,subvol=nix ${RAW_DISK}-part2 /mnt/system_root/nix
+mkdir -p /mnt/system_root/partition_root
+mount -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2 ${RAW_DISK}-part2 /mnt/system_root/partition_root
 
 # Wait
 sleep 1
 
-# Mount root subvolume
-# mkdir -p /mnt/system_root/partition_root
-# mount -o rw,noatime,compress-force=zstd:1,ssd,discard=async,space_cache=v2 /dev/mapper/crypt /mnt/system_root/partition_root
-
 # Create and mount EFI boot
-mkfs.fat -F 32 ${RAW_DISK}-part1
 mkdir -p /mnt/system_root/boot
 mount ${RAW_DISK}-part1 /mnt/system_root/boot
 
@@ -137,7 +96,6 @@ git add ./hosts/leaf/hardware-configuration.nix
 # ### target system
 mkdir -p /mnt/system_root/persist/system/root/.config/sops/age
 cp /mnt/keylogger/keys/age/leaf.keys.txt /mnt/system_root/persist/system/root/.config/sops/age/keys.txt
-#
 # ### current system
 mkdir -p /persist/system/root/.config/sops/age
 cp /mnt/keylogger/keys/age/leaf.keys.txt /persist/system/root/.config/sops/age/keys.txt
@@ -147,7 +105,12 @@ mkdir -p /mnt/system_root/persist/home/kieran/.config/sops/age
 cp /mnt/keylogger/keys/age/kieran.keys.txt /mnt/system_root/persist/home/kieran/.config/sops/age/keys.txt
 chown -R 1000:1000 /mnt/system_root/persist/home/kieran # kieran:kieran
 
-# SSH host key
+# ## SSH host key
+#
+# ### target system
+mkdir -p /mnt/system_root/persist/system/etc/ssh
+cp /mnt/keylogger/keys/ssh/leaf_host_key_ed25519 /mnt/system_root/persist/system/etc/ssh/leaf_host_key_ed25519
+# ### current system
 mkdir -p /persist/system/etc/ssh
 cp /mnt/keylogger/keys/ssh/leaf_host_key_ed25519 /persist/system/etc/ssh/leaf_host_key_ed25519
 
