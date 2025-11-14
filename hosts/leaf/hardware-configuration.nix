@@ -10,37 +10,40 @@
 
   boot.initrd.availableKernelModules = [ "uhci_hcd" "ehci_pci" "ahci" "xhci_pci" "virtio_pci" "virtio_scsi" "usb_storage" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/5cb5db3d-e505-4f86-a66b-2fdd6a11e8cd";
+    { device = "/dev/disk/by-uuid/9a1b7eaf-4dc8-4883-9672-ae7fad712a9f";
       fsType = "btrfs";
       options = [ "subvol=root" ];
     };
 
-  boot.initrd.luks.devices."crypt".device = "/dev/disk/by-uuid/e3357fb2-58c6-45ee-b6c7-e6cec5f32e37";
-
   fileSystems."/backup" =
-    { device = "/dev/disk/by-uuid/5cb5db3d-e505-4f86-a66b-2fdd6a11e8cd";
+    { device = "/dev/disk/by-uuid/9a1b7eaf-4dc8-4883-9672-ae7fad712a9f";
       fsType = "btrfs";
       options = [ "subvol=backup" ];
     };
 
   fileSystems."/persist" =
-    { device = "/dev/disk/by-uuid/5cb5db3d-e505-4f86-a66b-2fdd6a11e8cd";
+    { device = "/dev/disk/by-uuid/9a1b7eaf-4dc8-4883-9672-ae7fad712a9f";
       fsType = "btrfs";
       options = [ "subvol=persist" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/5cb5db3d-e505-4f86-a66b-2fdd6a11e8cd";
+    { device = "/dev/disk/by-uuid/9a1b7eaf-4dc8-4883-9672-ae7fad712a9f";
       fsType = "btrfs";
       options = [ "subvol=nix" ];
     };
 
+  fileSystems."/partition_root" =
+    { device = "/dev/disk/by-uuid/9a1b7eaf-4dc8-4883-9672-ae7fad712a9f";
+      fsType = "btrfs";
+    };
+
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/8DFB-F3DC";
+    { device = "/dev/disk/by-uuid/9A14-A718";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
