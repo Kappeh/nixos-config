@@ -1,7 +1,8 @@
 { ... }: {
   imports = [
-    ./gitea.nix # 2000, 2001
-    ./ntfy.nix  # 2002, 2003
+    ./gitea.nix    # 2000, 2001
+    ./ntfy.nix     # 2002, 2003
+    ./mailrise.nix # 2004, 2005
   ];
 
   config.users.groups.deploy = {
