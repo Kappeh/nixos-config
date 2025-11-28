@@ -4,6 +4,9 @@
       uptime_kuma = {
         uid = 2009;
         group = "uptime_kuma";
+        extraGroups = [
+          "docker"
+        ];
         isNormalUser = false;
         isSystemUser = true;
         useDefaultShell = false;
