@@ -5,6 +5,7 @@
     ./mailrise.nix    # 2004, 2005
     ./ddclient.nix    # 2007, 2008
     ./uptime_kuma.nix # 2009, 2010
+    ./traefik.nix     # 2011, 2012
   ];
 
   config.users.groups.deploy = {
@@ -16,6 +17,7 @@
       "mailrise_deploy"
       "ddclient_deploy"
       "uptime_kuma_deploy"
+      "traefik_deploy"
     ];
   };
 
