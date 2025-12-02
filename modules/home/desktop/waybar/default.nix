@@ -80,7 +80,8 @@
         };
 
         memory = {
-          format = " {used:0.1f}GiB    {swapUsed:0.1f}GiB";
+          # format = " {used:0.1f}GiB    {swapUsed:0.1f}GiB";
+          format = " {used:0.1f}GiB";
           tooltip = false;
           interval = 1;
         };
