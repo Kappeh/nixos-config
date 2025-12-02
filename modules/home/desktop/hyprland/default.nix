@@ -7,6 +7,7 @@
     ./hyprpicker.nix
     ./hyprpolkitagent.nix
     ./hyprshot.nix
+    ./windowrules.nix
   ];
 
   options.myModules.desktop.hyprland.enable = lib.mkEnableOption "Enable Hyprland";
