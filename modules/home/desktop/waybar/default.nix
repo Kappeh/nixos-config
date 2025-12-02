@@ -51,6 +51,7 @@
           "bluetooth"
           "upower#controller"
           "wireplumber"
+          "gamemode"
           "clock"
         ];
 
@@ -132,6 +133,15 @@
           format = "{icon} {volume}%";
           format-muted = "";
           format-icons = [ "" "" "" ];
+          tooltip = false;
+        };
+
+        gamemode = {
+          use-icon = false;
+          icon-size = 0;
+          icon-spacing = 0;
+          format = "";
+          format-alt = "";
           tooltip = false;
         };
 
