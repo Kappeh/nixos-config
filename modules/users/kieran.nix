@@ -78,6 +78,7 @@
               "Storage"
               "Videos"
               "dev"
+              "scripts"
             ];
           };
         };
