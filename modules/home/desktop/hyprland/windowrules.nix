@@ -27,7 +27,6 @@
         "workspace 4, class:(feishin), title:(Feishin)"
 
         # Steam
-        "tile, class:(steam)"
         "workspace 10, class:(steam)"
       ];
     };
