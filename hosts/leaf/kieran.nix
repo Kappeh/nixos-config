@@ -30,7 +30,10 @@
             sops.enable = true;
             ssh.enable = true;
           };
-          shells.enable = true;
+          shells = {
+            enable = true;
+            rust.enable = false;
+          };
           tools = {
             enable = true;
             bluetui.enable = false;
