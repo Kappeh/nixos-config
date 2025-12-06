@@ -1,8 +1,6 @@
 { config, lib, ... }: {
   imports = [
     ./bash/default.nix
-    ./java/default.nix
-    ./python/default.nix
     ./rust/default.nix
     ./zsh.nix
   ];
