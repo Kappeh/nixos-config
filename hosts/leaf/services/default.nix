@@ -3,9 +3,7 @@
     ./gitea.nix          # 2000, 2001, 2006
     ./ntfy.nix           # 2002, 2003
     ./mailrise.nix       # 2004, 2005
-    ./ddclient.nix       # 2007, 2008
     ./uptime_kuma.nix    # 2009, 2010
-    ./traefik.nix        # 2011, 2012
     ./namecheap_ddns.nix # 2013, 2014
   ];
 
@@ -16,9 +14,7 @@
       "gitea_deploy"
       "ntfy_deploy"
       "mailrise_deploy"
-      "ddclient_deploy"
       "uptime_kuma_deploy"
-      "traefik_deploy"
       "namecheap_ddns_deploy"
     ];
   };
