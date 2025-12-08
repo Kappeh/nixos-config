@@ -11,7 +11,7 @@
         enable = true;
         name = "ens18";
         DHCP = "no";
-        gateway= [ "10.0.0.1" ];
+        gateway = [ "10.0.0.1" ];
         dns = [ "10.0.1.1" ];
       };
     };
