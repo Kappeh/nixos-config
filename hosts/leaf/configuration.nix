@@ -5,7 +5,7 @@
   ];
 
   config = {
-    networking.hostname = "leaf";
+    networking.hostName = "leaf";
     systemd.network.networks."10-ens18".address = [ "10.0.1.100/16" ];
 
     # This option defines the first version of NixOS you have installed on this particular machine,
