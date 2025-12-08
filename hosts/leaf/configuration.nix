@@ -1,34 +1,12 @@
-{ config, lib, pkgs, inputs, ... }: {
+{ ... }: {
   imports = [
     ./hardware-configuration.nix
-
-    ./kieran.nix
-    ./network.nix
-    ./services/default.nix
-    ./ssh.nix
-
-    ../../modules/system/default.nix
-
-    inputs.sops-nix.nixosModules.sops
+    ../../templates/server/default.nix
   ];
 
   config = {
-    myModules = {
-      core = {
-        home_manager.enable = true;
-        opengl.enable = true;
-        sops.enable = true;
-        ssl.enable = true;
-        systemd_boot.enable = true;
-      };
-      shells.enable = true;
-
-      # users.normal.kieran.enable = false;
-    };
-
-    services.qemuGuest.enable = true;
-
-    time.timeZone = "Etc/UTC";    # Set your time zone.
+    networking.hostname = "leaf";
+    systemd.network.networks."10-ens18".address = [ "10.0.1.100/16" ];
 
     # This option defines the first version of NixOS you have installed on this particular machine,
     # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

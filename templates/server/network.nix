@@ -1,7 +1,6 @@
 { config, ... }: {
   config = {
     networking = {
-      hostName = "leaf";            # Define your hostname.
       useDHCP = false;              # Disable dhcp for static ip
       nameservers = [ "10.0.1.1" ]; # Use local dns server
     };
@@ -12,7 +11,6 @@
         enable = true;
         name = "ens18";
         DHCP = "no";
-        address = [ "10.0.1.100/16" ];
         gateway= [ "10.0.0.1" ];
         dns = [ "10.0.1.1" ];
       };
