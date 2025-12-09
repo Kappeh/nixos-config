@@ -25,6 +25,7 @@
       name = "deploy";
       gid = 1999;
       members = [
+        "kieran"
         "deploy"
 
         "gitea_deploy"
