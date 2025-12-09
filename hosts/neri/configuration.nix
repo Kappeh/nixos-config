@@ -7,6 +7,17 @@
   config = {
     networking.hostName = "neri";
 
+    boot.supportedFilesystems = [ "nfs" ];
+    fileSystems."/mnt/test_nfs" = {
+      device = "omv.home.kappeh.org:/test-nfs";
+      fsType = "nfs";
+      options = [
+        "x-systemd.automount"
+        "noauto"
+        "x-systemd.idle-timeout=600"
+      ];
+    };
+
     # This option defines the first version of NixOS you have installed on this particular machine,
     # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
     #
