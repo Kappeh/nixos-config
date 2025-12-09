@@ -18,19 +18,6 @@
         useDefaultShell = false;
         shell = pkgs.shadow;
       };
-      gitea_deploy = {
-        uid = 2006;
-        group = "gitea_deploy";
-        extraGroups = [
-          "deploy"
-          "docker"
-        ];
-        openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKwqS0VecArqsgKSLxpb8wV0/Y3iaAzCR5/HMUdWAlB gitea_deploy_ed25519" ];
-        isNormalUser = false;
-        isSystemUser = true;
-        useDefaultShell = false;
-        shell = pkgs.bash;
-      };
     };
     groups = {
       gitea_server = {
@@ -49,15 +36,6 @@
           "kieran"
         ];
       };
-      gitea_deploy = {
-        name = "gitea_deploy";
-        gid = 2006;
-        members = [
-          "gitea_deploy"
-          "kieran"
-        ];
-      };
     };
   };
 }
-

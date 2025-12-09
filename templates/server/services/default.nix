@@ -1,10 +1,10 @@
 { pkgs, ... }: {
   imports = [
-    ./gitea.nix          # 2000, 2001, 2006
-    ./ntfy.nix           # 2002, 2003
-    ./mailrise.nix       # 2004, 2005
-    ./uptime_kuma.nix    # 2009, 2010
-    ./namecheap_ddns.nix # 2013, 2014
+    ./gitea.nix          # 2000, 2001
+    ./ntfy.nix           # 2002
+    ./mailrise.nix       # 2004
+    ./uptime_kuma.nix    # 2009
+    ./namecheap_ddns.nix # 2013
   ];
 
   config.users = {
@@ -20,19 +20,12 @@
       useDefaultShell = false;
       shell = pkgs.bash;
     };
-
     groups.deploy = {
       name = "deploy";
       gid = 1999;
       members = [
         "kieran"
         "deploy"
-
-        "gitea_deploy"
-        "ntfy_deploy"
-        "mailrise_deploy"
-        "uptime_kuma_deploy"
-        "namecheap_ddns_deploy"
       ];
     };
   };
