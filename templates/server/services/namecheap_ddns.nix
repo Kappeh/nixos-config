@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ pkgs, ... }: {
   config.users = {
     users.namecheap_ddns = {
       uid = 2013;

@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ pkgs, ... }: {
   config.users = {
     users.uptime_kuma = {
       uid = 2009;

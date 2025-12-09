@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ pkgs, ... }: {
   config.users = {
     users.ntfy_server = {
       uid = 2002;

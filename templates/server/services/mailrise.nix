@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ pkgs, ... }: {
   config.users = {
     users.mailrise_server = {
       uid = 2004;
