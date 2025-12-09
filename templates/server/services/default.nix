@@ -40,7 +40,7 @@
   config.environment.persistence."/persist/system".directories = [
     {
       directory = "/services";
-      user = "kieran";
+      user = "deploy";
       group = "deploy";
       mode = "u=rwx,g=rwx,o=";
     }
