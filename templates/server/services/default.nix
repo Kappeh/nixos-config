@@ -2,6 +2,7 @@
   imports = [
     ./gitea.nix          # 2000, 2001
     ./ntfy.nix           # 2002
+    ./loki.nix           # 2003
     ./mailrise.nix       # 2004
     ./uptime_kuma.nix    # 2009
     ./namecheap_ddns.nix # 2013
