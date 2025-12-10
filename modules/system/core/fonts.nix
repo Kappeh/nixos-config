@@ -12,7 +12,7 @@
       nerd-fonts.symbols-only
       noto-fonts
       noto-fonts-cjk-sans
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       proggyfonts
       font-awesome
       jetbrains-mono

@@ -4,6 +4,7 @@
     ./bluetui.nix
     ./btdu.nix
     ./btop.nix
+    ./delta.nix
     ./eza.nix
     ./f3.nix
     ./fastfetch.nix
@@ -36,6 +37,7 @@
     bluetui.enable = lib.mkDefault config.myModules.tools.enable;
     btdu.enable = lib.mkDefault config.myModules.tools.enable;
     btop.enable = lib.mkDefault config.myModules.tools.enable;
+    delta.enable = lib.mkDefault config.myModules.tools.enable;
     eza.enable = lib.mkDefault config.myModules.tools.enable;
     f3.enable = lib.mkDefault config.myModules.tools.enable;
     fastfetch.enable = lib.mkDefault config.myModules.tools.enable;

@@ -1,4 +1,4 @@
-{ config, lib, osConfig,... }: {
+{ config, inputs, lib, osConfig, pkgs, ... }: {
   imports = [
     ./animations.nix
     ./binds.nix
@@ -20,8 +20,10 @@
 
     wayland.windowManager.hyprland = lib.mkIf config.myModules.desktop.hyprland.enable {
       enable = true;
-      xwayland.enable = true;
 
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+
+      xwayland.enable = true;
       systemd.enable = true;
 
       settings = {

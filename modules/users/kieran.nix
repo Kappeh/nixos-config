@@ -41,12 +41,15 @@
         ../home/default.nix
         inputs.impermanence.nixosModules.home-manager.impermanence
       ];
-
       config = {
         myModules = {
           applications = {
             enable = osConfig.myModules.applications.enable;
             editors.idea.enable = false;
+
+            # Known issues
+            # qt5 qtwebengine is unmaintained upstream since april 2025.
+            media.jellyfin_media_player.enable = false;
 
             # Build can fail due to race condition in libsecret test
             # https://gitlab.gnome.org/GNOME/libsecret/-/issues/80

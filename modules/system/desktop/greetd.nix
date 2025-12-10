@@ -1,7 +1,7 @@
 { config, lib, pkgs, inputs, ... }:
 let
   tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
-  session = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/Hyprland";
+  session = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/start-hyprland";
   username = "kieran";
 in {
   options.myModules.desktop.greetd.enable = lib.mkEnableOption "Enable greetd";

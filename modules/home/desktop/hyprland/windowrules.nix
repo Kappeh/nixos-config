@@ -1,34 +1,32 @@
 { config, lib, ... }: {
   config = lib.mkIf config.myModules.desktop.hyprland.enable {
     wayland.windowManager.hyprland.settings = {
-      windowrulev2 = [
+      windowrule = [
         # Discord
-        "workspace 2, class:(discord)"
+        # "workspace 2, class:discord"
+        "workspace 2, match:class discord"
 
          # Balatro
-        "fullscreen, class:(steam_app_2379780)"
+        "fullscreen on, match:class steam_app_2379780"
 
         # Overwatch
-        "fullscreen, class:(steam_app_2357570)"
-        "monitor HDMI-A-1, class:(steam_app_2357570)"
+        "monitor HDMI-A-1, fullscreen on, match:class steam_app_2357570"
 
         # KeePassXC
-        "workspace 5, class:(org.keepassxc.KeePassXC)"
+        "workspace 5, match:class org.keepassxc.KeePassXC"
         # KeePassXC - Browser Access Request
-        "float, class:(org.keepassxc.KeePassXC), title:(KeePassXC - Browser Access Request)"
-        "pin, class:(org.keepassxc.KeePassXC), title:(KeePassXC - Browser Access Request)"
-        "center (1), class:(org.keepassxc.KeePassXC), title:(KeePassXC - Browser Access Request)"
-        "noinitialfocus, class:(org.keepassxc.KeePassXC), title:(KeePassXC - Browser Access Request)"
+        "float on, pin on, center on, no_initial_focus on, match:class org.keepassxc.KeePassXC, match:title KeePassXC - Browser Access Request"
 
         # ssh-askpass-fullscreen
-        "fullscreen, class:(Ssh-askpass-fullscreen), title:(ssh-askpass-fullscreen)"
+        "fullscreen on, match:class Ssh-askpass-fullscreen, match:title ssh-askpass-fullscreen"
 
         # Feishin
-        "workspace 4, class:(feishin), title:(Feishin)"
+        "workspace 4, match:class feishin, match:title Feishin"
 
         # Steam
-        "workspace 10, class:(steam)"
+        "workspace 10, match:class steam"
       ];
     };
   };
 }
+

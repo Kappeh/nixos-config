@@ -12,11 +12,11 @@
       videoDrivers = [ "nvidia" ];
 
       # This helps fix tearing of windows for Nvidia cards
-      screenSection = ''
-        Option       "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
-        Option       "AllowIndirectGLXProtocol" "off"
-        Option       "TripleBuffer" "on"
-      '';
+      #screenSection = ''
+      #  Option       "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
+      #  Option       "AllowIndirectGLXProtocol" "off"
+      #  Option       "TripleBuffer" "on"
+      #'';
     };
 
     hardware.nvidia = {
@@ -36,13 +36,21 @@
       # https://forums.developer.nvidia.com/t/undetected-ultrawide-resolution-upon-upgrade-to-driver-version-580-105-08/350969
       # package = config.boot.kernelPackages.nvidiaPackages.beta; # stable, production, latest, beta or vulkan_beta
       package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-        version = "580.76.05";
-        sha256_64bit = "sha256-IZvmNrYJMbAhsujB4O/4hzY8cx+KlAyqh7zAVNBdl/0=";
-        sha256_aarch64 = "sha256-IZvmNrYJMbAhsujB4O/4hzY8cx+KlAyqh7zAVNBdl/0=";
+        version = "580.95.05";
+        sha256_64bit = "sha256-hJ7w746EK5gGss3p8RwTA9VPGpp2lGfk5dlhsv4Rgqc=";
+        sha256_aarch64 = "sha256-hJ7w746EK5gGss3p8RwTA9VPGpp2lGfk5dlhsv4Rgqc=";
         openSha256 = "sha256-ZpuVZybW6CFN/gz9rx+UJvQ715FZnAOYfHn5jt5Z2C8=";
         settingsSha256 = "sha256-ZpuVZybW6CFN/gz9rx+UJvQ715FZnAOYfHn5jt5Z2C8=";
         persistencedSha256 = lib.fakeSha256;
       };
+      #package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+      #  version = "580.76.05";
+      #  sha256_64bit = "sha256-IZvmNrYJMbAhsujB4O/4hzY8cx+KlAyqh7zAVNBdl/0=";
+      #  sha256_aarch64 = "sha256-IZvmNrYJMbAhsujB4O/4hzY8cx+KlAyqh7zAVNBdl/0=";
+      #  openSha256 = "sha256-ZpuVZybW6CFN/gz9rx+UJvQ715FZnAOYfHn5jt5Z2C8=";
+      #  settingsSha256 = "sha256-ZpuVZybW6CFN/gz9rx+UJvQ715FZnAOYfHn5jt5Z2C8=";
+      #  persistencedSha256 = lib.fakeSha256;
+      #};
     };
   };
 }
