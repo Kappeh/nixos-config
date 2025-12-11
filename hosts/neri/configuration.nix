@@ -8,8 +8,19 @@
     networking.hostName = "neri";
 
     boot.supportedFilesystems = [ "nfs" ];
+
     fileSystems."/mnt/test_nfs" = {
       device = "omv.home.kappeh.org:/test-nfs";
+      fsType = "nfs";
+      options = [
+        "x-systemd.automount"
+        "noauto"
+        "x-systemd.idle-timeout=600"
+      ];
+    };
+
+    fileSystems."/mnt/music_library_1" = {
+      device = "omv.home.kappeh.org:/music-library-1";
       fsType = "nfs";
       options = [
         "x-systemd.automount"
