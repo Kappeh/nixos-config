@@ -61,6 +61,7 @@ window#waybar {
 #bluetooth,
 #upower,
 #wireplumber,
+#mpd,
 #gamemode,
 #clock {
     padding: 5px 10px;
@@ -82,7 +83,9 @@ window#waybar.empty #waybar-mpris {
 #network.disconnected,
 #bluetooth.disabled,
 #bluetooth.off,
-#wireplumber.muted {
+#wireplumber.muted,
+#mpd.disconnected,
+#mpd.stopped {
     color: #@base03@;
 }
 
@@ -124,6 +127,10 @@ window#waybar.empty #waybar-mpris {
 }
 
 #wireplumber {
+    color: #@base0E@;
+}
+
+#mpd {
     color: #@base0E@;
 }
 
