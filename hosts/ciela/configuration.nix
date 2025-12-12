@@ -28,6 +28,8 @@
       users.system.enable = true;
     };
 
+    boot.supportedFilesystems = [ "nfs" ];
+
     time.timeZone = "Etc/UTC"; # Set your time zone.
 
     # Do not hibernate on lid closed
