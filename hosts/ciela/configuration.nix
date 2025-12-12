@@ -31,10 +31,10 @@
     time.timeZone = "Etc/UTC"; # Set your time zone.
 
     # Do not hibernate on lid closed
-    services.logind = {
-      lidSwitch = "ignore";
-      lidSwitchDocked = "ignore";
-      lidSwitchExternalPower = "ignore";
+    services.logind.settings.Login = {
+      HandleLidSwitch = "ignore";
+      HandleLidSwitchDocked = "ignore";
+      HandleLidSwitchExternalPower = "ignore";
     };
 
     # This option defines the first version of NixOS you have installed on this particular machine,

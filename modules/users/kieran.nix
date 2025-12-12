@@ -2,38 +2,49 @@
   options.myModules.users.normal.kieran.enable = lib.mkEnableOption "Enable kieran user and group";
 
   config = lib.mkIf config.myModules.users.normal.kieran.enable {
-    users.users.kieran = {
-      uid = 1000;
-      isNormalUser = true;
-      hashedPasswordFile = config.sops.secrets."users/kieran/hashedPassword".path;
-      openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOCUJsStgjTCObc7BrzoGDE3tj633SbghefFM2wk20gX local" ];
-      shell = pkgs.zsh;
-      useDefaultShell = true;
-      extraGroups = builtins.concatLists [
-        [
-          "audio"           # Enable audio devices for user
-          "video"           # Enable video devices for user
-          "wheel"           # Enable `sudo` for user
-        ]
-        # Grant access to duplicati files
-        (lib.optional config.myModules.users.system.duplicati.enable "duplicati")
-        # Grant access to FreshRSS files
-        (lib.optional config.myModules.users.system.freshrss.enable "freshrss")
-        # Allow gamemode user daemon to change CPU governor or niceness
-        (lib.optional config.myModules.applications.gaming.gamemode.enable "gamemode")
-        # Grant access to illegal crime minecraft server files
-        (lib.optional config.myModules.users.system.illegal_crime_mc.enable "illegal_crime_mc")
-        # Grant password-less access to the RW daemon socket
-        (lib.optional config.myModules.virtualisation.qemu.enable "libvirtd")
-        # Enable network manager for user
-        (lib.optional config.myModules.core.networkmanager.enable "networkmanager")
-        # Grant access to shared files used by services
-        (lib.optional config.myModules.users.system.services.enable "services")
-        # Grant access to synapse files
-        (lib.optional config.myModules.users.system.synapse.enable "synapse")
-        # Grant access to syncthing files
-        (lib.optional config.myModules.users.system.syncthing.enable "syncthing")
-      ];
+    users = {
+      users.kieran = {
+        name = "kieran";
+        uid = 1000;
+        group = "kieran";
+        isNormalUser = true;
+        hashedPasswordFile = config.sops.secrets."users/kieran/hashedPassword".path;
+        openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOCUJsStgjTCObc7BrzoGDE3tj633SbghefFM2wk20gX local" ];
+        shell = pkgs.zsh;
+        useDefaultShell = true;
+        extraGroups = builtins.concatLists [
+          [
+            "users"
+
+            "audio"           # Enable audio devices for user
+            "video"           # Enable video devices for user
+            "wheel"           # Enable `sudo` for user
+          ]
+          # Grant access to duplicati files
+          (lib.optional config.myModules.users.system.duplicati.enable "duplicati")
+          # Grant access to FreshRSS files
+          (lib.optional config.myModules.users.system.freshrss.enable "freshrss")
+          # Allow gamemode user daemon to change CPU governor or niceness
+          (lib.optional config.myModules.applications.gaming.gamemode.enable "gamemode")
+          # Grant access to illegal crime minecraft server files
+          (lib.optional config.myModules.users.system.illegal_crime_mc.enable "illegal_crime_mc")
+          # Grant password-less access to the RW daemon socket
+          (lib.optional config.myModules.virtualisation.qemu.enable "libvirtd")
+          # Enable network manager for user
+          (lib.optional config.myModules.core.networkmanager.enable "networkmanager")
+          # Grant access to shared files used by services
+          (lib.optional config.myModules.users.system.services.enable "services")
+          # Grant access to synapse files
+          (lib.optional config.myModules.users.system.synapse.enable "synapse")
+          # Grant access to syncthing files
+          (lib.optional config.myModules.users.system.syncthing.enable "syncthing")
+        ];
+      };
+      groups.kieran = {
+        name = "kieran";
+        gid = 1000;
+        members = [ "kieran" ];
+      };
     };
 
     home-manager.users.kieran = { config, osConfig, lib, inputs, ...}: {
@@ -67,7 +78,7 @@
           stateVersion = "24.05";
         };
 
-        home.persistence = lib.mkIf osConfig.myModules.core.impermanence.enable {
+        home.persistence = {
           "/persist/home/${config.home.username}".allowOther = true;
           "/backup/home/${config.home.username}" = {
             allowOther = true;
