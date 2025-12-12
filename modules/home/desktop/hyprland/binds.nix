@@ -78,6 +78,8 @@
         "$mod, p, exec, wofi-power-menu"
         # Open calculator
         "$mod, EQUAL, exec, qalculate-qt"
+        # Open music client
+        "$mod, m, exec, kitty rmpc"
       ];
 
       bindl = [

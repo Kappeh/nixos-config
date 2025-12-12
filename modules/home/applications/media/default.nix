@@ -10,6 +10,8 @@
     ./krita.nix
     ./libreoffice.nix
     ./obs_studio.nix
+    ./picard.nix
+    ./rmpc/default.nix
     ./vlc.nix
   ];
 
@@ -26,6 +28,8 @@
     krita.enable = lib.mkDefault config.myModules.applications.media.enable;
     libreoffice.enable = lib.mkDefault config.myModules.applications.media.enable;
     obs_studio.enable = lib.mkDefault config.myModules.applications.media.enable;
+    picard.enable = lib.mkDefault config.myModules.applications.media.enable;
+    rmpc.enable = lib.mkDefault config.myModules.applications.media.enable;
     vlc.enable = lib.mkDefault config.myModules.applications.media.enable;
   };
 }

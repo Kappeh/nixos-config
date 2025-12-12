@@ -1,4 +1,4 @@
-{ ... }: {
+{ config, ... }: {
   imports = [
     ./hardware-configuration.nix
     ../../templates/desktop/default.nix
@@ -9,8 +9,12 @@
 
     boot.supportedFilesystems = [ "nfs" ];
 
-    fileSystems."/mnt/test_nfs" = {
-      device = "omv.home.kappeh.org:/test-nfs";
+    environment.persistence."/persist/system".directories = [
+      "/mnt/"
+    ];
+
+    fileSystems."/mnt/music_library_1" = {
+      device = "omv.home.kappeh.org:/export/music-library-1";
       fsType = "nfs";
       options = [
         "x-systemd.automount"
@@ -19,15 +23,34 @@
       ];
     };
 
-    fileSystems."/mnt/music_library_1" = {
-      device = "omv.home.kappeh.org:/music-library-1";
-      fsType = "nfs";
-      options = [
-        "x-systemd.automount"
-        "noauto"
-        "x-systemd.idle-timeout=600"
-      ];
+    services.mpd = {
+      enable = true;
+      user = "kieran";
+      musicDirectory = "/mnt/music_library_1/tracks";
+      playlistDirectory = "/mnt/music_library_1/playlists";
+      extraConfig = ''
+        audio_output {
+          type "pipewire"
+          name "PipeWire"
+        }
+      '';
     };
+
+    systemd.services.mpd.environment = {
+      # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
+      XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.kieran.uid}"; # User-id must match above user. MPD will look inside this directory for the PipeWire socket.
+    };
+
+    #fileSystems."/mnt/bar" = {
+    #  device = "omv.home.kappeh.org/export/music-library-1";
+    #  fsType = "nfs";
+    #  options = [
+    #    "nfsvers=4.2"
+    #    "x-systemd.automount"
+    #    "noauto"
+    #    "x-systemd.idle-timeout=600"
+    #  ];
+    #};
 
     # This option defines the first version of NixOS you have installed on this particular machine,
     # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
