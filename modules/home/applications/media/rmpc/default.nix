@@ -1,8 +1,17 @@
 { config, lib, ... }: {
   options.myModules.applications.media.rmpc.enable = lib.mkEnableOption "Enable rmpc";
 
-  config.programs.rmpc = lib.mkIf config.myModules.applications.media.rmpc.enable {
-    enable = true;
-    config = builtins.readFile ./config.ron;
+  config = lib.mkIf config.myModules.applications.media.rmpc.enable {
+    programs.rmpc = {
+      enable = true;
+      config = builtins.readFile ./config.ron;
+    };
+
+    home.file."rmpc-theme.ron" = {
+      enable = true;
+      text = builtins.readFile ./theme.ron;
+      target = ".config/rmpc/theme.ron";
+      executable = false;
+    };
   };
 }

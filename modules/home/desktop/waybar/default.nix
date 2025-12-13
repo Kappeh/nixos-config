@@ -141,11 +141,11 @@
         "mpd" = {
           format = "{stateIcon} {artist} - {title}";
           format-disconnected = "󰝛";
-          format-stopped = "󰝛";
+          format-stopped = "";
           interval = 10;
           state-icons = {
-            paused = "󰝛";
-            playing = "󰝚";
+            paused = "";
+            playing = "";
           };
           tooltip = false;
           on-click = "";

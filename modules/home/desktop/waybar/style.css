@@ -84,8 +84,7 @@ window#waybar.empty #waybar-mpris {
 #bluetooth.disabled,
 #bluetooth.off,
 #wireplumber.muted,
-#mpd.disconnected,
-#mpd.stopped {
+#mpd.disconnected {
     color: #@base03@;
 }
 

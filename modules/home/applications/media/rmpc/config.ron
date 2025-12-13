@@ -4,12 +4,12 @@
 (
     address: "127.0.0.1:6600",
     password: None,
-    theme: None,
+    theme: "~/.config/rmpc/theme.ron",
     cache_dir: None,
     on_song_change: None,
     volume_step: 5,
     max_fps: 30,
-    scrolloff: 0,
+    scrolloff: 5,
     wrap_navigation: false,
     enable_mouse: true,
     enable_config_hot_reload: true,
@@ -36,13 +36,10 @@
             ".":       VolumeUp,
             "<Tab>":   NextTab,
             "<S-Tab>": PreviousTab,
-            "1":       SwitchToTab("Queue"),
-            "2":       SwitchToTab("Directories"),
-            "3":       SwitchToTab("Artists"),
-            "4":       SwitchToTab("Album Artists"),
-            "5":       SwitchToTab("Albums"),
-            "6":       SwitchToTab("Playlists"),
-            "7":       SwitchToTab("Search"),
+            "1":       SwitchToTab("1. Queue"),
+            "2":       SwitchToTab("2. Artists"),
+            "3":       SwitchToTab("3. Playlists"),
+            "4":       SwitchToTab("4. Search"),
             "q":       Quit,
             ">":       NextTrack,
             "p":       TogglePause,
@@ -128,25 +125,13 @@
     ),
     tabs: [
         (
-            name: "Queue",
+            name: "1. Queue",
             pane: Split(
                 direction: Horizontal,
                 panes: [
                     (
                         size: "40%",
-                        pane: Split(
-                            direction: Vertical,
-                            panes: [
-                                (
-                                    size: "3",
-                                    pane: Pane(Lyrics)
-                                ),
-                                (
-                                    size: "100%",
-                                    pane: Pane(AlbumArt)
-                                ),
-                            ],
-                        ),
+                        pane: Pane(AlbumArt)
                     ),
                     (
                         size: "60%",
@@ -155,28 +140,28 @@
                 ],
             ),
         ),
+        // (
+        //     name: "Directories",
+        //     pane: Pane(Directories),
+        // ),
         (
-            name: "Directories",
-            pane: Pane(Directories),
-        ),
-        (
-            name: "Artists",
+            name: "2. Artists",
             pane: Pane(Artists),
         ),
+        // (
+        //     name: "Album Artists",
+        //     pane: Pane(AlbumArtists),
+        // ),
+        // (
+        //     name: "Albums",
+        //     pane: Pane(Albums),
+        // ),
         (
-            name: "Album Artists",
-            pane: Pane(AlbumArtists),
-        ),
-        (
-            name: "Albums",
-            pane: Pane(Albums),
-        ),
-        (
-            name: "Playlists",
+            name: "3. Playlists",
             pane: Pane(Playlists),
         ),
         (
-            name: "Search",
+            name: "4. Search",
             pane: Pane(Search),
         ),
     ],
