@@ -97,7 +97,29 @@
                 size: "2",
             ),
             (
-                pane: Pane(ProgressBar),
+                pane: Split(
+                    direction: Horizontal,
+                    panes: [
+                        (
+                            pane: Pane(ProgressBar),
+                            size: "100%",
+                        ),
+                        (
+                            pane: Pane(Property(
+                                content: [
+                                    (kind: Property(Status(Elapsed))),
+                                    (kind: Text(" / ")),
+                                    (kind: Property(Status(Duration))),
+                                    (kind: Text(" (")),
+                                    (kind: Property(Status(Bitrate))),
+                                    (kind: Text(" kbps)"))
+                                ],
+                                align: Right,
+                            )),
+                            size: "25",
+                        ),
+                    ],
+                ),
                 size: "1",
             ),
         ],

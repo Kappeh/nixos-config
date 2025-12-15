@@ -37,9 +37,10 @@
             "<Tab>":   NextTab,
             "<S-Tab>": PreviousTab,
             "1":       SwitchToTab("1. Queue"),
-            "2":       SwitchToTab("2. Artists"),
-            "3":       SwitchToTab("3. Playlists"),
-            "4":       SwitchToTab("4. Search"),
+            "2":       SwitchToTab("2. Directories"),
+            "3":       SwitchToTab("3. Artists"),
+            "4":       SwitchToTab("4. Playlists"),
+            "5":       SwitchToTab("5. Search"),
             "q":       Quit,
             ">":       NextTrack,
             "p":       TogglePause,
@@ -140,12 +141,12 @@
                 ],
             ),
         ),
-        // (
-        //     name: "Directories",
-        //     pane: Pane(Directories),
-        // ),
         (
-            name: "2. Artists",
+            name: "2. Directories",
+            pane: Pane(Directories),
+        ),
+        (
+            name: "3. Artists",
             pane: Pane(Artists),
         ),
         // (
@@ -157,11 +158,11 @@
         //     pane: Pane(Albums),
         // ),
         (
-            name: "3. Playlists",
+            name: "4. Playlists",
             pane: Pane(Playlists),
         ),
         (
-            name: "4. Search",
+            name: "5. Search",
             pane: Pane(Search),
         ),
     ],

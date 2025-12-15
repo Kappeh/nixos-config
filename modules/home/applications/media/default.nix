@@ -9,7 +9,7 @@
     ./jellyfin_media_player.nix
     ./krita.nix
     ./libreoffice.nix
-    ./mpd.nix
+    ./mpd_mpris.nix
     ./obs_studio.nix
     ./picard.nix
     ./rmpc/default.nix
@@ -28,7 +28,7 @@
     jellyfin_media_player.enable = lib.mkDefault config.myModules.applications.media.enable;
     krita.enable = lib.mkDefault config.myModules.applications.media.enable;
     libreoffice.enable = lib.mkDefault config.myModules.applications.media.enable;
-    mpd.enable = lib.mkDefault config.myModules.applications.media.enable;
+    mpd_mpris.enable = lib.mkDefault config.myModules.applications.media.enable;
     obs_studio.enable = lib.mkDefault config.myModules.applications.media.enable;
     picard.enable = lib.mkDefault config.myModules.applications.media.enable;
     rmpc.enable = lib.mkDefault config.myModules.applications.media.enable;

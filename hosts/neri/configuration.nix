@@ -21,6 +21,30 @@
       ];
     };
 
+    myModules.core.networkmanager.enable = false;
+
+    networking = {
+      useDHCP = false;              # Disable dhcp for static ip
+      nameservers = [ "10.0.1.1" ]; # Use local dns server
+    };
+
+    systemd.network = {
+      enable = true;
+      networks."10-enp3s0" = {
+        enable = true;
+        name = "enp3s0";
+        DHCP = "no";
+        address = [ "10.0.69.69/16" ];
+        gateway = [ "10.0.0.1" ];
+        dns = [ "10.0.1.1" ];
+      };
+    };
+
+    services.resolved = {
+      enable = true;
+      fallbackDns = []; # Disable fallback dns server, only use the primary dns server
+    };
+
     # This option defines the first version of NixOS you have installed on this particular machine,
     # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
     #
