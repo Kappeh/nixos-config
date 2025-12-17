@@ -161,7 +161,7 @@
         };
 
         clock = {
-          format = " {:%A %d/%m/%Y %H:%M:%S}";
+          format = "󰥔 {:%A %d/%m/%Y %H:%M:%S}";
           tooltip = false;
           timezone = "Europe/London";
           interval = 1;
