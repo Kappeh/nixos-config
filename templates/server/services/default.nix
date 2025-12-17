@@ -5,6 +5,7 @@
     ./loki.nix           # 2003
     ./mailrise.nix       # 2004
     ./grafana.nix        # 2005
+    ./portainer.nix      # 2006
     ./uptime_kuma.nix    # 2009
     ./namecheap_ddns.nix # 2013
   ];
