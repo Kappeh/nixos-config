@@ -27,6 +27,7 @@
     services.qemuGuest.enable = true;
 
     boot.supportedFilesystems = [ "nfs" ];
+    environment.persistence."/persist/system".directories = [ "/mnt/" ];
 
     time.timeZone = "Etc/UTC";    # Set your time zone.
   };
