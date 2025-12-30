@@ -7,6 +7,7 @@
     ./grafana.nix        # 2005
     ./portainer.nix      # 2006
     ./jellyfin.nix       # 2007
+    ./ente.nix           # 2008
     ./uptime_kuma.nix    # 2009
     ./namecheap_ddns.nix # 2013
   ];
