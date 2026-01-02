@@ -10,6 +10,7 @@
     ./ente.nix           # 2008
     ./uptime_kuma.nix    # 2009
     ./syncthing.nix      # 2010
+    ./duplicati.nix      # 2011
     ./namecheap_ddns.nix # 2013
   ];
 
