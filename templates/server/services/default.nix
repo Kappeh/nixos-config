@@ -9,6 +9,7 @@
     ./jellyfin.nix       # 2007
     ./ente.nix           # 2008
     ./uptime_kuma.nix    # 2009
+    ./syncthing.nix      # 2010
     ./namecheap_ddns.nix # 2013
   ];
 
