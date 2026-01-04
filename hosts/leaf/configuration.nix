@@ -9,7 +9,7 @@
     systemd.network.networks."10-ens18".address = [ "10.0.1.100/16" ];
 
     fileSystems."/mnt/music_library_1" = {
-      device = "omv.home.kappeh.org:/music-library-1";
+      device = "omv.home.kappeh.org:/export/music-library-1";
       fsType = "nfs";
       options = [
         "x-systemd.automount"
