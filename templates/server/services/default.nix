@@ -11,6 +11,7 @@
     ./uptime_kuma.nix    # 2009
     ./syncthing.nix      # 2010
     ./duplicati.nix      # 2011
+    ./navidrome.nix      # 2012
     ./namecheap_ddns.nix # 2013
   ];
 

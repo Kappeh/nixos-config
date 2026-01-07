@@ -8,16 +8,6 @@
     networking.hostName = "leaf";
     systemd.network.networks."10-ens18".address = [ "10.0.1.100/16" ];
 
-    fileSystems."/mnt/music_library_1" = {
-      device = "omv.home.kappeh.org:/export/music-library-1";
-      fsType = "nfs";
-      options = [
-        "x-systemd.automount"
-        "noauto"
-        "x-systemd.idle-timeout=600"
-      ];
-    };
-
     # This option defines the first version of NixOS you have installed on this particular machine,
     # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
     #
