@@ -7,15 +7,24 @@
 
     knownHosts = {
       "ciela" = {
-        hostNames = [ "ciela.illegal-crime.org" ];
+        hostNames = [
+          "ciela.illegal-crime.org"
+          "ciela.home.kappeh.org"
+        ];
         publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHOXu2r9mqPzDSgO2VoWj45xXsnJCqFYGrlui5qYK/0h ciela_host_key_ed25519";
       };
       "ciela_initrd" = {
-        hostNames = [ "ciela.illegal-crime.org" ];
+        hostNames = [
+          "ciela.illegal-crime.org"
+          "ciela.home.kappeh.org"
+        ];
         publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL47+Wnncs1VEJBCkr1vzyC1g+P3SRW1jmLhoadu3PEO ciela_initrd_host_key_ed25519";
       };
       "leaf" = {
-        hostNames = [ "leaf.illegal-crime.org" ];
+        hostNames = [
+          "leaf.illegal-crime.org"
+          "leaf.home.kappeh.org"
+        ];
         publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMuKy12mhjVzGb93FXgcaAARZT9bLDTte3D/AmfOkEex leaf_host_key_ed25519";
       };
     };
