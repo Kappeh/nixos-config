@@ -36,7 +36,7 @@
 
         # `systemd-journald` writes the system's journal in binary
         # form to `/var/log/journal/{machine-id}`.
-        "/var/log"
+        # "/var/log"
 
         # Persistent XRandR monitor profiles.
         "/var/lib/colord"

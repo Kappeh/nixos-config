@@ -28,6 +28,12 @@
       users.system.enable = true;
     };
 
+    # /var/log was moved into a seperate subvolumes on host `neri`
+    # this is here to keep it in the `persist` subvolume for now on this host
+    environment.persistence."/persist/system".directories = [
+      "/var/log"
+    ];
+
     boot.supportedFilesystems = [ "nfs" ];
 
     time.timeZone = "Etc/UTC"; # Set your time zone.
