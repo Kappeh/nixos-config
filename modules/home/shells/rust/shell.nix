@@ -12,7 +12,7 @@ in
       libmysqlclient
       libpqxx
       lld_20
-      llvmPackages_17.bintools
+      llvmPackages_20.bintools
       mariadb
       postgresql
       rustup
