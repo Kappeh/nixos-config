@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    ./backup.nix
     ./update_blacklist.nix
   ];
 
