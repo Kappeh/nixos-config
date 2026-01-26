@@ -1,4 +1,8 @@
 { pkgs, ... }: {
+  imports = [
+    ./update_blacklist.nix
+  ];
+
   config = {
     fileSystems."/mnt/minecraft_server" = {
       device = "omv.home.kappeh.org:/export/minecraft-server";
