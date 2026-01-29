@@ -16,6 +16,7 @@
     ./docker_registry.nix          # 2014
     ./minecraft_server/default.nix # 2015
     ./synapse.nix                  # 2016
+    ./cipher.nix                   # 2017
   ];
 
   config.users = {
