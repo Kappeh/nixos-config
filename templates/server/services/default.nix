@@ -17,6 +17,7 @@
     ./minecraft_server/default.nix # 2015
     ./synapse.nix                  # 2016
     ./cipher.nix                   # 2017
+    ./rota.nix                     # 2018
   ];
 
   config.users = {
