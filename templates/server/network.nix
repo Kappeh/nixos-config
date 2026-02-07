@@ -2,7 +2,7 @@
   config = {
     networking = {
       useDHCP = false;              # Disable dhcp for static ip
-      nameservers = [ "10.0.1.1" ]; # Use local dns server
+      nameservers = [ "10.0.1.104" ]; # Use local dns server
     };
 
     systemd.network = {
@@ -12,7 +12,7 @@
         name = "ens18";
         DHCP = "no";
         gateway = [ "10.0.0.1" ];
-        dns = [ "10.0.1.1" ];
+        dns = [ "10.0.1.104" ];
       };
     };
 
