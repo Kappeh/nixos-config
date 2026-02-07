@@ -40,15 +40,6 @@
 
   outputs = { nixpkgs, ... } @ inputs: {
     nixosConfigurations = {
-      ciela = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/ciela/configuration.nix
-          inputs.home-manager.nixosModules.default
-          inputs.impermanence.nixosModules.impermanence
-          inputs.stylix.nixosModules.stylix
-        ];
-      };
       leaf = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
