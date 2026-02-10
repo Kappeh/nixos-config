@@ -18,6 +18,7 @@
     ./synapse.nix                  # 2016
     ./cipher.nix                   # 2017
     ./rota.nix                     # 2018
+    ./home_assistant.nix           # 2019
   ];
 
   config.users = {
