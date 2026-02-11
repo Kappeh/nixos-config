@@ -58,6 +58,10 @@
     networking = {
       useDHCP = false;              # Disable dhcp for static ip
       nameservers = [ "10.0.1.104" ]; # Use local dns server
+
+      # Enable wake-on-lan
+      interfaces.enp3s0.wakeOnLan.enable = true;
+      firewall.allowedUDPPorts = [ 9 ];
     };
 
     systemd.network = {
