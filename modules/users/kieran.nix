@@ -19,6 +19,8 @@
             "audio"           # Enable audio devices for user
             "video"           # Enable video devices for user
             "wheel"           # Enable `sudo` for user
+
+            "wireshark"
           ]
           # Grant access to duplicati files
           (lib.optional config.myModules.users.system.duplicati.enable "duplicati")
