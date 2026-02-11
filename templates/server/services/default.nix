@@ -20,6 +20,7 @@
     ./rota.nix                     # 2018
     ./home_assistant.nix           # 2019
     ./mosquitto.nix                # 2020
+    ./nginx_proxy_manager.nix      # 2021
   ];
 
   config.users = {
