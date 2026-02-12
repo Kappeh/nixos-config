@@ -10,6 +10,8 @@
       ];
     };
 
+    networking.firewall.allowedTCPPorts = [ 8123 ];
+
     users = {
       users.home_assistant = {
         uid = 2019;

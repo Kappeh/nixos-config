@@ -1,5 +1,7 @@
 { pkgs, ... }: {
   config = {
+    networking.firewall.allowedTCPPorts = [ 8089 ];
+
     users = {
       users.rota = {
         uid = 2018;

@@ -10,6 +10,8 @@
       ];
     };
 
+    networking.firewall.allowedTCPPorts = [ 8200 ];
+
     users = {
       users.duplicati = {
         uid = 2011;

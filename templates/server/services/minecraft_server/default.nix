@@ -15,6 +15,12 @@
       ];
     };
 
+    networking.firewall.allowedTCPPorts = [
+      8201  # Duplicati Web UI
+      8100  # Maps Web UI
+      25585 # Schematics Web UI
+    ];
+
     users = {
       users.minecraft_server = {
         uid = 2015;

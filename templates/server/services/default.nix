@@ -23,6 +23,15 @@
     ./nginx_proxy_manager.nix      # 2021
   ];
 
+  config.networking.firewall.allowedTCPPorts = [
+    10000
+    10001
+    10002
+    10003
+    10004
+    10005
+  ];
+
   config.users = {
     users.deploy = {
       uid = 1999;

@@ -10,7 +10,10 @@
       ];
     };
 
-    networking.firewall.allowedTCPPorts = [ 5000 ];
+    networking.firewall.allowedTCPPorts = [
+      5000 # Registry
+      5002 # Web UI
+    ];
 
     users = {
       users.docker_registry = {

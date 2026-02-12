@@ -10,6 +10,8 @@
       ];
     };
 
+    networking.firewall.allowedTCPPorts = [ 4533 ];
+
     users = {
       users.navidrome = {
         uid = 2012;

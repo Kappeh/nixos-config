@@ -10,6 +10,8 @@
       ];
     };
 
+    networking.firewall.allowedTCPPorts = [ 8096 ];
+
     users = {
       users.jellyfin = {
         uid = 2007;
