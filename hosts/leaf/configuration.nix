@@ -14,15 +14,6 @@
       "/var/log"
     ];
 
-    # Sysctl settings to enable Wake-on-LAN functionality by allowing broadcast
-    # packet forwarding and ensuring the server responds to broadcast ICMP pings.
-    # These settings are necessary for Home Assistant's ability to send WOL magic packets.
-    boot.kernel.sysctl = {
-      "net.ipv4.icmp_echo_ignore_broadcasts" = 0;
-      "net.ipv4.conf.all.bc_forwarding" = 1;
-      "net.ipv4.conf.ens18.bc_forwarding" = 1;
-    };
-
     # This option defines the first version of NixOS you have installed on this particular machine,
     # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
     #
