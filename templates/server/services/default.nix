@@ -22,6 +22,7 @@
     ./mosquitto.nix                # 2020
     ./nginx_proxy_manager.nix      # 2021
     ./whisper.nix                  # 2022
+    ./diun.nix                     # 2023
   ];
 
   config.networking.firewall.allowedTCPPorts = [
