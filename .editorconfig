@@ -10,3 +10,4 @@ insert_final_newline = true
 
 [{*.nix, *.yaml, *.yml}]
 indent_size = 2
+

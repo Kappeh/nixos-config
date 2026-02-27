@@ -15,10 +15,12 @@
     ./git.nix
     ./lazygit.nix
     ./lf.nix
+    ./lsp/default.nix
     ./nix_search_tv.nix
-    ./nixvim.nix
+    ./nixvim/default.nix
     ./playerctl.nix
     ./pulsemixer.nix
+    ./ripgrep.nix
     ./tldr.nix
     ./tmux.nix
     ./tree.nix
@@ -48,10 +50,12 @@
     git.enable = lib.mkDefault config.myModules.tools.enable;
     lazygit.enable = lib.mkDefault config.myModules.tools.enable;
     lf.enable = lib.mkDefault config.myModules.tools.enable;
+    lsp.enable = lib.mkDefault config.myModules.tools.enable;
     nix_search_tv.enable = lib.mkDefault config.myModules.tools.enable;
     nixvim.enable = lib.mkDefault config.myModules.tools.enable;
     playerctl.enable = lib.mkDefault config.myModules.tools.enable;
     pulsemixer.enable = lib.mkDefault config.myModules.tools.enable;
+    ripgrep.enable = lib.mkDefault config.myModules.tools.enable;
     tldr.enable = lib.mkDefault config.myModules.tools.enable;
     tmux.enable = lib.mkDefault config.myModules.tools.enable;
     tree.enable = lib.mkDefault config.myModules.tools.enable;
