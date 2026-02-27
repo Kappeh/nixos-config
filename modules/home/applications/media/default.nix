@@ -1,5 +1,6 @@
 { config, lib, ... }: {
   imports = [
+    ./cava.nix
     ./davinci_resolve.nix
     ./easyeffects.nix
     ./feh.nix
@@ -19,6 +20,7 @@
   options.myModules.applications.media.enable = lib.mkEnableOption "Enable media applications";
 
   config.myModules.applications.media = {
+    cava.enable = lib.mkDefault config.myModules.applications.media.enable;
     davinci_resolve.enable = lib.mkDefault config.myModules.applications.media.enable;
     easyeffects.enable = lib.mkDefault config.myModules.applications.media.enable;
     feh.enable = lib.mkDefault config.myModules.applications.media.enable;
