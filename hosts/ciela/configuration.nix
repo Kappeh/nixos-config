@@ -2,12 +2,27 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }: {
+{ inputs, ... }: {
   imports = [
     ./hardware-configuration.nix
+    ./kieran.nix
+    ../../modules/system/default.nix
+
+    inputs.sops-nix.nixosModules.sops
   ];
 
   config = {
+    myModules = {
+      core = {
+        fonts.enable = true;
+        home_manager.enable = true;
+        sops.enable = true;
+        ssl.enable = true;
+        impermanence.filesystems.enable = false;
+      };
+      shells.enable = true;
+    };
+
     # Use the extlinux boot loader. (NixOS wants to enable GRUB by default)
     boot.loader.grub.enable = false;
     # Enables the generation of /boot/extlinux/extlinux.conf
@@ -16,7 +31,7 @@
     networking.hostName = "ciela"; # Define your hostname.
 
     # Configure network connections interactively with nmcli or nmtui.
-    networking.networkmanager.enable = true;
+    # networking.networkmanager.enable = true;
 
     # Set your time zone.
     time.timeZone = "Etc/UTC";
@@ -26,18 +41,18 @@
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
     # Select internationalisation properties.
-    i18n.defaultLocale = "en_GB.UTF-8";
-    console = {
-      font = "Lat2-Terminus16";
-      useXkbConfig = true; # use xkb.options in tty.
-    };
+    # i18n.defaultLocale = "en_GB.UTF-8";
+    # console = {
+    #   font = "Lat2-Terminus16";
+    #   useXkbConfig = true; # use xkb.options in tty.
+    # };
 
     # Enable the X11 windowing system.
     # services.xserver.enable = true;
 
     # Configure keymap in X11
-    services.xserver.xkb.layout = "gb";
-    services.xserver.xkb.options = "eurosign:4,caps:escape";
+    # services.xserver.xkb.layout = "gb";
+    # services.xserver.xkb.options = "eurosign:4,caps:escape";
 
     # Enable CUPS to print documents.
     # services.printing.enable = true;
@@ -53,42 +68,42 @@
     # Enable touchpad support (enabled default in most desktopManager).
     # services.libinput.enable = true;
 
-    nixpkgs.config.allowUnfree = true;
-    nix.settings = {
-      experimental-features = "nix-command flakes";
-      auto-optimise-store = true;
-    };
+    # nixpkgs.config.allowUnfree = true;
+    # nix.settings = {
+    #   experimental-features = "nix-command flakes";
+    #   auto-optimise-store = true;
+    # };
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.kieran = {
-      name = "kieran";
-      uid = 1000;
-      group = "kieran";
-      isNormalUser = true;
-      openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOCUJsStgjTCObc7BrzoGDE3tj633SbghefFM2wk20gX local" ];
-      extraGroups = [
-        "users"
-        "wheel" # Enable ‘sudo’ for the user.
-      ];
-      packages = with pkgs; [
-        tree
-      ];
-    };
+    # users.users.kieran = {
+    #   name = "kieran";
+    #   uid = 1000;
+    #   group = "kieran";
+    #   isNormalUser = true;
+    #   openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOCUJsStgjTCObc7BrzoGDE3tj633SbghefFM2wk20gX local" ];
+    #   extraGroups = [
+    #     "users"
+    #     "wheel" # Enable ‘sudo’ for the user.
+    #   ];
+    #   packages = with pkgs; [
+    #     tree
+    #   ];
+    # };
 
-    users.groups.kieran = {
-      name = "kieran";
-      gid = 1000;
-      members = [ "kieran" ];
-    };
+    # users.groups.kieran = {
+    #   name = "kieran";
+    #   gid = 1000;
+    #   members = [ "kieran" ];
+    # };
 
     # programs.firefox.enable = true;
 
     # List packages installed in system profile.
     # You can use https://search.nixos.org/ to find more packages (and options).
-    environment.systemPackages = with pkgs; [
-      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-      wget
-    ];
+    # environment.systemPackages = with pkgs; [
+    #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #   wget
+    # ];
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.

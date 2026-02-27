@@ -1,12 +1,15 @@
 { config, lib, ... }: {
   options.myModules.core.impermanence.enable = lib.mkEnableOption "Enable impermanence";
+  options.myModules.core.impermanence.filesystems.enable = lib.mkEnableOption "Enable persistent filesystems";
 
   config = {
     boot.initrd.postDeviceCommands = lib.mkIf config.myModules.core.impermanence.enable (
       lib.mkAfter (builtins.readFile ./rollback.sh)
     );
 
-    fileSystems = {
+    myModules.core.impermanence.filesystems.enable = lib.mkDefault true;
+
+    fileSystems = lib.mkIf config.myModules.core.impermanence.filesystems.enable {
       "/backup".neededForBoot = true;
       "/persist".neededForBoot = true;
     };
