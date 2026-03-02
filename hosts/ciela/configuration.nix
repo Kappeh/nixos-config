@@ -6,7 +6,12 @@
   imports = [
     ./hardware-configuration.nix
     ./kieran.nix
-    ../../modules/system/default.nix
+    # ../../modules/system/default.nix
+    ../../modules/system/applications/default.nix
+    ../../modules/system/core/default.nix
+    ../../modules/system/desktop/default.nix
+    ../../modules/system/shells/default.nix
+    ../../modules/system/virtualisation/default.nix
 
     inputs.sops-nix.nixosModules.sops
   ];
