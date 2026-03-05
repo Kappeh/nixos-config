@@ -2,6 +2,7 @@
   imports = [
     ./scripts/default.nix
     ./services/default.nix
+    ./jellyfin.nix
     ./ssh.nix
 
     ../../modules/system/default.nix
