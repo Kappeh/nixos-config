@@ -16,6 +16,7 @@
     ./lazygit.nix
     ./lf.nix
     ./lsp/default.nix
+    ./nix_index.nix
     ./nix_search_tv.nix
     ./nixvim/default.nix
     ./playerctl.nix
@@ -51,6 +52,7 @@
     lazygit.enable = lib.mkDefault config.myModules.tools.enable;
     lf.enable = lib.mkDefault config.myModules.tools.enable;
     lsp.enable = lib.mkDefault config.myModules.tools.enable;
+    nix_index.enable = lib.mkDefault config.myModules.tools.enable;
     nix_search_tv.enable = lib.mkDefault config.myModules.tools.enable;
     nixvim.enable = lib.mkDefault config.myModules.tools.enable;
     playerctl.enable = lib.mkDefault config.myModules.tools.enable;
