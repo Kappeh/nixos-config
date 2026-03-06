@@ -4,7 +4,7 @@
   config.home = lib.mkIf config.myModules.applications.media.krita.enable {
     packages = [ pkgs.krita ];
 
-    persistence."/persist/home/${config.home.username}" = {
+    persistence."/persist" = {
       files = [
         ".config/kritarc"
         ".config/kritadisplayrc"

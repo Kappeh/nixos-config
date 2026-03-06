@@ -8,7 +8,7 @@
     };
 
     home = lib.mkIf config.myModules.core.appimage.enable {
-      persistence."/persist/home/${config.home.username}".directories = [ ".cache/appimage-run" ];
+      persistence."/persist".directories = [ ".cache/appimage-run" ];
     };
   };
 }

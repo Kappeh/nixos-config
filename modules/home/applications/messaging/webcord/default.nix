@@ -10,7 +10,7 @@
         target = ".config/WebCord/Themes/calvera_dark.theme.css";
       };
 
-      persistence."/persist/home/${config.home.username}".directories = [ ".config/WebCord" ];
+      persistence."/persist".directories = [ ".config/WebCord" ];
     };
   };
 }

@@ -5,7 +5,7 @@
     home = {
       packages = [ pkgs.blender ];
 
-      persistence."/persist/home/${config.home.username}".directories = [
+      persistence."/persist".directories = [
         ".cache/blender"
         ".config/blender"
       ];

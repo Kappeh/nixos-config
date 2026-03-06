@@ -8,7 +8,7 @@
     };
 
     home = lib.mkIf config.myModules.core.nvidia.enable {
-      persistence."/persist/home/${config.home.username}".directories = [ ".cache/nvidia" ];
+      persistence."/persist".directories = [ ".cache/nvidia" ];
     };
   };
 }

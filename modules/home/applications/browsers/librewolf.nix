@@ -432,6 +432,6 @@
       };
     };
 
-    home.persistence."/persist/home/${config.home.username}".directories = [ ".librewolf" ];
+    home.persistence."/persist".directories = [ ".librewolf" ];
   };
 }

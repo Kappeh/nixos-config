@@ -8,7 +8,7 @@
     };
 
     home = lib.mkIf config.myModules.core.sops.enable {
-      persistence."/persist/home/${config.home.username}".files = [ ".config/sops/age/keys.txt" ];
+      persistence."/persist".files = [ ".config/sops/age/keys.txt" ];
     };
   };
 }

@@ -8,7 +8,7 @@
         pkgs.wl-clip-persist
       ];
 
-      persistence."/persist/home/${config.home.username}".directories = [ ".cache/cliphist" ];
+      persistence."/persist".directories = [ ".cache/cliphist" ];
     };
 
     services.cliphist = {

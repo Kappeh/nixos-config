@@ -5,7 +5,7 @@
     home = {
       packages = [ pkgs.davinci-resolve ];
 
-      persistence."/persist/home/${config.home.username}".directories = [
+      persistence."/persist".directories = [
         ".cache/DaVinci_Resolve_Welcome"
         ".local/share/DaVinciResolve"
       ];

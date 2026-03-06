@@ -335,7 +335,7 @@
       };
     };
 
-    home.persistence."/persist/home/${config.home.username}".directories = [
+    home.persistence."/persist".directories = [
       ".mozilla/firefox/default/"
       ".mozilla/native-messaging-hosts"
     ];

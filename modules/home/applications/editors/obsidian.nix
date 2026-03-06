@@ -5,7 +5,7 @@
     home = {
       packages = [ pkgs.obsidian ];
 
-      persistence."/persist/home/${config.home.username}".directories = [ ".config/obsidian" ];
+      persistence."/persist".directories = [ ".config/obsidian" ];
     };
   };
 }

@@ -5,7 +5,7 @@
     home = {
       packages = [ pkgs.gqrx ];
 
-      persistence."/persist/home/${config.home.username}".directories = [ ".config/gqrx" ];
+      persistence."/persist".directories = [ ".config/gqrx" ];
     };
   };
 }

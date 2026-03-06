@@ -5,7 +5,7 @@
     home = {
       packages = [ pkgs.jetbrains.idea-community ];
 
-      persistence."/persist/home/${config.home.username}".directories = [
+      persistence."/persist".directories = [
         ".config/JetBrains"
         ".local/share/JetBrains"
       ];

@@ -52,6 +52,6 @@
       };
     };
 
-    home.persistence."/persist/home/${config.home.username}".directories = [ ".local/share/zsh" ];
+    home.persistence."/persist".directories = [ ".local/share/zsh" ];
   };
 }

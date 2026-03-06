@@ -5,6 +5,8 @@
     programs.yazi = {
       enable = true;
 
+      shellWrapperName = "y";
+
       enableBashIntegration = true;
       enableFishIntegration = true;
       enableNushellIntegration = true;

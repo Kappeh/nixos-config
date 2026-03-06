@@ -5,7 +5,7 @@
     home = {
       packages = [ pkgs.feishin ];
 
-      persistence."/persist/home/${config.home.username}".directories = [ ".config/feishin" ];
+      persistence."/persist".directories = [ ".config/feishin" ];
     };
   };
 }

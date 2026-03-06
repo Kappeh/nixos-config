@@ -6,6 +6,6 @@
 
     programs.nixcord.enable = true;
 
-    home.persistence."/persist/home/${config.home.username}".directories = [ ".config/discord" ];
+    home.persistence."/persist".directories = [ ".config/discord" ];
   };
 }

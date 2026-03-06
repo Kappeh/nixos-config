@@ -5,7 +5,7 @@
     home = {
       packages = [ pkgs.keepassxc ];
 
-      persistence."/persist/home/${config.home.username}".directories = [
+      persistence."/persist".directories = [
         ".cache/keepassxc/"
         ".config/keepassxc/"
       ];

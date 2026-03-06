@@ -18,7 +18,7 @@
 
     services.resolved = {
       enable = true;
-      fallbackDns = []; # Disable fallback dns server, only use the primary dns server
+      settings.Resolve.FallbackDns = []; # Disable fallback dns server, only use the primary dns server
     };
   };
 }

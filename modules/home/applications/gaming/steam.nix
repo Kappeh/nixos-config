@@ -10,17 +10,17 @@
     home = lib.mkIf config.myModules.applications.gaming.steam.enable {
       packages = [ pkgs.steam ];
 
-      persistence."/persist/home/${config.home.username}".directories = [
-        { directory = ".local/share/Steam"; method = "symlink"; }
-        { directory = ".local/share/Factorio"; method = "symlink"; }
-        { directory = ".factorio"; }
-        { directory = ".local/share/FasterThanLight"; method = "symlink"; }
-        { directory = ".local/share/IntoTheBreach"; method = "symlink"; }
-        { directory = ".local/share/shapez.io"; }
-        { directory = ".local/share/Terraria"; }
-        { directory = ".local/share/Daedalic Entertainment GmbH"; method = "symlink"; }
-        { directory = ".config/UNDERTALE"; method = "symlink"; }
-        { directory = ".config/unity3d/Landfall/Haste"; method = "symlink"; }
+      persistence."/persist".directories = [
+        ".local/share/Steam"
+        ".local/share/Factorio"
+        ".factorio"
+        ".local/share/FasterThanLight"
+        ".local/share/IntoTheBreach"
+        ".local/share/shapez.io"
+        ".local/share/Terraria"
+        ".local/share/Daedalic Entertainment GmbH"
+        ".config/UNDERTALE"
+        ".config/unity3d/Landfall/Haste"
       ];
     };
   };

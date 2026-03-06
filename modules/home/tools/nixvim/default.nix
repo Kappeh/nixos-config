@@ -13,7 +13,7 @@
   config = {
     programs.nixvim.enable = config.myModules.tools.nixvim.enable;
 
-    home.persistence."/persist/home/${config.home.username}".directories = [
+    home.persistence."/persist".directories = [
       ".local/share/nvim"
     ];
   };

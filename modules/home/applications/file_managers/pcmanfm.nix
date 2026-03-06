@@ -5,7 +5,7 @@
     home = {
       packages = [ pkgs.pcmanfm ];
 
-      persistence."/persist/home/${config.home.username}".directories = [
+      persistence."/persist".directories = [
         ".config/libfm"
         ".config/pcmanfm/default"
       ];

@@ -7,7 +7,7 @@
       preset = "Default";
     };
 
-    home.persistence."/persist/home/${config.home.username}" = {
+    home.persistence."/persist" = {
       directories = [ ".config/easyeffects" ];
       files = [ ".config/easyeffectsrc" ];
     };

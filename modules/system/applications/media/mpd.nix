@@ -9,23 +9,24 @@
       user = "kieran";
       group = "kieran";
 
-      musicDirectory = "/mnt/music_library_1/tracks";
-      playlistDirectory = "/mnt/music_library_1/playlists";
-
-      network = {
-        listenAddress = "127.0.0.1";
+      settings = {
+        bind_to_address = "127.0.0.1";
         port = 6600;
+        db_file = "/var/lib/mpd/tag_cache";
+        music_directory = "/mnt/music_library_1/tracks";
+        playlist_directory = "/mnt/music_library_1/playlists";
       };
 
       dataDir = "/var/lib/mpd";
-      dbFile = "/var/lib/mpd/tag_cache";
 
-      extraConfig = ''
-        audio_output {
-          type "pipewire"
-          name "PipeWire"
-        }
-      '';
+      settings = {
+        audio_output = [
+          {
+            type = "pipewire";
+            name = "PipeWire";
+          }
+        ];
+      };
     };
 
     systemd.services.mpd = {
