@@ -78,7 +78,7 @@
 
     services.resolved = {
       enable = true;
-      fallbackDns = []; # Disable fallback dns server, only use the primary dns server
+      settings.Resolve.fallbackDns = []; # Disable fallback dns server, only use the primary dns server
     };
 
     # This option defines the first version of NixOS you have installed on this particular machine,

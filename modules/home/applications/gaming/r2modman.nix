@@ -5,7 +5,7 @@
     home = {
       packages = [ pkgs.r2modman ];
 
-      persistence."/persist/home/${config.home.username}".directories = [
+      persistence."/persist".directories = [
         ".config/r2modman"
         ".config/r2modmanPlus-local"
       ];

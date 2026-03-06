@@ -4,7 +4,7 @@
   config.home = lib.mkIf config.myModules.applications.misc.qalculate.enable {
     packages = [ pkgs.qalculate-qt ];
 
-    persistence."/persist/home/${config.home.username}".directories = [
+    persistence."/persist".directories = [
       ".config/qalculate"
       ".local/share/qalculate"
     ];

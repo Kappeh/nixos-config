@@ -12,6 +12,6 @@
       initExtra = builtins.readFile ./initExtra.sh;
     };
 
-    home.persistence."/persist/home/${config.home.username}".files = [ ".bash_history" ];
+    home.persistence."/persist".files = [ ".bash_history" ];
   };
 }

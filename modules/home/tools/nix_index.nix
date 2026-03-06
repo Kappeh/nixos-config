@@ -3,7 +3,7 @@
 
   config = lib.mkIf config.myModules.tools.nix_index.enable {
     home.packages = [ pkgs.nix-index ];
-    home.persistence."/persist/home/${config.home.username}".directories = [
+    home.persistence."/persist".directories = [
       ".cache/nix-index"
     ];
   };

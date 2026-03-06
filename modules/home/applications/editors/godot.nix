@@ -5,7 +5,7 @@
     home = {
       packages = [ pkgs.godot ];
 
-      persistence."/persist/home/${config.home.username}".directories = [
+      persistence."/persist".directories = [
         ".config/godot"
         ".local/share/godot"
       ];

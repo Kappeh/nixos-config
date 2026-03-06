@@ -8,7 +8,7 @@
     };
 
     home = lib.mkIf config.myModules.core.pipewire.enable {
-      persistence."/persist/home/${config.home.username}".directories = [
+      persistence."/persist".directories = [
         ".config/pulse" # I do not know whether this needs to stick around or not
         ".local/state/wireplumber"
       ];

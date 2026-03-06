@@ -3,28 +3,47 @@
     wayland.windowManager.hyprland.settings = {
       windowrule = [
         # Discord
-        # "workspace 2, class:discord"
-        "workspace 2, match:class discord"
+        "match:class discord, workspace 2"
 
-         # Balatro
-        "fullscreen on, match:class steam_app_2379780"
+        # Balatro
+        "match:class steam_app_2379780, fullscreen on"
 
         # Overwatch
-        "monitor HDMI-A-1, fullscreen on, match:class steam_app_2357570"
+        "match:class steam_app_2357570, monitor HDMI-A-1, fullscreen on"
 
-        # KeePassXC
-        "workspace 5, match:class org.keepassxc.KeePassXC"
-        # KeePassXC - Browser Access Request
-        "float on, pin on, center on, no_initial_focus on, match:class org.keepassxc.KeePassXC, match:title KeePassXC - Browser Access Request"
+        {
+          name = "keepassxc-workspace-5";
+          match.class = "org.keepassxc.KeePassXC";
+          workspace = 5;
+        }
+
+        {
+          name = "keepassxc-access-request";
+          match.initial_title = "KeePassXC -  Access Request";
+          float = true;
+          pin = true;
+          center = true;
+          no_initial_focus = true;
+          size = "monitor_w*0.8 monitor_h*0.8";
+        }
+
+        {
+          name = "keepassxc-browser-access-request";
+          match.initial_title = "KeePassXC - Browser Access Request";
+          float = true;
+          pin = true;
+          center = true;
+          no_initial_focus = true;
+        }
 
         # ssh-askpass-fullscreen
-        "fullscreen on, match:class Ssh-askpass-fullscreen, match:title ssh-askpass-fullscreen"
+        "match:class Ssh-askpass-fullscreen, match:title ssh-askpass-fullscreen, fullscreen on"
 
         # Feishin
-        "workspace 4, match:class feishin, match:title Feishin"
+        "match:class feishin, match:title Feishin, workspace 4"
 
         # Steam
-        "workspace 10, match:class steam"
+        "match:class steam, workspace 10"
       ];
     };
   };

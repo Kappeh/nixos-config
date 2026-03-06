@@ -52,7 +52,6 @@
     home-manager.users.kieran = { config, osConfig, lib, inputs, ...}: {
       imports = [
         ../home/default.nix
-        inputs.impermanence.nixosModules.home-manager.impermanence
       ];
       config = {
         myModules = {
@@ -80,24 +79,18 @@
           stateVersion = "24.05";
         };
 
-        home.persistence = {
-          "/persist/home/${config.home.username}".allowOther = true;
-          "/backup/home/${config.home.username}" = {
-            allowOther = true;
-            directories = [
-              "Apps"
-              "Desktop"
-              "Documents"
-              "Downloads"
-              "Music"
-              "Pictures"
-              "Storage"
-              "Videos"
-              "dev"
-              "scripts"
-            ];
-          };
-        };
+        home.persistence."/backup".directories = [
+          "Apps"
+          "Desktop"
+          "Documents"
+          "Downloads"
+          "Music"
+          "Pictures"
+          "Storage"
+          "Videos"
+          "dev"
+          "scripts"
+        ];
       };
     };
   };

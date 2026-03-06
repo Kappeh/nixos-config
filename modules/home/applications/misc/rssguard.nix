@@ -4,7 +4,7 @@
   config.home = lib.mkIf config.myModules.applications.misc.rssguard.enable {
     packages = [ pkgs.rssguard ];
 
-    persistence."/persist/home/${config.home.username}".directories = [
+    persistence."/persist".directories = [
       ".config/RSS Guard 4"
     ];
   };

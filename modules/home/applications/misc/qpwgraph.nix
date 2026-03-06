@@ -5,7 +5,7 @@
     home = {
       packages = [ pkgs.qpwgraph ];
 
-      persistence."/persist/home/${config.home.username}".files = [
+      persistence."/persist".files = [
         "default.qpwgraph"
         ".config/rncbc.org/qpwgraph.conf"
       ];

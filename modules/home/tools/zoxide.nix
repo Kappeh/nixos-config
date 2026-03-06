@@ -11,6 +11,6 @@
       enableZshIntegration = true;
     };
 
-    home.persistence."/persist/home/${config.home.username}".directories = [ ".local/share/zoxide" ];
+    home.persistence."/persist".directories = [ ".local/share/zoxide" ];
   };
 }

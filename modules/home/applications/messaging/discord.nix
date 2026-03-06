@@ -5,7 +5,7 @@
     home = {
       packages = [ pkgs.discord ];
 
-      persistence."/persist/home/${config.home.username}".directories = [ ".config/discord" ];
+      persistence."/persist".directories = [ ".config/discord" ];
     };
   };
 }

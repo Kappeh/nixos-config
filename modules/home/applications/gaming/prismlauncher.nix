@@ -5,7 +5,7 @@
     home = {
       packages = [ pkgs.prismlauncher ];
 
-      persistence."/persist/home/${config.home.username}".directories = [ ".local/share/PrismLauncher" ];
+      persistence."/persist".directories = [ ".local/share/PrismLauncher" ];
     };
   };
 }

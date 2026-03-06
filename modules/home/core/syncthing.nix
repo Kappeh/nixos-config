@@ -4,7 +4,7 @@
   config = lib.mkIf config.myModules.core.syncthing.enable {
     services.syncthing.enable = true;
 
-    home.persistence."/persist/home/${config.home.username}".directories = [
+    home.persistence."/persist".directories = [
       "Sync"
       ".local/state/syncthing"
     ];

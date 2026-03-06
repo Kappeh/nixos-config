@@ -25,7 +25,7 @@
       };
     };
 
-    home.persistence."/persist/home/${config.home.username}".files = [
+    home.persistence."/persist".files = [
       ".config/FreeTube/playlists.db"
       ".config/FreeTube/profiles.db"
     ];

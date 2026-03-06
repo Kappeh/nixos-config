@@ -5,7 +5,7 @@
     home = {
       packages = [ pkgs.jellyfin-media-player ];
 
-      persistence."/persist/home/${config.home.username}".directories = [
+      persistence."/persist".directories = [
         ".local/share/Jellyfin Media Player"
         ".config/jellyfin.org"
         ".local/share/jellyfinmediaplayer"

@@ -12,7 +12,7 @@
     home = {
       packages = [ pkgs.element-desktop ];
 
-      persistence."/persist/home/${config.home.username}".directories = [ ".config/Element" ];
+      persistence."/persist".directories = [ ".config/Element" ];
     };
   };
 }

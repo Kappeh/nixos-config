@@ -21,7 +21,6 @@
     home-manager.users.kieran = { ... }: {
       imports = [
         ../../modules/home/default.nix
-        inputs.impermanence.nixosModules.home-manager.impermanence
       ];
 
       config = {
@@ -49,11 +48,6 @@
           username = "kieran";
           homeDirectory = "/home/kieran";
           stateVersion = "24.05";
-        };
-
-        home.persistence = {
-          "/backup/home/kieran".allowOther = true;
-          "/persist/home/kieran".allowOther = true;
         };
       };
     };

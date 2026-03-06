@@ -8,7 +8,7 @@
     };
 
     home = lib.mkIf config.myModules.desktop.dconf.enable {
-      persistence."/persist/home/${config.home.username}".directories = [ ".config/dconf" ];
+      persistence."/persist".directories = [ ".config/dconf" ];
     };
   };
 }

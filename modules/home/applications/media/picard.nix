@@ -5,7 +5,7 @@
     home = {
       packages = [ pkgs.picard ];
 
-      persistence."/persist/home/${config.home.username}".directories = [
+      persistence."/persist".directories = [
         ".config/MusicBrainz"
       ];
     };

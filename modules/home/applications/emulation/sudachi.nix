@@ -79,7 +79,7 @@ in {
       categories = [ "Game" "Emulator" ];
     };
 
-    home.persistence."/persist/home/${config.home.username}".directories = [
+    home.persistence."/persist".directories = [
       ".config/sudachi"
       ".local/share/sudachi"
     ];
