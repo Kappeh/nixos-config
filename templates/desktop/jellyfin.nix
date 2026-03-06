@@ -19,6 +19,9 @@
         isSystemUser = true;
         useDefaultShell = false;
         shell = pkgs.shadow;
+        home = "/home/jellyfin";
+        homeMode = "755";
+        createHome = true;
       };
       groups.jellyfin = {
         name = "jellyfin";
