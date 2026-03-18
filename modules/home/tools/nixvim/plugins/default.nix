@@ -9,6 +9,7 @@
     ./lualine.nix
     ./neo_tree.nix
     ./render_markdown.nix
+    ./smear_cursor.nix
     ./telescope.nix
     ./treesitter.nix
     ./trim.nix
