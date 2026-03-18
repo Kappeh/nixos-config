@@ -55,6 +55,7 @@
       # General UI & Behavior
       foldenable = false;         # Disable folds
       showmode = false;           # Don't show mode, the lualine plugin does this
+      cmdheight = 0;               # Disable command line area
       showtabline = 2;            # Always show tab line
       startofline = true;         # Move the cursor to the first non-blank of the line for some operations
       termguicolors = true;       # Enables 24-bit RGB color in the TUI
