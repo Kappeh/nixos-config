@@ -58,6 +58,10 @@
           italic = false;
         };
         # fill
+        fill = {
+          bg = "#${config.lib.stylix.colors.base00}";
+          italic = false;
+        };
         hint = {
           bg = "#${config.lib.stylix.colors.base00}";
           italic = false;

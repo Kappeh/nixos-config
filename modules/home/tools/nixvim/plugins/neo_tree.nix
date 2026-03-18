@@ -2,7 +2,15 @@
   config.programs.nixvim.plugins.neo-tree = lib.mkIf config.myModules.tools.nixvim.enable {
     enable = true;
     settings = {
-      filesystem.hijack_netrw_behavior = "disabled";
+      filesystem = {
+        hijack_netrw_behavior = "disabled";
+        filtered_items = {
+          visible = true;
+          hide_dotfiles = false;
+          hide_gitignored = false;
+          hide_ignored = false;
+        };
+      };
       enable_git_status = true;
       enable_modified_markers = true;
       enable_diagnostics = true;
