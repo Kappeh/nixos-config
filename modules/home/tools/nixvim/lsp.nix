@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }: {
   config.programs.nixvim.plugins.lsp = lib.mkIf config.myModules.tools.nixvim.enable {
     enable = true;
+
     servers = {
       # HTML, CSS, JS, C, Java, Kotlin, Markdown, Nginx, postgres, rust, sql, typescript, docker compose, python
 
@@ -32,6 +33,14 @@
         installCargo = false;
         installRustc = false;
       };
+    };
+
+    keymaps.lspBuf = {
+      K = "hover";
+      gD = "references";
+      gd = "definition";
+      gi = "implementation";
+      gt = "type_definition";
     };
   };
 }
