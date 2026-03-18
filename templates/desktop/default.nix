@@ -18,7 +18,7 @@
       core.enable = true;
       desktop.enable = true;
       shells.enable = true;
-      virtualisation.enable = true;
+      virtualisation.enable = false;
     };
 
     boot = {
