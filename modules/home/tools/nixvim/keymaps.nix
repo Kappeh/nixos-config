@@ -84,5 +84,11 @@
       action = ":Neotree toggle show git_status right<CR>";
       options.desc = "Toggle Git Status";
     }
+    {
+      mode = "n";
+      key = "<leader>$";
+      action = ":bot sp | term<CR>";
+      options.desc = "Split Terminal";
+    }
   ];
 }
