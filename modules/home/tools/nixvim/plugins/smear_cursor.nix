@@ -1,6 +1,6 @@
 { config, lib, ... }: {
   config.programs.nixvim.plugins.smear-cursor = lib.mkIf config.myModules.tools.nixvim.enable {
-    enable = true;
+    enable = false;
     settings = {
       hide_target_hack = false;
       stiffness = 0.8;
