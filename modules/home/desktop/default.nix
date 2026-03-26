@@ -1,6 +1,7 @@
 { config, lib, ... }: {
   imports = [
     ./cursor_theme/default.nix
+    ./gtk.nix
     ./hyprland/default.nix
     ./waybar/default.nix
     ./wofi/default.nix

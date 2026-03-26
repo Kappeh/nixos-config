@@ -59,6 +59,9 @@
             enable = osConfig.myModules.applications.enable;
             editors.idea.enable = false;
 
+            # Failed to build
+            emulation.fceux.enable = false;
+
             # Known issues
             # qt5 qtwebengine is unmaintained upstream since april 2025.
             media.jellyfin_media_player.enable = false;
