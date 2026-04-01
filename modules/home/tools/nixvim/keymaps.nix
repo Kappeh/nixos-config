@@ -51,7 +51,7 @@
     {
       mode = "n";
       key = "<leader>f";
-      action = ":Telescope find_files<CR>";
+      action = ":Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>";
       options.desc = "Find Files";
     }
     {
