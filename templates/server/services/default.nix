@@ -23,6 +23,7 @@
     ./nginx_proxy_manager.nix      # 2021
     ./whisper.nix                  # 2022
     ./diun.nix                     # 2023
+    ./wireguard.nix                # 2024
   ];
 
   config.networking.firewall.allowedTCPPorts = [
