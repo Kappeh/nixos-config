@@ -10,7 +10,7 @@
     ./dconf.nix
     ./libnotify.nix
     ./mako.nix
-    ./swww.nix
+    ./awww.nix
     ./udiskie.nix
     ./xdg_mime.nix
   ];
@@ -27,7 +27,7 @@
     dconf.enable = lib.mkDefault config.myModules.desktop.enable;
     libnotify.enable = lib.mkDefault config.myModules.desktop.enable;
     mako.enable = lib.mkDefault config.myModules.desktop.enable;
-    swww.enable = lib.mkDefault config.myModules.desktop.enable;
+    awww.enable = lib.mkDefault config.myModules.desktop.enable;
     udiskie.enable = lib.mkDefault config.myModules.desktop.enable;
     xdg_mime.enable = lib.mkDefault config.myModules.desktop.enable;
   };
