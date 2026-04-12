@@ -6,6 +6,7 @@
     ./sidequest.nix
     ./steam.nix
     ./supertuxkart.nix
+    ./tetrio.nix
   ];
 
   options.myModules.applications.gaming.enable = lib.mkEnableOption "Enable gaming";
@@ -17,5 +18,6 @@
     sidequest.enable = lib.mkDefault config.myModules.applications.gaming.enable;
     steam.enable = lib.mkDefault config.myModules.applications.gaming.enable;
     supertuxkart.enable = lib.mkDefault config.myModules.applications.gaming.enable;
+    tetrio.enable = lib.mkDefault config.myModules.applications.gaming.enable;
   };
 }
