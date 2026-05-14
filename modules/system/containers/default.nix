@@ -12,7 +12,7 @@
       enable = true;
       enableOnBoot = true;
       logDriver = "journald";
-      storageDriver = "btrfs";
+      storageDriver = "overlay2";
     };
 
     virtualisation.oci-containers.backend = "docker";
