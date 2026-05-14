@@ -9,7 +9,7 @@
           { name = "path"; }
           { name = "buffer"; }
           { name = "dictionary"; }
-          { name = "emoji"; }
+          # { name = "emoji"; }
         ];
         mapping = {
           "<C-n>" = "cmp.mapping.select_next_item()";
@@ -24,7 +24,7 @@
     cmp-path.enable = true;
     cmp-buffer.enable = true;
     cmp-dictionary.enable = true;
-    cmp-emoji.enable = true;
+    # cmp-emoji.enable = true;
   };
 }
 

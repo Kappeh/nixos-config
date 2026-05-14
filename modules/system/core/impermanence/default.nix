@@ -3,9 +3,9 @@
   options.myModules.core.impermanence.filesystems.enable = lib.mkEnableOption "Enable persistent filesystems";
 
   config = {
-    boot.initrd.postDeviceCommands = lib.mkIf config.myModules.core.impermanence.enable (
-      lib.mkAfter (builtins.readFile ./rollback.sh)
-    );
+    # boot.initrd.postDeviceCommands = lib.mkIf config.myModules.core.impermanence.enable (
+    #   lib.mkAfter (builtins.readFile ./rollback.sh)
+    # );
 
     myModules.core.impermanence.filesystems.enable = lib.mkDefault true;
 

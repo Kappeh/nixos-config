@@ -1,10 +1,9 @@
-{ config, inputs, lib, pkgs, ... }: {
+{ config, inputs, lib, ... }: {
   options.myModules.applications.editors.vscodium.enable = lib.mkEnableOption "Enable VSCodium";
 
   config = lib.mkIf config.myModules.applications.editors.vscodium.enable {
-    programs.vscode = {
+    programs.vscodium = {
       enable = true;
-      package = pkgs.vscodium;
 
       mutableExtensionsDir = true;
 
