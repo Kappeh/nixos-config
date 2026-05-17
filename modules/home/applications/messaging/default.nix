@@ -10,8 +10,8 @@
 
   config.myModules.applications.messaging = {
     webcord.enable = lib.mkDefault config.myModules.applications.messaging.enable;
-    # discord.enable = lib.mkDefault false;
+    discord.enable = lib.mkDefault config.myModules.applications.messaging.enable;
     element_desktop.enable = lib.mkDefault config.myModules.applications.messaging.enable;
-    nixcord.enable = lib.mkDefault config.myModules.applications.messaging.enable;
+    nixcord.enable = false;
   };
 }
