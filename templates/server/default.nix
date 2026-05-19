@@ -20,6 +20,7 @@
         systemd_boot.enable = true;
       };
       shells.enable = true;
+      virtualisation.docker.enable = true;
 
       # users.normal.kieran.enable = false;
     };
