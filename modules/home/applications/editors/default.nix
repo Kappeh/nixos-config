@@ -1,7 +1,6 @@
 { config, lib, ... }: {
   imports = [
     ./godot.nix
-    ./idea.nix
     ./obsidian.nix
     ./vscodium.nix
   ];
@@ -10,7 +9,6 @@
 
   config.myModules.applications.editors = {
     godot.enable = lib.mkDefault config.myModules.applications.editors.enable;
-    idea.enable = lib.mkDefault config.myModules.applications.editors.enable;
     obsidian.enable = lib.mkDefault config.myModules.applications.editors.enable;
     vscodium.enable = lib.mkDefault config.myModules.applications.editors.enable;
   };

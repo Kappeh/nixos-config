@@ -57,7 +57,6 @@
         myModules = {
           applications = {
             enable = osConfig.myModules.applications.enable;
-            editors.idea.enable = false;
 
             # Failed to build
             emulation.fceux.enable = false;
