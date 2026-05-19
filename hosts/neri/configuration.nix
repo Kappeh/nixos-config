@@ -53,8 +53,6 @@
       fileSystems = [ "/raid_root" ];
     };
 
-    myModules.core.networkmanager.enable = false;
-
     networking = {
       useDHCP = false;              # Disable dhcp for static ip
       nameservers = [ "10.0.1.104" ]; # Use local dns server

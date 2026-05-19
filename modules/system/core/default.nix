@@ -8,7 +8,6 @@
     ./libinput.nix
     ./locale.nix
     ./logiops/default.nix
-    ./networkmanager.nix
     ./nix.nix
     ./nvidia.nix
     ./opengl.nix
@@ -32,7 +31,6 @@
     impermanence.enable = lib.mkDefault config.myModules.core.enable;
     libinput.enable = lib.mkDefault config.myModules.core.enable;
     logiops.enable = lib.mkDefault config.myModules.core.enable;
-    networkmanager.enable = lib.mkDefault config.myModules.core.enable;
     nvidia.enable = lib.mkDefault config.myModules.core.enable;
     opengl.enable = lib.mkDefault config.myModules.core.enable;
     pipewire.enable = lib.mkDefault config.myModules.core.enable;

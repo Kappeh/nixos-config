@@ -26,8 +26,6 @@
           (lib.optional config.myModules.applications.gaming.gamemode.enable "gamemode")
           # Grant password-less access to the RW daemon socket
           (lib.optional config.myModules.virtualisation.qemu.enable "libvirtd")
-          # Enable network manager for user
-          (lib.optional config.myModules.core.networkmanager.enable "networkmanager")
         ];
       };
       groups.kieran = {
