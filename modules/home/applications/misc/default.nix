@@ -1,7 +1,6 @@
 { config, lib, ... }: {
   imports = [
     ./gqrx.nix
-    ./monero_gui.nix
     ./qalculate.nix
     ./qmk.nix
     ./qpwgraph.nix
@@ -16,7 +15,6 @@
 
   config.myModules.applications.misc = {
     gqrx.enable = lib.mkDefault config.myModules.applications.misc.enable;
-    monero_gui.enable = lib.mkDefault config.myModules.applications.misc.enable;
     qalculate.enable = lib.mkDefault config.myModules.applications.misc.enable;
     qmk.enable = lib.mkDefault config.myModules.applications.misc.enable;
     qpwgraph.enable = lib.mkDefault config.myModules.applications.misc.enable;
