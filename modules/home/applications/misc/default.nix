@@ -1,6 +1,5 @@
 { config, lib, ... }: {
   imports = [
-    ./gparted.nix
     ./gqrx.nix
     ./monero_gui.nix
     ./qalculate.nix
@@ -16,7 +15,6 @@
   options.myModules.applications.misc.enable = lib.mkEnableOption "Enable misc applications";
 
   config.myModules.applications.misc = {
-    gparted.enable = lib.mkDefault config.myModules.applications.misc.enable;
     gqrx.enable = lib.mkDefault config.myModules.applications.misc.enable;
     monero_gui.enable = lib.mkDefault config.myModules.applications.misc.enable;
     qalculate.enable = lib.mkDefault config.myModules.applications.misc.enable;
