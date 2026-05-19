@@ -1,6 +1,5 @@
 { config, lib, ... }: {
   imports = [
-    ./firefox.nix
     ./librewolf.nix
     ./mullvad_browser.nix
     ./tor_browser.nix
@@ -10,7 +9,6 @@
 
   config = {
     myModules.applications.browsers = {
-      firefox.enable = lib.mkDefault config.myModules.applications.browsers.enable;
       librewolf.enable = lib.mkDefault config.myModules.applications.browsers.enable;
       mullvad_browser.enable = lib.mkDefault config.myModules.applications.browsers.enable;
       tor_browser.enable = lib.mkDefault config.myModules.applications.browsers.enable;
