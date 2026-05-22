@@ -8,7 +8,10 @@
     };
 
     home = lib.mkIf config.myModules.applications.gaming.steam.enable {
-      packages = [ pkgs.steam ];
+      packages = with pkgs; [
+        protontricks
+        steam
+      ];
 
       persistence."/persist".directories = [
         ".local/share/Steam"
