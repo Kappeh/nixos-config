@@ -15,8 +15,7 @@
         };
         input = {
           method = "pipewire";
-          source = "mpd.PipeWire";
-          virtual = 1;
+          source = "easyeffects_sink.monitor";
         };
         output = {
           orientation = "bottom";
