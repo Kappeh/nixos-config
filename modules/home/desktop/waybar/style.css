@@ -61,7 +61,7 @@ window#waybar {
 #bluetooth,
 #upower,
 #wireplumber,
-#mpd,
+#custom-waybar-mpris,
 #gamemode,
 #clock {
     padding: 5px 10px;
@@ -75,30 +75,23 @@ window#waybar {
     transition-duration: 0.5s;
 }
 
+/*
 window#waybar.empty #waybar-mpris {
     background-color: transparent;
 }
+*/
 
 #network.disabled,
 #network.disconnected,
 #bluetooth.disabled,
 #bluetooth.off,
-#wireplumber.muted,
-#mpd.disconnected {
+#wireplumber.muted {
     color: #@base03@;
 }
 
 #custom-nixos-icon {
     color: #@base0C@;
     margin-left: 5px;
-}
-
-#waybar-mpris {
-    padding: 5px 10px;
-    margin: 5px 2.5px 8px 2.5px;
-    /* border: 1px; */
-    color: #@base05@;
-    background-color: transparent;
 }
 
 #cpu {
@@ -129,7 +122,13 @@ window#waybar.empty #waybar-mpris {
     color: #@base0E@;
 }
 
+/*
 #mpd {
+    color: #@base0E@;
+}
+*/
+
+#custom-waybar-mpris {
     color: #@base0E@;
 }
 

@@ -38,10 +38,7 @@
           "hyprland/workspaces"
         ];
 
-        modules-center = [
-          # "custom/waybar-mpris"
-          # "mpd"
-        ];
+        modules-center = [];
 
         modules-right = [
           "cpu"
@@ -51,7 +48,8 @@
           "network"
           "bluetooth"
           "upower#controller"
-          "mpd"
+          # "mpd"
+          "custom/waybar-mpris"
           "wireplumber"
           "gamemode"
           "clock"
@@ -66,15 +64,6 @@
           all-outputs = true;
           active-only = false;
         };
-
-        # "custom/waybar-mpris" = {
-        #   return-type = "json";
-        #   # Play and pause symbols are switched so that the current state is displayed instead
-        #   exec = "waybar-mpris --position --autofocus --play  --pause ";
-        #   on-click = "waybar-mpris --send toggle";
-        #   on-scroll-up = "waybar-mpris --send player-next";
-        #   on-scroll-down = "waybar-mpris --send player-prev";
-        # };
 
         cpu = {
           format = " {usage}%";
@@ -138,17 +127,26 @@
           tooltip = false;
         };
 
-        "mpd" = {
-          format = "{stateIcon} {artist} - {title}";
-          format-disconnected = "󰝛";
-          format-stopped = "";
-          interval = 10;
-          state-icons = {
-            paused = "";
-            playing = "";
-          };
-          tooltip = false;
-          on-click = "";
+        # "mpd" = {
+        #   format = "{stateIcon} {artist} - {title}";
+        #   format-disconnected = "󰝛";
+        #   format-stopped = "";
+        #   interval = 10;
+        #   state-icons = {
+        #     paused = "";
+        #     playing = "";
+        #   };
+        #   tooltip = false;
+        #   on-click = "";
+        # };
+
+        "custom/waybar-mpris" = {
+          return-type = "json";
+          # Play and pause symbols are switched so that the current state is displayed instead
+          exec = "waybar-mpris --autofocus --play  --pause ";
+          on-click = "waybar-mpris --send toggle";
+          on-scroll-up = "waybar-mpris --send player-next";
+          on-scroll-down = "waybar-mpris --send player-prev";
         };
 
         gamemode = {
