@@ -4,7 +4,7 @@
       "$mod" = "SUPER";
 
       "$terminal" = "alacritty";
-      "$launcher" = "wofi";
+      "$launcher" = "rofi -show drun";
 
       bindm = [
         "$mod, mouse:272, movewindow"
@@ -63,7 +63,7 @@
         # Open colour picker
         "$mod, Print, exec, hyprpicker --autocopy --format=hex --quiet"
         # Open clipboard manager
-        "$mod, c, exec, cliphist list | wofi -S dmenu | cliphist decode | wl-copy"
+        "$mod, c, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
         # Open bluetooth controls
         "$mod, b, exec, alacritty -e bluetui"
         # Open volume controls
@@ -75,7 +75,7 @@
         # Restore recent notifications
         "$mod, n, exec, makoctl restore"
         # Open power menu
-        "$mod, p, exec, wofi-power-menu"
+        "$mod, p, exec, rofi -show power-menu -modi power-menu:rofi-power-menu"
         # Open calculator
         "$mod, EQUAL, exec, qalculate-qt"
         # Open music client

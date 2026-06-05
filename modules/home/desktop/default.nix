@@ -1,16 +1,15 @@
 { config, lib, ... }: {
   imports = [
     ./cursor_theme/default.nix
-    ./gtk.nix
     ./hyprland/default.nix
     ./waybar/default.nix
-    ./wofi/default.nix
-    ./wofi_power_menu/default.nix
+    ./awww.nix
     ./cliphist.nix
     ./dconf.nix
+    ./gtk.nix
     ./libnotify.nix
     ./mako.nix
-    ./awww.nix
+    ./rofi.nix
     ./udiskie.nix
     ./xdg_mime.nix
   ];
@@ -20,9 +19,8 @@
   config.myModules.desktop = {
     cursor_theme.enable = lib.mkDefault config.myModules.desktop.enable;
     hyprland.enable = lib.mkDefault config.myModules.desktop.enable;
+    rofi.enable = lib.mkDefault config.myModules.desktop.enable;
     waybar.enable = lib.mkDefault config.myModules.desktop.enable;
-    wofi.enable = lib.mkDefault config.myModules.desktop.enable;
-    wofi_power_menu.enable = lib.mkDefault config.myModules.desktop.enable;
     cliphist.enable = lib.mkDefault config.myModules.desktop.enable;
     dconf.enable = lib.mkDefault config.myModules.desktop.enable;
     libnotify.enable = lib.mkDefault config.myModules.desktop.enable;
