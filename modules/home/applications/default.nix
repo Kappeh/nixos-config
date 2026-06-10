@@ -2,7 +2,6 @@
   imports = [
     ./browsers/default.nix
     ./editors/default.nix
-    ./emulation/default.nix
     ./file_managers/default.nix
     ./gaming/default.nix
     ./media/default.nix
@@ -18,7 +17,6 @@
   config.myModules.applications = {
     browsers.enable = lib.mkDefault config.myModules.applications.enable;
     editors.enable = lib.mkDefault config.myModules.applications.enable;
-    emulation.enable = lib.mkDefault config.myModules.applications.enable;
     file_managers.enable = lib.mkDefault config.myModules.applications.enable;
     gaming.enable = lib.mkDefault config.myModules.applications.enable;
     media.enable = lib.mkDefault config.myModules.applications.enable;
