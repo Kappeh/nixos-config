@@ -30,5 +30,18 @@
         ];
       };
     };
+
+    systemd.services.navidrome = {
+      description = "Compose service navidrome";
+      requires = [
+        "docker.service"
+        "mnt-music_library_1.mount"
+      ];
+      after = [
+        "docker.service"
+        "mnt-music_library_1.mount"
+      ];
+
+    };
   };
 }
