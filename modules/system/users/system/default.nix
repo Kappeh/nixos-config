@@ -1,0 +1,29 @@
+{ ... }: {
+  imports = [
+    ./cipher.nix
+    ./diun.nix
+    ./docker_registry.nix
+    ./duplicati.nix
+    ./ente.nix
+    ./gitea_runner.nix
+    ./gitea_server.nix
+    ./grafana.nix
+    ./home_assistant.nix
+    ./jellyfin.nix
+    ./loki.nix
+    ./mailrise.nix
+    ./minecraft_server.nix
+    ./mosquitto.nix
+    ./namecheap_ddns.nix
+    ./navidrome.nix
+    ./nginx_proxy_manager.nix
+    ./ntfy.nix
+    ./portainer.nix
+    ./rota.nix
+    ./synapse.nix
+    ./syncthing.nix
+    ./uptime_kuma.nix
+    ./whisper.nix
+    ./wireguard.nix
+  ];
+}
