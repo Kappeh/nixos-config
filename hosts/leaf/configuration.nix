@@ -8,6 +8,8 @@
     networking.hostName = "leaf";
     systemd.network.networks."10-ens18".address = [ "10.0.1.100/16" ];
 
+    services.qemuGuest.enable = true;
+
     # /var/log was moved into a seperate subvolumes on host `neri`
     # this is here to keep it in the `persist` subvolume for now on this host
     environment.persistence."/persist/system".directories = [

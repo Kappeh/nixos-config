@@ -5,6 +5,7 @@
     ./desktop/default.nix
     ./shares/default.nix
     ./shells/default.nix
+    ./tools.nix
     ./users/default.nix
     ./virtualisation/default.nix
   ];

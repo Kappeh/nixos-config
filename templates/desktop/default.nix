@@ -12,7 +12,10 @@
 
   config = {
     myModules = {
-      applications.enable = true;
+      applications = {
+        enable = true;
+        messaging.nixcord.enable = false;
+      };
       core.enable = true;
       desktop.enable = true;
       shares = {
@@ -24,6 +27,7 @@
         enable = false;
         docker.enable = true;
       };
+      tools.enable = true;
     };
 
     boot = {

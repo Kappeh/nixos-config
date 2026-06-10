@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, ... }: {
   options.myModules.applications.misc.qmk.enable = lib.mkEnableOption "Enable QMK";
 
   config = lib.mkIf config.myModules.applications.misc.qmk.enable {
