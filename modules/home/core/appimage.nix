@@ -1,14 +1,7 @@
-{ config, lib, osConfig, ... }: {
+{ config, lib, ... }: {
   options.myModules.core.appimage.enable = lib.mkEnableOption "Enable AppImage";
 
-  config = {
-    # Disable AppImage Home Manager module if NixOS module is disabled
-    myModules = lib.mkIf (!osConfig.myModules.core.appimage.enable) {
-      core.appimage.enable = lib.mkForce false;
-    };
-
-    home = lib.mkIf config.myModules.core.appimage.enable {
-      persistence."/persist".directories = [ ".cache/appimage-run" ];
-    };
+  config.home = lib.mkIf config.myModules.core.appimage.enable {
+    persistence."/persist".directories = [ ".cache/appimage-run" ];
   };
 }

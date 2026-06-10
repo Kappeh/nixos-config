@@ -1,17 +1,8 @@
-{ config, lib, osConfig, ... }: {
+{ config, lib, ... }: {
   options.myModules.core.pipewire.enable = lib.mkEnableOption "Enable PipeWire";
 
-  config = {
-    # Disable PipeWire Home Manager module if NixOS module is disabled
-    myModules = lib.mkIf (!osConfig.myModules.core.pipewire.enable) {
-      core.pipewire.enable = lib.mkForce false;
-    };
-
-    home = lib.mkIf config.myModules.core.pipewire.enable {
-      persistence."/persist".directories = [
-        ".config/pulse" # I do not know whether this needs to stick around or not
-        ".local/state/wireplumber"
-      ];
-    };
-  };
+  config.home.persistence."/persist".directories = lib.mkIf config.myModules.core.pipewire.enable [
+    ".config/pulse" # I do not know whether this needs to stick around or not
+    ".local/state/wireplumber"
+  ];
 }
