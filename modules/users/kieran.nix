@@ -44,10 +44,6 @@
           applications = {
             enable = osConfig.myModules.applications.enable;
 
-            # Known issues
-            # qt5 qtwebengine is unmaintained upstream since april 2025.
-            media.jellyfin_media_player.enable = false;
-
             # Build can fail due to race condition in libsecret test
             # https://gitlab.gnome.org/GNOME/libsecret/-/issues/80
             # media.davinci_resolve.enable = false;

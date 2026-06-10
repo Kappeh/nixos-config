@@ -6,7 +6,6 @@
     ./feh.nix
     ./feishin.nix
     ./gimp.nix
-    ./jellyfin_media_player.nix
     ./krita.nix
     ./libreoffice.nix
     ./mpd_mpris.nix
@@ -25,7 +24,6 @@
     feh.enable = lib.mkDefault config.myModules.applications.media.enable;
     feishin.enable = lib.mkDefault config.myModules.applications.media.enable;
     gimp.enable = lib.mkDefault config.myModules.applications.media.enable;
-    jellyfin_media_player.enable = lib.mkDefault config.myModules.applications.media.enable;
     krita.enable = lib.mkDefault config.myModules.applications.media.enable;
     libreoffice.enable = lib.mkDefault config.myModules.applications.media.enable;
     mpd_mpris.enable = lib.mkDefault config.myModules.applications.media.enable;
