@@ -1,29 +1,24 @@
 { pkgs, ... }: {
   imports = [
-    ./gitea.nix                    # 2000, 2001
-    ./ntfy.nix                     # 2002
-    ./loki.nix                     # 2003
-    ./mailrise.nix                 # 2004
-    ./grafana.nix                  # 2005
-    ./portainer.nix                # 2006
-    ./jellyfin.nix                 # 2007
-    ./ente.nix                     # 2008
-    ./uptime_kuma.nix              # 2009
-    ./syncthing.nix                # 2010
-    ./duplicati.nix                # 2011
-    ./navidrome.nix                # 2012
-    ./namecheap_ddns.nix           # 2013
-    ./docker_registry.nix          # 2014
-    ./minecraft_server/default.nix # 2015
-    ./synapse.nix                  # 2016
-    ./cipher.nix                   # 2017
-    ./rota.nix                     # 2018
-    ./home_assistant.nix           # 2019
-    ./mosquitto.nix                # 2020
-    ./nginx_proxy_manager.nix      # 2021
-    ./whisper.nix                  # 2022
-    ./diun.nix                     # 2023
-    ./wireguard.nix                # 2024
+    ./minecraft_server/default.nix
+    ./docker_registry.nix
+    ./duplicati.nix
+    ./ente.nix
+    ./gitea.nix
+    ./home_assistant.nix
+    ./jellyfin.nix
+    ./mailrise.nix
+    ./mosquitto.nix
+    ./navidrome.nix
+    ./nginx_proxy_manager.nix
+    ./ntfy.nix
+    ./portainer.nix
+    ./rota.nix
+    ./synapse.nix
+    ./syncthing.nix
+    ./uptime_kuma.nix
+    ./whisper.nix
+    ./wireguard.nix
   ];
 
   config.networking.firewall.allowedTCPPorts = [

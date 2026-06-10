@@ -5,7 +5,6 @@
     ./ssh.nix
 
     ../../modules/system/default.nix
-    ../../modules/system/users/default.nix
     ../../modules/users/default.nix
 
     inputs.sops-nix.nixosModules.sops
