@@ -1,7 +1,5 @@
 { config, lib, pkgs, ... }: {
-  options.myModules.users.normal.kieran.enable = lib.mkEnableOption "Enable kieran user and group";
-
-  config = lib.mkIf config.myModules.users.normal.kieran.enable {
+  config = {
     users.users.kieran = {
       uid = 1000;
 
@@ -39,9 +37,7 @@
     };
 
     home-manager.users.kieran = { config, osConfig, ...}: {
-      imports = [
-        ../home/default.nix
-      ];
+      imports = [ ../../../home/default.nix ];
 
       config = {
         home = {

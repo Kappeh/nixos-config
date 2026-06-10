@@ -1,12 +1,10 @@
 { inputs, ... }: {
   imports = [
-    # ./kieran.nix
     ./network.nix
     ./services/default.nix
     ./ssh.nix
 
     ../../modules/system/default.nix
-    ../../modules/users/default.nix
 
     inputs.sops-nix.nixosModules.sops
   ];
