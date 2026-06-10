@@ -2,16 +2,6 @@
   config = {
     environment.persistence."/persist/system".directories = [ "/mnt/" ];
 
-    fileSystems."/mnt/music_library_1" = {
-      device = "omv.home.kappeh.org:/export/music-library-1";
-      fsType = "nfs";
-      options = [
-        "x-systemd.automount"
-        "noauto"
-        "x-systemd.idle-timeout=600"
-      ];
-    };
-
     fileSystems = {
       "/".options = [ "noatime" "compress=zstd:1" "discard=async" "ssd" "space_cache=v2" ];
       "/backup".options = [ "noatime" "compress=zstd:1" "discard=async" "ssd" "space_cache=v2" ];

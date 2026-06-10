@@ -2,10 +2,10 @@
   imports = [
     ./scripts/default.nix
     ./services/default.nix
-    ./jellyfin.nix
     ./ssh.nix
 
     ../../modules/system/default.nix
+    ../../modules/system/users/default.nix
     ../../modules/users/default.nix
 
     inputs.sops-nix.nixosModules.sops
@@ -16,6 +16,10 @@
       applications.enable = true;
       core.enable = true;
       desktop.enable = true;
+      shares = {
+        music_library_1.enable = true;
+        video_library_1.enable = true;
+      };
       shells.enable = true;
       virtualisation = {
         enable = false;
