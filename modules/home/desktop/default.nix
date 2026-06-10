@@ -11,6 +11,7 @@
     ./mako.nix
     ./rofi.nix
     ./udiskie.nix
+    ./wlr_which_key.nix
     ./xdg_mime.nix
   ];
 
@@ -19,6 +20,7 @@
   config.myModules.desktop = {
     cursor_theme.enable = lib.mkDefault config.myModules.desktop.enable;
     hyprland.enable = lib.mkDefault config.myModules.desktop.enable;
+    wlr_which_key.enable = lib.mkDefault config.myModules.desktop.enable;
     rofi.enable = lib.mkDefault config.myModules.desktop.enable;
     waybar.enable = lib.mkDefault config.myModules.desktop.enable;
     cliphist.enable = lib.mkDefault config.myModules.desktop.enable;

@@ -21,7 +21,7 @@
         "$mod, Space, exec, $launcher"
 
         "$mod, t, settiled, active"
-        "$mod, s, setfloating, active"
+        # "$mod, s, setfloating, active"
         "$mod, f, fullscreen, 0"
 
         "$mod, h, movefocus, l"
@@ -56,14 +56,25 @@
         "$mod SHIFT, 9, movetoworkspacesilent, 9"
         "$mod SHIFT, 0, movetoworkspacesilent, 10"
 
+        # Open clipboard menu
+        "$mod, c, exec, wlr-which-key --initial-keys \"c\""
+        # Open games menu
+        "$mod, g, exec, wlr-which-key --initial-keys \"g\""
+        # Open main menu
+        "$mod, m, exec, wlr-which-key"
+        # Open power menu
+        "$mod, p, exec, wlr-which-key --initial-keys \"p\""
+        # Open run menu
+        "$mod, r, exec, wlr-which-key --initial-keys \"r\""
+        # Open ssh menu
+        "$mod, s, exec, wlr-which-key --initial-keys \"s\""
+
         # Screenshot a region
         ", Print, exec, hyprshot --clipboard-only -m region"
         # Screenshot the active monitor
         "SHIFT, Print, exec, hyprshot --clipboard-only -m active -m output"
         # Open colour picker
         "$mod, Print, exec, hyprpicker --autocopy --format=hex --quiet"
-        # Open clipboard manager
-        "$mod, c, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
         # Open bluetooth controls
         "$mod, b, exec, alacritty -e bluetui"
         # Open volume controls
@@ -74,12 +85,8 @@
         "$mod SHIFT, e, exec, pcmanfm"
         # Restore recent notifications
         "$mod, n, exec, makoctl restore"
-        # Open power menu
-        "$mod, p, exec, rofi -show power-menu -modi power-menu:rofi-power-menu"
         # Open calculator
         "$mod, EQUAL, exec, qalculate-qt"
-        # Open music client
-        "$mod, m, exec, kitty rmpc"
       ];
 
       bindl = [
