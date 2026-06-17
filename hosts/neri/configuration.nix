@@ -1,4 +1,4 @@
-{ ... }: {
+{ config, ... }: {
   imports = [
     ./hardware-configuration.nix
     ../../templates/desktop/default.nix
@@ -9,6 +9,16 @@
   ];
 
   config = {
+    sops.secrets.wg0 = {
+      format = "binary";
+      sopsFile = ../../secrets/wg0;
+    };
+    networking.wg-quick.interfaces.wg0 = {
+      type = "wireguard";
+      configFile = config.sops.secrets."wg0".path;
+      dns = [ "10.0.1.104" ];
+    };
+
     # This option defines the first version of NixOS you have installed on this particular machine,
     # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
     #
