@@ -25,6 +25,9 @@
       general = {
         border_size = 2;
         layout = "master";
+
+        "col.active_border" = lib.mkForce "0xff${config.lib.stylix.colors.base0D} 0xff${config.lib.stylix.colors.base0E} 135deg";
+        "col.inactive_border" = lib.mkForce "0xff${config.lib.stylix.colors.base03} 0xff${config.lib.stylix.colors.base02} 135deg";
       };
 
       master = {
@@ -58,6 +61,21 @@
         name = "wacom-intuos-s-pen";
         output = "HDMI-A-1";
       }];
+
+      group = {
+        "col.border_active" = lib.mkForce "0xff${config.lib.stylix.colors.base0D} 0xff${config.lib.stylix.colors.base0E} 135deg";
+        "col.border_inactive" = lib.mkForce "0xff${config.lib.stylix.colors.base03} 0xff${config.lib.stylix.colors.base02} 135deg";
+
+        groupbar = {
+          enabled = true;
+          indicator_height = 5;
+          render_titles = false;
+          rounding = 0;
+          keep_upper_gap = false;
+          gaps_in = 2;
+          gaps_out = 2;
+        };
+      };
 
       misc = {
         disable_hyprland_logo = true;

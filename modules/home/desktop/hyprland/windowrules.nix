@@ -2,6 +2,9 @@
   config = lib.mkIf config.myModules.desktop.hyprland.enable {
     wayland.windowManager.hyprland.settings = {
       windowrule = [
+        # Window Groups
+        "match:group true, no_anim on"
+
         # Discord
         "match:class discord, workspace 2"
 

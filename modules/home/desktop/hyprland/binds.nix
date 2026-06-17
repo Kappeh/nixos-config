@@ -21,18 +21,30 @@
         "$mod, Space, exec, $launcher"
 
         "$mod, t, settiled, active"
-        # "$mod, s, setfloating, active"
+        "$mod SHIFT, T, setfloating, active"
         "$mod, f, fullscreen, 0"
 
         "$mod, h, movefocus, l"
-        "$mod, l, movefocus, r"
-        "$mod, k, movefocus, u"
         "$mod, j, movefocus, d"
+        "$mod, k, movefocus, u"
+        "$mod, l, movefocus, r"
 
-        "$mod SHIFT, h, layoutmsg, rollnext"
-        "$mod SHIFT, l, layoutmsg, rollprev"
-        "$mod SHIFT, k, layoutmsg, removemaster"
-        "$mod SHIFT, j, layoutmsg, addmaster"
+        "$mod SHIFT, h, movewindoworgroup, l"
+        "$mod SHIFT, j, movewindoworgroup, d"
+        "$mod SHIFT, k, movewindoworgroup, u"
+        "$mod SHIFT, l, movewindoworgroup, r"
+
+        "$mod CTRL, h, layoutmsg, rollnext"
+        "$mod CTRL, j, layoutmsg, addmaster"
+        "$mod CTRL, k, layoutmsg, removemaster"
+        "$mod CTRL, l, layoutmsg, rollprev"
+
+        "$mod, SEMICOLON, togglegroup"
+
+        "$mod, n, changegroupactive, f"
+        "$mod, p, changegroupactive, b"
+        "$mod SHIFT, n, movegroupwindow, f"
+        "$mod SHIFT, p, movegroupwindow, b"
 
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
@@ -63,7 +75,7 @@
         # Open main menu
         "$mod, m, exec, wlr-which-key"
         # Open power menu
-        "$mod, p, exec, wlr-which-key --initial-keys \"p\""
+        # "$mod, p, exec, wlr-which-key --initial-keys \"p\""
         # Open run menu
         "$mod, r, exec, wlr-which-key --initial-keys \"r\""
         # Open ssh menu
@@ -86,7 +98,7 @@
         # Open file manager (gui)
         "$mod SHIFT, e, exec, pcmanfm"
         # Restore recent notifications
-        "$mod, n, exec, makoctl restore"
+        # "$mod, n, exec, makoctl restore"
         # Open calculator
         "$mod, EQUAL, exec, qalculate-qt"
       ];
