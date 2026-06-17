@@ -4,7 +4,8 @@
   config.home = lib.mkIf config.myModules.applications.gaming.steam.enable {
     packages = with pkgs; [
       protontricks
-      steam
+      # steam
+      millennium-steam
     ];
 
     persistence."/persist".directories = [

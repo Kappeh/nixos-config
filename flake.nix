@@ -16,6 +16,8 @@
 
     impermanence.url = "github:nix-community/impermanence";
 
+    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
     nixcord.url = "github:kaylorben/nixcord";
