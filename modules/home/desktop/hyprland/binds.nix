@@ -95,6 +95,9 @@
         ", XF86AudioPrev, exec, playerctl previous"
 
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
+
+        # Toggle mute on Discord
+        ", XF86Launch6, pass, class:^(discord)$"
       ];
 
       bindle = [

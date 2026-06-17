@@ -13,7 +13,7 @@
     myModules = {
       applications = {
         enable = true;
-        messaging.nixcord.enable = false;
+        messaging.discord.enable = false;
       };
       core.enable = true;
       desktop.enable = true;
