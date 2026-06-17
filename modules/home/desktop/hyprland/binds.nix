@@ -73,6 +73,8 @@
         ", Print, exec, hyprshot --clipboard-only -m region"
         # Screenshot the active monitor
         "SHIFT, Print, exec, hyprshot --clipboard-only -m active -m output"
+        # Screenshot the focused window
+        "CTRL, Print, exec, hyprshot --clipboard-only -m active -m window"
         # Open colour picker
         "$mod, Print, exec, hyprpicker --autocopy --format=hex --quiet"
         # Open bluetooth controls
