@@ -14,6 +14,11 @@
       applications = {
         enable = true;
         messaging.discord.enable = false;
+        media = {
+          mpd.enable = false;
+          mpd_mpris.enable = false;
+          rmpc.enable = false;
+        };
       };
       core.enable = true;
       desktop.enable = true;
