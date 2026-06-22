@@ -23,8 +23,8 @@
       core.enable = true;
       desktop.enable = true;
       shares = {
+        media_library_1.enable = true;
         music_library_1.enable = true;
-        video_library_1.enable = true;
       };
       shells.enable = true;
       virtualisation = {
