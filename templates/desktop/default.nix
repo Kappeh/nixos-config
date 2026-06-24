@@ -25,6 +25,7 @@
       shares = {
         media_library_1.enable = true;
         music_library_1.enable = true;
+        nas_1.enable = true;
       };
       shells.enable = true;
       virtualisation = {

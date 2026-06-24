@@ -7,6 +7,7 @@
     ./media_library_1.nix
     ./minecraft_server.nix
     ./music_library_1.nix
+    ./nas_1.nix
   ];
 
   config.myModules.shares = {
@@ -17,5 +18,6 @@
     media_library_1.enable = lib.mkDefault false;
     minecraft_server.enable = lib.mkDefault false;
     music_library_1.enable = lib.mkDefault false;
+    nas_1.enable = lib.mkDefault false;
   };
 }
