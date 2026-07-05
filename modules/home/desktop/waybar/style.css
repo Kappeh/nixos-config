@@ -55,6 +55,7 @@ window#waybar {
 
 #custom-nixos-icon,
 #cpu,
+#temperature,
 #memory,
 #disk,
 #network,
@@ -94,7 +95,8 @@ window#waybar.empty #waybar-mpris {
     margin-left: 5px;
 }
 
-#cpu {
+#cpu,
+#temperature {
     color: #@base08@;
 }
 

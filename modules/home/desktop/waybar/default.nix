@@ -42,6 +42,7 @@
 
         modules-right = [
           "cpu"
+          "temperature"
           "memory"
           "disk#raid"
           # "disk#storage"
@@ -68,6 +69,15 @@
         cpu = {
           format = " {usage}%";
           tooltip = false;
+          interval = 1;
+        };
+
+        temperature = {
+          hwmon-path = "/sys/class/thermal/thermal_zone2/temp";
+          tooltip = false;
+          critical-threshold = 80;
+          format = " {temperatureC}°C";
+          format-critical = " {temperatureC}°C";
           interval = 1;
         };
 
