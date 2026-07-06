@@ -6,6 +6,7 @@
     ./boot.nix
     ./filesystems.nix
     ./network.nix
+    ./smartmontools.nix
   ];
 
   config = {
