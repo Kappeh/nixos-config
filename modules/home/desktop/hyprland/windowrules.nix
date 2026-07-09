@@ -47,6 +47,7 @@
 
         # Steam
         "match:class steam, workspace 10"
+        "match:class steam, match:title Sign in to Steam, float on, center on"
       ];
     };
   };
