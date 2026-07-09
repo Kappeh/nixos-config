@@ -92,6 +92,7 @@
       monitor = [
         "DP-2, 1920x1080, 0x0, 1"
         "HDMI-A-1, 2560x1080, 1920x0, 1"
+        "DP-3, 1920x1080, 960x1080, 1"
       ];
 
       # TODO make configurable
@@ -100,8 +101,8 @@
         "2, monitor:DP-2"
         "3, monitor:DP-2"
         "4, monitor:DP-2"
-        "5, monitor:DP-2"
-        "6, monitor:HDMI-A-1"
+        "5, monitor:DP-3"
+        "6, monitor:DP-3"
         "7, monitor:HDMI-A-1"
         "8, monitor:HDMI-A-1"
         "9, monitor:HDMI-A-1"

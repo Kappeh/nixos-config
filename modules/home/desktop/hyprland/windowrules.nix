@@ -15,9 +15,9 @@
         "match:class steam_app_2357570, monitor HDMI-A-1, fullscreen on"
 
         {
-          name = "keepassxc-workspace-5";
+          name = "keepassxc-workspace-4";
           match.class = "org.keepassxc.KeePassXC";
-          workspace = 5;
+          workspace = 4;
         }
 
         {
@@ -43,7 +43,7 @@
         "match:class Ssh-askpass-fullscreen, match:title ssh-askpass-fullscreen, fullscreen on"
 
         # Feishin
-        "match:class feishin, match:title Feishin, workspace 4"
+        "match:class feishin, match:title Feishin, workspace 5"
 
         # Steam
         "match:class steam, workspace 10"
