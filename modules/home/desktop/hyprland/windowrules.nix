@@ -43,7 +43,7 @@
         "match:class Ssh-askpass-fullscreen, match:title ssh-askpass-fullscreen, fullscreen on"
 
         # Feishin
-        "match:class feishin, match:title Feishin, workspace 5"
+        "match:class feishin, match:title Feishin, workspace 5, fullscreen on"
 
         # Steam
         "match:class steam, workspace 10"
