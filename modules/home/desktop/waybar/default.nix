@@ -56,7 +56,8 @@
           "upower#controller"
           # "mpd"
           "custom/waybar-mpris"
-          "wireplumber"
+          "wireplumber#sink"
+          "wireplumber#source"
           "gamemode"
           "clock"
         ];
@@ -135,10 +136,19 @@
           on-click = "";
         };
 
-        wireplumber = {
+        "wireplumber#sink" = {
+          node-type = "Audio/Sink";
           format = "{icon} {volume}%";
           format-muted = "";
           format-icons = [ "" "" "" ];
+          tooltip = false;
+        };
+
+        "wireplumber#source" = {
+          node-type = "Audio/Source";
+          format = "{icon} {volume}%";
+          format-muted = "󰍭";
+          format-icons = [ "󰍬" "󰍬" "󰍬" ];
           tooltip = false;
         };
 
