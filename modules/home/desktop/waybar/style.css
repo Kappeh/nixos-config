@@ -96,6 +96,21 @@ window#waybar.empty #waybar-mpris {
 }
 
 #cpu,
+#temperature,
+#memory,
+#disk {
+    min-width: 60px;
+}
+
+#network {
+    min-width: 200px;
+}
+
+#clock {
+    min-width: 240px;
+}
+
+#cpu,
 #temperature {
     color: #@base08@;
 }
