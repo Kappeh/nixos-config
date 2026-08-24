@@ -105,10 +105,11 @@
         # };
 
         network = {
-          format-wifi = "";
-          format-ethernet = "";
+          format-wifi = " {bandwidthUpBits}  {bandwidthDownBits} ";
+          format-ethernet = " {bandwidthUpBits}  {bandwidthDownBits} ";
           format-disconnected = "󱘖";
           tooltip = false;
+          interval = 1;
         };
 
         bluetooth = {
