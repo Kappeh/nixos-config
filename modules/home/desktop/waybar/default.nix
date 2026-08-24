@@ -1,7 +1,5 @@
 { config, lib, pkgs, ... }: {
-  options.myModules.desktop.waybar.enable = lib.mkEnableOption "Enable Waybar";
-
-  config = lib.mkIf config.myModules.desktop.waybar.enable {
+  config = lib.mkIf config.myModules.desktop.enable {
     stylix.targets.waybar.enable = false;
 
     home.packages = [ pkgs.waybar-mpris ];

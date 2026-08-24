@@ -141,20 +141,7 @@
             ssh.enable = ssh.enable;
             syncthing.enable = syncthing.enable;
           };
-          desktop = with desktop; {
-            awww.enable = awww.enable;
-            cliphist.enable = cliphist.enable;
-            cursor_theme.enable = cursor_theme.enable;
-            dconf.enable = dconf.enable;
-            hyprland.enable = hyprland.enable;
-            libnotify.enable = libnotify.enable;
-            mako.enable = mako.enable;
-            rofi.enable = rofi.enable;
-            udiskie.enable = udiskie.enable;
-            waybar.enable = waybar.enable;
-            wlr_which_key.enable = wlr_which_key.enable;
-            xdg_mime.enable = xdg_mime.enable;
-          };
+          desktop.enable = desktop.enable;
           shells = with shells; {
             rust.enable = rust.enable;
             zsh.enable = zsh.enable;

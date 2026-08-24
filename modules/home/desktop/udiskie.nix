@@ -1,7 +1,5 @@
 { config, lib, pkgs, ... }: {
-  options.myModules.desktop.udiskie.enable = lib.mkEnableOption "Enable udiskie";
-
-  config = lib.mkIf config.myModules.desktop.udiskie.enable {
+  config = lib.mkIf config.myModules.desktop.enable {
     home.packages = [ pkgs.udiskie ];
 
     services.udiskie = {

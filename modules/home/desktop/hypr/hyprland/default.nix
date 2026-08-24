@@ -1,7 +1,5 @@
 { config, inputs, lib, pkgs, ... }: {
-  options.myModules.desktop.hyprland.enable = lib.mkEnableOption "Enable Hyprland";
-
-  config.wayland.windowManager.hyprland = lib.mkIf config.myModules.desktop.hyprland.enable {
+  config.wayland.windowManager.hyprland = lib.mkIf config.myModules.desktop.enable {
     enable = true;
 
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;

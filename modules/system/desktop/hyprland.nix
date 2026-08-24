@@ -1,7 +1,5 @@
 { config, lib, pkgs, inputs, ... }: {
-  options.myModules.desktop.hyprland.enable = lib.mkEnableOption "Enable Hyprland";
-
-  config = lib.mkIf config.myModules.desktop.hyprland.enable {
+  config = lib.mkIf config.myModules.desktop.enable {
     nix.settings = {
       substituters = [ "https://hyprland.cachix.org" ];
       trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];

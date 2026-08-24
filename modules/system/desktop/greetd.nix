@@ -4,11 +4,9 @@ let
   session = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/start-hyprland";
   username = "kieran";
 in {
-  options.myModules.desktop.greetd.enable = lib.mkEnableOption "Enable greetd";
-
   # Automatic login with greetd and tuigreet
   # https://discourse.nixos.org/t/autologin-hyprland/38159/12
-  config = lib.mkIf config.myModules.desktop.greetd.enable {
+  config = lib.mkIf config.myModules.desktop.enable {
     environment.systemPackages = [ pkgs.tuigreet ];
 
     services.greetd = {

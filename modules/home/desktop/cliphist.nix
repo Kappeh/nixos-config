@@ -1,7 +1,5 @@
 { config, lib, pkgs, ... }: {
-  options.myModules.desktop.cliphist.enable = lib.mkEnableOption "Enable ClipHist";
-
-  config = lib.mkIf config.myModules.desktop.cliphist.enable {
+  config = lib.mkIf config.myModules.desktop.enable {
     home = {
       packages = [
         pkgs.wl-clipboard

@@ -1,7 +1,3 @@
-{ config, lib, ... }: {
-  options.myModules.desktop.udisks.enable = lib.mkEnableOption "Enable udisks";
-
-  config = lib.mkIf config.myModules.desktop.udisks.enable {
-    services.udisks2.enable = true;
-  };
+{ config, ... }: {
+  config.services.udisks2.enable = config.myModules.desktop.enable;
 }

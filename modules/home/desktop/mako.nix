@@ -1,7 +1,5 @@
 { config, lib, ... }: {
-  options.myModules.desktop.mako.enable = lib.mkEnableOption "Enable mako";
-
-  config = lib.mkIf config.myModules.desktop.mako.enable {
+  config = lib.mkIf config.myModules.desktop.enable {
     services.mako = {
       enable = true;
 

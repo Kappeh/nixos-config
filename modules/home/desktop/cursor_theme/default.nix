@@ -1,7 +1,5 @@
 { config, lib, pkgs, ... }: {
-  options.myModules.desktop.cursor_theme.enable = lib.mkEnableOption "Enable cursor theme";
-
-  config = lib.mkIf config.myModules.desktop.cursor_theme.enable {
+  config = lib.mkIf config.myModules.desktop.enable {
     home.pointerCursor = {
       enable = true;
       gtk.enable = true;

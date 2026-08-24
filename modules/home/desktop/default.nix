@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{ lib, ... }: {
   imports = [
     ./cursor_theme/default.nix
     ./hypr/default.nix
@@ -16,19 +16,4 @@
   ];
 
   options.myModules.desktop.enable = lib.mkEnableOption "Enable desktop";
-
-  config.myModules.desktop = {
-    cursor_theme.enable = lib.mkDefault config.myModules.desktop.enable;
-    hyprland.enable = lib.mkDefault config.myModules.desktop.enable;
-    wlr_which_key.enable = lib.mkDefault config.myModules.desktop.enable;
-    rofi.enable = lib.mkDefault config.myModules.desktop.enable;
-    waybar.enable = lib.mkDefault config.myModules.desktop.enable;
-    cliphist.enable = lib.mkDefault config.myModules.desktop.enable;
-    dconf.enable = lib.mkDefault config.myModules.desktop.enable;
-    libnotify.enable = lib.mkDefault config.myModules.desktop.enable;
-    mako.enable = lib.mkDefault config.myModules.desktop.enable;
-    awww.enable = lib.mkDefault config.myModules.desktop.enable;
-    udiskie.enable = lib.mkDefault config.myModules.desktop.enable;
-    xdg_mime.enable = lib.mkDefault config.myModules.desktop.enable;
-  };
 }

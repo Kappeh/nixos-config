@@ -1,7 +1,5 @@
 { config, lib, pkgs, ... }: {
-  options.myModules.desktop.rofi.enable = lib.mkEnableOption "Enable Rofi";
-
-  config = lib.mkIf config.myModules.desktop.rofi.enable {
+  config = lib.mkIf config.myModules.desktop.enable {
     home.packages = [
       pkgs.rofi-power-menu
     ];

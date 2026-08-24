@@ -1,4 +1,4 @@
-{ ... }: {
+{
   imports = [
     ./kieran.nix
   ];

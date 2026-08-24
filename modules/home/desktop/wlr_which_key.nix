@@ -1,7 +1,5 @@
 { config, lib, pkgs, ... }: {
-  options.myModules.desktop.wlr_which_key.enable = lib.mkEnableOption "Enable wlr-which-key";
-
-  config = lib.mkIf config.myModules.desktop.wlr_which_key.enable {
+  config = lib.mkIf config.myModules.desktop.enable {
     home.packages = [ pkgs.wlr-which-key ];
 
     xdg.configFile."wlr-which-key/config.yaml".source = (pkgs.formats.yaml { }).generate "something" {
