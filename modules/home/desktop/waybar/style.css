@@ -130,9 +130,11 @@ window#waybar.empty #waybar-mpris {
 }
 */
 
+/*
 #custom-waybar-mpris {
     color: #@base0E@;
 }
+*/
 
 #gamemode {
     color: #@base05@;

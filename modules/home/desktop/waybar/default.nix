@@ -53,7 +53,7 @@
           "bluetooth"
           "upower#controller"
           # "mpd"
-          "custom/waybar-mpris"
+          # "custom/waybar-mpris"
           "wireplumber#sink"
           "wireplumber#source"
           "gamemode"
@@ -164,14 +164,14 @@
         #   on-click = "";
         # };
 
-        "custom/waybar-mpris" = {
-          return-type = "json";
-          # Play and pause symbols are switched so that the current state is displayed instead
-          exec = "waybar-mpris --autofocus --play  --pause ";
-          on-click = "waybar-mpris --send toggle";
-          on-scroll-up = "waybar-mpris --send player-next";
-          on-scroll-down = "waybar-mpris --send player-prev";
-        };
+        # "custom/waybar-mpris" = {
+        #   return-type = "json";
+        #   # Play and pause symbols are switched so that the current state is displayed instead
+        #   exec = "waybar-mpris --autofocus --play  --pause ";
+        #   on-click = "waybar-mpris --send toggle";
+        #   on-scroll-up = "waybar-mpris --send player-next";
+        #   on-scroll-down = "waybar-mpris --send player-prev";
+        # };
 
         gamemode = {
           use-icon = false;
