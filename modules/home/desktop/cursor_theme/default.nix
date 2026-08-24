@@ -3,6 +3,7 @@
 
   config = lib.mkIf config.myModules.desktop.cursor_theme.enable {
     home.pointerCursor = {
+      enable = true;
       gtk.enable = true;
       x11.enable = true;
       name = "Sunity-cursors";

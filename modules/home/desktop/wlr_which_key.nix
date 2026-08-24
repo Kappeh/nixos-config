@@ -154,7 +154,7 @@
                 {
                   key = "y";
                   desc = "Confirm";
-                  cmd = "systemctl poweroff";
+                  cmd = "hyprshutdown -t 'Shutting Down...' --post-command 'shutdown -P 0'";
                 }
                 {
                   key = "n";
@@ -170,7 +170,7 @@
                 {
                   key = "y";
                   desc = "Confirm";
-                  cmd = "systemctl reboot";
+                  cmd = "hyprshutdown -t 'Restarting...' --post-cmd 'reboot'";
                 }
                 {
                   key = "n";
@@ -186,7 +186,7 @@
                 {
                   key = "y";
                   desc = "Confirm";
-                  cmd = "pkill Hyprland";
+                  cmd = "hyprshutdown -t 'Logging Out...' --post-cmd 'pkill Hyprland'";
                 }
                 {
                   key = "n";

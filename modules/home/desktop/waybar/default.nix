@@ -9,6 +9,11 @@
     programs.waybar = {
       enable = true;
 
+      systemd = {
+        enable = true;
+        targets = [ "hyprland-session.target" ];
+      };
+
       style = pkgs.replaceVars ./style.css {
         base00 = config.lib.stylix.colors.base00;
         base01 = config.lib.stylix.colors.base01;

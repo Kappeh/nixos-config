@@ -4,7 +4,10 @@
   config = lib.mkIf config.myModules.applications.messaging.nixcord.enable {
     stylix.targets.nixcord.extraCss = builtins.readFile ./extra.css;
 
-    programs.nixcord.enable = true;
+    programs.nixcord = {
+      enable = true;
+      discord.vencord.enable = true;
+    };
 
     home.persistence."/persist".directories = [ ".config/discord" ];
   };
