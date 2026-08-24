@@ -20,7 +20,7 @@
         wlr_which_key = "${pkgs.wlr-which-key}/bin/wlr-which-key";
         bluetui = "${pkgs.bluetui}/bin/bluetui";
         pulsemixer = "${pkgs.pulsemixer}/bin/pulsemixer";
-        qalculate_qt = "${pkgs.qalculate-qt}/bin/qalculate_qt";
+        qalculate_qt = "${pkgs.qalculate-qt}/bin/qalculate-qt";
         hyprpicker = "${pkgs.hyprpicker}/bin/hyprpicker";
         grim = "${pkgs.grim}/bin/grim";
         slurp = "${pkgs.slurp}/bin/slurp";
