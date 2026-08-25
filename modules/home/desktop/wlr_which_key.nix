@@ -152,7 +152,7 @@
                 {
                   key = "y";
                   desc = "Confirm";
-                  cmd = "hyprshutdown -t 'Shutting Down...' --post-command 'shutdown -P 0'";
+                  cmd = "hyprshutdown -t 'Shutting Down...' --post-cmd 'shutdown -P 0'";
                 }
                 {
                   key = "n";
