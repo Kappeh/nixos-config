@@ -32,7 +32,7 @@
         height = 30;
         output = [ "DP-2" ];
         spacing = 0;
-        fixed-center = false;
+        # fixed-center = false;
 
         reload_style_on_change = false;
 
@@ -41,19 +41,17 @@
           "hyprland/workspaces"
         ];
 
-        modules-center = [];
-
-        modules-right = [
+        modules-center = [
           "cpu"
           "temperature"
           "memory"
           "disk#raid"
-          # "disk#storage"
           "network"
           "bluetooth"
           "upower#controller"
-          # "mpd"
-          # "custom/waybar-mpris"
+        ];
+
+        modules-right = [
           "wireplumber#sink"
           "wireplumber#source"
           "gamemode"
