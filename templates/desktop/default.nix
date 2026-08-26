@@ -17,7 +17,6 @@
         media = {
           mpd.enable = false;
           mpd_mpris.enable = false;
-          rmpc.enable = false;
         };
       };
       core.enable = true;

@@ -17,7 +17,6 @@
     libreoffice.enable = lib.mkEnableOption "Enable LibreOffice";
     mpd_mpris.enable = lib.mkEnableOption "Enable mpd-mpris";
     picard.enable = lib.mkEnableOption "Enable Picard";
-    rmpc.enable = lib.mkEnableOption "Enable Rmpc";
     vlc.enable = lib.mkEnableOption "Enable VLC";
   };
 
@@ -34,7 +33,6 @@
     mpd_mpris.enable = lib.mkDefault config.myModules.applications.media.enable;
     obs_studio.enable = lib.mkDefault config.myModules.applications.media.enable;
     picard.enable = lib.mkDefault config.myModules.applications.media.enable;
-    rmpc.enable = lib.mkDefault config.myModules.applications.media.enable;
     vlc.enable = lib.mkDefault config.myModules.applications.media.enable;
   };
 }

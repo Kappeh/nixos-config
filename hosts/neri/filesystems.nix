@@ -1,4 +1,4 @@
-{ ... }: {
+{
   config = {
     environment.persistence."/persist/system".directories = [ "/mnt/" ];
 

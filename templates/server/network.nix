@@ -1,4 +1,4 @@
-{ config, ... }: {
+{
   config = {
     networking = {
       useDHCP = false;              # Disable dhcp for static ip

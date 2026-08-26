@@ -13,8 +13,6 @@
         ]
         # Allow gamemode user daemon to change CPU governor or niceness
         (lib.optional config.myModules.applications.gaming.gamemode.enable "gamemode")
-        # Grant password-less access to the RW daemon socket
-        (lib.optional config.myModules.virtualisation.qemu.enable "libvirtd")
         # Allow non-root user to capture network packets without needing superuser privileges
         (lib.optional config.myModules.applications.misc.wireshark.enable "wireshark")
       ];
@@ -71,7 +69,6 @@
             editors = with editors; {
               godot.enable = godot.enable;
               obsidian.enable = obsidian.enable;
-              vscodium.enable = vscodium.enable;
             };
             file_managers = with file_managers; {
               pcmanfm.enable = pcmanfm.enable;
@@ -97,7 +94,6 @@
               mpd_mpris.enable = mpd_mpris.enable;
               obs_studio.enable = obs_studio.enable;
               picard.enable = picard.enable;
-              rmpc.enable = rmpc.enable;
               vlc.enable = vlc.enable;
             };
             messaging = with messaging; {

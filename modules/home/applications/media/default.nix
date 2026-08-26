@@ -11,7 +11,6 @@
     ./mpd_mpris.nix
     ./obs_studio.nix
     ./picard.nix
-    ./rmpc/default.nix
     ./vlc.nix
   ];
 
@@ -29,7 +28,6 @@
     mpd_mpris.enable = lib.mkDefault config.myModules.applications.media.enable;
     obs_studio.enable = lib.mkDefault config.myModules.applications.media.enable;
     picard.enable = lib.mkDefault config.myModules.applications.media.enable;
-    rmpc.enable = lib.mkDefault config.myModules.applications.media.enable;
     vlc.enable = lib.mkDefault config.myModules.applications.media.enable;
   };
 }
