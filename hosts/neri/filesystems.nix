@@ -3,7 +3,7 @@
     environment.persistence."/persist/system".directories = [ "/mnt/" ];
 
     fileSystems = {
-      "/".options = [ "noatime" "compress=zstd:1" "discard=async" "ssd" "space_cache=v2" ];
+      # "/".options = [ "noatime" "compress=zstd:1" "discard=async" "ssd" "space_cache=v2" ];
       "/backup".options = [ "noatime" "compress=zstd:1" "discard=async" "ssd" "space_cache=v2" ];
       # "/backups".options = [ "noatime" "compress=zstd:1" "discard=async" "ssd" "space_cache=v2" ];
       "/persist".options = [ "noatime" "compress=zstd:1" "discard=async" "ssd" "space_cache=v2" ];

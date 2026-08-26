@@ -18,10 +18,16 @@
   boot.initrd.luks.devices."crypt2".device = "/dev/disk/by-uuid/9d2c4603-4870-47f5-b70c-28a56ba30750";
   boot.initrd.luks.devices."crypt3".device = "/dev/disk/by-uuid/ff906e8c-0e85-429f-b769-966b7fb0b5c7";
 
+  # fileSystems."/" =
+  #   { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
+  #     fsType = "btrfs";
+  #     options = [ "subvol=root" ];
+  #   };
+
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
-      fsType = "btrfs";
-      options = [ "subvol=root" ];
+    { device = "none";
+      fsType = "tmpfs";
+      options = [ "size=2G" "mode=755" ];
     };
 
   fileSystems."/backup" =
