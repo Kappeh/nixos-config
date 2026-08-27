@@ -19,6 +19,7 @@
     ./upower.nix
     ./vim.nix
     ./wireguard.nix
+    ./zram.nix
   ];
 
   options.myModules.core = {
@@ -54,5 +55,6 @@
     systemd_boot.enable = lib.mkDefault config.myModules.core.enable;
     upower.enable = lib.mkDefault config.myModules.core.enable;
     wireguard.enable = lib.mkDefault config.myModules.core.enable;
+    zram.enable = lib.mkDefault config.myModules.core.enable;
   };
 }
