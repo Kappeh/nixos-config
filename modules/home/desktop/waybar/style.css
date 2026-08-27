@@ -57,12 +57,12 @@ window#waybar {
 #cpu,
 #temperature,
 #memory,
+#custom-tmpfs,
 #disk,
 #network,
 #bluetooth,
 #upower,
 #wireplumber,
-#custom-waybar-mpris,
 #gamemode,
 #clock {
     padding: 5px 10px;
@@ -75,12 +75,6 @@ window#waybar {
     transition-property: color;
     transition-duration: 0.5s;
 }
-
-/*
-window#waybar.empty #waybar-mpris {
-    background-color: transparent;
-}
-*/
 
 #network.disabled,
 #network.disconnected,
@@ -98,6 +92,7 @@ window#waybar.empty #waybar-mpris {
 #cpu,
 #temperature,
 #memory,
+#custom-tmpfs,
 #disk {
     min-width: 60px;
 }
@@ -119,6 +114,7 @@ window#waybar.empty #waybar-mpris {
     color: #@base09@;
 }
 
+#custom-tmpfs,
 #disk {
     color: #@base0A@;
 }
@@ -138,18 +134,6 @@ window#waybar.empty #waybar-mpris {
 #wireplumber {
     color: #@base0E@;
 }
-
-/*
-#mpd {
-    color: #@base0E@;
-}
-*/
-
-/*
-#custom-waybar-mpris {
-    color: #@base0E@;
-}
-*/
 
 #gamemode {
     color: #@base05@;

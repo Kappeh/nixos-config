@@ -44,7 +44,9 @@
         modules-center = [
           "cpu"
           "temperature"
-          "memory"
+          "memory#physical"
+          "memory#swap"
+          "custom/tmpfs"
           "disk#raid"
           "network"
           "bluetooth"
@@ -83,24 +85,30 @@
           interval = 1;
         };
 
-        memory = {
-          # format = " {used:0.1f}GiB    {swapUsed:0.1f}GiB";
-          format = " {used:0.1f}GiB";
+        "memory#physical" = {
+          format = " {used:0.1f}G";
+          tooltip = false;
+          interval = 1;
+        };
+
+        "memory#swap" = {
+          format = "󰾴 {swapUsed:0.1f}G";
+          tooltip = false;
+          interval = 1;
+        };
+
+        "custom/tmpfs" = {
+          format = "󰙅 {text}";
+          exec = "df -h -t tmpfs | grep '/\$' | cut -w -f 3";
           tooltip = false;
           interval = 1;
         };
 
         "disk#raid" = {
           path = "/raid_root";
-          format = " {percentage_used}%";
+          format = "󰋊 {percentage_used}%";
           tooltip = false;
         };
-
-        # "disk#storage" = {
-        #   path = "/storage_root";
-        #   format = " {percentage_used}%";
-        #   tooltip = false;
-        # };
 
         network = {
           format-wifi = " {bandwidthUpBits}  {bandwidthDownBits} ";
@@ -148,28 +156,6 @@
           format-icons = [ "󰍬" "󰍬" "󰍬" ];
           tooltip = false;
         };
-
-        # "mpd" = {
-        #   format = "{stateIcon} {artist} - {title}";
-        #   format-disconnected = "󰝛";
-        #   format-stopped = "";
-        #   interval = 10;
-        #   state-icons = {
-        #     paused = "";
-        #     playing = "";
-        #   };
-        #   tooltip = false;
-        #   on-click = "";
-        # };
-
-        # "custom/waybar-mpris" = {
-        #   return-type = "json";
-        #   # Play and pause symbols are switched so that the current state is displayed instead
-        #   exec = "waybar-mpris --autofocus --play  --pause ";
-        #   on-click = "waybar-mpris --send toggle";
-        #   on-scroll-up = "waybar-mpris --send player-next";
-        #   on-scroll-down = "waybar-mpris --send player-prev";
-        # };
 
         gamemode = {
           use-icon = false;
