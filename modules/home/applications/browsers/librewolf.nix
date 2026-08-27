@@ -2,7 +2,10 @@
   options.myModules.applications.browsers.librewolf.enable = lib.mkEnableOption "Enable LibreWolf";
 
   config = lib.mkIf config.myModules.applications.browsers.librewolf.enable {
-    stylix.targets.librewolf.profileNames = [ "default" ];
+    stylix.targets.librewolf = {
+      colorTheme.enable = true;
+      profileNames = [ "default" ];
+    };
 
     programs.librewolf = {
       enable = true;
@@ -11,17 +14,21 @@
         name = "default";
         isDefault = true;
 
-        extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
-          buster-captcha-solver
-          clearurls
-          consent-o-matic
-          darkreader
-          decentraleyes
-          keepassxc-browser
-          simplelogin
-          sponsorblock
-          ublock-origin
-        ];
+        extensions = {
+          packages = with inputs.firefox-addons.packages."x86_64-linux"; [
+            buster-captcha-solver
+            clearurls
+            consent-o-matic
+            darkreader
+            decentraleyes
+            keepassxc-browser
+            simplelogin
+            sponsorblock
+            ublock-origin
+          ];
+          # Required to allow stylix to set colors
+          settings."FirefoxColor@mozilla.com".force = true;
+        };
 
         search = {
           force = true;
@@ -193,9 +200,9 @@
           # Apparently allows transparency
           # TODO: transparent top menu / tabs
           "browser.tabs.allow_transparent_browser" = true;
-    # Enable DRM
-    "drm" = true;
-    "media.eme.enabled" = true;
+          # Enable DRM
+          "drm" = true;
+          "media.eme.enabled" = true;
 
           # Performance
           "gfx.webrender.all" = true; # Force enable GPU acceleration
