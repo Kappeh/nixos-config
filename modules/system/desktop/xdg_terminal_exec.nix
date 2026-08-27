@@ -1,3 +1,5 @@
-{ config, ... }: {
-  config.xdg.terminal-exec.enable = config.myModules.desktop.enable;
+{ config, lib, ... }: {
+  config = lib.mkIf config.myModules.desktop.enable {
+    xdg.terminal-exec.enable = true;
+  };
 }
