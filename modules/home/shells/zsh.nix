@@ -49,6 +49,8 @@
         ns = "nix-search-tv print | fzf -i --preview 'nix-search-tv preview {}' --scheme history --layout reverse";
         lg = "lazygit";
         n = "nvim";
+        poweroff = "hyprshutdown -t 'Shutting Down...' --post-cmd 'shutdown -P 0'";
+        reboot = "hyprshutdown -t 'Rebooting...' --post-cmd 'reboot'";
       };
     };
 
