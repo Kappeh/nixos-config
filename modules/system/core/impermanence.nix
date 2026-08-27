@@ -1,15 +1,6 @@
-{ config, lib, ... }: {
-  options.myModules.core.impermanence.enable = lib.mkEnableOption "Enable impermanence";
-  options.myModules.core.impermanence.filesystems.enable = lib.mkEnableOption "Enable persistent filesystems";
-
+{
   config = {
-    # boot.initrd.postDeviceCommands = lib.mkIf config.myModules.core.impermanence.enable (
-    #   lib.mkAfter (builtins.readFile ./rollback.sh)
-    # );
-
-    myModules.core.impermanence.filesystems.enable = lib.mkDefault true;
-
-    fileSystems = lib.mkIf config.myModules.core.impermanence.filesystems.enable {
+    fileSystems = {
       "/backup".neededForBoot = true;
       "/persist".neededForBoot = true;
     };
@@ -45,24 +36,6 @@
         "/var/lib/colord"
       ];
     };
-
-    # I don't know where this came from.
-    # I don't know if it is required or not.
-    # TODO: Investigate.
-    # systemd.tmpfiles.rules = builtins.concatLists [
-    #   [
-    #     "d /persist/home/ 0755 root root -"
-    #     "d /backup/home/ 0755 root root -"
-    #     "d /persist/system/ 0755 root root -"
-    #     "d /backup/system/ 0755 root root -"
-    #     "d /persist/system/root 0700 root root -"
-    #     "d /backup/system/root 0700 root root -"
-    #   ]
-    #   (lib.optionals config.myModules.users.normal.kieran.enable [
-    #     "d /persist/home/kieran 0700 kieran users -"
-    #     "d /backup/home/kieran 0700 kieran users -"
-    #   ])
-    # ];
 
     # Remove security lecture for sudo
     security.sudo.extraConfig = ''

@@ -4,7 +4,7 @@
     ./bluetooth.nix
     ./fonts.nix
     ./home_manager.nix
-    ./impermanence/default.nix
+    ./impermanence.nix
     ./libinput.nix
     ./locale.nix
     ./logiops/default.nix
@@ -41,7 +41,6 @@
     gnupg.enable = lib.mkDefault config.myModules.core.enable;
     home_manager.enable = lib.mkDefault config.myModules.core.enable;
     hunspell.enable = lib.mkDefault config.myModules.core.enable;
-    impermanence.enable = lib.mkDefault config.myModules.core.enable;
     libinput.enable = lib.mkDefault config.myModules.core.enable;
     logiops.enable = lib.mkDefault config.myModules.core.enable;
     numlock.enable = lib.mkDefault config.myModules.core.enable;
