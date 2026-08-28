@@ -19,6 +19,7 @@
       ".local/share/Daedalic Entertainment GmbH"
       ".config/UNDERTALE"
       ".config/unity3d/Landfall/Haste"
+      ".config/millennium"
     ];
   };
 }
