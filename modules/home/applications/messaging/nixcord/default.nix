@@ -9,6 +9,9 @@
       discord.vencord.enable = true;
     };
 
-    home.persistence."/persist".directories = [ ".config/discord" ];
+    home.persistence."/persist".directories = [
+      ".config/discord"
+      ".config/Vencord/settings"
+    ];
   };
 }
