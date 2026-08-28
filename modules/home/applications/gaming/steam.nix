@@ -20,6 +20,7 @@
       ".config/UNDERTALE"
       ".config/unity3d/Landfall/Haste"
       ".config/millennium"
+      ".config/StardewValley"
     ];
   };
 }
