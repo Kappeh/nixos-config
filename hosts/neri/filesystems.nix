@@ -1,6 +1,9 @@
 {
   config = {
-    environment.persistence."/persist/system".directories = [ "/mnt/" ];
+    environment.persistence."/persist/system".directories = [
+      "/mnt/"
+      "/var/lib/btrfs"
+    ];
 
     fileSystems = {
       "/backup" = {
