@@ -1,4 +1,4 @@
-{ ... }: {
+{
   imports = [
     ./backup.nix
     ./update_blacklist.nix
@@ -10,6 +10,9 @@
       8201  # Duplicati Web UI
       8100  # Maps Web UI
       25585 # Schematics Web UI
+
+      25565 # Velocity Endpoint
+      25566 # Beta Server Endpoint
     ];
   };
 }
