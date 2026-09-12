@@ -18,6 +18,7 @@
         ssl.enable = true;
         ssh.enable = true;
         systemd_boot.enable = true;
+        zram.enable = true;
       };
       shells = {
         enable = true;
