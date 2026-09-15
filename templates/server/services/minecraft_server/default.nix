@@ -1,6 +1,7 @@
 {
   imports = [
     ./backup.nix
+    ./time_set_day.nix
     ./update_blacklist.nix
   ];
 
