@@ -138,6 +138,9 @@
             syncthing.enable = syncthing.enable;
           };
           desktop.enable = desktop.enable;
+          services = with services; {
+            ollama.enable = ollama.enable;
+          };
           shells = with shells; {
             rust.enable = rust.enable;
             zsh.enable = zsh.enable;

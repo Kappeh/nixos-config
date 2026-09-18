@@ -4,6 +4,7 @@
     ./core/default.nix
     ./desktop/default.nix
     ./scripts/default.nix
+    ./services.nix
     ./shares/default.nix
     ./shells/default.nix
     ./tools.nix
