@@ -101,6 +101,7 @@
               webcord.enable = webcord.enable;
               discord.enable = discord.enable;
               element_desktop.enable = element_desktop.enable;
+              protonmail_desktop.enable = protonmail_desktop.enable;
             };
             misc = with misc; {
               gqrx.enable = gqrx.enable;
