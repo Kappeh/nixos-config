@@ -1,9 +1,10 @@
 { ... }: {
   imports = [
-    ./hardware-configuration.nix
-    ../../templates/server/default.nix
-
     ./filesystems.nix
+    ./hardware-configuration.nix
+    ./services.nix
+
+    ../../templates/server/default.nix
   ];
 
   config = {

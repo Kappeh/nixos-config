@@ -1,5 +1,7 @@
-{ ... }: {
-  config = {
+{ config, lib, ... }: {
+  options.myModules.services.docker.ente.enable = lib.mkEnableOption "Enable ente service";
+
+  config = lib.mkIf config.myModules.services.docker.ente.enable {
     myModules.shares.ente_1.enable = true;
     networking.firewall.allowedTCPPorts = [
       3002 # Albums endpoint

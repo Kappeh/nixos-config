@@ -24,17 +24,16 @@
       };
       core.enable = true;
       desktop.enable = true;
-      services.ollama.enable = true;
+      services = {
+        docker.enable = true;
+        ollama.enable = true;
+      };
       shares = {
         media_library_1.enable = true;
         music_library_1.enable = true;
         nas_1.enable = true;
       };
       shells.enable = true;
-      virtualisation = {
-        enable = false;
-        docker.enable = true;
-      };
       tools.enable = true;
     };
 

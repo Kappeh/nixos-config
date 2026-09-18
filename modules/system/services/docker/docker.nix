@@ -1,7 +1,7 @@
-{ lib, config, ... }: {
-  options.myModules.virtualisation.docker.enable = lib.mkEnableOption "Enable Docker";
+{ config, lib, ... }: {
+  options.myModules.services.docker.enable = lib.mkEnableOption "Enable Docker";
 
-  config = lib.mkIf config.myModules.virtualisation.docker.enable {
+  config = lib.mkIf config.myModules.services.docker.enable {
     virtualisation.docker = {
       enable = true;
       enableOnBoot = true;

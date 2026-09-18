@@ -1,5 +1,5 @@
-{ config, pkgs, ... }: {
-  config.systemd = {
+{ config, lib, ... }: {
+  config.systemd = lib.mkIf config.myModules.services.docker.minecraft_server.enable {
     services."minecraft_server_backup" = {
       serviceConfig = {
         Type = "oneshot";

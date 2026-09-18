@@ -1,7 +1,7 @@
-{ config, pkgs, ... }: let
+{ config, lib, pkgs, ... }: let
   script = pkgs.writeScriptBin "minecraft_server_update_blacklist" (builtins.readFile ./update_blacklist.sh);
 in {
-  config = {
+  config = lib.mkIf config.myModules.services.docker.minecraft_server.enable {
     environment.systemPackages = [
       pkgs.ipset
       pkgs.whois

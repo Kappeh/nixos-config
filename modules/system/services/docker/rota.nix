@@ -1,5 +1,7 @@
-{ ... }: {
-  config = {
+{ config, lib, ... }: {
+  options.myModules.services.docker.rota.enable = lib.mkEnableOption "Enable rota service";
+
+  config = lib.mkIf config.myModules.services.docker.rota.enable {
     networking.firewall.allowedTCPPorts = [ 8089 ];
 
     systemd = {

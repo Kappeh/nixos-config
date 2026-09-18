@@ -1,11 +1,13 @@
-{
+{ config, lib, ... }: {
   imports = [
     ./backup.nix
     ./time_set_day.nix
     ./update_blacklist.nix
   ];
 
-  config = {
+  options.myModules.services.docker.minecraft_server.enable = lib.mkEnableOption "Enable minecraft_server service";
+
+  config = lib.mkIf config.myModules.services.docker.minecraft_server.enable {
     myModules.shares.minecraft_server.enable = true;
     networking.firewall.allowedTCPPorts = [
       8201  # Duplicati Web UI

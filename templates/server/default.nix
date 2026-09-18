@@ -1,7 +1,6 @@
 { inputs, ... }: {
   imports = [
     ./network.nix
-    ./services/default.nix
     ./ssh.nix
 
     ../../modules/system/default.nix
@@ -20,6 +19,7 @@
         systemd_boot.enable = true;
         zram.enable = true;
       };
+      services.docker.enable = true;
       shells = {
         enable = true;
         rust.enable = false;
@@ -31,7 +31,6 @@
         playerctl.enable = false;
         pulsemixer.enable = false;
       };
-      virtualisation.docker.enable = true;
     };
 
     boot.supportedFilesystems = [ "nfs" ];
