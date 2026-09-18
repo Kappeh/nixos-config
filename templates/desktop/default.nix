@@ -1,7 +1,6 @@
 { inputs, pkgs, ... }: {
   imports = [
     ./scripts/default.nix
-    ./services/default.nix
     ./ssh.nix
 
     ../../modules/system/default.nix
