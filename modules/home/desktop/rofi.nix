@@ -4,6 +4,12 @@
       pkgs.rofi-power-menu
     ];
 
+    stylix.targets.rofi = {
+      enable = true;
+      colors.enable = false;
+      fonts.enable = false;
+    };
+
     programs.rofi = {
       enable = true;
 
@@ -12,25 +18,27 @@
         pkgs.rofi-power-menu
       ];
 
-      modes = [
-        "window"
-        "run"
-        "drun"
-        # "ssh"
-        # "keys"
-      ];
+      settings = {
+        modes = [
+          "window"
+          "run"
+          "drun"
+          # "ssh"
+          # "keys"
+        ];
 
-      location = "center";
-      xoffset = 0;
-      yoffset = 0;
-      cycle = true;
-      terminal = "${pkgs.alacritty}/bin/alacritty";
+        location = 0;
+        xoffset = 0;
+        yoffset = 0;
 
-      extraConfig = {
-        disable-history = true;
+        font = "${config.stylix.fonts.monospace.name} 10";
         show-icons = false;
+
+        cycle = true;
+        disable-history = true;
         kb-primary-paste = "Control+V,Shift+Insert";
         kb-secondary-paste = "Control+v,Insert";
+        terminal = "${pkgs.alacritty}/bin/alacritty";
       };
 
       theme = let inherit (config.lib.formats.rasi) mkLiteral; in {
@@ -102,12 +110,6 @@
           padding = mkLiteral "5px";
         };
       };
-    };
-
-    stylix.targets.rofi = {
-      enable = true;
-      colors.enable = false;
-      fonts.enable = true;
     };
   };
 }

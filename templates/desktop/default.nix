@@ -15,6 +15,9 @@
         enable = true;
         messaging.discord.enable = false;
         media = {
+          # Build error: mismatched hash
+          davinci_resolve.enable = false;
+
           mpd.enable = false;
           mpd_mpris.enable = false;
         };
