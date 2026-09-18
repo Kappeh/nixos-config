@@ -1,7 +1,6 @@
 { inputs, ... }: {
   imports = [
     ./network.nix
-    ./ssh.nix
 
     ../../modules/system/default.nix
 
@@ -19,7 +18,10 @@
         systemd_boot.enable = true;
         zram.enable = true;
       };
-      services.docker.enable = true;
+      services = {
+        docker.enable = true;
+        openssh.enable = true;
+      };
       shells = {
         enable = true;
         rust.enable = false;

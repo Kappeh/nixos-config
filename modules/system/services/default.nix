@@ -1,6 +1,7 @@
 { config, lib, ... }: {
   imports = [
     ./docker/default.nix
+    ./openssh.nix
   ];
 
   options.myModules.services = {
@@ -12,5 +13,6 @@
   config.myModules.services = with config.myModules.services; {
     docker.enable = lib.mkDefault enable;
     ollama.enable = lib.mkDefault enable;
+    openssh.enable = lib.mkDefault enable;
   };
 }
