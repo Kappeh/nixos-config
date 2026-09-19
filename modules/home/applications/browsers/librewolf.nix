@@ -1,7 +1,9 @@
 { config, inputs, lib, ... }: {
-  options.myModules.applications.browsers.librewolf.enable = lib.mkEnableOption "Enable LibreWolf";
+  options.kappeh.applications.browsers.librewolf.enable = lib.mkEnableOption "Enable LibreWolf";
 
-  config = lib.mkIf config.myModules.applications.browsers.librewolf.enable {
+  config = lib.mkIf config.kappeh.applications.browsers.librewolf.enable {
+    home.persistence."/persist".directories = [ ".librewolf" ];
+
     stylix.targets.librewolf = {
       colorTheme.enable = true;
       profileNames = [ "default" ];
@@ -438,7 +440,6 @@
         };
       };
     };
-
-    home.persistence."/persist".directories = [ ".librewolf" ];
   };
 }
+

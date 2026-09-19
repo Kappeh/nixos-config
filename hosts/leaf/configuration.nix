@@ -1,17 +1,40 @@
-{ ... }: {
+{
   imports = [
     ./filesystems.nix
     ./hardware-configuration.nix
-    ./services.nix
 
-    ../../templates/server/default.nix
+    ../../modules/profiles/server.nix
   ];
 
   config = {
-    networking.hostName = "leaf";
-    systemd.network.networks."10-ens18".address = [ "10.0.1.100/16" ];
-
     services.qemuGuest.enable = true;
+
+    boot.supportedFilesystems = [ "nfs" ];
+
+    time.timeZone = "Etc/UTC";    # Set your time zone.
+
+    networking = {
+      hostName = "leaf";
+      useDHCP = false;              # Disable dhcp for static ip
+      nameservers = [ "10.0.1.104" ]; # Use local dns server
+    };
+
+    systemd.network = {
+      enable = true;
+      networks."10-ens18" = {
+        enable = true;
+        address = [ "10.0.1.100/16" ];
+        name = "ens18";
+        DHCP = "no";
+        gateway = [ "10.0.0.1" ];
+        dns = [ "10.0.1.104" ];
+      };
+    };
+
+    services.resolved = {
+      enable = true;
+      settings.Resolve.FallbackDns = []; # Disable fallback dns server, only use the primary dns server
+    };
 
     # This option defines the first version of NixOS you have installed on this particular machine,
     # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

@@ -1,5 +1,5 @@
 { config, lib, pkgs, ... }: {
-  config = lib.mkIf config.myModules.desktop.enable {
+  config = lib.mkIf config.kappeh.desktop.enable {
     stylix.targets.waybar.enable = false;
 
     home.packages = [ pkgs.waybar-mpris ];
@@ -176,3 +176,4 @@
     };
   };
 }
+

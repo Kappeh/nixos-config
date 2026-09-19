@@ -1,5 +1,5 @@
 { config, lib, ... }: {
-  config = lib.mkIf config.myModules.desktop.enable {
+  config = lib.mkIf config.kappeh.desktop.enable {
     programs.hyprtoolkit = {
       enable = true;
 

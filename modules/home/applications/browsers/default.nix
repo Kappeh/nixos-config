@@ -5,13 +5,13 @@
     ./tor_browser.nix
   ];
 
-  options.myModules.applications.browsers.enable = lib.mkEnableOption "Enable browsers";
+  options.kappeh.applications.browsers.enable = lib.mkEnableOption "Enable browsers";
 
   config = {
-    myModules.applications.browsers = {
-      librewolf.enable = lib.mkDefault config.myModules.applications.browsers.enable;
-      mullvad_browser.enable = lib.mkDefault config.myModules.applications.browsers.enable;
-      tor_browser.enable = lib.mkDefault config.myModules.applications.browsers.enable;
+    kappeh.applications.browsers = with config.kappeh.applications; {
+      librewolf.enable = lib.mkDefault browsers.enable;
+      mullvad_browser.enable = lib.mkDefault browsers.enable;
+      tor_browser.enable = lib.mkDefault browsers.enable;
     };
 
     # TODO find a better way to do these
@@ -25,3 +25,4 @@
     };
   };
 }
+

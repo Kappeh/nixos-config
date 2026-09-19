@@ -1,14 +1,13 @@
 { config, lib, pkgs, ... }: {
-  options.myModules.applications.file_managers.pcmanfm.enable = lib.mkEnableOption "Enable PCManFM";
+  options.kappeh.applications.file_managers.pcmanfm.enable = lib.mkEnableOption "Enable PCManFM";
 
-  config = lib.mkIf config.myModules.applications.file_managers.pcmanfm.enable {
-    home = {
-      packages = [ pkgs.pcmanfm ];
+  config.home = lib.mkIf config.kappeh.applications.file_managers.pcmanfm.enable {
+    persistence."/persist".directories = [
+      ".config/libfm"
+      ".config/pcmanfm/default"
+    ];
 
-      persistence."/persist".directories = [
-        ".config/libfm"
-        ".config/pcmanfm/default"
-      ];
-    };
+    packages = [ pkgs.pcmanfm ];
   };
 }
+

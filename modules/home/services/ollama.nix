@@ -1,7 +1,9 @@
 { config, lib, ... }: {
-  options.myModules.services.ollama.enable = lib.mkEnableOption "Enable Ollama";
+  options.kappeh.services.ollama.enable = lib.mkEnableOption "Enable Ollama";
 
-  config = lib.mkIf config.myModules.services.ollama.enable {
+  config = lib.mkIf config.kappeh.services.ollama.enable {
+    home.persistence."/persist".directories = [ ".ollama" ];
+
     services.ollama = {
       enable = true;
 
@@ -9,10 +11,8 @@
       port = 11434;
       acceleration = null;
 
-      environmentVariables = {
-      };
+      environmentVariables = {};
     };
-
-    home.persistence."/persist".directories = [ ".ollama" ];
   };
 }
+

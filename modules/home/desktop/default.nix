@@ -6,14 +6,16 @@
     ./awww.nix
     ./cliphist.nix
     ./dconf.nix
+    ./fontcache.nix
     ./libnotify.nix
     ./mako.nix
+    ./numlock.nix
     ./rofi.nix
     ./screenshot.nix
-    ./udiskie.nix
     ./wlr_which_key.nix
     ./xdg_mime.nix
   ];
 
-  options.myModules.desktop.enable = lib.mkEnableOption "Enable desktop";
+  options.kappeh.desktop.enable = lib.mkEnableOption "Enable desktop";
 }
+

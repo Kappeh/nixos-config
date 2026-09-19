@@ -1,11 +1,14 @@
 { config, lib, ... }: {
   imports = [
     ./ollama.nix
+    ./syncthing.nix
   ];
 
-  options.myModules.services.enable = lib.mkEnableOption "Enable all services by default";
+  options.kappeh.services.enable = lib.mkEnableOption "Enable services capability";
 
-  config.myModules.services = with config.myModules.services; {
-    ollama.enable = lib.mkDefault enable;
+  config.kappeh.services = with config.kappeh; {
+    ollama.enable = lib.mkDefault services.enable;
+    syncthing.enable = lib.mkDefault services.enable;
   };
 }
+

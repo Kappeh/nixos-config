@@ -48,3 +48,4 @@ hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 -- Hardware acceleration on Nvidia GPUs
 hl.env("LIBVA_DRIVER_NAME", "nvidia")
 hl.env("NVD_BACKEND", "direct")
+

@@ -1,5 +1,5 @@
 { config, inputs, lib, pkgs, ... }: {
-  config.wayland.windowManager.hyprland = lib.mkIf config.myModules.desktop.enable {
+  config.wayland.windowManager.hyprland = lib.mkIf config.kappeh.desktop.enable {
     enable = true;
 
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
@@ -64,3 +64,4 @@
     };
   };
 }
+

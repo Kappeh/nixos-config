@@ -1,16 +1,21 @@
 { config, lib, ... }: {
   imports = [
+    ./lf.nix
     ./pcmanfm.nix
+    ./yazi.nix
   ];
 
-  options.myModules.applications.file_managers.enable = lib.mkEnableOption "Enable file managers";
+  options.kappeh.applications.file_managers.enable = lib.mkEnableOption "Enable file managers";
 
   config = {
-    myModules.applications.file_managers = {
-      pcmanfm.enable = lib.mkDefault config.myModules.applications.file_managers.enable;
+    kappeh.applications.file_managers = with config.kappeh.applications; {
+      lf.enable = lib.mkDefault file_managers.enable;
+      pcmanfm.enable = lib.mkDefault file_managers.enable;
+      yazi.enable = lib.mkDefault file_managers.enable;
     };
 
     # TODO find better way to do this
     xdg.mimeApps.defaultApplications."inode/directory" = [ "pcmanfm.desktop" ];
   };
 }
+
