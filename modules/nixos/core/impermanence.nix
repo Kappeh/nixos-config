@@ -1,11 +1,14 @@
-{
+{ inputs, ... }: {
+  imports = [
+    inputs.impermanence.nixosModules.impermanence
+  ];
+
   config = {
     # Required by the home manager impermanence module to mount directories
     programs.fuse.userAllowOther = true;
 
     # https://nixos.org/manual/nixos/stable/#sec-systemd-state
 
-    users.mutableUsers = false;
     environment.persistence."/persist/system" = {
       hideMounts = true;
 
@@ -31,22 +34,9 @@
         # Persistent XRandR monitor profiles.
         "/var/lib/colord"
 
-        # Used widely by build tools and editors which may accidentally
-        # fill up the tmpfs for large projects. `/tmp` is cleaned on boot anyway.
-        "/tmp"
-
-        # /var/tmp is meant for temporary files that are preserved across reboots
-        # https://wiki.archlinux.org/title/Tmpfs#Usage
-        # https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch05s15.html
-        "/var/tmp"
+        "/mnt"
       ];
     };
-
-    # TODO: see if this belongs elsewhere
-    # Remove security lecture for sudo
-    security.sudo.extraConfig = ''
-      Defaults lecture = never
-    '';
   };
 }
 

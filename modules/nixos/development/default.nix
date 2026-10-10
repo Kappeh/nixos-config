@@ -1,5 +1,6 @@
 { config, lib, ... }: {
   imports = [
+    ./binfmt.nix
     ./lsp.nix
     ./qmk.nix
     ./via.nix
@@ -22,6 +23,7 @@
   };
 
   config.kappeh.development = with config.kappeh; {
+    binfmt.enable = lib.mkDefault development.enable;
     lsp.enable = lib.mkDefault development.enable;
     qmk.enable = lib.mkDefault development.enable;
     via.enable = lib.mkDefault development.enable;

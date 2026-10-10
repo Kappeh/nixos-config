@@ -2,12 +2,9 @@
   imports = [
     ../../modules/profiles/desktop.nix
 
-    ./boot.nix
-    ./filesystems.nix
-    ./hardware-configuration.nix
     ./network.nix
-    ./smartmontools.nix
-    ./ssh.nix
+    ./smartd.nix
+    ./storage.nix
   ];
 
   config = {

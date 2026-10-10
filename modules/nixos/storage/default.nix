@@ -1,6 +1,9 @@
 { config, lib, ... }: {
   imports = [
     ./shares/default.nix
+    ./auto_scrub.nix
+    ./filesystems.nix
+    ./tmp.nix
   ];
 
   options.kappeh.storage = {

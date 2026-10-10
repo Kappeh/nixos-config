@@ -1,17 +1,4 @@
-{ pkgs, ... }: let
-  smartd_notify_bridge = pkgs.writeShellScriptBin "smartd_notify_bridge" ''
-    USER="kieran"
-    UID=$(id -u "$USER")
-
-    export XDG_RUNTIME_DIR="/run/user/$UID"
-    export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus"
-
-    ${pkgs.libnotify}/bin/notify-send \
-      -u critical \
-      "SMART alert" \
-      "$SMARTD_MESSAGE"
-  '';
-in {
+{ pkgs, ... }: {
   config = {
     environment = {
       systemPackages = [ pkgs.smartmontools ];
@@ -24,7 +11,6 @@ in {
       extraOptions = [
         "--interval=3600"
         "--savestates=/var/lib/smartd/"
-        "--warnexec ${smartd_notify_bridge}/bin/smartd_notify_bridge"
       ];
       devices = [
         {

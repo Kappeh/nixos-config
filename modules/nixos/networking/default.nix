@@ -1,7 +1,9 @@
 { config, lib, ... }: {
   imports = [
+    ./wireguard/default.nix
     ./openssh.nix
-    ./wireguard.nix
+    ./resolved.nix
+    ./ssh.nix
     ./wireshark.nix
   ];
 
@@ -13,6 +15,7 @@
 
   config.kappeh.networking = with config.kappeh; {
     openssh.enable = lib.mkDefault networking.enable;
+    ssh.enable = lib.mkDefault networking.enable;
     wireguard.enable = lib.mkDefault networking.enable;
     wireshark.enable = lib.mkDefault networking.enable;
 

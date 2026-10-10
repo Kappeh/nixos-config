@@ -1,6 +1,7 @@
 { config, lib, ... }: {
   imports = [
     ./scripts/default.nix
+    ./sudo.nix
     ./terminals.nix
     ./zsh.nix
   ];

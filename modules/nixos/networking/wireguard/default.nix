@@ -1,4 +1,8 @@
 { config, lib, ... }: {
+  imports = [
+    ./wg0.nix
+  ];
+
   options.kappeh.networking.wireguard.enable = lib.mkEnableOption "Enable WireGuard";
 
   config = lib.mkIf config.kappeh.networking.wireguard.enable {

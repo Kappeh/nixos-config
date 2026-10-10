@@ -16,6 +16,7 @@
     hardware = {
       logiops.enable = true;
       bluetooth.enable = true;
+      intel.enable = true;
       libinput.enable = true;
       nvidia.enable = true;
       opengl.enable = true;

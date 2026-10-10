@@ -41,23 +41,16 @@
   outputs = { nixpkgs, ... } @ inputs: {
     nixosConfigurations = {
       leaf = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/leaf/configuration.nix
-          inputs.home-manager.nixosModules.default
-          inputs.impermanence.nixosModules.impermanence
-          inputs.stylix.nixosModules.stylix
-        ];
+        modules = [ ./hosts/leaf/configuration.nix ];
       };
       neri = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/neri/configuration.nix
-          inputs.home-manager.nixosModules.default
-          inputs.impermanence.nixosModules.impermanence
-          inputs.stylix.nixosModules.stylix
-        ];
+        modules = [ ./hosts/neri/configuration.nix ];
       };
     };
   };
 }
+

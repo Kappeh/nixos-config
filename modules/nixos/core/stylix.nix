@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, inputs, ... }: {
+  imports = [
+    inputs.stylix.nixosModules.stylix
+  ];
+
   config.stylix = {
     enable = true;
 
