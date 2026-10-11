@@ -23,10 +23,7 @@
       upower.enable = true;
       zram.enable = true;
     };
-    media = {
-      enable = true;
-      davinci_resolve.enable = false;
-    };
+    media.enable = true;
     networking.enable = true;
     security.enable = true;
     services.enable = true;
