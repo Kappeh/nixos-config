@@ -42,6 +42,7 @@
             "Downloads"
             "Music"
             "Pictures"
+            "Projects"
             "Storage"
             "Videos"
             "dev"
