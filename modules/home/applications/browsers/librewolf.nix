@@ -1,4 +1,4 @@
-{ config, inputs, lib, ... }: {
+{ config, lib, pkgs, ... }: {
   options.kappeh.applications.browsers.librewolf.enable = lib.mkEnableOption "Enable LibreWolf";
 
   config = lib.mkIf config.kappeh.applications.browsers.librewolf.enable {
@@ -17,7 +17,8 @@
         isDefault = true;
 
         extensions = {
-          packages = with inputs.firefox-addons.packages."x86_64-linux"; [
+          packages = with pkgs.nur.repos.rycee.firefox-addons; [
+          # packages = with inputs.firefox-addons.packages."x86_64-linux"; [
             buster-captcha-solver
             clearurls
             consent-o-matic

@@ -6,6 +6,7 @@
     ./kernel.nix
     ./locale.nix
     ./nix.nix
+    ./nur.nix
     ./stylix.nix
     ./systemd_boot.nix
   ];
