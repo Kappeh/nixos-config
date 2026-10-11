@@ -19,6 +19,7 @@
     godot.enable = lib.mkEnableOption "Enable godot";
     lazygit.enable = lib.mkEnableOption "Enable lazygit";
     nix_index.enable = lib.mkEnableOption "Enable nix_index";
+    nix_output_monitor.enable = lib.mkEnableOption "Enable nix-output-monitor";
     nix_search_tv.enable = lib.mkEnableOption "Enable nix_search_tv";
   };
 
@@ -37,6 +38,7 @@
     godot.enable = lib.mkDefault development.enable;
     lazygit.enable = lib.mkDefault development.enable;
     nix_index.enable = lib.mkDefault development.enable;
+    nix_output_monitor.enable = lib.mkDefault development.enable;
     nix_search_tv.enable = lib.mkDefault development.enable;
   };
 }

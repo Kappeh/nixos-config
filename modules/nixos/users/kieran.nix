@@ -97,6 +97,7 @@
             godot.enable = godot.enable;
             lazygit.enable = lazygit.enable;
             nix_index.enable = nix_index.enable;
+            nix_output_monitor.enable = nix_output_monitor.enable;
             nix_search_tv.enable = nix_search_tv.enable;
             qmk.enable = qmk.enable;
             via.enable = via.enable;

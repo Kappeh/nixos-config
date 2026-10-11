@@ -10,6 +10,7 @@
     ./godot.nix
     ./lazygit.nix
     ./nix_index.nix
+    ./nix_output_monitor.nix
     ./nix_search_tv.nix
     ./qmk.nix
     ./via.nix
@@ -28,6 +29,7 @@
     godot.enable = lib.mkDefault development.enable;
     lazygit.enable = lib.mkDefault development.enable;
     nix_index.enable = lib.mkDefault development.enable;
+    nix_output_monitor.enable = lib.mkDefault development.enable;
     nix_search_tv.enable = lib.mkDefault development.enable;
     qmk.enable = lib.mkDefault development.enable;
     via.enable = lib.mkDefault development.enable;
