@@ -31,7 +31,7 @@
     nixvim.enable = lib.mkDefault development.enable;
     blender.enable = lib.mkDefault development.enable;
     delta.enable = lib.mkDefault development.enable;
-    freecad.enable = lib.mkDefault development.enable;
+    freecad.enable = lib.mkDefault false; # Disabled due to build error
     gh.enable = lib.mkDefault development.enable;
     git.enable = lib.mkDefault development.enable;
     godot.enable = lib.mkDefault development.enable;
