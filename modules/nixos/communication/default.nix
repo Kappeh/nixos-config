@@ -1,4 +1,8 @@
 { config, lib, ... }: {
+  imports = [
+    ./nicotine_plus.nix
+  ];
+
   options.kappeh.communication = {
     enable = lib.mkEnableOption "Enable all messaging applications by default";
 
@@ -10,6 +14,8 @@
   };
 
   config.kappeh.communication = with config.kappeh; {
+    nicotine_plus.enable = lib.mkDefault communication.enable;
+
     discord.enable = lib.mkDefault communication.enable;
     element_desktop.enable = lib.mkDefault communication.enable;
     nixcord.enable = lib.mkDefault communication.enable;

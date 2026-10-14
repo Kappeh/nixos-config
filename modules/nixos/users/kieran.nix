@@ -77,6 +77,7 @@
             discord.enable = discord.enable;
             element_desktop.enable = element_desktop.enable;
             nixcord.enable = nixcord.enable;
+            nicotine_plus.enable = nixcord.enable;
             protonmail_desktop.enable = protonmail_desktop.enable;
             webcord.enable = webcord.enable;
           };
