@@ -43,16 +43,6 @@
       };
 
       initContent = builtins.readFile "${pkgs.fzf-git-sh}/share/fzf-git-sh/fzf-git.sh";
-
-      # TODO: Move to respective modules
-      shellAliases = {
-        cd = "z";
-        ns = "nix-search-tv print | fzf -i --preview 'nix-search-tv preview {}' --scheme history --layout reverse";
-        lg = "lazygit";
-        n = "nvim";
-        poweroff = "hyprshutdown -t 'Shutting Down...' --post-cmd 'shutdown -P 0'";
-        reboot = "hyprshutdown -t 'Rebooting...' --post-cmd 'reboot'";
-      };
     };
   };
 }

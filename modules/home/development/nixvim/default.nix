@@ -17,6 +17,10 @@
     ];
 
     programs.nixvim.enable = true;
+
+    programs.zsh.shellAliases = {
+      n = "nvim";
+    };
   };
 }
 

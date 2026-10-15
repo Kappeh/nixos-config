@@ -18,6 +18,10 @@
         update_interval = "24h";
       };
     };
+
+    programs.zsh.shellAliases = {
+      ns = "nix-search-tv print | fzf -i --preview 'nix-search-tv preview {}' --scheme history --layout reverse";
+    };
   };
 }
 
