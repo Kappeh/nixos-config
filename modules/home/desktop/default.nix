@@ -6,7 +6,7 @@
     ./awww.nix
     ./cliphist.nix
     ./dconf.nix
-    ./fontcache.nix
+    ./fontconfig.nix
     ./libnotify.nix
     ./mako.nix
     ./numlock.nix
