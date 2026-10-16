@@ -8,6 +8,7 @@
     ./obsidian.nix
     ./qalculate.nix
     ./rtl_sdr.nix
+    ./wine.nix
     ./xarchiver.nix
   ];
 }

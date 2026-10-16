@@ -13,6 +13,7 @@
     libreoffice.enable = lib.mkEnableOption "Enable LibreOffice";
     obsidian.enable = lib.mkEnableOption "Enable Obsidian";
     qalculate.enable = lib.mkEnableOption "Enable Qalculate";
+    wine.enable = lib.mkEnableOption "Enable wine";
     xarchiver.enable = lib.mkEnableOption "Enable xarchiver";
   };
 
@@ -26,6 +27,7 @@
     libreoffice.enable = lib.mkDefault applications.enable;
     obsidian.enable = lib.mkDefault applications.enable;
     qalculate.enable = lib.mkDefault applications.enable;
+    wine.enable = lib.mkDefault applications.enable;
     xarchiver.enable = lib.mkDefault applications.enable;
   };
 }

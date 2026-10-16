@@ -69,6 +69,7 @@
             obsidian.enable = obsidian.enable;
             qalculate.enable = qalculate.enable;
             rtl_sdr.enable = rtl_sdr.enable;
+            wine.enable = wine.enable;
             xarchiver.enable = xarchiver.enable;
           };
           audio.enable = audio.enable;
