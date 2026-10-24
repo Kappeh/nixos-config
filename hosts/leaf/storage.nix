@@ -23,7 +23,7 @@
         fsType = "btrfs";
         options = [ "subvol=root" ];
       };
-      "/partition_root" = {
+      "/mnt/btrfs_root" = {
         device = "/dev/disk/by-uuid/9a1b7eaf-4dc8-4883-9672-ae7fad712a9f";
         fsType = "btrfs";
         options = [ "noatime" "compress=zstd:1" "discard=async" "ssd" "space_cache=v2" ];
@@ -46,9 +46,6 @@
         neededForBoot = true;
       };
     };
-
-    kappeh.storage.auto_scrub.enable = true;
-    services.btrfs.autoScrub.fileSystems = [ "/partition_root" ];
   };
 }
 

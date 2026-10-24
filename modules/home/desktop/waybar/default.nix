@@ -105,7 +105,7 @@
         };
 
         "disk#raid" = {
-          path = "/raid_root";
+          path = "/mnt/btrfs_root";
           format = "󰋊 {percentage_used}%";
           tooltip = false;
         };

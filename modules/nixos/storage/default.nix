@@ -15,6 +15,7 @@
   };
 
   config.kappeh.storage = with config.kappeh; {
+    auto_scrub.enable = lib.mkDefault storage.enable;
     btdu.enable = lib.mkDefault storage.enable;
     f3.enable = lib.mkDefault storage.enable;
     udiskie.enable = lib.mkDefault storage.enable;

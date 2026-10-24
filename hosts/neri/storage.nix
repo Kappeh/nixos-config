@@ -35,7 +35,7 @@
         fsType = "tmpfs";
         options = [ "size=2G" "mode=755" ];
       };
-      "/raid_root" = {
+      "/mnt/btrfs_root" = {
         device = "/dev/disk/by-uuid/28f5a0a0-e0b2-4886-8f63-05ac1ee87dcb";
         fsType = "btrfs";
         options = [ "noatime" "compress=zstd:1" "discard=async" "ssd" "space_cache=v2" ];
@@ -58,9 +58,6 @@
         neededForBoot = true;
       };
     };
-
-    kappeh.storage.auto_scrub.enable = true;
-    services.btrfs.autoScrub.fileSystems = [ "/raid_root" ];
   };
 }
 

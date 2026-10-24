@@ -5,6 +5,7 @@
     services.btrfs.autoScrub = {
       enable = true;
       interval = "monthly";
+      fileSystems = [ "/mnt/btrfs_root" ];
     };
 
     environment.persistence."/persist/system".directories = [
