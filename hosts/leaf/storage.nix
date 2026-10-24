@@ -28,12 +28,6 @@
         fsType = "btrfs";
         options = [ "noatime" "compress=zstd:1" "discard=async" "ssd" "space_cache=v2" ];
       };
-      "/backup" = {
-        device = "/dev/disk/by-uuid/9a1b7eaf-4dc8-4883-9672-ae7fad712a9f";
-        fsType = "btrfs";
-        options = [ "subvol=backup" "noatime" "compress=zstd:1" "discard=async" "ssd" "space_cache=v2" ];
-        neededForBoot = true;
-      };
       "/persist" = {
         device = "/dev/disk/by-uuid/9a1b7eaf-4dc8-4883-9672-ae7fad712a9f";
         fsType = "btrfs";

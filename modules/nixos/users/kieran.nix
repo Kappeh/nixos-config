@@ -35,7 +35,7 @@
         home = {
           username = "kieran";
           homeDirectory = "/home/${config.home.username}";
-          persistence."/backup".directories = [
+          persistence."/persist".directories = [
             "Apps"
             "Desktop"
             "Documents"
@@ -44,8 +44,6 @@
             "Pictures"
             "Projects"
             "Videos"
-            "dev"
-            "scripts"
           ];
 
           stateVersion = "24.05";
