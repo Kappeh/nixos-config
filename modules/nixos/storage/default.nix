@@ -2,6 +2,7 @@
   imports = [
     ./shares/default.nix
     ./auto_scrub.nix
+    ./btrbk.nix
     ./filesystems.nix
     ./tmp.nix
   ];
@@ -16,6 +17,8 @@
 
   config.kappeh.storage = with config.kappeh; {
     auto_scrub.enable = lib.mkDefault storage.enable;
+    btrbk.enable = lib.mkDefault storage.enable;
+
     btdu.enable = lib.mkDefault storage.enable;
     f3.enable = lib.mkDefault storage.enable;
     udiskie.enable = lib.mkDefault storage.enable;
