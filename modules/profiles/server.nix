@@ -12,6 +12,7 @@
       git.enable = true;
       lazygit.enable = true;
       nix_index.enable = true;
+      nix_output_monitor.enable = true;
       nix_search_tv.enable = true;
     };
     hardware.zram.enable = true;
