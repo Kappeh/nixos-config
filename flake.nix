@@ -40,6 +40,11 @@
 
   outputs = { nixpkgs, ... } @ inputs: {
     nixosConfigurations = {
+      ciela = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [ ./hosts/ciela/configuration.nix ];
+      };
       leaf = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };

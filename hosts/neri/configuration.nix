@@ -2,6 +2,7 @@
   imports = [
     ../../modules/profiles/desktop.nix
 
+    ./monitors.nix
     ./network.nix
     ./smartd.nix
     ./storage.nix

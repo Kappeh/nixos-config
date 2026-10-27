@@ -63,6 +63,7 @@ window#waybar {
 #bluetooth,
 #upower,
 #wireplumber,
+#battery,
 #gamemode,
 #clock {
     padding: 5px 10px;
@@ -131,7 +132,8 @@ window#waybar {
     color: #@base0C@;
 }
 
-#wireplumber {
+#wireplumber,
+#battery {
     color: #@base0E@;
 }
 

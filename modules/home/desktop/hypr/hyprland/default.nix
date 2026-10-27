@@ -1,4 +1,9 @@
 { config, inputs, lib, pkgs, ... }: {
+  imports = [
+    ./monitors.nix
+    ./workspaces.nix
+  ];
+
   config.wayland.windowManager.hyprland = lib.mkIf config.kappeh.desktop.enable {
     enable = true;
 
@@ -10,8 +15,6 @@
 
     extraLuaFiles = {
       "environment.lua" = { content = ./environment.lua; autoLoad = true; };
-      "monitors.lua" = { content = ./monitors.lua; autoLoad = true; };
-      "workspaces.lua" = { content = ./workspaces.lua; autoLoad = true; };
       "input.lua" = { content = ./input.lua; autoLoad = true; };
       "commands.lua" = let
         alacritty = "${pkgs.alacritty}/bin/alacritty";
@@ -59,6 +62,7 @@
         base0F = 0xff${config.lib.stylix.colors.base0F}
       '';
       "general.lua" = { content = ./general.lua; autoLoad = true; };
+      "gestures.lua" = { content = ./gestures.lua; autoLoad = true; };
       "animations.lua" = { content = ./animations.lua; autoLoad = true; };
       "autostart.lua" = { content = ./autostart.lua; autoLoad = true; };
     };

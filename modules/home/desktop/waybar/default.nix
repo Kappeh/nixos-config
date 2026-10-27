@@ -30,7 +30,7 @@
         layer = "top";
         position = "top";
         height = 30;
-        output = [ "DP-2" ];
+        output = [ config.kappeh.desktop.barOutput ];
         spacing = 0;
         # fixed-center = false;
 
@@ -56,6 +56,7 @@
         modules-right = [
           "wireplumber#sink"
           "wireplumber#source"
+          "battery"
           "gamemode"
           "clock"
         ];
@@ -155,6 +156,18 @@
           format-muted = "󰍭";
           format-icons = [ "󰍬" "󰍬" "󰍬" ];
           tooltip = false;
+        };
+
+        battery = {
+          format = "{icon} {capacity}%";
+          format-charging = "{icon} {capacity}%";
+          format-icons = {
+            "charging" = [ "󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂅" ];
+            "default" = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+          };
+          tooltip = true;
+          tooltip-foramat-discharging = "{time}";
+          tooltip-foramat-charging = "{time}";
         };
 
         gamemode = {

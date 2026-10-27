@@ -79,7 +79,12 @@
             protonmail_desktop.enable = protonmail_desktop.enable;
             webcord.enable = webcord.enable;
           };
-          desktop.enable = desktop.enable;
+          desktop = {
+            enable = desktop.enable;
+            monitors = desktop.monitors;
+            barOutput = desktop.barOutput;
+            notificationOutput = desktop.notificationOutput;
+          };
           development = with development; {
             lsp = with lsp; {
               bashls.enable = bashls.enable;

@@ -22,7 +22,7 @@
         max-history = 5;
 
         # Location
-        output = "DP-2";
+        output = config.kappeh.desktop.notificationOutput;
         layer = "overlay";
         anchor = "top-right";
 

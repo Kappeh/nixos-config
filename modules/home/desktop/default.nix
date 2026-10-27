@@ -10,6 +10,7 @@
     ./libnotify.nix
     ./mako.nix
     ./numlock.nix
+    ./options.nix
     ./rofi.nix
     ./screenshot.nix
     ./wlr_which_key.nix
