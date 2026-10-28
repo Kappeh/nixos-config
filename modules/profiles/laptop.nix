@@ -25,7 +25,7 @@
       libinput.enable = true;
       opengl.enable = true;
       upower.enable = true;
-      zram.enable = true;
+      zswap.enable = true;
     };
     media = {
       easyeffects.enable = true;

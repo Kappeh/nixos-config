@@ -9,6 +9,7 @@
     ./opengl.nix
     ./upower.nix
     ./zram.nix
+    ./zswap.nix
   ];
 }
 

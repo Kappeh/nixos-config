@@ -162,6 +162,22 @@
               ];
             }
             {
+              key = "h";
+              desc = "Hibernate";
+              submenu = [
+                {
+                  key = "y";
+                  desc = "Confirm";
+                  cmd = "systemctl hibernate";
+                }
+                {
+                  key = "n";
+                  desc = "Cancel";
+                  cmd = "";
+                }
+              ];
+            }
+            {
               key = "r";
               desc = "Reboot";
               submenu = [
