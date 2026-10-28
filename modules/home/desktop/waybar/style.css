@@ -63,6 +63,7 @@ window#waybar {
 #bluetooth,
 #upower,
 #wireplumber,
+#backlight,
 #battery,
 #gamemode,
 #clock {
@@ -133,7 +134,8 @@ window#waybar {
 }
 
 #wireplumber,
-#battery {
+#battery,
+#backlight {
     color: #@base0E@;
 }
 

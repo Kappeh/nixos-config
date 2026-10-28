@@ -56,6 +56,7 @@
         modules-right = [
           "wireplumber#sink"
           "wireplumber#source"
+          "backlight"
           "battery"
           "gamemode"
           "clock"
@@ -156,6 +157,13 @@
           format-muted = "󰍭";
           format-icons = [ "󰍬" "󰍬" "󰍬" ];
           tooltip = false;
+        };
+
+        backlight = {
+          device = "intel_backlight";
+          format = "{icon} {percent}%";
+          tooltip = false;
+          format-icons = [ "" "" "" "" "" "" "" "" "" "" "" "" "" ];
         };
 
         battery = {

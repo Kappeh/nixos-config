@@ -4,6 +4,7 @@
     ./hypr/default.nix
     ./waybar/default.nix
     ./awww.nix
+    ./brightnessctl.nix
     ./cliphist.nix
     ./dconf.nix
     ./fontconfig.nix
