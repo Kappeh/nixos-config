@@ -1,4 +1,4 @@
-{
+{ lib, ... }: {
   imports = [
     ./logiops/default.nix
     ./bluetooth.nix
@@ -11,5 +11,7 @@
     ./zram.nix
     ./zswap.nix
   ];
+
+  options.kappeh.hardware.framework.enable = lib.mkEnableOption "Enable Framework tools";
 }
 

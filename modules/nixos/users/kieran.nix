@@ -118,6 +118,7 @@
             tetrio.enable = tetrio.enable;
           };
           hardware = with hardware; {
+            framework.enable = framework.enable;
             nvidia.enable = nvidia.enable;
           };
           media = with media; {
