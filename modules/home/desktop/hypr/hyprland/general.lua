@@ -4,8 +4,10 @@ hl.config({
     general = {
         border_size = 2,
         layout = "master",
-        col = { active_border = { colors = { base0D, base0E }, angle = 135 } },
-        col = { inactive_border = { colors = { base03, base02 }, angle = 135 } },
+        col = {
+            active_border = { colors = { base0D, base0E }, angle = 135 },
+            inactive_border = { colors = { base03, base02 }, angle = 135 },
+        },
     },
     master = {
         allow_small_split = true,
@@ -17,10 +19,16 @@ hl.config({
     },
     animations = { enabled = true },
     group = {
-        -- col = { border_active = { colors = { baseOD, Base0E }, angle = 135 } },
-        -- col = { inactive_border = { colors = { base03, base02 }, angle = 135 } },
+        col = {
+            border_active = { colors = { base0D, base0E }, angle = 135 },
+            border_inactive = { colors = { base03, base02 }, angle = 135 },
+        },
         groupbar = {
             enabled = true,
+            col = {
+                active = base0D,
+                inactive = base03,
+            },
             indicator_height = 5,
             render_titles = false,
             rounding = 0,
