@@ -80,7 +80,7 @@
         };
 
         temperature = {
-          hwmon-path = "/sys/class/thermal/thermal_zone2/temp";
+          hwmon-name = "coretemp";
           tooltip = false;
           critical-threshold = 80;
           format = " {temperatureC}°C";
