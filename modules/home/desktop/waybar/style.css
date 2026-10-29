@@ -65,6 +65,7 @@ window#waybar {
 #wireplumber,
 #backlight,
 #battery,
+#power-profiles-daemon,
 #gamemode,
 #clock {
     padding: 5px 10px;
@@ -135,7 +136,8 @@ window#waybar {
 
 #wireplumber,
 #battery,
-#backlight {
+#backlight,
+#power-profiles-daemon {
     color: #@base0E@;
 }
 

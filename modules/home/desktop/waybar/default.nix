@@ -58,6 +58,7 @@
           "wireplumber#source"
           "backlight"
           "battery"
+          "power-profiles-daemon"
           "gamemode"
           "clock"
         ];
@@ -176,6 +177,17 @@
           tooltip = true;
           tooltip-foramat-discharging = "{time}";
           tooltip-foramat-charging = "{time}";
+        };
+
+        power-profiles-daemon = {
+          format = "{icon}";
+          tooltip = false;
+          format-icons = {
+            default = "";
+            performance = "";
+            balanced = "";
+            power-saver = "";
+          };
         };
 
         gamemode = {

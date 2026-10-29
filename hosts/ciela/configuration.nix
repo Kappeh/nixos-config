@@ -4,6 +4,7 @@
 
     ./monitors.nix
     ./network.nix
+    ./power_management.nix
     ./storage.nix
   ];
 
