@@ -12,6 +12,8 @@ hl.config({
     master = {
         allow_small_split = true,
         mfact = 0.60,
+        new_status = "inherit";
+        new_on_active = "after";
     },
     decoration = {
         blur = { enabled = false },
