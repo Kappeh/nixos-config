@@ -1,4 +1,10 @@
 { config, lib, pkgs, ... }: {
+  options.kappeh.desktop.waybar.fixed_center = lib.mkOption {
+    description = "The center block will stay in the middle of the bar whenever possible.";
+    type = lib.types.bool;
+    default = true;
+  };
+
   config = lib.mkIf config.kappeh.desktop.enable {
     stylix.targets.waybar.enable = false;
 
@@ -32,7 +38,7 @@
         height = 30;
         output = [ config.kappeh.desktop.barOutput ];
         spacing = 0;
-        # fixed-center = false;
+        fixed-center = config.kappeh.desktop.waybar.fixed_center;
 
         reload_style_on_change = false;
 

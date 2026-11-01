@@ -84,6 +84,7 @@
             monitors = desktop.monitors;
             barOutput = desktop.barOutput;
             notificationOutput = desktop.notificationOutput;
+            waybar.fixed_center = desktop.waybar.fixed_center;
           };
           development = with development; {
             lsp = with lsp; {

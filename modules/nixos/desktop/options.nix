@@ -1,5 +1,7 @@
 { lib, ... }: {
   options.kappeh.desktop = {
+    enable = lib.mkEnableOption "Enable desktop capability";
+
     monitors = lib.mkOption {
       description = "Monitor configuration for this device.";
 
@@ -46,6 +48,12 @@
       type = lib.types.nullOr lib.types.str;
       default = null;
       description = "Monitor output used for Mako notifications.";
+    };
+
+    waybar.fixed_center = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "The center block will stay in the middle of the bar whenever possible.";
     };
   };
 }

@@ -14,7 +14,10 @@
       enable = true;
       excludeMicrosoftKeys = true;
     };
-    desktop.enable = true;
+    desktop = {
+      enable = true;
+      waybar.fixed_center = false;
+    };
     development.enable = true;
     gaming = {
       enable = true;
