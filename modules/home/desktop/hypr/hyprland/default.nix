@@ -22,7 +22,7 @@
         "commands.lua" = let
           alacritty = "${pkgs.alacritty}/bin/alacritty";
           pcmanfm = "${pkgs.pcmanfm}/bin/pcmanfm";
-          rofi = "${pkgs.rofi}/bin/rofi";
+          rofi = lib.getExe config.programs.rofi.finalPackage;
           wlr_which_key = "${pkgs.wlr-which-key}/bin/wlr-which-key";
           bluetui = "${pkgs.bluetui}/bin/bluetui";
           pulsemixer = "${pkgs.pulsemixer}/bin/pulsemixer";

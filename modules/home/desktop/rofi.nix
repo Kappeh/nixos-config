@@ -1,9 +1,5 @@
 { config, lib, pkgs, ... }: {
   config = lib.mkIf config.kappeh.desktop.enable {
-    home.packages = [
-      pkgs.rofi-power-menu
-    ];
-
     stylix.targets.rofi = {
       enable = true;
       colors.enable = false;
@@ -13,18 +9,20 @@
     programs.rofi = {
       enable = true;
 
-      plugins = [
-        pkgs.rofi-calc
-        pkgs.rofi-power-menu
+      plugins = with pkgs; [
+        rofi-calc
+        rofi-emoji
+        rofi-nerdy
+        rofi-power-menu
       ];
 
       settings = {
         modes = [
-          "window"
-          "run"
           "drun"
-          # "ssh"
-          # "keys"
+          "emoji"
+          "nerdy"
+          "run"
+          "window"
         ];
 
         location = 0;

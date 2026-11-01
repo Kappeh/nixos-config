@@ -2,6 +2,7 @@
   imports = [
     ./cursor_theme/default.nix
     ./hypr/default.nix
+    ./super_menu/default.nix
     ./waybar/default.nix
     ./awww.nix
     ./brightnessctl.nix
