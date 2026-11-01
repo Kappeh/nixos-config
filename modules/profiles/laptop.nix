@@ -10,6 +10,10 @@
       enable = true;
       discord.enable = false;
     };
+    core.lanzaboote = {
+      enable = true;
+      excludeMicrosoftKeys = true;
+    };
     desktop.enable = true;
     development.enable = true;
     gaming = {

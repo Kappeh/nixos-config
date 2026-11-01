@@ -4,6 +4,7 @@
   ];
 
   config.kappeh = {
+    core.systemd_boot.enable = true;
     development = {
       lsp.enable = true;
       nixvim.enable = true;

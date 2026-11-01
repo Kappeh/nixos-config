@@ -1,5 +1,7 @@
-{
-  config = {
+{ config, lib, ... }: {
+  options.kappeh.core.systemd_boot.enable = lib.mkEnableOption "Enable systemd-boot";
+
+  config = lib.mkIf config.kappeh.core.systemd_boot.enable {
     # Use the systemd-boot EFI boot loader.
     boot.loader = {
       systemd-boot = {

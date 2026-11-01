@@ -11,6 +11,11 @@
 
     impermanence.url = "github:nix-community/impermanence";
 
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.2.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
 
     nixcord.url = "github:kaylorben/nixcord";
