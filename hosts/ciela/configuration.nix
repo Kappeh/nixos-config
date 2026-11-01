@@ -12,11 +12,6 @@
     time.timeZone = "Europe/London";
 
     hardware.cpu.intel.npu.enable = true;
-    networking.networkmanager.enable = true;
-    environment.persistence."/persist/system".directories = [
-      "/etc/NetworkManager"
-      "/var/lib/NetworkManager"
-    ];
 
     services.logind.settings.Login = {
       HandleLidSwitch = "suspend-then-hibernate";
