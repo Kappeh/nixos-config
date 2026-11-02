@@ -7,6 +7,7 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd(power_menu))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(bluetoothManager))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(wifiManager))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(volumeMixer))
 
 hl.bind("Print", hl.dsp.exec_cmd(screenshot_region))

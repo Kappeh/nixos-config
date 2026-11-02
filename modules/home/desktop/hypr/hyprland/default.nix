@@ -32,6 +32,7 @@
           slurp = "${pkgs.slurp}/bin/slurp";
           swappy = "${pkgs.swappy}/bin/swappy";
           wl_copy = "${pkgs.wl-clipboard}/bin/wl-copy";
+          impala = "${pkgs.impala}/bin/impala";
         in ''
           terminal = '${alacritty}'
           fileManager = '${pcmanfm}'
@@ -44,6 +45,7 @@
           screenshot_region = '${grim} -g "$(${slurp})" - | ${wl_copy}'
           screenshot_region_edit = '${grim} -g "$(${slurp})" - | ${swappy} -f -'
           power_menu = '${wlr_which_key} -k "p"'
+          wifiManager = '${alacritty} -e ${impala}';
         '';
         "binds.lua" = { content = ./binds.lua; autoLoad = true; };
         "colors.lua" = ''

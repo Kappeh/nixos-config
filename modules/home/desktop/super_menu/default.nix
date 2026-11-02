@@ -53,7 +53,7 @@
             icon = "󰖩";
             text = "WiFi";
             type = "command";
-            command = "notify-send 'WiFi Connectivity' 'Not Implemented Yet'";
+            command = terminal_run "impala";
           }
           {
             icon = "󰖂";

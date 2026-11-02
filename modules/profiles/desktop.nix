@@ -25,7 +25,10 @@
       zram.enable = true;
     };
     media.enable = true;
-    networking.enable = true;
+    networking = {
+      enable = true;
+      impala.enable = false;
+    };
     security.enable = true;
     services.enable = true;
     shell = {

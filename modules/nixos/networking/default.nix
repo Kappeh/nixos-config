@@ -11,6 +11,7 @@
     enable = lib.mkEnableOption "Enable networking capability";
 
     bluetui.enable = lib.mkEnableOption "Enable bluetui";
+    impala.enable = lib.mkEnableOption "Enable impala";
   };
 
   config.kappeh.networking = with config.kappeh; {
@@ -20,6 +21,7 @@
     wireshark.enable = lib.mkDefault networking.enable;
 
     bluetui.enable = lib.mkDefault networking.enable;
+    impala.enable = lib.mkDefault networking.enable;
   };
 }
 

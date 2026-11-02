@@ -136,6 +136,7 @@
           };
           networking = with networking; {
             bluetui.enable = bluetui.enable;
+            impala.enable = impala.enable;
             wireshark.enable = wireshark.enable;
           };
           security = with security; {
