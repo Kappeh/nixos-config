@@ -1,15 +1,32 @@
 {
   config = {
+    environment.persistence."/persist/system".directories = [
+      "/var/lib/iwd"
+    ];
+
     networking = {
       hostName = "ciela";
 
-      networkmanager.enable = true;
-    };
+      # Use `iwd`'s internal DHCP client instead
+      useDHCP = false;
 
-    environment.persistence."/persist/system".directories = [
-      "/etc/NetworkManager"
-      "/var/lib/NetworkManager"
-    ];
+      wireless.iwd = {
+        enable = true;
+        settings = {
+          General = {
+            EnableNetworkConfiguration = true;
+            AddressRandomization = "network";
+            AddressRandomizationRange = "full";
+          };
+          Network = {
+            EnableIPv6 = true;
+            RoutePriorityOffset = 300;
+            # Use systemd-resolved as DNS resolver
+            NameResolvingService = "systemd";
+          };
+        };
+      };
+    };
   };
 }
 
