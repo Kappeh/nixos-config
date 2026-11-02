@@ -69,6 +69,7 @@
         "general.lua" = { content = ./general.lua; autoLoad = true; };
         "gestures.lua" = { content = ./gestures.lua; autoLoad = true; };
         "animations.lua" = { content = ./animations.lua; autoLoad = true; };
+        "layers.lua" = { content = ./layers.lua; autoLoad = true; };
         "autostart.lua" = { content = ./autostart.lua; autoLoad = true; };
       };
     };
