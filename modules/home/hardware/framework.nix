@@ -4,7 +4,6 @@
   config = lib.mkIf config.kappeh.hardware.framework.enable {
     home.packages = [
       pkgs.framework-tool
-      pkgs.framework-tool-tui
     ];
   };
 }
