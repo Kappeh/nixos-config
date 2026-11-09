@@ -21,8 +21,6 @@
     development.enable = true;
     gaming = {
       enable = true;
-      alvr.enable = false;
-      sidequest.enable = false;
       r2modman.enable = false;
       supertuxkart.enable = false;
     };

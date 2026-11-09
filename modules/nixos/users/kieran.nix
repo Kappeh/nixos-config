@@ -113,7 +113,6 @@
             protontricks.enable = protontricks.enable;
             protonup_qt.enable = protonup_qt.enable;
             r2modman.enable = r2modman.enable;
-            sidequest.enable = sidequest.enable;
             steam.enable = steam.enable;
             supertuxkart.enable = supertuxkart.enable;
             tetrio.enable = tetrio.enable;

@@ -1,8 +1,6 @@
 { config, lib, ... }: {
   imports = [
-    ./alvr.nix
     ./gamemode.nix
-    ./sidequest.nix
     ./steam.nix
   ];
 
@@ -18,9 +16,7 @@
   };
 
   config.kappeh.gaming = with config.kappeh; {
-    alvr.enable = lib.mkDefault gaming.enable;
     gamemode.enable = lib.mkDefault gaming.enable;
-    sidequest.enable = lib.mkDefault gaming.enable;
     steam.enable = lib.mkDefault gaming.enable;
 
     prismlauncher.enable = lib.mkDefault gaming.enable;
