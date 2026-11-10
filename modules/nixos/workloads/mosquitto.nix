@@ -3,7 +3,7 @@
 
   config = with config.kappeh.workloads; {
     users.users.mosquitto = {
-      name = "misquitto";
+      name = "mosquitto";
       uid = 2020;
       group = "mosquitto";
       isNormalUser = false;
